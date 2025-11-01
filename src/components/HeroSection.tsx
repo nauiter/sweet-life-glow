@@ -136,6 +136,7 @@ export const HeroSection = () => {
                 alt="Sweet - Your Anime Art Sensei"
                 width={1920}
                 height={1080}
+                fetchPriority="high"
                 className="w-full h-auto object-cover float-animation"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
