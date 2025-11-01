@@ -26,12 +26,12 @@ export const AboutSection = () => {
     },
     {
       icon: Lock,
-      title: "Private Community (Patreon Members)",
+      title: "Private Community",
       description: "Get exclusive access to Sweet's inner circle. Chat, share, and grow inside our private creative space just for supporters."
     },
     {
       icon: Send,
-      title: "Telegram Access (Private Channel)",
+      title: "Telegram Access",
       description: "Join the secret Telegram group for real-time updates, drops, and Sweet's behind-the-scenes moments."
     }
   ];
