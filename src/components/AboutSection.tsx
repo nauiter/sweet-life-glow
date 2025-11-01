@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Heart, Palette, Users, Zap } from "lucide-react";
+import { Heart, Palette, Users, Zap, Lock, Send } from "lucide-react";
 
 export const AboutSection = () => {
   const benefits = [
@@ -23,6 +23,16 @@ export const AboutSection = () => {
       icon: Zap,
       title: "Weekly Updates",
       description: "Fresh content every week. New lessons, art packs, and challenges to keep you inspired."
+    },
+    {
+      icon: Lock,
+      title: "Private Community (Patreon Members)",
+      description: "Get exclusive access to Sweet's inner circle. Chat, share, and grow inside our private creative space just for supporters."
+    },
+    {
+      icon: Send,
+      title: "Telegram Access (Private Channel)",
+      description: "Join the secret Telegram group for real-time updates, drops, and Sweet's behind-the-scenes moments."
     }
   ];
 
@@ -86,10 +96,16 @@ export const AboutSection = () => {
 
         {/* CTA */}
         <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <Button variant="hero" size="xl">
-            Start Your Journey
-            <Heart fill="currentColor" />
-          </Button>
+          <a 
+            href="https://www.patreon.com/cw/SweetLifeAnimes" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button variant="hero" size="xl">
+              Start Your Journey
+              <Heart fill="currentColor" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
