@@ -1,8 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Quote, Star, Users } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 export const CommunitySection = () => {
+  const [counts, setCounts] = useState({ rating: 0, students: 0, lessons: 0, artworks: 0 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCount('rating', 4.9, 1500, true);
+          animateCount('students', 500, 1800);
+          animateCount('lessons', 50, 1200);
+          animateCount('artworks', 1000, 1800);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCount = (key: 'rating' | 'students' | 'lessons' | 'artworks', target: number, duration: number, isDecimal = false) => {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCounts(prev => ({ ...prev, [key]: target }));
+        clearInterval(timer);
+      } else {
+        const value = isDecimal ? parseFloat(current.toFixed(1)) : Math.floor(current);
+        setCounts(prev => ({ ...prev, [key]: value }));
+      }
+    }, 16);
+  };
   const testimonials = [
     {
       name: "Mika Chen",
@@ -71,23 +113,23 @@ export const CommunitySection = () => {
         </div>
 
         {/* Social Proof Stats */}
-        <div className="max-w-4xl mx-auto">
+        <div ref={statsRef} className="max-w-4xl mx-auto">
           <Card className="p-8 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">4.9/5</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{counts.rating.toFixed(1)}/5</div>
                 <div className="text-sm text-muted-foreground">Average Rating</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{counts.students}+</div>
                 <div className="text-sm text-muted-foreground">Active Students</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">50+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{counts.lessons}+</div>
                 <div className="text-sm text-muted-foreground">Lessons</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">1K+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{counts.artworks >= 1000 ? '1K+' : `${counts.artworks}+`}</div>
                 <div className="text-sm text-muted-foreground">Artworks</div>
               </div>
             </div>
@@ -99,9 +141,15 @@ export const CommunitySection = () => {
           <p className="text-lg text-muted-foreground">
             Ready to become part of this amazing community?
           </p>
-          <Button variant="hero" size="xl">
-            Join Sweet's Circle
-          </Button>
+          <a 
+            href="https://www.patreon.com/cw/SweetLifeAnimes" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button variant="hero" size="xl">
+              Join Sweet's Circle
+            </Button>
+          </a>
         </div>
       </div>
     </section>
