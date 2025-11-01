@@ -91,7 +91,7 @@ export const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4">
               <a 
-                href="https://www.patreon.com/c/SweetLifeAnimes" 
+                href="https://www.patreon.com/cw/SweetLifeAnimes" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
