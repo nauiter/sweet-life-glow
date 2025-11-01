@@ -1,11 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import { GallerySection } from "@/components/GallerySection";
+import { CommunitySection } from "@/components/CommunitySection";
+import { ShopSection } from "@/components/ShopSection";
+import { UpdatesSection } from "@/components/UpdatesSection";
+import { Footer } from "@/components/Footer";
+import { FloatingAvatar } from "@/components/FloatingAvatar";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="relative">
+      {/* Main Content */}
+      <HeroSection />
+      <AboutSection />
+      <GallerySection />
+      <CommunitySection />
+      <ShopSection />
+      <UpdatesSection />
+      <Footer />
+      
+      {/* Floating Interactive Elements */}
+      <FloatingAvatar />
+      
+      {/* Mobile CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-r from-primary to-secondary md:hidden">
+        <button className="w-full py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform">
+          💜 Enroll Now - Join 500+ Artists
+        </button>
       </div>
     </div>
   );
