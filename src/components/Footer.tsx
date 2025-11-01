@@ -32,17 +32,8 @@ export const Footer = () => {
               <li><a href="#" className="hover:text-primary transition-colors">Twitter / X</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Patreon</a></li>
-            </ul>
+          </ul>
           </div>
-        </div>
-        
-        {/* Bottom */}
-        <div className="pt-8 border-t border-primary/10 text-center">
-          <p className="text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-            Made with <Heart size={16} className="text-primary fill-primary" /> by Sweet
-            <span className="mx-2">•</span>
-            <span>#SweetLifeAnimes</span>
-          </p>
         </div>
       </div>
     </footer>
