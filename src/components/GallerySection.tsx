@@ -27,7 +27,7 @@ export const GallerySection = () => {
     <section className="relative py-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={galleryBg} alt="" className="w-full h-full object-cover opacity-20" />
+        <img src={galleryBg} alt="" width={1701} height={1080} className="w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
       
@@ -54,6 +54,8 @@ export const GallerySection = () => {
                 <img 
                   src={artwork.image} 
                   alt={artwork.title}
+                  width={1024}
+                  height={1024}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
