@@ -1,8 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
 import sweetCharacter from "@/assets/sweet-character.jpg";
+import { useState, useEffect, useRef } from "react";
 
 export const HeroSection = () => {
+  const [counts, setCounts] = useState({ otakus: 0, artworks: 0, updates: 0 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCount('otakus', 500, 1500);
+          animateCount('artworks', 1000, 1800);
+          animateCount('updates', 50, 1200);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCount = (key: 'otakus' | 'artworks' | 'updates', target: number, duration: number) => {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCounts(prev => ({ ...prev, [key]: target }));
+        clearInterval(timer);
+      } else {
+        setCounts(prev => ({ ...prev, [key]: Math.floor(current) }));
+      }
+    }, 16);
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
@@ -50,27 +90,39 @@ export const HeroSection = () => {
             
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button variant="hero" size="xl" className="group">
-                Enroll Now
-                <Heart className="group-hover:scale-110 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl">
-                Watch Free Class
-              </Button>
+              <a 
+                href="https://www.patreon.com/c/SweetLifeAnimes" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" size="xl" className="group">
+                  Enroll Now
+                  <Heart className="group-hover:scale-110 transition-transform" />
+                </Button>
+              </a>
+              <a 
+                href="https://youtube.com/@sweetlifeacademy" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="xl">
+                  Watch Free Class
+                </Button>
+              </a>
             </div>
             
             {/* Stats */}
-            <div className="flex gap-8 pt-6">
+            <div ref={statsRef} className="flex gap-8 pt-6">
               <div>
-                <div className="text-3xl font-bold gradient-text">500+</div>
+                <div className="text-3xl font-bold gradient-text">{counts.otakus}+</div>
                 <div className="text-sm text-muted-foreground">Creative Otakus</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">1000+</div>
+                <div className="text-3xl font-bold gradient-text">{counts.artworks}+</div>
                 <div className="text-sm text-muted-foreground">Artworks Created</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">50+</div>
+                <div className="text-3xl font-bold gradient-text">{counts.updates}+</div>
                 <div className="text-sm text-muted-foreground">Weekly Updates</div>
               </div>
             </div>
