@@ -1,28 +1,33 @@
+import { lazy, Suspense } from "react";
 import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { GallerySection } from "@/components/GallerySection";
-import { CommunitySection } from "@/components/CommunitySection";
-import { ShopSection } from "@/components/ShopSection";
-import { UpdatesSection } from "@/components/UpdatesSection";
-import { Footer } from "@/components/Footer";
-import { FooterNauiterMaster } from "@/components/shared/FooterNauiterMaster";
-import { FloatingAvatar } from "@/components/FloatingAvatar";
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const AboutSection = lazy(() => import("@/components/AboutSection").then(m => ({ default: m.AboutSection })));
+const GallerySection = lazy(() => import("@/components/GallerySection").then(m => ({ default: m.GallerySection })));
+const CommunitySection = lazy(() => import("@/components/CommunitySection").then(m => ({ default: m.CommunitySection })));
+const ShopSection = lazy(() => import("@/components/ShopSection").then(m => ({ default: m.ShopSection })));
+const UpdatesSection = lazy(() => import("@/components/UpdatesSection").then(m => ({ default: m.UpdatesSection })));
+const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
+const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiterMaster").then(m => ({ default: m.FooterNauiterMaster })));
+const FloatingAvatar = lazy(() => import("@/components/FloatingAvatar").then(m => ({ default: m.FloatingAvatar })));
 
 const Index = () => {
   return (
     <div className="relative">
       {/* Main Content */}
       <HeroSection />
-      <AboutSection />
-      <GallerySection />
-      <CommunitySection />
-      <ShopSection />
-      <UpdatesSection />
-      <Footer />
-      <FooterNauiterMaster />
-      
-      {/* Floating Interactive Elements */}
-      <FloatingAvatar />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <AboutSection />
+        <GallerySection />
+        <CommunitySection />
+        <ShopSection />
+        <UpdatesSection />
+        <Footer />
+        <FooterNauiterMaster />
+        
+        {/* Floating Interactive Elements */}
+        <FloatingAvatar />
+      </Suspense>
       
       {/* Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-r from-primary to-secondary md:hidden">
