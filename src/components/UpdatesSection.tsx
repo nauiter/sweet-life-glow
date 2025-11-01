@@ -94,26 +94,6 @@ export const UpdatesSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* Newsletter Card */}
-        <Card className="max-w-3xl mx-auto mt-12 p-8 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold gradient-text">Never Miss an Update!</h3>
-            <p className="text-muted-foreground">
-              Get Sweet's weekly tips, new releases, and exclusive content delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-2">
-              <input 
-                type="email" 
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg neon-glow hover:scale-105 transition-transform">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </Card>
       </div>
     </section>
   );
