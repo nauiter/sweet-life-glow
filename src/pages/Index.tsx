@@ -5,6 +5,7 @@ import { CommunitySection } from "@/components/CommunitySection";
 import { ShopSection } from "@/components/ShopSection";
 import { UpdatesSection } from "@/components/UpdatesSection";
 import { Footer } from "@/components/Footer";
+import { FooterNauiterMaster } from "@/components/shared/FooterNauiterMaster";
 import { FloatingAvatar } from "@/components/FloatingAvatar";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <ShopSection />
       <UpdatesSection />
       <Footer />
+      <FooterNauiterMaster />
       
       {/* Floating Interactive Elements */}
       <FloatingAvatar />
