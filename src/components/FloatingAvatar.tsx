@@ -43,15 +43,17 @@ export const FloatingAvatar = () => {
               </p>
             </div>
 
-            {/* Action Buttons */}
-            <div className="space-y-2">
+            {/* Action Button */}
+            <a 
+              href="https://www.patreon.com/cw/SweetLifeAnimes" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
               <Button variant="hero" className="w-full" size="sm">
                 💬 Talk to Sweet
               </Button>
-              <Button variant="outline" className="w-full" size="sm">
-                Join Discord
-              </Button>
-            </div>
+            </a>
           </div>
         </Card>
       )}
