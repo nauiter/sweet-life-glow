@@ -22,7 +22,7 @@ export const ShopSection = () => {
       icon: Download,
       title: "Brush Pack Bundle",
       description: "Essential digital brushes for anime art creation",
-      price: "$12",
+      price: "Free",
       badge: null
     }
   ];
@@ -87,9 +87,15 @@ export const ShopSection = () => {
             <p className="text-muted-foreground mb-6">
               Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
             </p>
-            <Button variant="hero" size="xl">
-              Enroll in Full Course
-            </Button>
+            <a 
+              href="https://www.patreon.com/cw/SweetLifeAnimes" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="hero" size="xl">
+                Enroll in Full Course
+              </Button>
+            </a>
           </Card>
         </div>
       </div>
