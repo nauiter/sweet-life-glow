@@ -18,7 +18,7 @@ export const FooterNauiterMaster = () => {
           className="text-white mb-2 transition-colors hover:text-[hsl(194,100%,50%)]"
           style={{ fontSize: 'clamp(0.85rem, 1vw, 1rem)' }}
         >
-          © 2025 Developer — Nauiter Master | Todos os direitos reservados
+          © 2025 Developer — Nauiter Master | All rights reserved
         </p>
         
         {/* Latin Phrase */}
