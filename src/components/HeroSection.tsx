@@ -62,7 +62,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 px-4 py-20">
+      <div className="container relative z-10 px-4 pt-8 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text Content */}
           <div className="space-y-6 animate-slide-up">
