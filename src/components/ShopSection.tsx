@@ -88,7 +88,7 @@ export const ShopSection = () => {
               Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
             </p>
             <a 
-              href="https://www.patreon.com/cw/SweetLifeAnimes" 
+              href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
               target="_blank" 
               rel="noopener noreferrer"
             >

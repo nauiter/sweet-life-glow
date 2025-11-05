@@ -142,7 +142,7 @@ export const CommunitySection = () => {
             Ready to become part of this amazing community?
           </p>
           <a 
-            href="https://www.patreon.com/cw/SweetLifeAnimes" 
+            href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
             target="_blank" 
             rel="noopener noreferrer"
           >

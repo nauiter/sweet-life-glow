@@ -97,7 +97,7 @@ export const AboutSection = () => {
         {/* CTA */}
         <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
           <a 
-            href="https://www.patreon.com/cw/SweetLifeAnimes" 
+            href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
             target="_blank" 
             rel="noopener noreferrer"
           >

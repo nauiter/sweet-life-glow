@@ -9,7 +9,6 @@ const ShopSection = lazy(() => import("@/components/ShopSection").then(m => ({ d
 const UpdatesSection = lazy(() => import("@/components/UpdatesSection").then(m => ({ default: m.UpdatesSection })));
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiterMaster").then(m => ({ default: m.FooterNauiterMaster })));
-const FloatingAvatar = lazy(() => import("@/components/FloatingAvatar").then(m => ({ default: m.FloatingAvatar })));
 
 const Index = () => {
   return (
@@ -24,16 +23,18 @@ const Index = () => {
         <UpdatesSection />
         <Footer />
         <FooterNauiterMaster />
-        
-        {/* Floating Interactive Elements */}
-        <FloatingAvatar />
       </Suspense>
       
       {/* Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-r from-primary to-secondary md:hidden">
-        <button className="w-full py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform">
+        <a 
+          href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block w-full py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform text-center"
+        >
           💜 Enroll Now - Join 500+ Artists
-        </button>
+        </a>
       </div>
     </div>
   );
