@@ -1,29 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Package, Sparkles } from "lucide-react";
+import { Download, Linkedin, Sparkles, Grid } from "lucide-react";
 
 export const ShopSection = () => {
   const resources = [
     {
-      icon: Package,
-      title: "Pose Reference Pack",
-      description: "100+ dynamic anime poses for your reference library",
+      icon: Linkedin,
+      title: "Master the Art of Crafting the Perfect LinkedIn Profile",
+      description: "Unlock the secrets of building a professional presence that attracts opportunities! Expert tips on personal branding, storytelling, and visibility strategies.",
+      category: "Career Growth / Personal Branding",
       price: "Free",
-      badge: "Popular"
+      badge: "Popular",
+      downloadUrl: "/downloads/Master_Of_Linkedln.pdf"
     },
     {
       icon: Sparkles,
-      title: "Color Palette Collection",
-      description: "50 curated color schemes for anime aesthetics",
+      title: "Unlocking the Power of ChatGPT: A Guide for Digital Artists, Content Innovators, and Creators",
+      description: "Learn how to use AI to supercharge your creative workflow. Practical ways to use ChatGPT for storytelling, art direction, translations, and beyond.",
+      category: "AI for Creators / Productivity",
       price: "Free",
-      badge: "New"
+      badge: "New",
+      downloadUrl: "/downloads/Unlocking_the_Power_of_ChatGPT.pdf"
     },
     {
-      icon: Download,
-      title: "Brush Pack Bundle",
-      description: "Essential digital brushes for anime art creation",
+      icon: Grid,
+      title: "Master the Art of Grids and Layouts",
+      description: "Discover the design principles behind balanced, eye-catching compositions. Layout grids, composition theory, and professional design techniques.",
+      category: "Art & Design / Composition",
       price: "Free",
-      badge: null
+      badge: null,
+      downloadUrl: "/downloads/Sweet_GridsLayouts.rar"
     }
   ];
 
@@ -40,7 +46,7 @@ export const ShopSection = () => {
             Free Resources & Tools
           </h2>
           <p className="text-xl text-muted-foreground">
-            Download these goodies to kickstart your creative journey! More premium packs coming soon. 🎨
+            Download these free creative packs to boost your artistic and professional journey. More exclusive content coming soon!
           </p>
         </div>
 
@@ -66,14 +72,18 @@ export const ShopSection = () => {
                 
                 <div>
                   <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
+                  <p className="text-muted-foreground text-xs mb-2 opacity-80">{resource.category}</p>
                   <p className="text-muted-foreground text-sm mb-4">{resource.description}</p>
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold gradient-text">{resource.price}</span>
-                  <Button variant="outline" size="sm" className="group-hover:border-primary">
-                    Download
-                  </Button>
+                  <a href={resource.downloadUrl} download>
+                    <Button variant="outline" size="sm" className="group-hover:border-primary">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </Button>
+                  </a>
                 </div>
               </div>
             </Card>
