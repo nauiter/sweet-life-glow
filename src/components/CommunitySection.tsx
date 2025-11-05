@@ -137,8 +137,8 @@ export const CommunitySection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 space-y-6 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-lg text-muted-foreground">
+        <div className="text-center mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <p className="text-lg text-muted-foreground mb-6">
             Ready to become part of this amazing community?
           </p>
           <a 
