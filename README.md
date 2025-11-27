@@ -1,73 +1,155 @@
-# Welcome to your Lovable project
+# Sweet Life Animes | Digital Art & Creative Community
 
-## Project info
+> **"Where Anime Art Meets Creative Innovation."**
 
-**URL**: https://lovable.dev/projects/d377141f-296f-4da9-a3b7-06ae014e8f78
+This repository contains the source code for Sweet Life Animes' official landing page. A visually striking and high-performance web application designed to showcase anime art, creative resources, and build a vibrant community of digital artists and anime enthusiasts.
 
-## How can I edit this code?
+## 🎨 Project Overview
 
-There are several ways of editing your application.
+This project is an interactive **Single Page Application (SPA)** featuring:
+- **Modern Anime-Inspired Design System:** Bold aesthetics with gradient effects, glassmorphism, and smooth animations.
+- **Art Gallery Showcase:** Interactive display of original anime artwork and character designs.
+- **Free Resources Hub:** Downloadable educational content including LinkedIn mastery guides, ChatGPT for creators, and design layout fundamentals.
+- **Community Engagement:** Social proof metrics, testimonials, and community building features.
+- **Professional Portfolio:** Highlighting Sweet character designs and artistic capabilities.
+- **SEO Optimized:** Structured data, semantic HTML, and optimized meta tags for maximum discoverability.
 
-**Use Lovable**
+## 🚀 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d377141f-296f-4da9-a3b7-06ae014e8f78) and start prompting.
+The project was built using modern technologies in the React ecosystem:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Core:** [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- **Animations:** CSS Transitions & Tailwind Animate
+- **State Management:** [TanStack Query](https://tanstack.com/query/latest)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Routing:** [React Router DOM](https://reactrouter.com/)
 
-**Use your preferred IDE**
+## 🛠️ Installation & Local Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+To run this project locally, follow the steps below:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js (Version 18 or higher)
+- npm or yarn
 
-Follow these steps:
+### Steps
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/sweet-life-animes.git
+   cd sweet-life-animes
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:8080`
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
+
+## 📄 Project Structure
+
+```
+sweet-life-animes/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/             # shadcn/ui base components
+│   │   ├── AboutSection.tsx
+│   │   ├── CommunitySection.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GallerySection.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── ShopSection.tsx
+│   │   └── UpdatesSection.tsx
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utilities and helpers
+│   ├── pages/              # Page components
+│   ├── assets/             # Images and static resources
+│   ├── App.tsx             # Main application component
+│   ├── main.tsx            # Application entry point
+│   └── index.css           # Global styles and design tokens
+├── public/
+│   ├── downloads/          # Free resources (PDFs, archives)
+│   └── robots.txt          # SEO configuration
+└── package.json
 ```
 
-**Edit a file directly in GitHub**
+## 🎯 Key Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Hero Section
+Dynamic introduction with animated avatar and call-to-action buttons leading to social media and resource downloads.
 
-**Use GitHub Codespaces**
+### Art Gallery
+Showcasing original anime artwork with hover effects and responsive grid layout.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Free Resources
+Three downloadable educational resources:
+- **Master the Art of Crafting the Perfect LinkedIn Profile** - Career development guide
+- **Unlocking the Power of ChatGPT** - AI tools for digital creators
+- **Master the Art of Grids and Layouts** - Design fundamentals for artists
 
-## What technologies are used for this project?
+### Community Section
+Social proof with animated counters displaying community metrics and user testimonials.
 
-This project is built with:
+### Footer
+Clean, responsive footer with social media links and brand information.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Design System
 
-## How can I deploy this project?
+The project uses a custom design system built on Tailwind CSS with:
+- **Semantic color tokens** for consistent theming
+- **HSL color format** for better color manipulation
+- **CSS variables** defined in `index.css` for design tokens
+- **Responsive breakpoints** for mobile-first development
+- **Custom animations** for enhanced user experience
 
-Simply open [Lovable](https://lovable.dev/projects/d377141f-296f-4da9-a3b7-06ae014e8f78) and click on Share -> Publish.
+## 📱 Responsive Design
 
-## Can I connect a custom domain to my Lovable project?
+Fully responsive across all device sizes:
+- Mobile (320px+)
+- Tablet (768px+)
+- Desktop (1024px+)
+- Large screens (1440px+)
 
-Yes, you can!
+## 🔒 Security
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This is a static landing page with no backend integration, ensuring:
+- No sensitive data exposure
+- Secure external link handling with `rel="noopener noreferrer"`
+- Static content with no XSS vulnerabilities
+- Safe download delivery through standard HTML5 attributes
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🚀 Deployment
+
+The application can be deployed to any static hosting service:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+- AWS S3 + CloudFront
+
+Simply run `npm run build` and deploy the contents of the `dist` folder.
+
+## 📄 License
+
+© 2025 Sweet Life Animes. All Rights Reserved.
+
+---
+
+**Built with 💜 for the anime art community**
