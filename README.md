@@ -148,6 +148,8 @@ Simply run `npm run build` and deploy the contents of the `dist` folder.
 
 ## 📄 License
 
+---
+
 © 2025 Sweet Life Animes. All Rights Reserved.
 
 ---
