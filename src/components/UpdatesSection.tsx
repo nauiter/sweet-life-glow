@@ -30,7 +30,7 @@ export const UpdatesSection = () => {
   ];
 
   return (
-    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="updates" className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" />
       

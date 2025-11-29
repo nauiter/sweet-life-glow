@@ -40,7 +40,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="about" className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
       <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
