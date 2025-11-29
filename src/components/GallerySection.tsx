@@ -26,7 +26,7 @@ export const GallerySection = () => {
   ];
 
   return (
-    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0">
         <img 

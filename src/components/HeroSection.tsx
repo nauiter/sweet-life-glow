@@ -33,7 +33,7 @@ export const HeroSection = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">

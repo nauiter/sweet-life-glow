@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
@@ -17,6 +18,9 @@ const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiter
 const Index = () => {
   return (
     <div className="relative">
+      {/* Fixed Navigation */}
+      <Navigation />
+      
       {/* Main Content */}
       <HeroSection />
       <Suspense fallback={<SectionSkeleton />}>

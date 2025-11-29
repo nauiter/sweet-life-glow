@@ -118,6 +118,11 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
