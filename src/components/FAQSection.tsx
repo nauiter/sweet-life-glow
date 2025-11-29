@@ -1,0 +1,132 @@
+import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { HelpCircle } from "lucide-react";
+import { EXTERNAL_LINKS } from "@/constants/data";
+
+export const FAQSection = () => {
+  const faqs = [
+    {
+      question: "What is Sweet Life Animes?",
+      answer: "Sweet Life Animes is your creative universe where anime art meets emotion and technique! I'm Sweet, your sensei and friend, and I've created a comprehensive course to help you master anime art, from basic anatomy to advanced digital illustration. With over 500 creative otakus in our community, we're building something special together! 💜"
+    },
+    {
+      question: "Who is this course for?",
+      answer: "This course is perfect for aspiring anime artists, digital illustrators, hobbyists, and anyone passionate about anime art! Whether you're a complete beginner with zero experience or an intermediate artist looking to refine your skills, my teaching style makes complex techniques feel approachable and fun. If you love anime and want to create your own characters, this is for you!"
+    },
+    {
+      question: "What will I learn in the course?",
+      answer: "You'll master anime techniques from foundation to professional level! Including: character anatomy and proportions, emotional expression and storytelling, digital illustration workflows, advanced shading and lighting, composition and layout design, AI tools for anime creation, plus how to grow and monetize your art brand. We have 50+ comprehensive lessons covering everything you need!"
+    },
+    {
+      question: "Do I need previous drawing experience?",
+      answer: "Not at all! The course is designed for all skill levels. I start from the basics and gradually build up to advanced techniques. My teaching style is friendly and encouraging - I remember what it's like to be a beginner, so I make everything easy to understand. You'll be amazed at your progress in just a few weeks!"
+    },
+    {
+      question: "What's included in the course?",
+      answer: "Course members get access to everything: 50+ video lessons, exclusive brush packs and art resources, weekly art challenges, downloadable reference materials, private Discord community access, private Telegram group for real-time updates, priority support from me personally, and lifetime access to all future updates. Plus, I add fresh content every week!"
+    },
+    {
+      question: "How long does it take to complete?",
+      answer: "The course is self-paced, so you go at your own speed! Most students see significant improvement within 3 months, but you have lifetime access, so there's no rush. Whether you dedicate 1 hour or 10 hours per week, you'll make progress. The important thing is consistency - and our supportive community helps keep you motivated! ✨"
+    },
+    {
+      question: "Is there a community?",
+      answer: "Yes! Our vibrant community is one of the best parts. You'll join 500+ creative otakus in our private Discord server where everyone shares their art, gives feedback, and supports each other. Plus, there's exclusive access to our Telegram group for behind-the-scenes content and real-time updates from me. It's like having a creative family! 💜"
+    },
+    {
+      question: "What software do I need?",
+      answer: "You can use any digital art software you prefer! Most students use Procreate (iPad), Clip Studio Paint, Photoshop, or free options like Krita and MediBang Paint. The techniques I teach work across all platforms. I also show you how to integrate AI tools like Stable Diffusion and ChatGPT into your workflow for next-level creativity."
+    },
+    {
+      question: "How much does it cost?",
+      answer: "Visit the enrollment page to see current pricing and any special offers! The course provides incredible value - think of it as investing in yourself and your creative future. You get lifetime access, weekly updates, community support, and personal guidance from me. Plus, I share strategies to monetize your art so you can turn your passion into income! 🎨"
+    },
+    {
+      question: "Can I get a refund if I'm not satisfied?",
+      answer: "I'm confident you'll love the course, but if you're not satisfied, check the refund policy on the enrollment page. My goal is to make sure every student feels supported and excited about their creative journey. If you have any concerns before enrolling, feel free to reach out through Instagram or Telegram!"
+    },
+    {
+      question: "How do I get started?",
+      answer: `Simply click the "Enroll Now" button to join the course! After enrollment, you'll get immediate access to all lessons, resources, and the community. You can start learning right away and join the weekly art challenges. I'll be there to guide you every step of the way. Ready to level up your art skills? Let's create something magical together! 💜✨`
+    }
+  ];
+
+  return (
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      
+      <div className="container relative z-10 px-4">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
+            <HelpCircle className="text-primary" size={20} />
+            <span className="text-sm font-medium gradient-text">Got Questions?</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Everything you need to know about joining Sweet's creative universe! ✨
+          </p>
+        </div>
+
+        {/* FAQ Accordion */}
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 md:p-8 bg-card/70 backdrop-blur-sm border-primary/20 neon-glow animate-slide-up">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border-b border-primary/20 last:border-0"
+                >
+                  <AccordionTrigger className="text-left hover:text-primary transition-colors py-4 text-base md:text-lg font-semibold hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4 pt-2">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Card>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-muted-foreground">
+            Still have questions? Reach out on Instagram or Telegram!
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href={EXTERNAL_LINKS.instagram}
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Contact Sweet Life Animes on Instagram"
+              className="px-6 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 hover:border-primary/50 hover:neon-glow transition-all text-foreground hover:text-primary"
+            >
+              📸 Instagram
+            </a>
+            <a 
+              href={EXTERNAL_LINKS.telegram}
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Join Sweet Life Animes Telegram Channel"
+              className="px-6 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 hover:border-primary/50 hover:neon-glow transition-all text-foreground hover:text-primary"
+            >
+              ✈️ Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
