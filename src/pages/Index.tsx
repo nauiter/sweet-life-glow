@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { HeroSection } from "@/components/HeroSection";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { EXTERNAL_LINKS } from "@/constants/data";
 
@@ -28,6 +29,9 @@ const Index = () => {
         <Footer />
         <FooterNauiterMaster />
       </Suspense>
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
       
       {/* Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-r from-primary to-secondary md:hidden">
