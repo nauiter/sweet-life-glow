@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Palette, Users, Zap, Lock, Send } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const AboutSection = () => {
   const benefits = [
@@ -38,57 +40,57 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
       <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">About the Course</span>
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+            About the Course
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             This isn't just another art course—it's your creative awakening. I'm Sweet, and I'll be your sensei and friend on this journey.
           </p>
         </div>
 
         {/* Who's Sweet Card */}
-        <Card className="max-w-4xl mx-auto mb-16 p-8 bg-card/70 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up">
+        <Card className={cn(SPACING.container.content, SPACING.card.spacious, "bg-card/70 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up", SPACING.margin.hero)}>
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
               <Heart size={40} className="text-white" fill="currentColor" />
             </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold gradient-text">Who's Sweet? 💜</h3>
+            <div className={SPACING.stack.normal}>
+              <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Who's Sweet? 💜</h3>
               <p className="text-foreground leading-relaxed">
                 I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started. Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
               </p>
               <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-primary/20 rounded-full text-sm border border-primary/50">VTuber Artist</span>
-                <span className="px-3 py-1 bg-secondary/20 rounded-full text-sm border border-secondary/50">Digital Illustrator</span>
-                <span className="px-3 py-1 bg-accent/20 rounded-full text-sm border border-accent/50">Creative Mentor</span>
+                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-primary/20 rounded-full border border-primary/50")}>VTuber Artist</span>
+                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-secondary/20 rounded-full border border-secondary/50")}>Digital Illustrator</span>
+                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-accent/20 rounded-full border border-accent/50")}>Creative Mentor</span>
               </div>
             </div>
           </div>
         </Card>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-2", SPACING.grid.normal, SPACING.container.wide, SPACING.margin.major)}>
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="p-6 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group"
+              className={cn(SPACING.card.default, "bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <benefit.icon className="text-white" size={24} />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                <div className={SPACING.stack.tight}>
+                  <h3 className={cn(TYPOGRAPHY.heading.h4, "font-bold")}>{benefit.title}</h3>
+                  <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{benefit.description}</p>
                 </div>
               </div>
             </Card>

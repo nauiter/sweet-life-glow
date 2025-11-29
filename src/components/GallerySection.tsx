@@ -3,6 +3,8 @@ import artSample1 from "@/assets/art-sample-1.jpg";
 import artSample2 from "@/assets/art-sample-2.jpg";
 import artSample3 from "@/assets/art-sample-3.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const GallerySection = () => {
   const artworks = [
@@ -24,7 +26,7 @@ export const GallerySection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0">
         <img 
@@ -38,23 +40,23 @@ export const GallerySection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Gallery Showcase
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Check out what you'll be creating! These are real student works and examples from our community.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.full)}>
           {artworks.map((artwork, index) => (
             <Card 
               key={index}
-              className="group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up cursor-pointer"
+              className={cn("group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up cursor-pointer")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative aspect-square overflow-hidden">
@@ -68,8 +70,8 @@ export const GallerySection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{artwork.title}</h3>
-                    <p className="text-muted-foreground">{artwork.description}</p>
+                    <h3 className={cn(TYPOGRAPHY.heading.h4, "mb-2")}>{artwork.title}</h3>
+                    <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{artwork.description}</p>
                   </div>
                 </div>
               </div>
@@ -78,8 +80,8 @@ export const GallerySection = () => {
         </div>
 
         {/* Bottom Text */}
-        <div className="text-center mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div className={cn("text-center animate-slide-up", SPACING.margin.major)} style={{ animationDelay: '0.3s' }}>
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-2xl mx-auto")}>
             Every week, students share their amazing progress in our Discord community. You could be next! 💜
           </p>
         </div>

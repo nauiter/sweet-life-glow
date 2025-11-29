@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Bell, Calendar, Clock } from "lucide-react";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const UpdatesSection = () => {
   const updates = [
@@ -28,39 +30,39 @@ export const UpdatesSection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" />
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow glow-pulse">
             <Bell className="text-primary" size={20} />
-            <span className="text-sm font-medium gradient-text">Stay Updated</span>
+            <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>Stay Updated</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Latest Updates
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Fresh content, events, and announcements! The Sweet Life never stops evolving. ✨
           </p>
         </div>
 
         {/* Updates List */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className={cn(SPACING.container.content, SPACING.stack.normal)}>
           {updates.map((update, index) => (
             <Card 
               key={index}
-              className={`p-6 bg-card/70 backdrop-blur-sm transition-all animate-slide-up group cursor-pointer ${
+              className={cn(SPACING.card.default, `bg-card/70 backdrop-blur-sm transition-all animate-slide-up group cursor-pointer ${
                 update.urgent 
                   ? 'border-primary/50 neon-glow hover:border-primary' 
                   : 'border-primary/20 hover:border-primary/50 hover:neon-glow'
-              }`}
+              }`)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 space-y-2">
+                <div className={cn("flex-1", SPACING.stack.tight)}>
                   <div className="flex items-center gap-3 flex-wrap">
                     <Badge 
                       variant={update.urgent ? "default" : "secondary"}
@@ -68,14 +70,14 @@ export const UpdatesSection = () => {
                     >
                       {update.badge}
                     </Badge>
-                    <span className="text-sm text-muted-foreground">{update.type}</span>
+                    <span className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{update.type}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold group-hover:gradient-text transition-all">
+                  <h3 className={cn(TYPOGRAPHY.heading.h4, "group-hover:gradient-text transition-all")}>
                     {update.title}
                   </h3>
                   
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className={cn(TYPOGRAPHY.body.small, "flex items-center gap-2 text-muted-foreground")}>
                     <Calendar size={16} />
                     <span>{update.date}</span>
                   </div>

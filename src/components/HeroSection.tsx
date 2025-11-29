@@ -4,6 +4,8 @@ import sweetCharacter from "@/assets/sweet-character.jpg";
 import { useState, useEffect, useRef } from "react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -49,26 +51,26 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 px-4 pt-8 pb-20">
+      <div className={cn("container relative z-10 pt-8 pb-20", SPACING.section.x)}>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text Content */}
-          <div className="space-y-6 animate-slide-up">
-            <div className="inline-block px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
-              <span className="text-sm font-medium gradient-text">✨ Welcome to Your Sweet Creative Life</span>
+          <div className={cn("animate-slide-up", SPACING.stack.normal)}>
+            <div className={cn("inline-block px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
+              <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>✨ Welcome to Your Sweet Creative Life</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className={cn(TYPOGRAPHY.heading.h1, "leading-tight", SPACING.margin.normal)}>
               <span className="gradient-text">Learn Anime Art</span>
               <br />
               <span className="neon-text">with Sweet</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-xl">
+            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl", SPACING.margin.normal)}>
               Hey cutie! 💜 Ready to level up your art skills? Join 500+ creative otakus in my neon-lit universe where emotion meets technique.
             </p>
             
             {/* Speech Bubble */}
-            <div className="relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md">
+            <div className={cn("relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md", SPACING.margin.normal)}>
               <p className="text-foreground italic">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
@@ -76,7 +78,7 @@ export const HeroSection = () => {
             </div>
             
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className={cn("flex flex-wrap gap-4", SPACING.margin.normal)}>
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
@@ -93,16 +95,16 @@ export const HeroSection = () => {
             {/* Stats */}
             <div ref={statsRef} className="flex gap-8 pt-6">
               <div>
-                <div className="text-3xl font-bold gradient-text">{otakusCount}+</div>
-                <div className="text-sm text-muted-foreground">Creative Otakus</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{otakusCount}+</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Creative Otakus</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">{artworksCount}+</div>
-                <div className="text-sm text-muted-foreground">Artworks Created</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{artworksCount}+</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Artworks Created</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">{updatesCount}+</div>
-                <div className="text-sm text-muted-foreground">Weekly Updates</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{updatesCount}+</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Weekly Updates</div>
               </div>
             </div>
           </div>

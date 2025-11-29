@@ -4,6 +4,8 @@ import { Quote, Star, Users } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const CommunitySection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -53,78 +55,78 @@ export const CommunitySection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
             <Users className="text-primary" size={20} />
-            <span className="text-sm font-medium">Join 500+ Creative Otakus</span>
+            <span className={cn(TYPOGRAPHY.badge)}>Join 500+ Creative Otakus</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Community Love
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Don't just take my word for it—here's what the fam is saying! ✨
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.full, SPACING.margin.hero)}>
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className="p-6 bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up"
+              className={cn(SPACING.card.default, "bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="text-primary mb-4" size={32} />
-              <p className="text-foreground mb-4 leading-relaxed italic">
+              <Quote className={cn("text-primary", SPACING.margin.close)} size={32} />
+              <p className={cn(TYPOGRAPHY.body.small, "text-foreground leading-relaxed italic", SPACING.margin.close)}>
                 "{testimonial.content}"
               </p>
-              <div className="flex items-center gap-1 mb-3">
+              <div className={cn("flex items-center gap-1", SPACING.margin.tight)}>
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} size={16} className="text-primary fill-primary" />
                 ))}
               </div>
               <div>
                 <div className="font-bold">{testimonial.name}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{testimonial.role}</div>
               </div>
             </Card>
           ))}
         </div>
 
         {/* Social Proof Stats */}
-        <div ref={statsRef} className="max-w-4xl mx-auto">
-          <Card className="p-8 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div ref={statsRef} className={SPACING.container.content}>
+          <Card className={cn(SPACING.card.spacious, "bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up")}>
+            <div className={cn("grid grid-cols-2 lg:grid-cols-4", SPACING.grid.normal, "text-center")}>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{ratingCount.toFixed(1)}/5</div>
-                <div className="text-sm text-muted-foreground">Average Rating</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{ratingCount.toFixed(1)}/5</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Average Rating</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{studentsCount}+</div>
-                <div className="text-sm text-muted-foreground">Active Students</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{studentsCount}+</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Active Students</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{lessonsCount}+</div>
-                <div className="text-sm text-muted-foreground">Lessons</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{lessonsCount}+</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Lessons</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{artworksCount >= 1000 ? '1K+' : `${artworksCount}+`}</div>
-                <div className="text-sm text-muted-foreground">Artworks</div>
+                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{artworksCount >= 1000 ? '1K+' : `${artworksCount}+`}</div>
+                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Artworks</div>
               </div>
             </div>
           </Card>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-lg text-muted-foreground mb-6">
+        <div className={cn("text-center animate-slide-up", SPACING.margin.major)} style={{ animationDelay: '0.3s' }}>
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground", SPACING.margin.normal)}>
             Ready to become part of this amazing community?
           </p>
           <a 
