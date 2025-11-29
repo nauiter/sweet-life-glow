@@ -67,8 +67,8 @@ export const FAQSection = () => {
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
+          <div className={cn("inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
             <HelpCircle className="text-primary" size={20} />
             <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>Got Questions?</span>
           </div>
@@ -103,7 +103,7 @@ export const FAQSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className={cn("text-center animate-slide-up", SPACING.margin.major, SPACING.stack.normal)} style={{ animationDelay: '0.2s' }}>
+        <div className={cn("text-center animate-slide-up", SPACING.stack.normal, SPACING.margin.major)} style={{ animationDelay: '0.2s' }}>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Still have questions? Reach out on Instagram!
           </p>
