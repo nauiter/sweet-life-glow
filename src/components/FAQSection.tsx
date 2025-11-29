@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const FAQSection = () => {
   const faqs = [
@@ -57,41 +59,41 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
             <HelpCircle className="text-primary" size={20} />
-            <span className="text-sm font-medium gradient-text">Got Questions?</span>
+            <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>Got Questions?</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Everything you need to know about joining Sweet's creative universe! ✨
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-6 md:p-8 bg-card/70 backdrop-blur-sm border-primary/20 neon-glow animate-slide-up">
-            <Accordion type="single" collapsible className="space-y-4">
+        <div className={SPACING.container.content}>
+          <Card className={cn(SPACING.card.spacious, "bg-card/70 backdrop-blur-sm border-primary/20 neon-glow animate-slide-up")}>
+            <Accordion type="single" collapsible className={SPACING.stack.normal}>
               {faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
                   className="border-b border-primary/20 last:border-0"
                 >
-                  <AccordionTrigger className="text-left hover:text-primary transition-colors py-4 text-base md:text-lg font-semibold hover:no-underline">
+                  <AccordionTrigger className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline")}>
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4 pt-2">
+                  <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2")}>
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -101,8 +103,8 @@ export const FAQSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <p className="text-lg text-muted-foreground">
+        <div className={cn("text-center animate-slide-up", SPACING.margin.major, SPACING.stack.normal)} style={{ animationDelay: '0.2s' }}>
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Still have questions? Reach out on Instagram!
           </p>
           <div className="flex flex-wrap justify-center gap-4">

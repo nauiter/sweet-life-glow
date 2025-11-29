@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download, Linkedin, Sparkles, Grid } from "lucide-react";
 import { DOWNLOAD_LINKS, EXTERNAL_LINKS } from "@/constants/data";
+import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
+import { cn } from "@/lib/utils";
 
 export const ShopSection = () => {
   const resources = [
@@ -35,50 +37,50 @@ export const ShopSection = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       <div className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 px-4">
+      <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
+          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Free Resources & Tools
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Download these free creative packs to boost your artistic and professional journey. More exclusive content coming soon!
           </p>
         </div>
 
         {/* Resources Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.wide)}>
           {resources.map((resource, index) => (
             <Card 
               key={index}
-              className="p-6 bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group"
+              className={cn(SPACING.card.default, "bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="space-y-4">
+              <div className={SPACING.stack.normal}>
                 <div className="flex items-start justify-between">
                   <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform neon-glow">
                     <resource.icon className="text-white" size={28} />
                   </div>
                   {resource.badge && (
-                    <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full border border-primary/50">
+                    <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/50")}>
                       {resource.badge}
                     </span>
                   )}
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
-                  <p className="text-muted-foreground text-xs mb-2 opacity-80">{resource.category}</p>
-                  <p className="text-muted-foreground text-sm mb-4">{resource.description}</p>
+                  <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight)}>{resource.title}</h3>
+                  <p className={cn(TYPOGRAPHY.body.tiny, "text-muted-foreground opacity-80", SPACING.margin.tight)}>{resource.category}</p>
+                  <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground", SPACING.margin.close)}>{resource.description}</p>
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold gradient-text">{resource.price}</span>
+                  <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>{resource.price}</span>
                   <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`}>
                     <Button variant="outline" size="sm" className="group-hover:border-primary">
                       <Download className="mr-2 h-4 w-4" />
@@ -92,10 +94,10 @@ export const ShopSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 space-y-6 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          <Card className="max-w-3xl mx-auto p-8 bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-primary/30 neon-glow">
-            <h3 className="text-2xl font-bold mb-3">Want Access to Everything?</h3>
-            <p className="text-muted-foreground mb-6">
+        <div className={cn("text-center animate-slide-up", SPACING.margin.hero, SPACING.stack.relaxed)} style={{ animationDelay: '0.3s' }}>
+          <Card className={cn(SPACING.container.narrow, SPACING.card.spacious, "bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-primary/30 neon-glow")}>
+            <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight)}>Want Access to Everything?</h3>
+            <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground", SPACING.margin.normal)}>
               Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
             </p>
             <a 
