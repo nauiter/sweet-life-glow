@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const Footer = () => {
   return (
@@ -13,15 +14,14 @@ export const Footer = () => {
             </p>
           </div>
           
-          {/* Social */}
           <div>
             <h4 className="font-bold mb-4">Connect & Support</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="https://www.instagram.com/sweetlifeanimes" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
-              <li><a href="https://t.me/sweetlifeanimes" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram Channel</a></li>
-              <li><a href="https://www.deviantart.com/latthy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Art Gallery (DeviantArt)</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=61581047814185" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook Page</a></li>
-              <li><a href="https://www.paypal.com/donate/?hosted_button_id=FXDHDJ5B3LPS2" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Donate via PayPal</a></li>
+              <li><a href={EXTERNAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Follow Sweet Life Animes on Instagram">Instagram</a></li>
+              <li><a href={EXTERNAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Join Sweet Life Animes Telegram Channel">Telegram Channel</a></li>
+              <li><a href={EXTERNAL_LINKS.deviantArt} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="View Sweet Life Animes Art Gallery on DeviantArt">Art Gallery (DeviantArt)</a></li>
+              <li><a href={EXTERNAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes Facebook Page">Facebook Page</a></li>
+              <li><a href={EXTERNAL_LINKS.paypal} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Support Sweet Life Animes via PayPal">Donate via PayPal</a></li>
             </ul>
           </div>
         </div>

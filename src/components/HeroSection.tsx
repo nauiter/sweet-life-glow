@@ -2,20 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
 import sweetCharacter from "@/assets/sweet-character.jpg";
 import { useState, useEffect, useRef } from "react";
+import { EXTERNAL_LINKS } from "@/constants/data";
+import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 
 export const HeroSection = () => {
-  const [counts, setCounts] = useState({ otakus: 0, artworks: 0, updates: 0 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
+
+  // Use custom hook for animated counters
+  const otakusCount = useAnimatedCounter({ target: 500, duration: 1500, enabled: hasAnimated });
+  const artworksCount = useAnimatedCounter({ target: 1000, duration: 1800, enabled: hasAnimated });
+  const updatesCount = useAnimatedCounter({ target: 50, duration: 1200, enabled: hasAnimated });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          animateCount('otakus', 500, 1500);
-          animateCount('artworks', 1000, 1800);
-          animateCount('updates', 50, 1200);
         }
       },
       { threshold: 0.5 }
@@ -27,22 +30,6 @@ export const HeroSection = () => {
 
     return () => observer.disconnect();
   }, [hasAnimated]);
-
-  const animateCount = (key: 'otakus' | 'artworks' | 'updates', target: number, duration: number) => {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCounts(prev => ({ ...prev, [key]: target }));
-        clearInterval(timer);
-      } else {
-        setCounts(prev => ({ ...prev, [key]: Math.floor(current) }));
-      }
-    }, 16);
-  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
@@ -91,9 +78,10 @@ export const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4">
               <a 
-                href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+                href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Enroll in Sweet Life Animes anime art course"
               >
                 <Button variant="hero" size="xl" className="group">
                   Enroll Now
@@ -105,15 +93,15 @@ export const HeroSection = () => {
             {/* Stats */}
             <div ref={statsRef} className="flex gap-8 pt-6">
               <div>
-                <div className="text-3xl font-bold gradient-text">{counts.otakus}+</div>
+                <div className="text-3xl font-bold gradient-text">{otakusCount}+</div>
                 <div className="text-sm text-muted-foreground">Creative Otakus</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">{counts.artworks}+</div>
+                <div className="text-3xl font-bold gradient-text">{artworksCount}+</div>
                 <div className="text-sm text-muted-foreground">Artworks Created</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text">{counts.updates}+</div>
+                <div className="text-3xl font-bold gradient-text">{updatesCount}+</div>
                 <div className="text-sm text-muted-foreground">Weekly Updates</div>
               </div>
             </div>
@@ -124,7 +112,7 @@ export const HeroSection = () => {
             <div className="relative rounded-3xl overflow-hidden neon-glow">
               <img 
                 src={sweetCharacter} 
-                alt="Sweet - Your Anime Art Sensei"
+                alt="Sweet - Your Anime Art Sensei and Creative Mentor"
                 width={1920}
                 height={1080}
                 fetchPriority="high"

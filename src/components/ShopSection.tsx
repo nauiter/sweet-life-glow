@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download, Linkedin, Sparkles, Grid } from "lucide-react";
+import { DOWNLOAD_LINKS, EXTERNAL_LINKS } from "@/constants/data";
 
 export const ShopSection = () => {
   const resources = [
@@ -11,7 +12,7 @@ export const ShopSection = () => {
       category: "Career Growth / Personal Branding",
       price: "Free",
       badge: "Popular",
-      downloadUrl: "/downloads/Master_Of_Linkedln.pdf"
+      downloadUrl: DOWNLOAD_LINKS.linkedInGuide
     },
     {
       icon: Sparkles,
@@ -20,7 +21,7 @@ export const ShopSection = () => {
       category: "AI for Creators / Productivity",
       price: "Free",
       badge: "New",
-      downloadUrl: "/downloads/Unlocking_the_Power_of_ChatGPT.pdf"
+      downloadUrl: DOWNLOAD_LINKS.chatGPTGuide
     },
     {
       icon: Grid,
@@ -29,7 +30,7 @@ export const ShopSection = () => {
       category: "Art & Design / Composition",
       price: "Free",
       badge: null,
-      downloadUrl: "/downloads/Sweet_GridsLayouts.rar"
+      downloadUrl: DOWNLOAD_LINKS.gridsLayouts
     }
   ];
 
@@ -78,7 +79,7 @@ export const ShopSection = () => {
                 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold gradient-text">{resource.price}</span>
-                  <a href={resource.downloadUrl} download>
+                  <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`}>
                     <Button variant="outline" size="sm" className="group-hover:border-primary">
                       <Download className="mr-2 h-4 w-4" />
                       Download
@@ -98,9 +99,10 @@ export const ShopSection = () => {
               Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
             </p>
             <a 
-              href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+              href={EXTERNAL_LINKS.coursify}
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label="Enroll in Sweet Life Animes full anime art course"
             >
               <Button variant="hero" size="xl">
                 Enroll in Full Course

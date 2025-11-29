@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { HeroSection } from "@/components/HeroSection";
+import { SectionSkeleton } from "@/components/ui/section-skeleton";
+import { EXTERNAL_LINKS } from "@/constants/data";
 
 // Lazy load below-the-fold components to reduce initial bundle size
 const AboutSection = lazy(() => import("@/components/AboutSection").then(m => ({ default: m.AboutSection })));
@@ -15,7 +17,7 @@ const Index = () => {
     <div className="relative">
       {/* Main Content */}
       <HeroSection />
-      <Suspense fallback={<div className="min-h-screen" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <AboutSection />
         <GallerySection />
         <CommunitySection />
@@ -28,9 +30,10 @@ const Index = () => {
       {/* Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-r from-primary to-secondary md:hidden">
         <a 
-          href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+          href={EXTERNAL_LINKS.coursify}
           target="_blank" 
           rel="noopener noreferrer"
+          aria-label="Enroll now in Sweet Life Animes anime art course - Join 500+ artists"
           className="block w-full py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform text-center"
         >
           💜 Enroll Now - Join 500+ Artists

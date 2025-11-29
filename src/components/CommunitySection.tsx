@@ -2,21 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Quote, Star, Users } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { EXTERNAL_LINKS } from "@/constants/data";
+import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 
 export const CommunitySection = () => {
-  const [counts, setCounts] = useState({ rating: 0, students: 0, lessons: 0, artworks: 0 });
   const [hasAnimated, setHasAnimated] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
+
+  // Use custom hook for animated counters
+  const ratingCount = useAnimatedCounter({ target: 4.9, duration: 1500, isDecimal: true, enabled: hasAnimated });
+  const studentsCount = useAnimatedCounter({ target: 500, duration: 1800, enabled: hasAnimated });
+  const lessonsCount = useAnimatedCounter({ target: 50, duration: 1200, enabled: hasAnimated });
+  const artworksCount = useAnimatedCounter({ target: 1000, duration: 1800, enabled: hasAnimated });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          animateCount('rating', 4.9, 1500, true);
-          animateCount('students', 500, 1800);
-          animateCount('lessons', 50, 1200);
-          animateCount('artworks', 1000, 1800);
         }
       },
       { threshold: 0.5 }
@@ -28,23 +31,6 @@ export const CommunitySection = () => {
 
     return () => observer.disconnect();
   }, [hasAnimated]);
-
-  const animateCount = (key: 'rating' | 'students' | 'lessons' | 'artworks', target: number, duration: number, isDecimal = false) => {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCounts(prev => ({ ...prev, [key]: target }));
-        clearInterval(timer);
-      } else {
-        const value = isDecimal ? parseFloat(current.toFixed(1)) : Math.floor(current);
-        setCounts(prev => ({ ...prev, [key]: value }));
-      }
-    }, 16);
-  };
   const testimonials = [
     {
       name: "Mika Chen",
@@ -117,19 +103,19 @@ export const CommunitySection = () => {
           <Card className="p-8 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{counts.rating.toFixed(1)}/5</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{ratingCount.toFixed(1)}/5</div>
                 <div className="text-sm text-muted-foreground">Average Rating</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{counts.students}+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{studentsCount}+</div>
                 <div className="text-sm text-muted-foreground">Active Students</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{counts.lessons}+</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{lessonsCount}+</div>
                 <div className="text-sm text-muted-foreground">Lessons</div>
               </div>
               <div>
-                <div className="text-3xl font-bold gradient-text mb-2">{counts.artworks >= 1000 ? '1K+' : `${counts.artworks}+`}</div>
+                <div className="text-3xl font-bold gradient-text mb-2">{artworksCount >= 1000 ? '1K+' : `${artworksCount}+`}</div>
                 <div className="text-sm text-muted-foreground">Artworks</div>
               </div>
             </div>
@@ -142,9 +128,10 @@ export const CommunitySection = () => {
             Ready to become part of this amazing community?
           </p>
           <a 
-            href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+            href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Join Sweet Life Animes creative community"
           >
             <Button variant="hero" size="xl">
               Join Sweet's Circle
