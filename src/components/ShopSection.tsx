@@ -80,7 +80,7 @@ export const ShopSection = () => {
         </div>
 
         {/* Resources Grid */}
-        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.wide)}>
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.wide, SPACING.margin.hero)}>
           {resources.map((resource, index) => (
             <Card 
               key={index}
@@ -120,7 +120,7 @@ export const ShopSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className={cn("text-center animate-slide-up", SPACING.margin.hero, SPACING.stack.relaxed)} style={{ animationDelay: '0.3s' }}>
+        <div className={cn("text-center animate-slide-up mt-16", SPACING.stack.relaxed)} style={{ animationDelay: '0.3s' }}>
           <Card className={cn(SPACING.container.narrow, SPACING.card.spacious, "bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-primary/30 neon-glow")}>
             <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight)}>Want Access to Everything?</h3>
             <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground", SPACING.margin.normal)}>
