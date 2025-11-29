@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://sweetlifeanimes.com/</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://storage.googleapis.com/gpt-engineer-file-uploads/GbaOPfHXUFalxxIEHWeI9J04XVJ2/uploads/1762005843950-hearts.png</image:loc>
+      <image:title>Sweet Life Animes - Learn Anime Art</image:title>
+      <image:caption>Sweet - Your anime art sensei and creative mentor</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Main Sections (Anchors on homepage) -->
+  <url>
+    <loc>https://sweetlifeanimes.com/#about</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/#gallery</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/#community</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/#resources</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/#updates</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/#faq</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Downloadable Resources -->
+  <url>
+    <loc>https://sweetlifeanimes.com/downloads/Master_Of_Linkedln.pdf</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/downloads/Unlocking_the_Power_of_ChatGPT.pdf</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/downloads/Sweet_GridsLayouts.rar</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- External Course Link (informational) -->
+  <!-- Note: External links are not typically in sitemaps, but documented here for reference -->
+  <!-- Course Enrollment: https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand -->
+
+</urlset>
