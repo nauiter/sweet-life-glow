@@ -28,7 +28,7 @@ export const FAQSection = () => {
     },
     {
       question: "What's included in the course?",
-      answer: "Course members get access to everything: 50+ video lessons, exclusive brush packs and art resources, weekly art challenges, downloadable reference materials, private Discord community access, private Telegram group for real-time updates, priority support from me personally, and lifetime access to all future updates. Plus, I add fresh content every week!"
+      answer: "Course members get access to everything: 50+ video lessons, exclusive brush packs and art resources, weekly art challenges, downloadable reference materials, private Discord community access, priority support from me personally, and lifetime access to all future updates. Plus, I add fresh content every week!"
     },
     {
       question: "How long does it take to complete?",
@@ -36,7 +36,7 @@ export const FAQSection = () => {
     },
     {
       question: "Is there a community?",
-      answer: "Yes! Our vibrant community is one of the best parts. You'll join 500+ creative otakus in our private Discord server where everyone shares their art, gives feedback, and supports each other. Plus, there's exclusive access to our Telegram group for behind-the-scenes content and real-time updates from me. It's like having a creative family! 💜"
+      answer: "Yes! Our vibrant community is one of the best parts. You'll join 500+ creative otakus in our private Discord server where everyone shares their art, gives feedback, and supports each other. It's like having a creative family where everyone encourages your growth! 💜"
     },
     {
       question: "What software do I need?",
@@ -48,7 +48,7 @@ export const FAQSection = () => {
     },
     {
       question: "Can I get a refund if I'm not satisfied?",
-      answer: "I'm confident you'll love the course, but if you're not satisfied, check the refund policy on the enrollment page. My goal is to make sure every student feels supported and excited about their creative journey. If you have any concerns before enrolling, feel free to reach out through Instagram or Telegram!"
+      answer: "I'm confident you'll love the course, but if you're not satisfied, check the refund policy on the enrollment page. My goal is to make sure every student feels supported and excited about their creative journey. If you have any concerns before enrolling, feel free to reach out through Instagram!"
     },
     {
       question: "How do I get started?",
@@ -103,7 +103,7 @@ export const FAQSection = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12 space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <p className="text-lg text-muted-foreground">
-            Still have questions? Reach out on Instagram or Telegram!
+            Still have questions? Reach out on Instagram!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
@@ -114,15 +114,6 @@ export const FAQSection = () => {
               className="px-6 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 hover:border-primary/50 hover:neon-glow transition-all text-foreground hover:text-primary"
             >
               📸 Instagram
-            </a>
-            <a 
-              href={EXTERNAL_LINKS.telegram}
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Join Sweet Life Animes Telegram Channel"
-              className="px-6 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 hover:border-primary/50 hover:neon-glow transition-all text-foreground hover:text-primary"
-            >
-              ✈️ Telegram
             </a>
           </div>
         </div>
