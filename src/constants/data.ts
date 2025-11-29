@@ -12,8 +12,9 @@ export const EXTERNAL_LINKS = {
   // Support
   paypal: "https://www.paypal.com/donate/?hosted_button_id=FXDHDJ5B3LPS2",
   
-  // Course
+  // Course & Shop
   coursify: "https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand",
+  payhipShop: "https://payhip.com/SweetLifeAnimes",
 } as const;
 
 export const SITE_CONFIG = {

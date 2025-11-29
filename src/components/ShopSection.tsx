@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Linkedin, Sparkles, Grid } from "lucide-react";
+import { Download, Linkedin, Sparkles, Grid, ShoppingBag } from "lucide-react";
 import { DOWNLOAD_LINKS, EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -51,6 +51,32 @@ export const ShopSection = () => {
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
             Download these free creative packs to boost your artistic and professional journey. More exclusive content coming soon!
           </p>
+        </div>
+
+        {/* Shop CTA */}
+        <div className={cn("text-center animate-slide-up", SPACING.margin.normal)} style={{ animationDelay: '0.1s' }}>
+          <Card className={cn(SPACING.container.narrow, SPACING.card.default, "bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border-primary/40 neon-glow")}>
+            <div className={SPACING.stack.tight}>
+              <div className="flex items-center justify-center gap-3">
+                <ShoppingBag className="text-primary" size={32} />
+                <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Visit Our Shop</h3>
+              </div>
+              <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground")}>
+                Explore exclusive digital products, brush packs, and premium resources!
+              </p>
+              <a 
+                href={EXTERNAL_LINKS.payhipShop}
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Visit Sweet Life Animes Shop on Payhip"
+              >
+                <Button variant="hero" size="lg" className="mt-2">
+                  <ShoppingBag className="mr-2" />
+                  Browse Shop
+                </Button>
+              </a>
+            </div>
+          </Card>
         </div>
 
         {/* Resources Grid */}
