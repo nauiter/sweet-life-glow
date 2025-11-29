@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Sparkles } from "lucide-react";
+import { Heart, Sparkles, ShoppingBag } from "lucide-react";
 import sweetCharacter from "@/assets/sweet-character.jpg";
 import { useState, useEffect, useRef } from "react";
 import { EXTERNAL_LINKS } from "@/constants/data";
@@ -88,6 +88,17 @@ export const HeroSection = () => {
                 <Button variant="hero" size="xl" className="group">
                   Enroll Now
                   <Heart className="group-hover:scale-110 transition-transform" />
+                </Button>
+              </a>
+              <a 
+                href={EXTERNAL_LINKS.payhipShop}
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Visit Sweet Life Animes Shop"
+              >
+                <Button variant="outline" size="xl" className="group border-primary/50 hover:border-primary">
+                  <ShoppingBag className="group-hover:scale-110 transition-transform" />
+                  Browse Shop
                 </Button>
               </a>
             </div>
