@@ -18,7 +18,6 @@ export const Footer = () => {
             <h4 className="font-bold mb-4">Connect & Support</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li><a href={EXTERNAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Follow Sweet Life Animes on Instagram">Instagram</a></li>
-              <li><a href={EXTERNAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Join Sweet Life Animes Telegram Channel">Telegram Channel</a></li>
               <li><a href={EXTERNAL_LINKS.deviantArt} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="View Sweet Life Animes Art Gallery on DeviantArt">Art Gallery (DeviantArt)</a></li>
               <li><a href={EXTERNAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes Facebook Page">Facebook Page</a></li>
               <li><a href={EXTERNAL_LINKS.paypal} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Support Sweet Life Animes via PayPal">Donate via PayPal</a></li>

@@ -32,8 +32,8 @@ export const AboutSection = () => {
     },
     {
       icon: Send,
-      title: "Telegram Access",
-      description: "Join the secret Telegram group for real-time updates, drops, and Sweet's behind-the-scenes moments."
+      title: "Direct Support",
+      description: "Get priority support and personalized feedback from Sweet to accelerate your artistic growth."
     }
   ];
 

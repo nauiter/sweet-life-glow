@@ -6,7 +6,6 @@
 export const EXTERNAL_LINKS = {
   // Social Media
   instagram: "https://www.instagram.com/sweetlifeanimes",
-  telegram: "https://t.me/sweetlifeanimes",
   deviantArt: "https://www.deviantart.com/latthy",
   facebook: "https://www.facebook.com/profile.php?id=61581047814185",
   
