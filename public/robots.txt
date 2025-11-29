@@ -1,14 +1,73 @@
+# Sweet Life Animes - Robots.txt
+# https://sweetlifeanimes.com/robots.txt
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Specific crawlers optimization
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Social Media Bots (for link previews)
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Disallow areas with no SEO value
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow download resources
+Allow: /downloads/
+
+# Sitemap location
+Sitemap: https://sweetlifeanimes.com/sitemap.xml
+
+# Host preference (optional)
+Host: sweetlifeanimes.com
