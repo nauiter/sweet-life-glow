@@ -9,6 +9,7 @@ const GallerySection = lazy(() => import("@/components/GallerySection").then(m =
 const CommunitySection = lazy(() => import("@/components/CommunitySection").then(m => ({ default: m.CommunitySection })));
 const ShopSection = lazy(() => import("@/components/ShopSection").then(m => ({ default: m.ShopSection })));
 const UpdatesSection = lazy(() => import("@/components/UpdatesSection").then(m => ({ default: m.UpdatesSection })));
+const FAQSection = lazy(() => import("@/components/FAQSection").then(m => ({ default: m.FAQSection })));
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiterMaster").then(m => ({ default: m.FooterNauiterMaster })));
 
@@ -23,6 +24,7 @@ const Index = () => {
         <CommunitySection />
         <ShopSection />
         <UpdatesSection />
+        <FAQSection />
         <Footer />
         <FooterNauiterMaster />
       </Suspense>
