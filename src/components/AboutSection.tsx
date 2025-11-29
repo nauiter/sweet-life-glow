@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Palette, Users, Zap, Lock, Send } from "lucide-react";
+import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const AboutSection = () => {
   const benefits = [
@@ -97,9 +98,10 @@ export const AboutSection = () => {
         {/* CTA */}
         <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
           <a 
-            href="https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand" 
+            href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Start your anime art journey with Sweet Life Animes"
           >
             <Button variant="hero" size="xl">
               Start Your Journey

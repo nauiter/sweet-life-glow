@@ -4,27 +4,23 @@
  */
 
 export const FooterNauiterMaster = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer 
-      className="relative py-6 text-center border-t border-white/5 animate-fade-in-footer"
-      style={{
-        backgroundColor: 'hsl(0, 0%, 5.5%)',
-        boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.4)',
-      }}
+      className="relative py-6 text-center border-t border-white/5 bg-[#0e0e0e] shadow-[0_-2px_10px_rgba(0,0,0,0.4)] animate-fade-in-footer"
     >
       <div className="container mx-auto px-4">
         {/* Copyright Line */}
         <p 
-          className="text-white mb-2 transition-colors hover:text-[hsl(194,100%,50%)]"
-          style={{ fontSize: 'clamp(0.85rem, 1vw, 1rem)' }}
+          className="text-white mb-2 transition-colors hover:text-[hsl(194,100%,50%)] text-sm md:text-base"
         >
-          © 2025 Developer — Nauiter Master | All rights reserved
+          © {currentYear} Developer — Nauiter Master | All rights reserved
         </p>
         
         {/* Latin Phrase */}
         <p 
-          className="text-white/70 italic"
-          style={{ fontSize: 'clamp(0.75rem, 0.9vw, 0.9rem)' }}
+          className="text-white/70 italic text-xs md:text-sm"
         >
           Sic Mundus Creatus Est
         </p>
