@@ -146,6 +146,8 @@ All colors MUST be HSL.
   
   .neon-text {
     text-shadow: 0 0 10px hsl(var(--neon-pink)), 0 0 20px hsl(var(--neon-pink) / 0.5);
+    line-height: 1.2;
+    padding-block: 0.1em;
   }
   
   .float-animation {
