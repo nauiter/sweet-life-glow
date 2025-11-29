@@ -42,7 +42,7 @@ export const GallerySection = () => {
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
           <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Gallery Showcase
           </h2>
@@ -70,7 +70,7 @@ export const GallerySection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div>
-                    <h3 className={cn(TYPOGRAPHY.heading.h4, "mb-2")}>{artwork.title}</h3>
+                    <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight)}>{artwork.title}</h3>
                     <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{artwork.description}</p>
                   </div>
                 </div>

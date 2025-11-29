@@ -47,7 +47,7 @@ export const AboutSection = () => {
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Section Header */}
-        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
           <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             About the Course
           </h2>

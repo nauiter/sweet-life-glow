@@ -62,8 +62,8 @@ export const CommunitySection = () => {
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
-        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.margin.hero, SPACING.stack.normal)}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow">
+        <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
+          <div className={cn("inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
             <Users className="text-primary" size={20} />
             <span className={cn(TYPOGRAPHY.badge)}>Join 500+ Creative Otakus</span>
           </div>
