@@ -4,6 +4,7 @@ import { Heart, Palette, Users, Zap, Lock, Send } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
+import sweetPhoto from "@/assets/sweet5.webp";
 
 export const AboutSection = () => {
   const benefits = [
@@ -115,9 +116,9 @@ export const AboutSection = () => {
             <div className="hidden lg:block relative w-full h-full min-h-[300px]">
               <div className="relative rounded-2xl overflow-hidden neon-glow h-full">
                 <img 
-                  src="/images/sweet-character.jpg" 
+                  src={sweetPhoto} 
                   alt="Sweet - Your Creative Mentor"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
