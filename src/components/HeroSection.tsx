@@ -93,22 +93,22 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 py-6 sm:py-8 md:py-12 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
         {/* Title - Centered Below Countdown */}
-        <div className="text-center mb-12 md:mb-16 mt-8 md:mt-12">
+        <div className="text-center mb-8 md:mb-12 mt-4 md:mt-8">
           <h1 className="font-bold leading-[1.3]" style={{ fontSize: 'clamp(28px, 5vw, 48px)' }}>
             <span className="gradient-text neon-text">Learn Anime Art with Sweet</span>
           </h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center relative">
-          {/* Left: Character Image (Desktop) */}
-          <div className="hidden lg:block relative animate-slide-up order-1">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 md:gap-10 lg:gap-16 items-start lg:items-center relative">
+          {/* Left: Character Image + Speech Bubble (Desktop) */}
+          <div className="hidden lg:flex relative animate-slide-up order-1 flex-col gap-6">
             <div className="relative rounded-3xl overflow-hidden neon-glow">
               <img 
                 src="/images/sweet-character.jpg" 
                 alt="Sweet - Your Anime Art Sensei and Creative Mentor"
                 width={600}
                 height={600}
-                sizes="(max-width: 1024px) 0vw, 45vw"
+                sizes="(max-width: 1024px) 0vw, 40vw"
                 loading="eager"
                 className="w-full h-auto object-cover rounded-2xl"
               />
@@ -117,50 +117,42 @@ export const HeroSection = () => {
             
             {/* Floating Hearts */}
             <Heart className="absolute -top-4 -right-4 text-primary w-8 h-8 animate-float" fill="currentColor" />
-            <Heart className="absolute bottom-20 -left-4 text-secondary w-6 h-6 animate-float" fill="currentColor" style={{ animationDelay: '1s' }} />
+            <Heart className="absolute bottom-[30%] -left-4 text-secondary w-6 h-6 animate-float" fill="currentColor" style={{ animationDelay: '1s' }} />
             
-            {/* Speech Bubble - Desktop: Beside Character's Face */}
-            <div className="absolute top-[15%] -right-[45%] w-[280px] bg-card/90 backdrop-blur-sm p-5 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
-              <p className="text-foreground italic text-sm leading-relaxed">
+            {/* Speech Bubble - Directly Below Image */}
+            <div className="relative bg-card/90 backdrop-blur-sm p-6 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse -mt-2" role="complementary" aria-label="Sweet's message to students">
+              <p className="text-foreground italic text-base leading-relaxed">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
-              <div className="absolute left-[-12px] top-[25%] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[15px] border-r-primary/50" aria-hidden="true" />
-              <div className="absolute left-[-8px] top-[25%] w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-card/90" aria-hidden="true" />
+              <div className="absolute -top-3 left-[20%] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[15px] border-b-primary/50" aria-hidden="true" />
+              <div className="absolute -top-2 left-[20%] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[12px] border-b-card/90" aria-hidden="true" />
             </div>
           </div>
 
           {/* Right: Text Content */}
-          <div className={cn("animate-slide-up order-2 lg:pl-8", SPACING.stack.normal)}>
-            <div className="space-y-4 mb-8 lg:mb-10">
-              <p className="text-muted-foreground max-w-xl mx-auto md:mx-auto lg:mx-0 px-4 md:px-0 lg:px-0 text-center md:text-center lg:text-left leading-relaxed text-sm sm:text-base lg:text-[18px] lg:leading-[1.6]">
+          <div className={cn("animate-slide-up order-2 lg:order-2", SPACING.stack.normal)}>
+            <div className="space-y-5 mb-8 lg:mb-12">
+              <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0 px-4 md:px-0 text-center lg:text-left leading-relaxed text-base sm:text-lg lg:text-[19px] lg:leading-[1.7]">
                 Hey cutie! 💜 Ready to level up your art skills?
               </p>
-              <p className="text-muted-foreground max-w-xl mx-auto md:mx-auto lg:mx-0 px-4 md:px-0 lg:px-0 text-center md:text-center lg:text-left leading-relaxed text-sm sm:text-base lg:text-[18px] lg:leading-[1.6]">
+              <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0 px-4 md:px-0 text-center lg:text-left leading-relaxed text-base sm:text-lg lg:text-[19px] lg:leading-[1.7]">
                 Join 500+ creative otakus in my neon-lit universe where emotion meets technique.
               </p>
             </div>
             
-            {/* Speech Bubble - Mobile/Tablet */}
-            <div className="lg:hidden relative bg-card/90 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border-2 border-primary/50 shadow-lg shadow-primary/20 max-w-md mx-auto mb-8 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
-              <p className="text-foreground italic text-xs sm:text-sm leading-relaxed">
-                "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
-              </p>
-              <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/90 border-l-2 border-b-2 border-primary/50 transform rotate-45" aria-hidden="true" />
-            </div>
-            
-            {/* CTAs - Desktop: Centralized */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-6 mb-8 lg:mb-10 px-4 md:px-0 lg:px-0 justify-center lg:justify-center items-center">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-5 mb-10 lg:mb-14 px-4 md:px-0 justify-center lg:justify-start items-center lg:items-start">
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Enroll in Sweet Life Animes anime art course"
-                className="w-full sm:w-auto md:w-[80%] md:mx-auto lg:w-[300px]"
+                className="w-full sm:w-auto lg:w-auto"
               >
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/50"
+                  className="group w-full sm:w-[280px] lg:w-[300px] min-h-[52px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/50"
                 >
                   Enroll Now 💜
                   <Heart className="group-hover:scale-110 transition-transform" />
@@ -171,12 +163,12 @@ export const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Sweet Life Animes Shop"
-                className="w-full sm:w-auto md:w-[80%] md:mx-auto lg:w-[300px]"
+                className="w-full sm:w-auto lg:w-auto"
               >
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-md hover:shadow-lg"
+                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full sm:w-[280px] lg:w-[300px] min-h-[52px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-md hover:shadow-lg"
                 >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
@@ -184,59 +176,52 @@ export const HeroSection = () => {
               </a>
             </div>
             
-            {/* December Offer Card - Below CTA Area */}
-            <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-8 md:mt-10 mx-4 md:mx-0 lg:mx-0 max-w-3xl lg:max-w-none overflow-hidden" role="region" aria-label="Special December offer">
-              <div className="absolute -top-2.5 -right-2 sm:-right-2.5 z-10">
-                <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
-                  🔥 90% OFF
-                </span>
+          </div>
+        </div>
+        
+        {/* December Offer Card - Full Width Below Grid */}
+        <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-12 md:mt-16 mx-4 md:mx-0 max-w-full overflow-hidden" role="region" aria-label="Special December offer">
+          <div className="absolute -top-2.5 -right-2 sm:-right-2.5 z-10">
+            <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
+              🔥 90% OFF
+            </span>
+          </div>
+          
+          {/* Desktop/Tablet: Horizontal Layout */}
+          <div className="hidden md:flex items-center justify-between gap-8 p-6 lg:p-8 bg-[#2c1e4a] rounded-2xl">
+            {/* Left: Offer Details */}
+            <div className="flex-1 space-y-4">
+              <div className="flex items-center gap-3">
+                <Sparkles className="text-primary flex-shrink-0" size={28} />
+                <h3 className="text-2xl lg:text-3xl font-bold gradient-text">December Sale!</h3>
               </div>
-              
-              {/* Desktop/Tablet: 2-Column Layout */}
-              <div className="hidden md:grid md:grid-cols-2 gap-6 lg:gap-8 p-6 md:p-8 bg-[#2c1e4a] rounded-2xl items-center">
-                {/* Left: Image */}
-                <div className="relative rounded-xl overflow-hidden">
-                  <img 
-                    src="/images/sweet-character.jpg" 
-                    alt="December Special Offer - Anime Art Course"
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2c1e4a]/80 to-transparent" />
-                </div>
-                
-                {/* Right: Text Block */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Sparkles className="text-primary flex-shrink-0" size={24} />
-                    <h3 className="text-2xl lg:text-3xl font-bold gradient-text">December Sale!</h3>
-                  </div>
-                  <p className="text-base text-white/90 leading-relaxed">
-                    Complete course, AI magic, premium brushes & lifetime access. ✨
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl text-white/70 line-through">$297</span>
-                    <span className="text-4xl lg:text-5xl text-white font-black">$29</span>
-                  </div>
-                  <a 
-                    href={EXTERNAL_LINKS.coursify}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Enroll in December special for $29"
-                    className="block"
-                  >
-                    <Button 
-                      variant="hero" 
-                      size="lg" 
-                      className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold w-full md:w-auto px-8 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90"
-                    >
-                      Enroll for $29 (Save $268!)
-                      <Sparkles className="group-hover:scale-110 transition-transform" size={18} />
-                    </Button>
-                  </a>
-                </div>
+              <p className="text-base lg:text-lg text-white/90 leading-relaxed max-w-xl">
+                Complete course, AI magic, premium brushes & lifetime access. ✨
+              </p>
+              <div className="flex items-center gap-4">
+                <span className="text-xl lg:text-2xl text-white/70 line-through">$297</span>
+                <span className="text-5xl lg:text-6xl text-white font-black">$29</span>
               </div>
+            </div>
+            
+            {/* Right: CTA Button */}
+            <a 
+              href={EXTERNAL_LINKS.coursify}
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Enroll in December special for $29"
+              className="flex-shrink-0"
+            >
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90"
+              >
+                Enroll for $29 (Save $268!)
+                <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
+              </Button>
+            </a>
+          </div>
               
               {/* Mobile Layout: Vertical */}
               <div className="md:hidden space-y-3 p-4 sm:p-5">
@@ -269,28 +254,35 @@ export const HeroSection = () => {
                     <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
                   </Button>
                 </a>
-              </div>
-            </div>
+          </div>
+        </div>
+        
+        {/* Mobile/Tablet: Image + Speech Bubble */}
+        <div className="lg:hidden relative animate-slide-up max-w-2xl mx-auto mt-10 md:mt-12" style={{ animationDelay: '0.2s' }}>
+          <div className="relative rounded-3xl overflow-hidden neon-glow">
+            <img 
+              src="/images/sweet-character.jpg" 
+              alt="Sweet - Your Anime Art Sensei and Creative Mentor"
+              width={800}
+              height={450}
+              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 70vw, 0vw"
+              loading="eager"
+              className="w-full h-auto object-cover max-h-[400px] sm:max-h-[450px] md:max-h-[500px]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
           
-          {/* Mobile Image (shown only on mobile/tablet) */}
-          <div className="lg:hidden relative animate-slide-up max-w-2xl mx-auto order-3" style={{ animationDelay: '0.2s' }}>
-            <div className="relative rounded-3xl overflow-hidden neon-glow">
-              <img 
-                src="/images/sweet-character.jpg" 
-                alt="Sweet - Your Anime Art Sensei and Creative Mentor"
-                width={800}
-                height={450}
-                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 0vw"
-                loading="eager"
-                className="w-full h-auto object-cover max-h-[400px] sm:max-h-[450px] md:max-h-[500px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            </div>
-            
-            {/* Floating Hearts */}
-            <Heart className="absolute -top-4 -right-4 text-primary w-8 h-8 animate-float" fill="currentColor" />
-            <Heart className="absolute bottom-20 -left-4 text-secondary w-6 h-6 animate-float" fill="currentColor" style={{ animationDelay: '1s' }} />
+          {/* Floating Hearts */}
+          <Heart className="absolute -top-4 -right-4 text-primary w-8 h-8 animate-float" fill="currentColor" />
+          <Heart className="absolute bottom-[30%] -left-4 text-secondary w-6 h-6 animate-float" fill="currentColor" style={{ animationDelay: '1s' }} />
+          
+          {/* Speech Bubble - Below Image */}
+          <div className="relative bg-card/90 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse mt-4 mx-4" role="complementary" aria-label="Sweet's message to students">
+            <p className="text-foreground italic text-sm sm:text-base leading-relaxed">
+              "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
+            </p>
+            <div className="absolute -top-3 left-[20%] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[15px] border-b-primary/50" aria-hidden="true" />
+            <div className="absolute -top-2 left-[20%] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[12px] border-b-card/90" aria-hidden="true" />
           </div>
         </div>
       </div>
