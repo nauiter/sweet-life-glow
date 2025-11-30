@@ -28,10 +28,6 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <div className={cn("inline-block px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
-              <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>✨ Welcome to Your Sweet Creative Life</span>
-            </div>
-            
             <h1 className={cn(TYPOGRAPHY.heading.h1, "leading-tight", SPACING.margin.normal)}>
               <span className="gradient-text">Learn Anime Art</span>
               <br />
