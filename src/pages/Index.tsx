@@ -15,7 +15,6 @@ const ShopSection = lazy(() => import("@/components/ShopSection").then(m => ({ d
 const UpdatesSection = lazy(() => import("@/components/UpdatesSection").then(m => ({ default: m.UpdatesSection })));
 const FAQSection = lazy(() => import("@/components/FAQSection").then(m => ({ default: m.FAQSection })));
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
-const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiterMaster").then(m => ({ default: m.FooterNauiterMaster })));
 
 // Lazy load conditional/interactive components to reduce unused JavaScript
 const ExitIntentModal = lazy(() => import("@/components/ExitIntentModal").then(m => ({ default: m.ExitIntentModal })));
@@ -66,7 +65,6 @@ const Index = () => {
         </Section>
         
         <Footer />
-        <FooterNauiterMaster />
       </Suspense>
       </main>
       

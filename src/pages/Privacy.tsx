@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FooterNauiterMaster } from "@/components/shared/FooterNauiterMaster";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -174,7 +173,6 @@ const Privacy = () => {
       </main>
 
       <Footer />
-      <FooterNauiterMaster />
       <ScrollToTop />
     </div>
   );
