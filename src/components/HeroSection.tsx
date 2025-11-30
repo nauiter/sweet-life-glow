@@ -5,7 +5,6 @@ import { Heart, Sparkles, ShoppingBag } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 export const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -78,7 +77,7 @@ export const HeroSection = () => {
           {/* Left: Character Image + Speech Bubble (Desktop) */}
           <div className="hidden lg:flex relative animate-slide-up order-1 flex-col gap-4 w-full max-w-[500px] justify-self-center">
             <div className="relative rounded-3xl overflow-hidden neon-glow">
-              <OptimizedImage src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width={800} height={450} sizes="(max-width: 1024px) 0vw, 42vw" priority className="w-full h-auto object-cover rounded-2xl" />
+              <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" className="w-full h-auto object-cover rounded-2xl" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             </div>
             
@@ -190,7 +189,7 @@ export const HeroSection = () => {
         animationDelay: '0.2s'
       }}>
           <div className="relative rounded-3xl overflow-hidden neon-glow">
-            <OptimizedImage src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width={800} height={450} sizes="(max-width: 640px) 85vw, (max-width: 1024px) 70vw, 0vw" priority className="w-full h-auto object-cover max-h-[380px] sm:max-h-[420px] md:max-h-[480px]" />
+            <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" className="w-full h-auto object-cover max-h-[380px] sm:max-h-[420px] md:max-h-[480px]" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
           
