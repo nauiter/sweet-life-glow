@@ -46,6 +46,34 @@ const getRandomMessage = () => {
   return messages[Math.floor(Math.random() * messages.length)];
 };
 
+// Create a subtle notification sound using Web Audio API
+const playNotificationSound = () => {
+  try {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    
+    // Create a soft, pleasant notification sound
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    // Set frequency for a pleasant "ding" sound
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.1);
+    
+    // Set volume - keep it subtle
+    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+    
+    oscillator.type = 'sine'; // Smooth sine wave
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.3);
+  } catch (error) {
+    console.log('Could not play notification sound:', error);
+  }
+};
+
 export const PurchaseNotifications = () => {
   const [notification, setNotification] = useState<Notification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -60,6 +88,9 @@ export const PurchaseNotifications = () => {
 
       setNotification(newNotification);
       setIsVisible(true);
+      
+      // Play notification sound
+      playNotificationSound();
 
       // Hide after 5 seconds
       setTimeout(() => {
