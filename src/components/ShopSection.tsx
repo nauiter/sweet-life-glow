@@ -99,16 +99,14 @@ export const ShopSection = () => {
                   )}
                 </div>
                 
-                <div>
+                <div className="flex-1">
                   <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight)}>{resource.title}</h3>
                   <p className={cn(TYPOGRAPHY.body.tiny, "text-muted-foreground opacity-80", SPACING.margin.tight)}>{resource.category}</p>
                   <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground", SPACING.margin.close)}>{resource.description}</p>
                 </div>
                 
-                <div className="flex flex-col gap-3 mt-auto">
-                  <div className="flex items-center justify-between">
-                    <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>{resource.price}</span>
-                  </div>
+                <div className="flex flex-col gap-2 mt-auto pt-4">
+                  <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text text-center")}>{resource.price}</span>
                   <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`} className="w-full">
                     <Button variant="outline" size="sm" className="group-hover:border-primary w-full">
                       <Download className="mr-2 h-4 w-4" />
