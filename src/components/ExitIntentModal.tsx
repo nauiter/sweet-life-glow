@@ -63,10 +63,10 @@ export const ExitIntentModal = () => {
         </button>
 
         {/* Animated Background */}
-        <div className="absolute inset-0 pointer-events-none animate-fade-in" style={{ animationDuration: '0.8s' }}>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-          <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.3s' }} />
-          <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.6s' }} />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 animate-fade-in" style={{ animationDuration: '0.6s' }} />
+          <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-parallax-1" />
+          <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-3xl animate-parallax-2" />
         </div>
 
         {/* Content */}
