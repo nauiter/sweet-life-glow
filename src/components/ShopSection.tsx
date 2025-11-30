@@ -138,21 +138,24 @@ export const ShopSection = () => {
 
         {/* Bottom CTA */}
         <div className={cn("text-center animate-slide-up mt-16", SPACING.stack.relaxed)} style={{ animationDelay: '0.3s' }}>
-          <Card className={cn(SPACING.container.narrow, SPACING.card.spacious, "card-highlight")}>
-            <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight)}>Want Access to Everything?</h3>
-            <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground", SPACING.margin.normal)}>
-              Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
-            </p>
-            <a 
-              href={EXTERNAL_LINKS.coursify}
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Enroll in Sweet Life Animes full anime art course"
-            >
-              <Button variant="hero" size="xl">
-                Enroll in Full Course
-              </Button>
-            </a>
+          <Card className={cn(SPACING.container.narrow, SPACING.card.spacious, "card-highlight mx-auto")}>
+            <div className="flex flex-col items-center gap-4 sm:gap-6">
+              <h3 className={cn(TYPOGRAPHY.heading.h3, "mb-0")}>Want Access to Everything?</h3>
+              <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground mb-0")}>
+                Course members get all resources, exclusive brush packs, weekly art challenges, and priority support from Sweet!
+              </p>
+              <a 
+                href={EXTERNAL_LINKS.coursify}
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Enroll in Sweet Life Animes full anime art course"
+                className="w-full sm:w-auto"
+              >
+                <Button variant="hero" size="xl" className="w-full sm:w-auto">
+                  Enroll in Full Course
+                </Button>
+              </a>
+            </div>
           </Card>
         </div>
       </div>
