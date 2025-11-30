@@ -49,10 +49,6 @@ export const FAQSection = () => {
       answer: "Visit the enrollment page to see current pricing and any special offers! The course provides incredible value - think of it as investing in yourself and your creative future. You get lifetime access, weekly updates, community support, and personal guidance from me. Plus, I share strategies to monetize your art so you can turn your passion into income! 🎨"
     },
     {
-      question: "Can I get a refund if I'm not satisfied?",
-      answer: "I'm confident you'll love the course, but if you're not satisfied, check the refund policy on the enrollment page. My goal is to make sure every student feels supported and excited about their creative journey. If you have any concerns before enrolling, feel free to reach out through Instagram!"
-    },
-    {
       question: "How do I get started?",
       answer: `Simply click the "Enroll Now" button to join the course! After enrollment, you'll get immediate access to all lessons, resources, and the community. You can start learning right away and join the weekly art challenges. I'll be there to guide you every step of the way. Ready to level up your art skills? Let's create something magical together! 💜✨`
     }

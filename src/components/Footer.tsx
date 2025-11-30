@@ -30,7 +30,6 @@ export const Footer = () => {
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li><a href="/privacy" className="hover:text-primary transition-colors inline-block">Privacy Policy</a></li>
               <li><a href="/terms" className="hover:text-primary transition-colors inline-block">Terms of Service</a></li>
-              <li><a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block">Refund Policy</a></li>
             </ul>
           </div>
         </div>

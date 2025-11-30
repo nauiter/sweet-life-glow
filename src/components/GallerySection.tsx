@@ -79,11 +79,12 @@ const galleryArtworks = [
 const ITEMS_PER_BATCH = 8;
 const AUTO_ROTATE_INTERVAL = 10000; // 10 seconds - slower rotation
 
-// Neon border style for gallery items - white only
+// Neon border style for gallery items - white only with smooth transitions
 const neonStyle = {
   border: 'border-white/40',
   shadow: '0 0 20px rgba(255, 255, 255, 0.4)',
-  glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]'
+  glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]',
+  transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
 };
 
 // Shuffle function to randomize array
@@ -254,7 +255,7 @@ export const GallerySection = () => {
                     )}
                     style={{ 
                       animationDelay: `${index * 0.1}s`,
-                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1), ${neonStyle.transition}`,
                       willChange: isTransitioning ? 'opacity, transform' : 'auto',
                       boxShadow: neonStyle.shadow
                     }}
