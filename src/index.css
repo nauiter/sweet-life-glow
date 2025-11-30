@@ -11,6 +11,10 @@ All colors MUST be HSL.
     /* Neon Anime Color System */
     --background: 276 65% 11%;
     --foreground: 300 100% 98%;
+    
+    /* Accessibility - Focus Ring */
+    --focus-ring: 328 100% 64%;
+    --focus-ring-offset: 276 65% 11%;
 
     --card: 276 50% 15%;
     --card-foreground: 300 100% 98%;
@@ -247,5 +251,70 @@ All colors MUST be HSL.
     background-clip: text;
     line-height: 1.2;
     padding-block: 0.1em;
+  }
+}
+
+/* Accessibility Enhancements */
+@layer utilities {
+  /* Enhanced Focus States for Keyboard Navigation */
+  *:focus-visible {
+    outline: 3px solid hsl(var(--focus-ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  /* Reduced Motion for Users with Vestibular Disorders */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .neon-glow {
+      box-shadow: none;
+      border: 2px solid hsl(var(--primary));
+    }
+    
+    .gradient-text {
+      -webkit-text-fill-color: inherit;
+      color: hsl(var(--primary));
+    }
+  }
+  
+  /* Screen Reader Only Content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Skip to Main Content Link */
+  .skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+  
+  .skip-to-main:focus {
+    left: 1rem;
+    top: 1rem;
   }
 }

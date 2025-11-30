@@ -39,8 +39,8 @@ export const ShopSection = () => {
   return (
     <section id="resources" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="resources-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      <div className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" aria-hidden="true" />
+      <div className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
@@ -80,20 +80,21 @@ export const ShopSection = () => {
         </div>
 
         {/* Resources Grid */}
-        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.wide, SPACING.margin.hero)}>
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.wide, SPACING.margin.hero)} role="list" aria-label="Free downloadable resources">
           {resources.map((resource, index) => (
             <Card 
               key={index}
               className={cn(SPACING.card.default, "card-elevated animate-slide-up group flex flex-col")}
               style={{ animationDelay: `${index * 0.1}s` }}
+              role="listitem"
             >
               <div className={cn(SPACING.stack.normal, "flex-1 flex flex-col")}>
                 <div className="flex items-start justify-between">
-                  <div className="icon-wrapper-lg group-hover:scale-110 transition-transform">
+                  <div className="icon-wrapper-lg group-hover:scale-110 transition-transform" aria-hidden="true">
                     <resource.icon className="text-white" size={28} />
                   </div>
                   {resource.badge && (
-                    <span className="badge-primary">
+                    <span className="badge-primary" role="status" aria-label={`${resource.badge} resource`}>
                       {resource.badge}
                     </span>
                   )}

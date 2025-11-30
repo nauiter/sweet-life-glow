@@ -14,6 +14,9 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <a href="#main-content" className="skip-to-main">
+        Skip to main content
+      </a>
       <Toaster />
       <Sonner />
       <BrowserRouter>

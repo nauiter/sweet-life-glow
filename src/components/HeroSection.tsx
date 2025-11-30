@@ -8,15 +8,15 @@ export const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-20" aria-hidden="true">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-32 right-20 w-40 h-40 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent/30 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
       
       {/* Sparkles */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <Sparkles className="absolute top-1/4 left-1/4 text-primary animate-sparkle" size={20} />
         <Sparkles className="absolute top-1/3 right-1/3 text-secondary animate-sparkle" size={16} style={{ animationDelay: '0.5s' }} />
         <Sparkles className="absolute bottom-1/3 left-1/2 text-accent animate-sparkle" size={18} style={{ animationDelay: '1s' }} />
@@ -39,11 +39,11 @@ export const HeroSection = () => {
             </p>
             
             {/* Speech Bubble */}
-            <div className={cn("relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md mb-6 sm:mb-7 md:mb-8")}>
+            <div className={cn("relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md mb-6 sm:mb-7 md:mb-8")} role="complementary" aria-label="Sweet's message to students">
               <p className="text-foreground italic">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
-              <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/70 border-l border-b border-primary/30 transform rotate-45" />
+              <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/70 border-l border-b border-primary/30 transform rotate-45" aria-hidden="true" />
             </div>
             
             {/* CTAs */}
@@ -79,9 +79,9 @@ export const HeroSection = () => {
             </div>
             
             {/* Curiosity CTA + Bonus */}
-            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-primary/40 neon-glow mt-6 sm:mt-8")}>
+            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-primary/40 neon-glow mt-6 sm:mt-8")} role="region" aria-label="Special December offer">
               <div className="absolute -top-3 -right-3">
-                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
+                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
                   🔥 90% OFF DECEMBER
                 </span>
               </div>
@@ -142,7 +142,7 @@ export const HeroSection = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-3 bg-primary rounded-full" />
         </div>
