@@ -262,17 +262,17 @@ export const PurchaseNotifications = () => {
             </div>
 
             {/* Content - Right side with clear hierarchy */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
-              <p className="text-sm font-bold text-foreground truncate" style={{ lineHeight: '1.3' }}>
+            <div className="flex-1 min-w-0 flex flex-col justify-center gap-0.5">
+              <p className="text-sm font-bold text-foreground truncate" style={{ lineHeight: '1.15' }}>
                 {notification.name}
               </p>
               <p 
                 className="text-xs line-clamp-1"
-                style={{ color: '#dddddd', lineHeight: '1.4' }}
+                style={{ color: '#dddddd', lineHeight: '1.2' }}
               >
                 {notification.message}
               </p>
-              <p className="text-xs font-semibold gradient-text" style={{ lineHeight: '1.3' }}>
+              <p className="text-xs font-semibold gradient-text" style={{ lineHeight: '1.15' }}>
                 {notification.cta}
               </p>
             </div>
