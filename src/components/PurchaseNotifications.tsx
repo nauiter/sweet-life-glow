@@ -54,6 +54,36 @@ const getRandomBadge = () => {
   return badges[Math.floor(Math.random() * badges.length)];
 };
 
+const getBadgeColorClasses = (badge: string) => {
+  if (badge.includes('HOT')) {
+    return {
+      bg: 'bg-gradient-to-r from-orange-500 to-red-500',
+      text: 'text-white',
+      glow: '0 0 20px rgba(249, 115, 22, 0.8), 0 0 40px rgba(239, 68, 68, 0.4)'
+    };
+  }
+  if (badge.includes('NEW')) {
+    return {
+      bg: 'bg-gradient-to-r from-cyan-500 to-blue-500',
+      text: 'text-white',
+      glow: '0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(59, 130, 246, 0.4)'
+    };
+  }
+  if (badge.includes('JUST IN')) {
+    return {
+      bg: 'bg-gradient-to-r from-pink-500 to-purple-500',
+      text: 'text-white',
+      glow: '0 0 20px rgba(236, 72, 153, 0.8), 0 0 40px rgba(168, 85, 247, 0.4)'
+    };
+  }
+  // FRESH
+  return {
+    bg: 'bg-gradient-to-r from-green-400 to-emerald-500',
+    text: 'text-white',
+    glow: '0 0 20px rgba(74, 222, 128, 0.8), 0 0 40px rgba(16, 185, 129, 0.4)'
+  };
+};
+
 const getRandomColor = (): 'white' | 'pink' | 'purple' => {
   const colors: ('white' | 'pink' | 'purple')[] = ['white', 'pink', 'purple'];
   return colors[Math.floor(Math.random() * colors.length)];
@@ -159,6 +189,7 @@ export const PurchaseNotifications = () => {
   if (!notification) return null;
 
   const colorClasses = getColorClasses(notification.colorVariant);
+  const badgeColors = getBadgeColorClasses(notification.badge);
 
   return (
     <div
@@ -174,17 +205,12 @@ export const PurchaseNotifications = () => {
         <div className="absolute -top-2 right-3 z-20">
           <span className={cn(
             "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg",
-            notification.colorVariant === 'pink' && "bg-pink-500 text-white",
-            notification.colorVariant === 'purple' && "bg-purple-500 text-white",
-            notification.colorVariant === 'white' && "bg-white text-primary"
+            badgeColors.bg,
+            badgeColors.text
           )}
           style={{
             animation: 'badge-pulse 2s ease-in-out infinite',
-            boxShadow: notification.colorVariant === 'pink' 
-              ? '0 0 15px rgba(236, 72, 153, 0.6)' 
-              : notification.colorVariant === 'purple'
-              ? '0 0 15px rgba(168, 85, 247, 0.6)'
-              : '0 0 15px rgba(255, 255, 255, 0.6)'
+            boxShadow: badgeColors.glow
           }}>
             {notification.badge}
           </span>
