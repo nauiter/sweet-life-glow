@@ -1,0 +1,37 @@
+{
+  "name": "Sweet Life Animes - Anime Art Course",
+  "short_name": "Sweet Life",
+  "description": "Master anime art with Sweet! Join 500+ creative otakus in our neon-lit universe where emotion meets technique.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0118",
+  "theme_color": "#f472b6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": [
+    "education",
+    "entertainment",
+    "lifestyle"
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Enroll Now",
+      "short_name": "Enroll",
+      "description": "Join the anime art course",
+      "url": "/#home"
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "View artwork gallery",
+      "url": "/#gallery"
+    }
+  ]
+}
