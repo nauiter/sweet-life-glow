@@ -255,24 +255,21 @@ export const PurchaseNotifications = () => {
             }}
           />
 
-          <div className="flex items-center gap-2.5 relative z-10">
+          <div className="flex items-center gap-3 relative z-10">
             {/* Icon - Left side */}
             <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
               <ShoppingBag className={colorClasses.iconColor} size={16} />
             </div>
 
-            {/* Content - Right side with clear hierarchy */}
+            {/* Content - Right side with compact two-line layout */}
             <div className="flex-1 min-w-0 flex flex-col justify-center gap-0.5">
-              <p className="text-sm font-bold text-foreground truncate" style={{ lineHeight: '1.15' }}>
-                {notification.name}
+              {/* Line 1: Name + Message merged */}
+              <p className="text-sm text-foreground truncate" style={{ lineHeight: '1.3' }}>
+                <span className="font-bold">{notification.name}</span>
+                <span className="text-muted-foreground ml-1">{notification.message}</span>
               </p>
-              <p 
-                className="text-xs line-clamp-1"
-                style={{ color: '#dddddd', lineHeight: '1.2' }}
-              >
-                {notification.message}
-              </p>
-              <p className="text-xs font-semibold gradient-text" style={{ lineHeight: '1.15' }}>
+              {/* Line 2: CTA */}
+              <p className="text-xs font-semibold gradient-text" style={{ lineHeight: '1.3' }}>
                 {notification.cta}
               </p>
             </div>
