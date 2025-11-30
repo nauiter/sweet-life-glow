@@ -70,9 +70,7 @@ const galleryArtworks = [
   { id: 27, image: artSample30, title: "Sunset Portrait", description: "Warm lighting techniques" },
   { id: 28, image: artSample31, title: "Romantic Moment", description: "Dual character interaction" },
   { id: 29, image: artSample32, title: "Sweet Connection", description: "Emotional storytelling" },
-  { id: 30, image: artSample33, title: "Peaceful Embrace", description: "Soft mood rendering" },
-  { id: 31, image: artSample34, title: "Action Hero", description: "Dynamic combat pose" },
-  { id: 32, image: artSample35, title: "Tactical Style", description: "Modern character design" },
+  { id: 30, image: artSample35, title: "Tactical Style", description: "Modern character design" },
   { id: 33, image: artSample36, title: "Neon Aesthetic", description: "Cyberpunk vibes" },
   { id: 34, image: artSample37, title: "Cherry Blossom", description: "Spring atmosphere" }
 ];
@@ -137,7 +135,7 @@ export const GallerySection = () => {
 
         {/* Gallery Grid */}
         <div 
-          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4", SPACING.grid.normal, SPACING.container.full)}
+          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", SPACING.container.full)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -146,12 +144,13 @@ export const GallerySection = () => {
               <DialogTrigger asChild>
                 <Card 
                   className={cn(
-                    "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow cursor-pointer",
-                    isTransitioning ? "opacity-0" : "opacity-100 animate-fade-in"
+                    "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer",
+                    "transition-all duration-500 ease-out hover:neon-glow",
+                    isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"
                   )}
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
-                    transition: 'opacity 0.3s ease-in-out'
+                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                   onClick={() => setSelectedImage(artwork)}
                 >
