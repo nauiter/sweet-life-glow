@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
@@ -22,9 +21,6 @@ const Index = () => {
     <div className="relative">
       {/* Fixed Navigation */}
       <Navigation />
-      
-      {/* Breadcrumbs */}
-      <Breadcrumbs />
       
       {/* Countdown Timer - Creates Urgency */}
       <CountdownTimer />
