@@ -128,6 +128,15 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
 @keyframes slide-up {
   from { 
     opacity: 0;
