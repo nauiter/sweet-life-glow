@@ -45,7 +45,7 @@ All colors MUST be HSL.
     
     /* Section Separators - Consistent Pattern */
     --separator-color: 276 40% 30%;
-    --separator-opacity: 0.2;
+    --separator-opacity: 0.15;
     --separator-height: 1px;
     
     /* Custom Neon Variables */

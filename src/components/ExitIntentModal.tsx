@@ -177,7 +177,7 @@ export const ExitIntentModal = () => {
               </button>
 
               {/* Trust Badge - Minimal */}
-              <div className="text-center pt-2 border-t border-border">
+              <div className="text-center pt-2 border-t" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
                 <div className="flex items-center justify-center gap-1.5 text-muted-foreground">
                   <Heart size={12} className="text-primary" fill="currentColor" />
                   <span className="text-[10px] italic">

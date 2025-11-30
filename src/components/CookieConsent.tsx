@@ -33,7 +33,7 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t border-primary/30 shadow-2xl animate-slide-up hidden md:block">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl animate-slide-up hidden md:block" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           {/* Left: Message */}

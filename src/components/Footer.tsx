@@ -5,7 +5,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="relative py-12 border-t border-primary/20">
+    <footer className="relative py-12 border-t" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-8 max-w-6xl mx-auto">
           {/* Brand */}
@@ -37,7 +37,7 @@ export const Footer = () => {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-primary/10 pt-8 text-center">
+        <div className="border-t pt-8 text-center" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
           <p className="text-muted-foreground text-sm flex items-center justify-center gap-2">
             © {currentYear} Sweet Life Animes. Made with <Heart className="text-primary w-4 h-4" fill="currentColor" /> All rights reserved.
           </p>
