@@ -52,7 +52,7 @@ export const ExitIntentModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent 
-        className="max-w-[95%] sm:max-w-[80%] lg:max-w-[60%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 overflow-hidden shadow-2xl"
+        className="max-w-[90%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-[55%] xl:max-w-[50%] w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl"
         aria-describedby="exit-intent-description"
       >
         {/* Close Button */}
@@ -74,7 +74,7 @@ export const ExitIntentModal = () => {
         {/* Content */}
         <div className="relative z-10">
           {/* Urgent Header */}
-          <div className="bg-gradient-to-r from-destructive via-primary to-destructive p-6 text-center relative overflow-hidden animate-pulse">
+          <div className="bg-gradient-to-r from-destructive via-primary to-destructive p-4 sm:p-5 text-center relative overflow-hidden animate-pulse">
             <div className="absolute inset-0 opacity-30">
               <AlertTriangle className="absolute top-2 left-4 animate-bounce" size={24} />
               <Zap className="absolute bottom-3 right-6 animate-bounce" size={20} style={{ animationDelay: '0.3s' }} />
@@ -82,64 +82,64 @@ export const ExitIntentModal = () => {
             </div>
             
             <div className="relative">
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/30 rounded-full mb-3 animate-bounce">
-                <AlertTriangle className="text-white" size={24} />
-                <span className="text-white font-black text-base uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/30 rounded-full mb-2 animate-bounce">
+                <AlertTriangle className="text-white" size={20} />
+                <span className="text-white font-black text-sm uppercase tracking-wider">
                   ⚠️ WAIT! DON'T LEAVE YET!
                 </span>
               </div>
               
-              <h2 className={cn(TYPOGRAPHY.heading.h1, "text-white mb-2 text-shadow-lg")}>
+              <h2 className={cn(TYPOGRAPHY.heading.h2, "text-white mb-1.5 text-shadow-lg")}>
                 One-Time Offer!
               </h2>
               
-              <p className={cn(TYPOGRAPHY.body.intro, "text-white/95 font-semibold")}>
+              <p className={cn(TYPOGRAPHY.body.default, "text-white/95 font-semibold")}>
                 Before you go... grab this exclusive deal! 🔥
               </p>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className={cn(SPACING.card.spacious)}>
-            <div className={SPACING.stack.normal}>
+          <div className="p-4 sm:p-6">
+            <div className="space-y-4">
               {/* Offer Box */}
-              <div className="bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-primary/40 text-center relative overflow-hidden">
+              <div className="bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border-2 border-primary/40 text-center relative overflow-hidden">
                 <div className="absolute top-2 right-2">
                   <span className="inline-flex items-center px-3 py-1 bg-destructive text-white text-xs font-bold rounded-full animate-pulse">
                     LIMITED TIME
                   </span>
                 </div>
                 
-              <div className="mb-4">
-                <div className={cn(TYPOGRAPHY.heading.h2, "gradient-text font-black mb-2")}>
+              <div className="mb-3 sm:mb-4">
+                <div className={cn(TYPOGRAPHY.heading.h3, "gradient-text font-black mb-2")}>
                   LAST CHANCE: DECEMBER SALE
                 </div>
                 <div className="flex items-center justify-center gap-3 flex-wrap">
                   <div className="text-center">
                     <div className={cn(TYPOGRAPHY.body.small, "text-muted-foreground mb-1")}>Was</div>
-                    <div className={cn(TYPOGRAPHY.heading.h2, "text-muted-foreground line-through")}>$297</div>
+                    <div className={cn(TYPOGRAPHY.heading.h3, "text-muted-foreground line-through")}>$297</div>
                   </div>
-                  <div className={cn(TYPOGRAPHY.heading.h1, "text-primary")}>→</div>
-                  <div className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full border-4 border-white/20">
+                  <div className={cn(TYPOGRAPHY.heading.h2, "text-primary")}>→</div>
+                  <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full border-4 border-white/20">
                     <div className={cn(TYPOGRAPHY.body.small, "text-white/90 mb-1")}>Now Only</div>
-                    <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black text-5xl sm:text-6xl")}>
+                    <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black text-4xl sm:text-5xl")}>
                       $29
                     </span>
                   </div>
                 </div>
-                <div className="inline-block px-5 py-2 bg-destructive text-white rounded-full mt-3 animate-pulse">
-                  <span className={cn(TYPOGRAPHY.body.default, "font-black")}>
+                <div className="inline-block px-4 py-1.5 bg-destructive text-white rounded-full mt-3 animate-pulse">
+                  <span className={cn(TYPOGRAPHY.body.small, "font-black")}>
                     🔥 SAVE 90% - ENDS DECEMBER 31
                   </span>
                 </div>
               </div>
 
-                <p id="exit-intent-description" className={cn(TYPOGRAPHY.body.intro, "text-foreground font-semibold mb-6")}>
+                <p id="exit-intent-description" className={cn(TYPOGRAPHY.body.default, "text-foreground font-semibold mb-4")}>
                   Don't leave without grabbing the biggest discount of the year! Full course + premium bonuses for just $29!
                 </p>
 
                 {/* Quick Benefits */}
-                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                <div className="grid sm:grid-cols-2 gap-3 mb-4">
                   <QuickBenefit 
                     icon={<Sparkles className="text-primary" />}
                     text="AI Art Generator Pro"
@@ -160,39 +160,39 @@ export const ExitIntentModal = () => {
               </div>
 
               {/* Urgency Message */}
-              <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-4 flex items-start gap-3">
-                <AlertTriangle className="text-destructive flex-shrink-0 mt-1 animate-pulse" size={24} />
+              <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-3 flex items-start gap-2">
+                <AlertTriangle className="text-destructive flex-shrink-0 mt-1 animate-pulse" size={20} />
                 <div>
-                  <p className={cn(TYPOGRAPHY.body.default, "text-foreground font-bold mb-1")}>
+                  <p className={cn(TYPOGRAPHY.body.small, "text-foreground font-bold mb-1")}>
                     ⏰ December special ends December 31st at midnight!
                   </p>
-                  <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>
+                  <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground text-xs")}>
                     This 90% discount ($297 → $29) is our biggest sale ever. After December, price returns to normal. Don't miss out!
                   </p>
                 </div>
               </div>
 
               {/* Payment Methods */}
-              <div className="bg-card/50 rounded-lg p-3 border border-primary/20 text-center">
-                <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground mb-1")}>
+              <div className="bg-card/50 rounded-lg p-2.5 border border-primary/20 text-center">
+                <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground mb-1 text-xs")}>
                   💳 Secure Payment Options:
                 </p>
-                <p className={cn(TYPOGRAPHY.body.default, "text-foreground font-semibold")}>
+                <p className={cn(TYPOGRAPHY.body.small, "text-foreground font-semibold")}>
                   PayPal • Stripe • PagSeguro
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2.5">
                 <Button 
                   onClick={handleCTA}
                   variant="hero" 
-                  size="xl" 
-                  className="w-full group text-lg font-black animate-pulse hover:animate-none"
+                  size="lg" 
+                  className="w-full group text-base sm:text-lg font-black animate-pulse hover:animate-none"
                 >
-                  <Gift className="group-hover:scale-110 transition-transform" size={24} />
+                  <Gift className="group-hover:scale-110 transition-transform" size={20} />
                   YES! Give Me 90% OFF ($29 Only)
-                  <Zap className="group-hover:scale-110 transition-transform" size={24} />
+                  <Zap className="group-hover:scale-110 transition-transform" size={20} />
                 </Button>
                 
                 <button
@@ -207,13 +207,13 @@ export const ExitIntentModal = () => {
               </div>
 
               {/* Trust Badge */}
-              <div className="text-center pt-4 border-t border-border">
+              <div className="text-center pt-3 border-t border-border">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                  <Heart size={16} className="text-primary" fill="currentColor" />
-                  <span className={cn(TYPOGRAPHY.body.small, "italic")}>
+                  <Heart size={14} className="text-primary" fill="currentColor" />
+                  <span className={cn(TYPOGRAPHY.body.small, "italic text-xs")}>
                     Join 500+ happy artists who claimed this offer
                   </span>
-                  <Heart size={16} className="text-primary" fill="currentColor" />
+                  <Heart size={14} className="text-primary" fill="currentColor" />
                 </div>
               </div>
             </div>
@@ -225,11 +225,11 @@ export const ExitIntentModal = () => {
 };
 
 const QuickBenefit = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
-  <div className="flex items-center gap-2 bg-background/50 backdrop-blur-sm rounded-lg p-3 border border-primary/20">
-    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0">
+  <div className="flex items-center gap-2 bg-background/50 backdrop-blur-sm rounded-lg p-2.5 border border-primary/20">
+    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0">
       {icon}
     </div>
-    <span className={cn(TYPOGRAPHY.body.small, "text-foreground font-semibold")}>
+    <span className={cn(TYPOGRAPHY.body.small, "text-foreground font-semibold text-xs")}>
       {text}
     </span>
   </div>
