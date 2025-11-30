@@ -58,9 +58,9 @@ export const AboutSection = () => {
 
         {/* Who's Sweet Card */}
         <Card className={cn(SPACING.container.content, SPACING.card.spacious, "card-solid animate-slide-up", SPACING.margin.hero)}>
-          <div className="flex items-start gap-6">
-            <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
-              <Heart size={40} className="text-white" fill="currentColor" />
+          <div className="flex items-start gap-4 md:gap-6">
+            <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
+              <Heart size={24} className="text-white md:w-8 md:h-8" fill="currentColor" />
             </div>
             <div className={SPACING.stack.normal}>
               <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Who's Sweet? 💜</h3>
