@@ -28,18 +28,18 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn(TYPOGRAPHY.heading.h1, "leading-tight", SPACING.margin.normal)}>
+            <h1 className={cn(TYPOGRAPHY.heading.h1, "leading-tight mb-4 sm:mb-5 md:mb-6")}>
               <span className="gradient-text">Learn Anime Art</span>
               <br />
               <span className="neon-text">with Sweet</span>
             </h1>
             
-            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl", SPACING.margin.normal)}>
+            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl mb-6 sm:mb-7 md:mb-8")}>
               Hey cutie! 💜 Ready to level up your art skills? Join 500+ creative otakus in my neon-lit universe where emotion meets technique.
             </p>
             
             {/* Speech Bubble */}
-            <div className={cn("relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md", SPACING.margin.normal)}>
+            <div className={cn("relative bg-card/70 backdrop-blur-sm p-6 rounded-2xl border border-primary/30 neon-glow max-w-md mb-6 sm:mb-7 md:mb-8")}>
               <p className="text-foreground italic">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
@@ -47,7 +47,7 @@ export const HeroSection = () => {
             </div>
             
             {/* CTAs */}
-            <div className={cn("flex flex-wrap gap-4", SPACING.margin.normal)}>
+            <div className={cn("flex flex-wrap gap-4 mb-6 sm:mb-7 md:mb-8")}>
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
@@ -73,7 +73,7 @@ export const HeroSection = () => {
             </div>
             
             {/* Curiosity CTA + Bonus */}
-            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-6 rounded-2xl border border-primary/40 neon-glow", SPACING.margin.normal)}>
+            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-6 rounded-2xl border border-primary/40 neon-glow mt-8")}>
               <div className="absolute -top-3 -right-3">
                 <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
                   🔥 90% OFF DECEMBER
