@@ -136,6 +136,25 @@ All colors MUST be HSL.
     line-height: 1.6;
     padding-block: 0.15em;
   }
+  
+  /* Responsive horizontal spacing for paragraphs */
+  @media (max-width: 640px) {
+    p {
+      padding-inline: 0.5rem;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    p {
+      padding-inline: 1rem;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    p {
+      padding-inline: 0;
+    }
+  }
 }
 
 /* Custom Utility Classes */
