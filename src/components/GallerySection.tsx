@@ -39,7 +39,7 @@ import artSample37 from "@/assets/art-sample-37.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
-import { generateSrcSet, GALLERY_IMAGE_SIZES, CDN_CONFIG } from "@/lib/responsiveImage";
+import { generateSrcSet, GALLERY_IMAGE_SIZES, GALLERY_MOBILE_SIZES, GALLERY_DESKTOP_SIZES, CDN_CONFIG } from "@/lib/responsiveImage";
 
 // Gallery artworks collection
 const galleryArtworks = [
@@ -128,19 +128,20 @@ export const GallerySection = () => {
     const nextEndIndex = nextStartIndex + ITEMS_PER_BATCH;
     const nextArtworks = shuffledArtworks.slice(nextStartIndex, nextEndIndex);
 
-    // Prefetch images from next batch
+    // Prefetch images from next batch - only first 2 on mobile for performance
     const prefetchImages = () => {
-      nextArtworks.forEach((artwork) => {
+      const itemsToPrefetch = isMobile ? nextArtworks.slice(0, 2) : nextArtworks;
+      itemsToPrefetch.forEach((artwork) => {
         const img = new Image();
         img.src = artwork.image;
       });
     };
 
     // Delay prefetch to not interfere with current batch loading
-    const prefetchTimer = setTimeout(prefetchImages, 2000);
+    const prefetchTimer = setTimeout(prefetchImages, isMobile ? 3000 : 2000);
 
     return () => clearTimeout(prefetchTimer);
-  }, [currentBatch, totalBatches, shuffledArtworks, ITEMS_PER_BATCH]);
+  }, [currentBatch, totalBatches, shuffledArtworks, ITEMS_PER_BATCH, isMobile]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -215,8 +216,10 @@ export const GallerySection = () => {
           alt="" 
           width={1600} 
           height={900} 
-          sizes="100vw"
+          sizes={isMobile ? "100vw" : "100vw"}
           loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           className="w-full h-full object-cover opacity-20 transition-transform duration-100 ease-out" 
           style={{ 
             transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,
@@ -276,15 +279,16 @@ export const GallerySection = () => {
                           src={artwork.image} 
                           srcSet={generateSrcSet({ 
                             src: artwork.image, 
-                            widths: [400, 800, 1200],
+                            widths: isMobile ? [300, 600] : [400, 800, 1200],
                             cdnEnabled: CDN_CONFIG.enabled,
                             cdnBaseUrl: CDN_CONFIG.baseUrl
                           })}
                           alt={artwork.title}
-                          width={400}
-                          height={710}
-                          sizes={GALLERY_IMAGE_SIZES}
-                          loading="lazy"
+                          width={isMobile ? 300 : 400}
+                          height={isMobile ? 533 : 710}
+                          sizes={isMobile ? GALLERY_MOBILE_SIZES : GALLERY_DESKTOP_SIZES}
+                          loading={index < 3 ? "eager" : "lazy"}
+                          decoding="async"
                           className="w-full h-full object-cover lg:group-hover:scale-110 transition-transform duration-500"
                           style={{ willChange: 'transform' }}
                         />
@@ -309,14 +313,15 @@ export const GallerySection = () => {
                       src={artwork.image}
                       srcSet={generateSrcSet({ 
                         src: artwork.image, 
-                        widths: [800, 1200, 1600],
+                        widths: isMobile ? [600, 900] : [800, 1200, 1600],
                         cdnEnabled: CDN_CONFIG.enabled,
                         cdnBaseUrl: CDN_CONFIG.baseUrl
                       })} 
                       alt={artwork.title}
-                      sizes="(max-width: 1200px) 90vw, 1200px"
+                      sizes={isMobile ? "90vw" : "(max-width: 1200px) 90vw, 1200px"}
                       className="w-full h-auto rounded-lg"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="mt-6">
                       <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight, "gradient-text")}>{artwork.title}</h3>

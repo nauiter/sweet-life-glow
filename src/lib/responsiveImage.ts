@@ -44,9 +44,20 @@ export const generateSrcSet = (options: ImageSrcSetOptions): string => {
 
 /**
  * Standard sizes attribute for gallery images
- * Optimizes for mobile-first with proper breakpoints
+ * Optimized for mobile-first with proper breakpoints
+ * Mobile gets smaller images for faster loading
  */
-export const GALLERY_IMAGE_SIZES = "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw";
+export const GALLERY_IMAGE_SIZES = "(max-width: 640px) 90vw, (max-width: 768px) 45vw, (max-width: 1024px) 30vw, 25vw";
+
+/**
+ * Mobile-optimized sizes for gallery thumbnails
+ */
+export const GALLERY_MOBILE_SIZES = "(max-width: 640px) 90vw, 45vw";
+
+/**
+ * Desktop-optimized sizes for gallery
+ */
+export const GALLERY_DESKTOP_SIZES = "(max-width: 1024px) 33vw, 25vw";
 
 /**
  * Sizes for hero/featured images
