@@ -236,18 +236,18 @@ export const PurchaseNotifications = () => {
             }}
           />
 
-          <div className="flex items-center gap-2 relative z-10 h-full">
+          <div className="flex items-center gap-2.5 relative z-10 h-full">
             {/* Icon - Left side */}
-            <div className={cn("flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
-              <ShoppingBag className={colorClasses.iconColor} size={14} />
+            <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
+              <ShoppingBag className={colorClasses.iconColor} size={16} />
             </div>
 
             {/* Content - Right side, vertically centered */}
             <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
-              <p className="text-xs font-bold text-foreground truncate leading-tight">
+              <p className="text-sm font-bold text-foreground truncate leading-tight">
                 {notification.name}
               </p>
-              <p className="text-[10px] text-muted-foreground leading-snug line-clamp-1">
+              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-1">
                 {notification.message}
               </p>
             </div>
