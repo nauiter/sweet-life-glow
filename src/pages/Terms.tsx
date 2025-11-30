@@ -57,7 +57,7 @@ const Terms = () => {
                 <>
                   <p><strong>Course Enrollment:</strong></p>
                   <ul>
-                    <li>All course purchases are final and non-refundable after 14 days</li>
+                    <li>All course purchases are final</li>
                     <li>You will receive lifetime access to purchased course content</li>
                     <li>Course content may be updated, but core curriculum remains accessible</li>
                     <li>Access is granted for personal, non-commercial use only</li>
@@ -68,13 +68,6 @@ const Terms = () => {
                     <li>Promotional offers are subject to availability and may expire</li>
                     <li>Payment processing is handled securely by third-party providers</li>
                     <li>You are responsible for any applicable taxes</li>
-                  </ul>
-                  <p><strong>Refund Policy:</strong></p>
-                  <ul>
-                    <li>14-day money-back guarantee (no questions asked)</li>
-                    <li>Refund requests must be submitted via email</li>
-                    <li>Processing time: 5-10 business days</li>
-                    <li>Access to course materials is revoked upon refund</li>
                   </ul>
                 </>
               }
