@@ -84,10 +84,10 @@ export const ShopSection = () => {
           {resources.map((resource, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, "card-elevated animate-slide-up group")}
+              className={cn(SPACING.card.default, "card-elevated animate-slide-up group flex flex-col")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={SPACING.stack.normal}>
+              <div className={cn(SPACING.stack.normal, "flex-1 flex flex-col")}>
                 <div className="flex items-start justify-between">
                   <div className="icon-wrapper-lg group-hover:scale-110 transition-transform">
                     <resource.icon className="text-white" size={28} />
@@ -105,10 +105,12 @@ export const ShopSection = () => {
                   <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground", SPACING.margin.close)}>{resource.description}</p>
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>{resource.price}</span>
-                  <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`}>
-                    <Button variant="outline" size="sm" className="group-hover:border-primary">
+                <div className="flex flex-col gap-3 mt-auto">
+                  <div className="flex items-center justify-between">
+                    <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>{resource.price}</span>
+                  </div>
+                  <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`} className="w-full">
+                    <Button variant="outline" size="sm" className="group-hover:border-primary w-full">
                       <Download className="mr-2 h-4 w-4" />
                       Download
                     </Button>
