@@ -33,7 +33,7 @@ export const HeroSection = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">
@@ -51,8 +51,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className={cn("container relative z-10 pt-8 pb-20", SPACING.section.x)}>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className={cn("container relative z-10 py-8 sm:py-12 md:pb-20", SPACING.section.x)}>
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
             <div className={cn("inline-block px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
@@ -104,7 +104,7 @@ export const HeroSection = () => {
             </div>
             
             {/* Stats */}
-            <div ref={statsRef} className="flex gap-8 pt-6">
+            <div ref={statsRef} className="flex flex-wrap gap-6 sm:gap-8 pt-4 sm:pt-6">
               <div>
                 <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{otakusCount}+</div>
                 <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Creative Otakus</div>

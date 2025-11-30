@@ -134,7 +134,7 @@ export const GallerySection = () => {
   const handleMouseLeave = () => setIsPaused(false);
 
   return (
-    <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="gallery-heading">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <img 
@@ -155,7 +155,7 @@ export const GallerySection = () => {
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
         <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="gallery-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Gallery Showcase
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
@@ -165,9 +165,11 @@ export const GallerySection = () => {
 
         {/* Gallery Grid */}
         <div 
-          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8", SPACING.container.full)}
+          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8", SPACING.container.full)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          role="list"
+          aria-label="Anime artwork gallery"
         >
           {currentArtworks.map((artwork, index) => (
             <Dialog key={`${artwork.id}-${currentBatch}`}>

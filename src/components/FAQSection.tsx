@@ -59,7 +59,7 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="faq" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="faq-heading">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
@@ -72,7 +72,7 @@ export const FAQSection = () => {
             <HelpCircle className="text-primary" size={20} />
             <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>Got Questions?</span>
           </div>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="faq-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Frequently Asked Questions
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>

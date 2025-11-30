@@ -30,7 +30,7 @@ export const UpdatesSection = () => {
   ];
 
   return (
-    <section id="updates" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="updates" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="updates-heading">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" />
       
@@ -41,7 +41,7 @@ export const UpdatesSection = () => {
             <Bell className="text-primary" size={20} />
             <span className={cn(TYPOGRAPHY.badge, "gradient-text")}>Stay Updated</span>
           </div>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="updates-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Latest Updates
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
