@@ -146,35 +146,39 @@ export const CountdownTimer = () => {
         </div>
 
         {/* Mobile Layout - Horizontal Compact */}
-        <div className="flex md:hidden items-center justify-between gap-2">
-          {/* Left: Price */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-xs text-white/70 line-through">$297</span>
-            <span className="text-xl text-white font-black">$29</span>
+        <div className="flex md:hidden flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 sm:gap-2">
+          {/* Top row: Price + Timer */}
+          <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
+            {/* Left: Price */}
+            <div className="flex items-center gap-1.5 bg-white/10 rounded-lg px-2 py-1">
+              <span className="text-xs text-white/70 line-through">$297</span>
+              <span className="text-xl text-white font-black">$29</span>
+            </div>
+
+            {/* Center: Countdown - Ultra Compact */}
+            <div className="flex items-center gap-1">
+              <TimeBlockMobile value={timeLeft.days} label="D" />
+              <span className="text-white/50 text-sm">:</span>
+              <TimeBlockMobile value={timeLeft.hours} label="H" />
+              <span className="text-white/50 text-sm">:</span>
+              <TimeBlockMobile value={timeLeft.minutes} label="M" />
+              <span className="text-white/50 text-sm">:</span>
+              <TimeBlockMobile value={timeLeft.seconds} label="S" />
+            </div>
           </div>
 
-          {/* Center: Countdown - Ultra Compact */}
-          <div className="flex items-center gap-1">
-            <TimeBlockMobile value={timeLeft.days} label="D" />
-            <span className="text-white/50 text-sm">:</span>
-            <TimeBlockMobile value={timeLeft.hours} label="H" />
-            <span className="text-white/50 text-sm">:</span>
-            <TimeBlockMobile value={timeLeft.minutes} label="M" />
-            <span className="text-white/50 text-sm">:</span>
-            <TimeBlockMobile value={timeLeft.seconds} label="S" />
-          </div>
-
-          {/* Right: CTA Button */}
+          {/* Bottom row: CTA Button - Full width on mobile */}
           <a 
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Enroll now for $29"
+            className="w-full sm:w-auto"
           >
             <Button 
               variant="outline" 
               size="sm"
-              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl text-xs px-3 py-1 h-auto whitespace-nowrap"
+              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl text-sm px-6 py-2 h-auto min-h-[40px] w-full sm:w-auto whitespace-nowrap"
             >
               Enroll Now!
             </Button>
