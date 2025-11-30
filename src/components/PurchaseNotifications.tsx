@@ -261,13 +261,14 @@ export const PurchaseNotifications = () => {
               <ShoppingBag className={colorClasses.iconColor} size={18} />
             </div>
 
-            {/* Content - Right side with perfect vertical symmetry around middle line */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center">
+            {/* Content - Right side - Optically Balanced */}
+            {/* pb-[3px] compensates the height difference between Name (14px) and CTA (10px), centering the middle line */}
+            <div className="flex-1 min-w-0 flex flex-col justify-center pb-[3px]">
               {/* Line 1: Name */}
               <p className="text-sm font-bold text-foreground truncate leading-none mb-[2px]">
                 {notification.name}
               </p>
-              {/* Line 2: Message - Center Axis */}
+              {/* Line 2: Message - The Visual Axis */}
               <p className="text-[11px] text-muted-foreground line-clamp-1 leading-none">
                 {notification.message}
               </p>
