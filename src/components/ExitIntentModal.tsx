@@ -5,22 +5,36 @@ import { Zap, X, Gift, Heart, Sparkles, Palette, Users, BookOpen, Video } from "
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+const SNOOZE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
+
 export const ExitIntentModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const isMobile = useIsMobile();
-  const STORAGE_KEY = "sweet-life-exit-intent-shown";
+  const STORAGE_KEY = "sweet-life-exit-intent-timestamp";
 
   useEffect(() => {
     // Exit intent only works on desktop
     if (isMobile) return;
     
-    // Check if exit intent was already triggered
-    const hasSeenExitIntent = localStorage.getItem(STORAGE_KEY);
+    // Check if exit intent was recently shown (within snooze period)
+    const lastShownTimestamp = localStorage.getItem(STORAGE_KEY);
     
-    if (hasSeenExitIntent) {
-      setHasTriggered(true);
-      return;
+    if (lastShownTimestamp) {
+      const timeSinceLastShown = Date.now() - parseInt(lastShownTimestamp);
+      
+      // If less than 5 minutes have passed, don't show the modal
+      if (timeSinceLastShown < SNOOZE_DURATION) {
+        setHasTriggered(true);
+        
+        // Set a timeout to re-enable the modal after the remaining snooze time
+        const remainingTime = SNOOZE_DURATION - timeSinceLastShown;
+        const resetTimer = setTimeout(() => {
+          setHasTriggered(false);
+        }, remainingTime);
+        
+        return () => clearTimeout(resetTimer);
+      }
     }
 
     const handleMouseLeave = (e: MouseEvent) => {
@@ -28,7 +42,8 @@ export const ExitIntentModal = () => {
       if (e.clientY <= 0 && !hasTriggered) {
         setIsOpen(true);
         setHasTriggered(true);
-        localStorage.setItem(STORAGE_KEY, "true");
+        // Save current timestamp instead of just "true"
+        localStorage.setItem(STORAGE_KEY, Date.now().toString());
       }
     };
 
@@ -50,6 +65,8 @@ export const ExitIntentModal = () => {
 
   const handleClose = () => {
     setIsOpen(false);
+    // Update timestamp when user closes the modal (snooze starts)
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
   };
 
   return (
