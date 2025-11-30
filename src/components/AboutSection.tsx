@@ -45,7 +45,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="about-heading">
+    <section id="about" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="about-heading">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-background" />
       <div 
