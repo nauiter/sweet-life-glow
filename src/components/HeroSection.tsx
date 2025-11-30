@@ -92,15 +92,14 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="container relative z-10 py-6 sm:py-8 md:py-12 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
-        {/* Desktop: Title Above Grid */}
-        <div className="hidden lg:block text-center mb-12">
-          <h1 className="text-[36px] font-bold leading-[1.4] mb-4">
-            <span className="gradient-text block mb-2">Learn Anime Art</span>
-            <span className="neon-text block">with Sweet</span>
+        {/* Title - Centered Below Countdown */}
+        <div className="text-center mb-12 md:mb-16 mt-8 md:mt-12">
+          <h1 className="font-bold leading-[1.3]" style={{ fontSize: 'clamp(28px, 5vw, 48px)' }}>
+            <span className="gradient-text neon-text">Learn Anime Art with Sweet</span>
           </h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center relative">
           {/* Left: Character Image (Desktop) */}
           <div className="hidden lg:block relative animate-slide-up order-1">
             <div className="relative rounded-3xl overflow-hidden neon-glow">
@@ -119,16 +118,19 @@ export const HeroSection = () => {
             {/* Floating Hearts */}
             <Heart className="absolute -top-4 -right-4 text-primary w-8 h-8 animate-float" fill="currentColor" />
             <Heart className="absolute bottom-20 -left-4 text-secondary w-6 h-6 animate-float" fill="currentColor" style={{ animationDelay: '1s' }} />
+            
+            {/* Speech Bubble - Desktop: Beside Character's Face */}
+            <div className="absolute top-[15%] -right-[45%] w-[280px] bg-card/90 backdrop-blur-sm p-5 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
+              <p className="text-foreground italic text-sm leading-relaxed">
+                "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
+              </p>
+              <div className="absolute left-[-12px] top-[25%] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[15px] border-r-primary/50" aria-hidden="true" />
+              <div className="absolute left-[-8px] top-[25%] w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-card/90" aria-hidden="true" />
+            </div>
           </div>
 
           {/* Right: Text Content */}
           <div className={cn("animate-slide-up order-2 lg:pl-8", SPACING.stack.normal)}>
-            {/* Mobile/Tablet Title */}
-            <h1 className="lg:hidden text-2xl sm:text-3xl font-bold leading-[1.4] mb-5 sm:mb-6 text-center mt-10 sm:mt-0 md:text-[28px] md:text-center">
-              <span className="gradient-text block mb-2">Learn Anime Art</span>
-              <span className="neon-text block">with Sweet</span>
-            </h1>
-            
             <div className="space-y-4 mb-8 lg:mb-10">
               <p className="text-muted-foreground max-w-xl mx-auto md:mx-auto lg:mx-0 px-4 md:px-0 lg:px-0 text-center md:text-center lg:text-left leading-relaxed text-sm sm:text-base lg:text-[18px] lg:leading-[1.6]">
                 Hey cutie! 💜 Ready to level up your art skills?
@@ -138,12 +140,12 @@ export const HeroSection = () => {
               </p>
             </div>
             
-            {/* Speech Bubble */}
-            <div className="relative bg-card/70 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-primary/30 neon-glow max-w-md mx-auto lg:mx-0 mb-8 lg:mb-10" role="complementary" aria-label="Sweet's message to students">
-              <p className="text-foreground italic text-xs sm:text-sm lg:text-base leading-relaxed">
+            {/* Speech Bubble - Mobile/Tablet */}
+            <div className="lg:hidden relative bg-card/90 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border-2 border-primary/50 shadow-lg shadow-primary/20 max-w-md mx-auto mb-8 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
+              <p className="text-foreground italic text-xs sm:text-sm leading-relaxed">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
-              <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/70 border-l border-b border-primary/30 transform rotate-45" aria-hidden="true" />
+              <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/90 border-l-2 border-b-2 border-primary/50 transform rotate-45" aria-hidden="true" />
             </div>
             
             {/* CTAs - Desktop: Centralized */}
@@ -182,54 +184,64 @@ export const HeroSection = () => {
               </a>
             </div>
             
-            {/* December Offer Banner - Desktop: Horizontal Stripe */}
-            <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 neon-glow mt-12 mx-4 md:mx-0 lg:mx-0 max-w-3xl lg:max-w-none overflow-hidden" role="region" aria-label="Special December offer">
+            {/* December Offer Card - Below CTA Area */}
+            <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-8 md:mt-10 mx-4 md:mx-0 lg:mx-0 max-w-3xl lg:max-w-none overflow-hidden" role="region" aria-label="Special December offer">
               <div className="absolute -top-2.5 -right-2 sm:-right-2.5 z-10">
                 <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
                   🔥 90% OFF
                 </span>
               </div>
               
-              {/* Desktop Layout: Full Horizontal Stripe */}
-              <div className="hidden lg:flex items-center justify-between gap-8 p-6 lg:p-8 bg-[#2c1e4a] rounded-2xl">
-                {/* Left: Offer Details */}
-                <div className="flex-1 space-y-3">
+              {/* Desktop/Tablet: 2-Column Layout */}
+              <div className="hidden md:grid md:grid-cols-2 gap-6 lg:gap-8 p-6 md:p-8 bg-[#2c1e4a] rounded-2xl items-center">
+                {/* Left: Image */}
+                <div className="relative rounded-xl overflow-hidden">
+                  <img 
+                    src="/images/sweet-character.jpg" 
+                    alt="December Special Offer - Anime Art Course"
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2c1e4a]/80 to-transparent" />
+                </div>
+                
+                {/* Right: Text Block */}
+                <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Sparkles className="text-primary flex-shrink-0" size={24} />
-                    <h3 className="text-2xl font-bold gradient-text">December Sale!</h3>
+                    <h3 className="text-2xl lg:text-3xl font-bold gradient-text">December Sale!</h3>
                   </div>
                   <p className="text-base text-white/90 leading-relaxed">
                     Complete course, AI magic, premium brushes & lifetime access. ✨
                   </p>
                   <div className="flex items-center gap-3">
                     <span className="text-xl text-white/70 line-through">$297</span>
-                    <span className="text-5xl text-white font-black">$29</span>
+                    <span className="text-4xl lg:text-5xl text-white font-black">$29</span>
                   </div>
-                </div>
-                
-                {/* Right: CTA Button */}
-                <a 
-                  href={EXTERNAL_LINKS.coursify}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  aria-label="Enroll in December special for $29"
-                  className="flex-shrink-0"
-                >
-                  <Button 
-                    variant="hero" 
-                    size="lg" 
-                    className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90"
+                  <a 
+                    href={EXTERNAL_LINKS.coursify}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Enroll in December special for $29"
+                    className="block"
                   >
-                    Enroll for $29 (Save $268!)
-                    <Sparkles className="group-hover:scale-110 transition-transform" size={18} />
-                  </Button>
-                </a>
+                    <Button 
+                      variant="hero" 
+                      size="lg" 
+                      className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold w-full md:w-auto px-8 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90"
+                    >
+                      Enroll for $29 (Save $268!)
+                      <Sparkles className="group-hover:scale-110 transition-transform" size={18} />
+                    </Button>
+                  </a>
+                </div>
               </div>
               
-              {/* Mobile/Tablet Layout: Vertical */}
-              <div className="lg:hidden space-y-3 p-4 sm:p-5">
+              {/* Mobile Layout: Vertical */}
+              <div className="md:hidden space-y-3 p-4 sm:p-5">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-2 mb-2">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text flex items-center gap-2">
+                  <h3 className="text-lg sm:text-xl font-bold gradient-text flex items-center gap-2">
                     <Sparkles className="text-primary flex-shrink-0" size={20} />
                     <span>December Sale!</span>
                   </h3>
@@ -246,12 +258,12 @@ export const HeroSection = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Enroll in December special for $29"
-                  className="block w-full sm:w-auto"
+                  className="block w-full"
                 >
                   <Button 
                     variant="hero" 
                     size="default" 
-                    className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full sm:w-auto min-h-[48px] text-sm sm:text-base"
+                    className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base"
                   >
                     Enroll for $29 (Save $268!)
                     <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
