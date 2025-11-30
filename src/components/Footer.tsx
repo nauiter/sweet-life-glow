@@ -2,6 +2,8 @@ import { Heart } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="relative py-12 border-t border-primary/20">
       <div className="container px-4 sm:px-6 lg:px-8">
@@ -32,6 +34,13 @@ export const Footer = () => {
               <li><a href="/terms" className="hover:text-primary transition-colors inline-block">Terms of Service</a></li>
             </ul>
           </div>
+        </div>
+        
+        {/* Copyright */}
+        <div className="border-t border-primary/10 pt-8 text-center">
+          <p className="text-muted-foreground text-sm flex items-center justify-center gap-2">
+            © {currentYear} Sweet Life Animes. Made with <Heart className="text-primary w-4 h-4" fill="currentColor" /> All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
