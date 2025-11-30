@@ -15,7 +15,6 @@ const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.
 const FooterNauiterMaster = lazy(() => import("@/components/shared/FooterNauiterMaster").then(m => ({ default: m.FooterNauiterMaster })));
 
 // Lazy load conditional/interactive components to reduce unused JavaScript
-const WelcomeModal = lazy(() => import("@/components/WelcomeModal").then(m => ({ default: m.WelcomeModal })));
 const ExitIntentModal = lazy(() => import("@/components/ExitIntentModal").then(m => ({ default: m.ExitIntentModal })));
 const CookieConsent = lazy(() => import("@/components/CookieConsent").then(m => ({ default: m.CookieConsent })));
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop").then(m => ({ default: m.ScrollToTop })));
@@ -47,7 +46,6 @@ const Index = () => {
       {/* Lazy load conditional/interactive components */}
       <Suspense fallback={null}>
         <ScrollToTop />
-        <WelcomeModal />
         <ExitIntentModal />
         <CookieConsent />
         <PurchaseNotifications />
