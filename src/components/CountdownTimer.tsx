@@ -76,55 +76,51 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed md:top-16 top-0 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
-        "border-b-2 border-white/30",
+        "fixed top-2 left-1/2 -translate-x-1/2 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
+        "border-2 border-white/30 rounded-lg md:rounded-xl",
+        "w-[95%] max-w-4xl",
         isUrgent && "animate-pulse",
-        isVisible ? "animate-slide-up" : "-translate-y-full opacity-0"
+        isVisible ? "animate-slide-up opacity-100" : "-translate-y-full opacity-0"
       )}
       style={{
         boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)"
       }}
     >
-      <div className="container px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
+      <div className="px-3 py-2 md:px-6 md:py-3">
         {/* Desktop Layout */}
-        <div className="hidden md:flex items-center justify-between gap-3 lg:gap-4">
+        <div className="hidden md:flex items-center justify-between gap-4">
           {/* Left: Urgency Message */}
           <div className="flex items-center gap-3">
-            <div className="flex-shrink-0 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-pulse">
-              <Zap className="text-white" size={20} fill="currentColor" />
-            </div>
+            <Zap className="text-white animate-pulse" size={20} fill="currentColor" />
             <div>
-              <div className={cn(TYPOGRAPHY.body.small, "text-white/90 font-medium uppercase tracking-wide")}>
-                {isUrgent ? "⚡ Last Hours!" : "🔥 December Special Offer"}
+              <div className="text-xs text-white/90 font-medium uppercase tracking-wide">
+                🔥 December Special
               </div>
-              <div className={cn(TYPOGRAPHY.heading.h4, "text-white font-bold leading-tight")}>
-                {isUrgent ? "Hurry! Your 90% OFF Expires Soon!" : "90% OFF - Limited Time Only!"}
+              <div className="text-lg text-white font-bold leading-tight">
+                90% OFF - Limited Time!
               </div>
             </div>
           </div>
 
           {/* Center: Price + Countdown */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {/* Price Box */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30 text-center">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 text-center">
               <div className="flex items-center gap-2">
-                <span className={cn(TYPOGRAPHY.body.small, "text-white/70 line-through")}>$297</span>
-                <span className={cn(TYPOGRAPHY.heading.h2, "text-white font-black")}>$29</span>
-              </div>
-              <div className={cn(TYPOGRAPHY.body.tiny, "text-white/80 uppercase tracking-wide font-semibold")}>
-                90% Savings!
+                <span className="text-sm text-white/70 line-through">$297</span>
+                <span className="text-2xl text-white font-black">$29</span>
               </div>
             </div>
 
             {/* Countdown */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <TimeBlock value={timeLeft.days} label="Days" />
-              <Separator />
-              <TimeBlock value={timeLeft.hours} label="Hours" />
-              <Separator />
-              <TimeBlock value={timeLeft.minutes} label="Mins" />
-              <Separator />
-              <TimeBlock value={timeLeft.seconds} label="Secs" />
+              <span className="text-white/50 font-bold pb-4">:</span>
+              <TimeBlock value={timeLeft.hours} label="Hrs" />
+              <span className="text-white/50 font-bold pb-4">:</span>
+              <TimeBlock value={timeLeft.minutes} label="Min" />
+              <span className="text-white/50 font-bold pb-4">:</span>
+              <TimeBlock value={timeLeft.seconds} label="Sec" />
             </div>
           </div>
 
@@ -133,64 +129,50 @@ export const CountdownTimer = () => {
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Enroll now in December special - 90% OFF"
+            aria-label="Enroll now in December special"
             className="flex-shrink-0"
           >
             <Button 
               variant="outline" 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl hover:scale-105 transition-transform group whitespace-nowrap"
+              size="default"
+              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl hover:scale-105 transition-transform whitespace-nowrap"
             >
-              <Clock className="group-hover:rotate-12 transition-transform" size={18} />
-              Enroll for $29 Now!
+              Enroll Now!
             </Button>
           </a>
         </div>
 
-        {/* Mobile Layout - Vertical Stack - 60% smaller */}
-        <div className="flex md:hidden flex-col items-center gap-2 text-center scale-[0.4] origin-top -mb-20">
-          {/* Urgency Message */}
-          <div className="flex items-center gap-2">
-            <Zap className="text-white animate-pulse" size={18} fill="currentColor" />
-            <div className={cn(TYPOGRAPHY.body.small, "text-white font-bold uppercase tracking-wide")}>
-              {isUrgent ? "⚡ Last Hours!" : "🔥 December Special"}
-            </div>
+        {/* Mobile Layout - Horizontal Compact */}
+        <div className="flex md:hidden items-center justify-between gap-2">
+          {/* Left: Price */}
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs text-white/70 line-through">$297</span>
+            <span className="text-xl text-white font-black">$29</span>
           </div>
 
-          {/* Price Row */}
-          <div className="flex items-center gap-2">
-            <span className={cn(TYPOGRAPHY.body.default, "text-white/70 line-through")}>$297</span>
-            <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black")}>$29</span>
-            <span className={cn(TYPOGRAPHY.body.tiny, "text-white/80 uppercase font-semibold px-2 py-1 bg-white/20 rounded")}>
-              90% OFF
-            </span>
+          {/* Center: Countdown - Ultra Compact */}
+          <div className="flex items-center gap-1">
+            <TimeBlockMobile value={timeLeft.days} label="D" />
+            <span className="text-white/50 text-sm">:</span>
+            <TimeBlockMobile value={timeLeft.hours} label="H" />
+            <span className="text-white/50 text-sm">:</span>
+            <TimeBlockMobile value={timeLeft.minutes} label="M" />
+            <span className="text-white/50 text-sm">:</span>
+            <TimeBlockMobile value={timeLeft.seconds} label="S" />
           </div>
 
-          {/* Countdown - Compact Mobile */}
-          <div className="flex items-center gap-2">
-            <TimeBlockMobile value={timeLeft.days} label="Days" />
-            <span className="text-white/50 font-bold">:</span>
-            <TimeBlockMobile value={timeLeft.hours} label="Hrs" />
-            <span className="text-white/50 font-bold">:</span>
-            <TimeBlockMobile value={timeLeft.minutes} label="Min" />
-            <span className="text-white/50 font-bold">:</span>
-            <TimeBlockMobile value={timeLeft.seconds} label="Sec" />
-          </div>
-
-          {/* CTA Button */}
+          {/* Right: CTA Button */}
           <a 
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Enroll now for $29"
-            className="w-full"
           >
             <Button 
               variant="outline" 
-              size="sm" 
-              className="w-full bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl"
+              size="sm"
+              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl text-xs px-3 py-1 h-auto whitespace-nowrap"
             >
-              <Clock size={16} />
               Enroll Now!
             </Button>
           </a>
@@ -201,13 +183,13 @@ export const CountdownTimer = () => {
 };
 
 const TimeBlock = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center min-w-[50px] sm:min-w-[60px]">
-    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 border border-white/30 shadow-lg min-w-[44px] sm:min-w-[52px]">
-      <div className={cn(TYPOGRAPHY.heading.h3, "text-white font-bold tabular-nums text-center leading-none")}>
+  <div className="flex flex-col items-center min-w-[40px]">
+    <div className="bg-white/20 backdrop-blur-sm rounded px-2 py-1 border border-white/30">
+      <div className="text-lg text-white font-bold tabular-nums text-center leading-none">
         {String(value).padStart(2, '0')}
       </div>
     </div>
-    <div className={cn(TYPOGRAPHY.body.tiny, "text-white/80 font-medium mt-1 uppercase tracking-wide")}>
+    <div className="text-[9px] text-white/80 font-medium mt-0.5 uppercase tracking-wide">
       {label}
     </div>
   </div>
@@ -221,12 +203,12 @@ const Separator = () => (
 
 const TimeBlockMobile = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
-    <div className="bg-white/20 backdrop-blur-sm rounded px-2 py-1 border border-white/30 min-w-[36px]">
-      <div className={cn(TYPOGRAPHY.body.default, "text-white font-bold tabular-nums text-center leading-none")}>
+    <div className="bg-white/20 backdrop-blur-sm rounded px-1.5 py-0.5 border border-white/30 min-w-[24px]">
+      <div className="text-sm text-white font-bold tabular-nums text-center leading-none">
         {String(value).padStart(2, '0')}
       </div>
     </div>
-    <div className={cn(TYPOGRAPHY.body.tiny, "text-white/70 font-medium mt-0.5 uppercase text-[9px]")}>
+    <div className="text-[8px] text-white/70 font-medium mt-0.5 uppercase">
       {label}
     </div>
   </div>
