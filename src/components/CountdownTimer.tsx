@@ -13,6 +13,8 @@ interface TimeLeft {
 }
 
 export const CountdownTimer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  
   // Set target date: End of December (December 31, 2025)
   const targetDate = new Date('2025-12-31T23:59:59');
   
@@ -34,6 +36,15 @@ export const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
+    // Show timer with animation after 1 second
+    const showTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    return () => clearTimeout(showTimer);
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -43,16 +54,29 @@ export const CountdownTimer = () => {
 
   const isUrgent = timeLeft.days <= 3;
 
+  if (!isVisible) return null;
+
   return (
-    <div className={cn("fixed top-16 md:top-20 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md border-b border-primary/30 shadow-lg animate-slide-up", isUrgent && "animate-pulse")}>
-      <div className="container px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
+    <div 
+      className={cn(
+        "fixed top-16 md:top-20 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500",
+        "border-b-2 border-white/30",
+        isUrgent && "animate-pulse",
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      )}
+      style={{
+        boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)"
+      }}
+    >
+      <div className="container px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between gap-3 lg:gap-4">
           {/* Left: Urgency Message */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-pulse">
+          <div className="flex items-center gap-3">
+            <div className="flex-shrink-0 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-pulse">
               <Zap className="text-white" size={20} fill="currentColor" />
             </div>
-            <div className="text-center lg:text-left">
+            <div>
               <div className={cn(TYPOGRAPHY.body.small, "text-white/90 font-medium uppercase tracking-wide")}>
                 {isUrgent ? "⚡ Last Days of December!" : "🔥 December Special Offer"}
               </div>
@@ -63,7 +87,7 @@ export const CountdownTimer = () => {
           </div>
 
           {/* Center: Price + Countdown */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-4">
             {/* Price Box */}
             <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30 text-center">
               <div className="flex items-center gap-2">
@@ -106,6 +130,55 @@ export const CountdownTimer = () => {
           </a>
         </div>
 
+        {/* Mobile Layout - Vertical Stack */}
+        <div className="flex md:hidden flex-col items-center gap-3 text-center">
+          {/* Urgency Message */}
+          <div className="flex items-center gap-2">
+            <Zap className="text-white animate-pulse" size={18} fill="currentColor" />
+            <div className={cn(TYPOGRAPHY.body.small, "text-white font-bold uppercase tracking-wide")}>
+              {isUrgent ? "⚡ Last Days!" : "🔥 December Special"}
+            </div>
+          </div>
+
+          {/* Price Row */}
+          <div className="flex items-center gap-2">
+            <span className={cn(TYPOGRAPHY.body.default, "text-white/70 line-through")}>$297</span>
+            <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black")}>$29</span>
+            <span className={cn(TYPOGRAPHY.body.tiny, "text-white/80 uppercase font-semibold px-2 py-1 bg-white/20 rounded")}>
+              90% OFF
+            </span>
+          </div>
+
+          {/* Countdown - Compact Mobile */}
+          <div className="flex items-center gap-2">
+            <TimeBlockMobile value={timeLeft.days} label="Days" />
+            <span className="text-white/50 font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.hours} label="Hrs" />
+            <span className="text-white/50 font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.minutes} label="Min" />
+            <span className="text-white/50 font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.seconds} label="Sec" />
+          </div>
+
+          {/* CTA Button */}
+          <a 
+            href={EXTERNAL_LINKS.coursify}
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Enroll now for $29"
+            className="w-full"
+          >
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="w-full bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl"
+            >
+              <Clock size={16} />
+              Enroll Now!
+            </Button>
+          </a>
+        </div>
+
         {/* Payment Methods Badge */}
         <div className="text-center mt-2 pt-2 border-t border-white/20">
           <p className={cn(TYPOGRAPHY.body.tiny, "text-white/80")}>
@@ -131,7 +204,20 @@ const TimeBlock = ({ value, label }: { value: number; label: string }) => (
 );
 
 const Separator = () => (
-  <div className={cn(TYPOGRAPHY.heading.h2, "text-white/50 font-bold pb-5 hidden sm:block")}>
+  <div className={cn(TYPOGRAPHY.heading.h2, "text-white/50 font-bold pb-5")}>
     :
+  </div>
+);
+
+const TimeBlockMobile = ({ value, label }: { value: number; label: string }) => (
+  <div className="flex flex-col items-center">
+    <div className="bg-white/20 backdrop-blur-sm rounded px-2 py-1 border border-white/30 min-w-[36px]">
+      <div className={cn(TYPOGRAPHY.body.default, "text-white font-bold tabular-nums text-center leading-none")}>
+        {String(value).padStart(2, '0')}
+      </div>
+    </div>
+    <div className={cn(TYPOGRAPHY.body.tiny, "text-white/70 font-medium mt-0.5 uppercase text-[9px]")}>
+      {label}
+    </div>
   </div>
 );

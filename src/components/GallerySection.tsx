@@ -165,7 +165,7 @@ export const GallerySection = () => {
 
         {/* Gallery Grid */}
         <div 
-          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8", SPACING.container.full)}
+          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10", SPACING.container.full)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           role="list"
