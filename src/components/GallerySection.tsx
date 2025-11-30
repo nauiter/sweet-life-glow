@@ -380,8 +380,8 @@ export const GallerySection = () => {
           })}
         </div>
 
-        {/* Progress Dots */}
-        <div className={cn("flex justify-center gap-1.5 md:gap-4 mb-12 md:mb-16")}>
+        {/* Progress Dots - Hidden on mobile */}
+        <div className={cn("hidden md:flex justify-center gap-4 mb-12 md:mb-16")}>
           {Array.from({ length: totalBatches }, (_, i) => (
             <button
               key={i}
@@ -393,10 +393,9 @@ export const GallerySection = () => {
                 }, 300);
               }}
               className={cn(
-                "rounded-full transition-all duration-300",
-                "w-1 h-1 md:w-3 md:h-3",
+                "w-3 h-3 rounded-full transition-all duration-300",
                 currentBatch === i 
-                  ? "bg-primary w-4 md:w-12 shadow-[0_0_10px_hsl(var(--primary))]" 
+                  ? "bg-primary w-12 shadow-[0_0_10px_hsl(var(--primary))]" 
                   : "bg-primary/30 hover:bg-primary/50 hover:scale-110"
               )}
               aria-label={`Go to batch ${i + 1}`}
