@@ -220,7 +220,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl p-4 w-[320px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl p-4 w-[340px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -250,7 +250,7 @@ export const PurchaseNotifications = () => {
                 {notification.name}
               </p>
               <p 
-                className="text-sm leading-relaxed line-clamp-1"
+                className="text-sm leading-relaxed line-clamp-2"
                 style={{ color: '#dddddd' }}
               >
                 {notification.message}
