@@ -174,7 +174,10 @@ export const CountdownTimer = () => {
             <Button 
               variant="outline" 
               size="default"
-              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base h-[48px] rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
+              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base h-[48px] rounded-xl transition-all duration-200"
+              style={{
+                animation: "pulse-cta 2.5s ease-in-out infinite"
+              }}
             >
               Enroll Now! 🚀
             </Button>
