@@ -26,6 +26,16 @@ import artSample24 from "@/assets/art-sample-24.jpg";
 import artSample25 from "@/assets/art-sample-25.jpg";
 import artSample26 from "@/assets/art-sample-26.jpg";
 import artSample27 from "@/assets/art-sample-27.jpg";
+import artSample28 from "@/assets/art-sample-28.jpg";
+import artSample29 from "@/assets/art-sample-29.jpg";
+import artSample30 from "@/assets/art-sample-30.jpg";
+import artSample31 from "@/assets/art-sample-31.jpg";
+import artSample32 from "@/assets/art-sample-32.jpg";
+import artSample33 from "@/assets/art-sample-33.jpg";
+import artSample34 from "@/assets/art-sample-34.jpg";
+import artSample35 from "@/assets/art-sample-35.jpg";
+import artSample36 from "@/assets/art-sample-36.jpg";
+import artSample37 from "@/assets/art-sample-37.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -55,7 +65,17 @@ const galleryArtworks = [
   { id: 21, image: artSample24, title: "Dramatic Lighting", description: "Atmospheric mood setting" },
   { id: 22, image: artSample25, title: "Bunny Charm", description: "Playful costume design" },
   { id: 23, image: artSample26, title: "Pink Dreams", description: "Soft color palette mastery" },
-  { id: 24, image: artSample27, title: "Urban Night", description: "City lights and neon" }
+  { id: 24, image: artSample27, title: "Urban Night", description: "City lights and neon" },
+  { id: 25, image: artSample28, title: "Maid Elegance", description: "Classic outfit design" },
+  { id: 26, image: artSample29, title: "Garden Scene", description: "Outdoor atmosphere" },
+  { id: 27, image: artSample30, title: "Sunset Portrait", description: "Warm lighting techniques" },
+  { id: 28, image: artSample31, title: "Romantic Moment", description: "Dual character interaction" },
+  { id: 29, image: artSample32, title: "Sweet Connection", description: "Emotional storytelling" },
+  { id: 30, image: artSample33, title: "Peaceful Embrace", description: "Soft mood rendering" },
+  { id: 31, image: artSample34, title: "Action Hero", description: "Dynamic combat pose" },
+  { id: 32, image: artSample35, title: "Tactical Style", description: "Modern character design" },
+  { id: 33, image: artSample36, title: "Neon Aesthetic", description: "Cyberpunk vibes" },
+  { id: 34, image: artSample37, title: "Cherry Blossom", description: "Spring atmosphere" }
 ];
 
 const ITEMS_PER_PAGE = 9;
