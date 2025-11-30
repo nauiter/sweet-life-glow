@@ -13,6 +13,14 @@ import artSample8 from "@/assets/art-sample-8.jpg";
 import artSample9 from "@/assets/art-sample-9.jpg";
 import artSample10 from "@/assets/art-sample-10.jpg";
 import artSample11 from "@/assets/art-sample-11.jpg";
+import artSample12 from "@/assets/art-sample-12.jpg";
+import artSample13 from "@/assets/art-sample-13.jpg";
+import artSample14 from "@/assets/art-sample-14.jpg";
+import artSample15 from "@/assets/art-sample-15.jpg";
+import artSample16 from "@/assets/art-sample-16.jpg";
+import artSample17 from "@/assets/art-sample-17.jpg";
+import artSample18 from "@/assets/art-sample-18.jpg";
+import artSample19 from "@/assets/art-sample-19.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -29,7 +37,15 @@ const galleryArtworks = [
   { id: 8, image: artSample8, title: "Dynamic Action Pose", description: "Movement and energy expression" },
   { id: 9, image: artSample9, title: "Perspective Mastery", description: "Advanced angle techniques" },
   { id: 10, image: artSample10, title: "Gaming Vibes", description: "Modern character personality" },
-  { id: 11, image: artSample11, title: "Energetic Expression", description: "Capturing emotion and life" }
+  { id: 11, image: artSample11, title: "Energetic Expression", description: "Capturing emotion and life" },
+  { id: 12, image: artSample12, title: "Workspace Focus", description: "Digital artist lifestyle" },
+  { id: 13, image: artSample13, title: "Mystical Atmosphere", description: "Fantasy lighting and mood" },
+  { id: 14, image: artSample14, title: "Elegant Poses", description: "Graceful character positioning" },
+  { id: 15, image: artSample15, title: "Cozy Moments", description: "Intimate scene composition" },
+  { id: 16, image: artSample16, title: "Power Action", description: "Dynamic energy and motion" },
+  { id: 17, image: artSample17, title: "Combat Scene", description: "Action-packed illustration" },
+  { id: 18, image: artSample18, title: "Fierce Character", description: "Strong personality design" },
+  { id: 19, image: artSample19, title: "Spring Fantasy", description: "Colorful seasonal art" }
 ];
 
 const ITEMS_PER_PAGE = 9;
