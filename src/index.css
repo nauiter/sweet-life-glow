@@ -163,7 +163,7 @@ All colors MUST be HSL.
   }
 }
 
-/* Desktop/Tablet specific adjustments */
+/* Desktop/Tablet specific adjustments - WEB + IPAD ABRAÇO VISUAL ✨ */
 @media (min-width: 768px) {
   .container {
     max-width: 1200px;
@@ -175,6 +175,95 @@ All colors MUST be HSL.
   body {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  /* ✨ Títulos e Cabeçalhos - Impacto visual */
+  h1, h2, h3 {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  /* Remove margin-top do primeiro título de cada seção */
+  section h1:first-child,
+  section h2:first-child,
+  section h3:first-child,
+  section > div > h1:first-of-type,
+  section > div > h2:first-of-type,
+  section > div > h3:first-of-type,
+  section > div > div > h1:first-of-type,
+  section > div > div > h2:first-of-type,
+  section > div > div > h3:first-of-type {
+    margin-top: 0;
+  }
+
+  /* 🌈 Parágrafos - Dança entre linhas */
+  p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 720px;
+  }
+
+  /* Centralizar parágrafos em seções centralizadas */
+  [class*="text-center"] p,
+  .text-center p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 🌟 Listas de Benefícios - Palco próprio */
+  [class*="grid"] > [class*="Card"],
+  [class*="benefits"] > * {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  [class*="grid"] [class*="Card"] p {
+    line-height: 1.6;
+  }
+
+  /* 💬 Depoimentos - Almofadas fofas */
+  #community [class*="Card"]:not([class*="gradient"]) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 20px;
+  }
+
+  /* 🎯 CTAs - Espaço para respirar */
+  [class*="text-center"] > a,
+  section > div > div[class*="text-center"]:has(button) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  button[class*="hero"],
+  button[class*="size-xl"] {
+    padding: 16px 32px;
+  }
+
+  /* 📚 FAQ - Pausa merecida */
+  [data-radix-accordion-item] {
+    margin-bottom: 28px;
+  }
+
+  [data-radix-accordion-content] {
+    line-height: 1.7;
+  }
+
+  [data-radix-accordion-item]:not(:last-child) {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  /* 🌌 Rodapé - Fim de capítulo */
+  footer {
+    padding: 40px;
+    line-height: 1.6;
+  }
+
+  footer p {
+    line-height: 1.6;
   }
 }
 
