@@ -202,23 +202,25 @@ export const PurchaseNotifications = () => {
     >
       <div className="relative">
         {/* Badge - Positioned above card */}
-        <div className="absolute -top-2 right-3 z-20">
-          <span className={cn(
-            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg",
-            badgeColors.bg,
-            badgeColors.text
-          )}
-          style={{
-            animation: 'badge-pulse 2s ease-in-out infinite',
-            boxShadow: badgeColors.glow
-          }}>
+        <div className="absolute -top-2 right-4 z-20">
+          <span 
+            className={cn(
+              "inline-flex items-center px-2 py-1 rounded-xl text-xs font-bold shadow-lg backdrop-blur-sm",
+              badgeColors.bg,
+              badgeColors.text
+            )}
+            style={{
+              animation: 'badge-pulse 2s ease-in-out infinite',
+              boxShadow: badgeColors.glow
+            }}
+          >
             {notification.badge}
           </span>
         </div>
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2.5 px-3 w-[320px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl p-4 w-[320px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -236,18 +238,21 @@ export const PurchaseNotifications = () => {
             }}
           />
 
-          <div className="flex items-center gap-2.5 relative z-10 h-full">
+          <div className="flex items-center gap-2 relative z-10">
             {/* Icon - Left side */}
-            <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
-              <ShoppingBag className={colorClasses.iconColor} size={16} />
+            <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
+              <ShoppingBag className={colorClasses.iconColor} size={18} />
             </div>
 
-            {/* Content - Right side, vertically centered */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
-              <p className="text-sm font-bold text-foreground truncate leading-tight">
+            {/* Content - Right side with clear hierarchy */}
+            <div className="flex-1 min-w-0 flex flex-col">
+              <p className="text-base font-bold text-foreground truncate mb-1 leading-tight">
                 {notification.name}
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-1">
+              <p 
+                className="text-sm leading-relaxed line-clamp-1"
+                style={{ color: '#dddddd' }}
+              >
                 {notification.message}
               </p>
             </div>
