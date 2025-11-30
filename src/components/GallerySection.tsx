@@ -38,6 +38,7 @@ import artSample37 from "@/assets/art-sample-37.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
+import { generateSrcSet, GALLERY_IMAGE_SIZES, CDN_CONFIG } from "@/lib/responsiveImage";
 
 // Gallery artworks collection
 const galleryArtworks = [
@@ -253,10 +254,16 @@ export const GallerySection = () => {
                       {isImageLoaded ? (
                         <img 
                           src={artwork.image} 
+                          srcSet={generateSrcSet({ 
+                            src: artwork.image, 
+                            widths: [400, 800, 1200],
+                            cdnEnabled: CDN_CONFIG.enabled,
+                            cdnBaseUrl: CDN_CONFIG.baseUrl
+                          })}
                           alt={artwork.title}
                           width={400}
                           height={710}
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                          sizes={GALLERY_IMAGE_SIZES}
                           loading="lazy"
                           className="w-full h-full object-cover lg:group-hover:scale-110 transition-transform duration-500"
                           style={{ willChange: 'transform' }}
@@ -279,8 +286,15 @@ export const GallerySection = () => {
                 <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-primary/20">
                   <div className="relative">
                     <img 
-                      src={artwork.image} 
+                      src={artwork.image}
+                      srcSet={generateSrcSet({ 
+                        src: artwork.image, 
+                        widths: [800, 1200, 1600],
+                        cdnEnabled: CDN_CONFIG.enabled,
+                        cdnBaseUrl: CDN_CONFIG.baseUrl
+                      })} 
                       alt={artwork.title}
+                      sizes="(max-width: 1200px) 90vw, 1200px"
                       className="w-full h-auto rounded-lg"
                       loading="lazy"
                     />
