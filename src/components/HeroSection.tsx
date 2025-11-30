@@ -80,28 +80,35 @@ export const HeroSection = () => {
             {/* Curiosity CTA + Bonus */}
             <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-6 rounded-2xl border border-primary/40 neon-glow", SPACING.margin.normal)}>
               <div className="absolute -top-3 -right-3">
-                <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-primary to-secondary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
-                  🎁 BONUS INSIDE
+                <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
+                  🔥 90% OFF DECEMBER
                 </span>
               </div>
               <div className={SPACING.stack.tight}>
-                <h3 className={cn(TYPOGRAPHY.heading.h4, "gradient-text flex items-center gap-2")}>
-                  <Sparkles className="text-primary" size={20} />
-                  Curious what makes this different?
-                </h3>
+                <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+                  <h3 className={cn(TYPOGRAPHY.heading.h4, "gradient-text flex items-center gap-2")}>
+                    <Sparkles className="text-primary" size={20} />
+                    December Mega Sale!
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span className={cn(TYPOGRAPHY.body.default, "text-muted-foreground line-through")}>$297</span>
+                    <span className={cn(TYPOGRAPHY.heading.h2, "text-primary font-black")}>$29</span>
+                  </div>
+                </div>
                 <p className={cn(TYPOGRAPHY.body.default, "text-foreground")}>
-                  Join 500+ artists who discovered their unique style! 
-                  <span className="font-bold text-primary"> Get exclusive bonus packs</span> when you enroll today - AI tools, premium brushes, and secret techniques! 💜
+                  Join 500+ artists at our <span className="font-bold text-primary">lowest price ever</span>! 
+                  Complete course + AI tools + premium brushes + lifetime access. 
+                  <span className="font-bold text-secondary"> Pay with PayPal, Stripe, or PagSeguro</span> 💜
                 </p>
                 <a 
                   href={EXTERNAL_LINKS.coursify}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  aria-label="Discover Sweet Life Animes bonus content"
+                  aria-label="Enroll in December special for $29"
                   className="inline-block"
                 >
-                  <Button variant="outline" size="sm" className="group border-primary/50 hover:border-primary hover:bg-primary/10 mt-2">
-                    Discover the Magic
+                  <Button variant="hero" size="lg" className="group hover:scale-105 transition-transform mt-2 font-bold">
+                    Enroll for $29 (Save $268!)
                     <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
                   </Button>
                 </a>

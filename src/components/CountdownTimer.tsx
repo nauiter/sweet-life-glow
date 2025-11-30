@@ -13,9 +13,8 @@ interface TimeLeft {
 }
 
 export const CountdownTimer = () => {
-  // Set target date: 7 days from now (adjust as needed)
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 7);
+  // Set target date: End of December (December 31, 2025)
+  const targetDate = new Date('2025-12-31T23:59:59');
   
   const calculateTimeLeft = (): TimeLeft => {
     const difference = +targetDate - +new Date();
@@ -42,36 +41,50 @@ export const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const isUrgent = timeLeft.days === 0 && timeLeft.hours < 6;
+  const isUrgent = timeLeft.days <= 3;
 
   return (
     <div className={cn("sticky top-16 md:top-20 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md border-b border-primary/30 shadow-lg animate-slide-up", isUrgent && "animate-pulse")}>
       <div className="container px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
           {/* Left: Urgency Message */}
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-pulse">
               <Zap className="text-white" size={20} fill="currentColor" />
             </div>
-            <div className="text-center sm:text-left">
+            <div className="text-center lg:text-left">
               <div className={cn(TYPOGRAPHY.body.small, "text-white/90 font-medium uppercase tracking-wide")}>
-                {isUrgent ? "⚡ Last Chance!" : "🔥 Limited Spots"}
+                {isUrgent ? "⚡ Last Days of December!" : "🔥 December Special Offer"}
               </div>
               <div className={cn(TYPOGRAPHY.heading.h4, "text-white font-bold leading-tight")}>
-                Next Class Enrollment Closes In:
+                90% OFF - Limited Time Only!
               </div>
             </div>
           </div>
 
-          {/* Center: Countdown */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <TimeBlock value={timeLeft.days} label="Days" />
-            <Separator />
-            <TimeBlock value={timeLeft.hours} label="Hours" />
-            <Separator />
-            <TimeBlock value={timeLeft.minutes} label="Mins" />
-            <Separator />
-            <TimeBlock value={timeLeft.seconds} label="Secs" />
+          {/* Center: Price + Countdown */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+            {/* Price Box */}
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30 text-center">
+              <div className="flex items-center gap-2">
+                <span className={cn(TYPOGRAPHY.body.small, "text-white/70 line-through")}>$297</span>
+                <span className={cn(TYPOGRAPHY.heading.h2, "text-white font-black")}>$29</span>
+              </div>
+              <div className={cn(TYPOGRAPHY.body.tiny, "text-white/80 uppercase tracking-wide font-semibold")}>
+                90% Savings!
+              </div>
+            </div>
+
+            {/* Countdown */}
+            <div className="flex items-center gap-2">
+              <TimeBlock value={timeLeft.days} label="Days" />
+              <Separator />
+              <TimeBlock value={timeLeft.hours} label="Hours" />
+              <Separator />
+              <TimeBlock value={timeLeft.minutes} label="Mins" />
+              <Separator />
+              <TimeBlock value={timeLeft.seconds} label="Secs" />
+            </div>
           </div>
 
           {/* Right: CTA Button */}
@@ -79,7 +92,7 @@ export const CountdownTimer = () => {
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Secure your spot in Sweet Life Animes course"
+            aria-label="Enroll now in December special - 90% OFF"
             className="flex-shrink-0"
           >
             <Button 
@@ -88,9 +101,16 @@ export const CountdownTimer = () => {
               className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl hover:scale-105 transition-transform group whitespace-nowrap"
             >
               <Clock className="group-hover:rotate-12 transition-transform" size={18} />
-              Secure My Spot
+              Enroll for $29 Now!
             </Button>
           </a>
+        </div>
+
+        {/* Payment Methods Badge */}
+        <div className="text-center mt-2 pt-2 border-t border-white/20">
+          <p className={cn(TYPOGRAPHY.body.tiny, "text-white/80")}>
+            💳 Pay with <span className="font-semibold">PayPal, Stripe, or PagSeguro</span>
+          </p>
         </div>
       </div>
     </div>
