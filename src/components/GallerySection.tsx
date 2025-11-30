@@ -208,7 +208,7 @@ export const GallerySection = () => {
   const handleMouseLeave = () => setIsPaused(false);
 
   return (
-    <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="gallery-heading">
+    <section id="gallery" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="gallery-heading">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <img 
@@ -242,7 +242,7 @@ export const GallerySection = () => {
 
         {/* Gallery Grid */}
         <div 
-          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-12 md:mb-16", SPACING.container.full)}
+          className={cn("grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 lg:gap-10 mb-12 md:mb-16", SPACING.container.full)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           role="list"

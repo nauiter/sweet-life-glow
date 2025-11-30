@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-36 md:pt-40" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-8 md:pt-40 md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">
@@ -28,7 +28,7 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn(TYPOGRAPHY.heading.h1, "leading-tight mb-4 sm:mb-5 md:mb-6")}>
+            <h1 className={cn("text-4xl md:text-7xl font-bold leading-tight mb-4 sm:mb-5 md:mb-6")}>
               <span className="gradient-text">Learn Anime Art</span>
               <br />
               <span className="neon-text">with Sweet</span>
