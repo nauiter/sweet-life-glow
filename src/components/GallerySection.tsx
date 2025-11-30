@@ -83,6 +83,7 @@ export const GallerySection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState<typeof galleryArtworks[0] | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const totalBatches = Math.ceil(galleryArtworks.length / ITEMS_PER_BATCH);
   const startIndex = currentBatch * ITEMS_PER_BATCH;
@@ -104,20 +105,38 @@ export const GallerySection = () => {
     return () => clearInterval(interval);
   }, [isPaused, totalBatches]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('gallery');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const scrollProgress = -rect.top;
+        setScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
   return (
     <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)}>
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <img 
           src={galleryBg} 
           alt="" 
           width={1701} 
           height={1080} 
           loading="lazy"
-          className="w-full h-full object-cover opacity-20" 
+          className="w-full h-full object-cover opacity-20 transition-transform duration-100 ease-out" 
+          style={{ 
+            transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,
+            willChange: 'transform'
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
