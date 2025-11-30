@@ -25,7 +25,7 @@ export const MobileCTABar = () => {
   if (isDismissed || !isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary md:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.3)] animate-slide-up">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary md:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.3)] animate-slide-up hidden">
       <div className="relative">
         {/* Dismiss Button */}
         <button
