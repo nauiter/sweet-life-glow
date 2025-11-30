@@ -173,11 +173,19 @@ export const PurchaseNotifications = () => {
         {/* Badge - Positioned above card */}
         <div className="absolute -top-2 right-3 z-20">
           <span className={cn(
-            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg animate-pulse",
+            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg",
             notification.colorVariant === 'pink' && "bg-pink-500 text-white",
             notification.colorVariant === 'purple' && "bg-purple-500 text-white",
             notification.colorVariant === 'white' && "bg-white text-primary"
-          )}>
+          )}
+          style={{
+            animation: 'badge-pulse 2s ease-in-out infinite',
+            boxShadow: notification.colorVariant === 'pink' 
+              ? '0 0 15px rgba(236, 72, 153, 0.6)' 
+              : notification.colorVariant === 'purple'
+              ? '0 0 15px rgba(168, 85, 247, 0.6)'
+              : '0 0 15px rgba(255, 255, 255, 0.6)'
+          }}>
             {notification.badge}
           </span>
         </div>
