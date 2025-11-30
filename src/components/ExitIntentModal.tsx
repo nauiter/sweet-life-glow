@@ -110,7 +110,7 @@ export const ExitIntentModal = () => {
                   Full course + premium bonuses for just $29!
                 </p>
 
-                {/* Quick Benefits - Only 2 */}
+                {/* Quick Benefits - 4 items */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   <QuickBenefit 
                     icon={<Sparkles className="text-primary" size={14} />}
@@ -119,6 +119,14 @@ export const ExitIntentModal = () => {
                   <QuickBenefit 
                     icon={<Heart className="text-primary" fill="currentColor" size={14} />}
                     text="Lifetime Access"
+                  />
+                  <QuickBenefit 
+                    icon={<Gift className="text-secondary" size={14} />}
+                    text="100+ Brushes"
+                  />
+                  <QuickBenefit 
+                    icon={<Zap className="text-accent" size={14} />}
+                    text="Secret Class"
                   />
                 </div>
               </div>
