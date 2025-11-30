@@ -44,7 +44,7 @@ export const CountdownTimer = () => {
   const isUrgent = timeLeft.days <= 3;
 
   return (
-    <div className={cn("sticky top-16 md:top-20 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md border-b border-primary/30 shadow-lg animate-slide-up", isUrgent && "animate-pulse")}>
+    <div className={cn("fixed top-16 md:top-20 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md border-b border-primary/30 shadow-lg animate-slide-up", isUrgent && "animate-pulse")}>
       <div className="container px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
           {/* Left: Urgency Message */}
