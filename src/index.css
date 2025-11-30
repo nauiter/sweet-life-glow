@@ -570,6 +570,36 @@ All colors MUST be HSL.
     transform: scale(1);
   }
   
+  /* ✨ Section Edge Highlights - Subtle visual separation */
+  section[id]:not(#home)::before,
+  section[id]:not(#home)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  section[id]:not(#home)::before {
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary) / 0.03),
+      transparent
+    );
+  }
+  
+  section[id]:not(#home)::after {
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      hsl(var(--primary) / 0.03),
+      transparent
+    );
+  }
+  
   /* Stagger delays for sequential animations */
   .scroll-animate:nth-child(1) { transition-delay: 0s; }
   .scroll-animate:nth-child(2) { transition-delay: 0.1s; }
