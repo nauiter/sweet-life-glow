@@ -148,6 +148,13 @@ All colors MUST be HSL.
   }
 }
 
+/* Desktop/Tablet specific adjustments */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

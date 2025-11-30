@@ -75,14 +75,35 @@ export const AboutSection = () => {
               </div>
               
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary/30 border-2 border-primary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
-                  VTuber Artist
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary/30 border-2 border-primary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
+                  data-tooltip="VTuber Artist"
+                >
+                  <span className="md:hidden lg:inline">VTuber Artist</span>
+                  <span className="hidden md:inline lg:hidden">🎨</span>
+                  <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-primary/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
+                    VTuber Artist
+                  </span>
                 </span>
-                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-secondary/20 to-secondary/30 border-2 border-secondary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
-                  Digital Illustrator
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-secondary/20 to-secondary/30 border-2 border-secondary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
+                  data-tooltip="Digital Illustrator"
+                >
+                  <span className="md:hidden lg:inline">Digital Illustrator</span>
+                  <span className="hidden md:inline lg:hidden">✏️</span>
+                  <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-secondary/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
+                    Digital Illustrator
+                  </span>
                 </span>
-                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/20 to-accent/30 border-2 border-accent/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
-                  Creative Mentor
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/20 to-accent/30 border-2 border-accent/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
+                  data-tooltip="Creative Mentor"
+                >
+                  <span className="md:hidden lg:inline">Creative Mentor</span>
+                  <span className="hidden md:inline lg:hidden">💡</span>
+                  <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-accent/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
+                    Creative Mentor
+                  </span>
                 </span>
               </div>
             </div>

@@ -28,12 +28,12 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn("text-2xl sm:text-3xl md:text-7xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center lg:text-left mt-10 sm:mt-0")}>
+            <h1 className={cn("text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center md:text-center lg:text-left mt-10 sm:mt-0")}>
               <span className="gradient-text block mb-2">Learn Anime Art</span>
               <span className="neon-text block">with Sweet</span>
             </h1>
             
-            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-6 md:mb-8 px-4 lg:px-0 text-center lg:text-left leading-relaxed text-sm sm:text-base")}>
+            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl mx-auto md:mx-auto lg:mx-0 mb-5 sm:mb-6 md:mb-8 px-4 md:px-0 lg:px-0 text-center md:text-center lg:text-left leading-relaxed text-sm sm:text-base")}>
               Hey cutie! 💜 Ready to level up your art skills? Join 500+ creative otakus in my neon-lit universe where emotion meets technique.
             </p>
             
@@ -46,18 +46,18 @@ export const HeroSection = () => {
             </div>
             
             {/* CTAs */}
-            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 lg:px-0")}>
+            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 md:px-0 lg:px-0 justify-center md:justify-center lg:justify-start")}>
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Enroll in Sweet Life Animes anime art course"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto md:w-[300px] lg:w-auto"
               >
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200"
+                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200"
                 >
                   Enroll Now
                   <Heart className="group-hover:scale-110 transition-transform" />
@@ -68,12 +68,12 @@ export const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Sweet Life Animes Shop"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto md:w-[300px] lg:w-auto"
               >
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full sm:w-auto min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200"
+                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200"
                 >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
