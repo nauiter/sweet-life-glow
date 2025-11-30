@@ -40,7 +40,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="about" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="about-heading">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
       <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
@@ -48,7 +48,7 @@ export const AboutSection = () => {
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Section Header */}
         <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="about-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             About the Course
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>

@@ -37,7 +37,7 @@ export const ShopSection = () => {
   ];
 
   return (
-    <section id="resources" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="resources" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="resources-heading">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       <div className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -45,7 +45,7 @@ export const ShopSection = () => {
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
         <div className={cn("text-center animate-slide-up", SPACING.container.narrow, SPACING.stack.normal, SPACING.margin.hero)}>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="resources-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Free Resources & Tools
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>

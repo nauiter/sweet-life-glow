@@ -41,10 +41,10 @@ export const TYPOGRAPHY = {
 
 export const SPACING = {
   section: {
-    // Vertical padding: 48px → 64px → 96px (mobile-first)
-    y: 'py-12 md:py-16 lg:py-24',
-    // Horizontal padding: 16px → 24px → 32px
-    x: 'px-4 sm:px-6 lg:px-8',
+    // Vertical padding: 40px → 56px → 80px (mobile-optimized)
+    y: 'py-10 sm:py-14 md:py-16 lg:py-20',
+    // Horizontal padding: 16px → 20px → 24px → 32px
+    x: 'px-4 sm:px-5 md:px-6 lg:px-8',
   },
   container: {
     // Narrow content (text, FAQs): 768px
@@ -65,14 +65,14 @@ export const SPACING = {
     spacious: 'p-8 sm:p-10',
   },
   grid: {
-    // Tight grid spacing: 16px
-    tight: 'gap-4',
-    // Normal grid spacing: 24px (most common)
-    normal: 'gap-6',
-    // Relaxed grid spacing: 32px
-    relaxed: 'gap-8',
-    // Loose grid spacing: 48px
-    loose: 'gap-12',
+    // Tight grid spacing: 12px → 16px
+    tight: 'gap-3 sm:gap-4',
+    // Normal grid spacing: 16px → 20px → 24px (mobile-optimized)
+    normal: 'gap-4 sm:gap-5 md:gap-6',
+    // Relaxed grid spacing: 24px → 32px
+    relaxed: 'gap-6 md:gap-8',
+    // Loose grid spacing: 32px → 48px
+    loose: 'gap-8 md:gap-12',
   },
   stack: {
     // Tight vertical stack: 12px
@@ -85,16 +85,16 @@ export const SPACING = {
   margin: {
     // Tight margin: 8px
     tight: 'mb-2',
-    // Close margin: 16px
-    close: 'mb-4',
-    // Normal margin: 24px
-    normal: 'mb-6',
-    // Section margin: 32px
-    section: 'mb-8',
-    // Major margin: 48px
-    major: 'mb-12',
-    // Hero margin: 64px
-    hero: 'mb-16',
+    // Close margin: 12px → 16px
+    close: 'mb-3 sm:mb-4',
+    // Normal margin: 16px → 24px
+    normal: 'mb-4 sm:mb-6',
+    // Section margin: 24px → 32px
+    section: 'mb-6 sm:mb-8',
+    // Major margin: 32px → 48px
+    major: 'mb-8 sm:mb-10 md:mb-12',
+    // Hero margin: 48px → 64px
+    hero: 'mb-12 sm:mb-14 md:mb-16',
   },
 } as const;
 

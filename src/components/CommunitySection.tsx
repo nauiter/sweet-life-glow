@@ -55,7 +55,7 @@ export const CommunitySection = () => {
   ];
 
   return (
-    <section id="community" className={cn("relative overflow-hidden", SPACING.section.y)}>
+    <section id="community" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="community-heading">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
@@ -67,7 +67,7 @@ export const CommunitySection = () => {
             <Users className="text-primary" size={20} />
             <span className={cn(TYPOGRAPHY.badge)}>Join 500+ Creative Otakus</span>
           </div>
-          <h2 className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
+          <h2 id="community-heading" className={cn(TYPOGRAPHY.heading.h2, "gradient-text")}>
             Community Love
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
