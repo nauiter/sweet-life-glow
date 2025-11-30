@@ -21,7 +21,7 @@ export const HeroSection = () => {
   }, []);
   return <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pt-40 sm:pt-44 lg:pt-40 pb-8" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements with Parallax */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl animate-float" style={{
         transform: `translateY(${scrollY * 0.15}px)`,
