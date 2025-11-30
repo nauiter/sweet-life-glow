@@ -291,8 +291,8 @@ export const GallerySection = () => {
                     ref={(el) => (imageRefs.current[index] = el)}
                     data-index={globalIndex}
                     className={cn(
-                      "group overflow-hidden bg-card/50 backdrop-blur-sm border-2 cursor-pointer",
-                      "transition-all duration-300 ease-out",
+                      "group overflow-hidden bg-card/50 backdrop-blur-sm border-2 cursor-pointer h-full",
+                      "transition-all duration-300 ease-out will-change-transform",
                       neonStyle.border,
                       neonStyle.glow,
                       isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"

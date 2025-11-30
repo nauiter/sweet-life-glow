@@ -163,6 +163,28 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Desktop/Tablet specific adjustments - WEB + IPAD ABRAÇO VISUAL ✨ */
 @media (min-width: 768px) {
   .container {
@@ -499,6 +521,54 @@ All colors MUST be HSL.
     line-height: 1.2;
     padding-block: 0.1em;
   }
+  
+  /* 🎬 Scroll Animations with IntersectionObserver */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-animate-scale.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Stagger delays for sequential animations */
+  .scroll-animate:nth-child(1) { transition-delay: 0s; }
+  .scroll-animate:nth-child(2) { transition-delay: 0.1s; }
+  .scroll-animate:nth-child(3) { transition-delay: 0.2s; }
+  .scroll-animate:nth-child(4) { transition-delay: 0.3s; }
+  .scroll-animate:nth-child(5) { transition-delay: 0.4s; }
+  .scroll-animate:nth-child(6) { transition-delay: 0.5s; }
+  
+  /* 🚀 Performance Optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Touch targets - minimum 44x44px for mobile */
+  @media (max-width: 768px) {
+    button, a[role="button"], [role="tab"], [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
 }
 
 /* Accessibility Enhancements */
@@ -519,6 +589,14 @@ All colors MUST be HSL.
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
+    }
+    
+    /* Disable scroll animations for reduced motion */
+    .scroll-animate,
+    .scroll-animate-scale {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
   }
   
