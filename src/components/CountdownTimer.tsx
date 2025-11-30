@@ -79,7 +79,7 @@ export const CountdownTimer = () => {
         "fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-b-2 border-white/30",
         isUrgent && "animate-pulse",
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        isVisible ? "animate-slide-up" : "-translate-y-full opacity-0"
       )}
       style={{
         boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)"
