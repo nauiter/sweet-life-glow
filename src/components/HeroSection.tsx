@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
@@ -28,7 +28,7 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn("text-2xl sm:text-3xl md:text-7xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center lg:text-left mt-8 sm:mt-0")}>
+            <h1 className={cn("text-2xl sm:text-3xl md:text-7xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center lg:text-left mt-10 sm:mt-0")}>
               <span className="gradient-text block mb-2">Learn Anime Art</span>
               <span className="neon-text block">with Sweet</span>
             </h1>
