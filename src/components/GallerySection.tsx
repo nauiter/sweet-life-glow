@@ -256,12 +256,13 @@ export const GallerySection = () => {
                           <div className="animate-pulse w-12 h-12 rounded-full bg-primary/20" />
                         </div>
                       )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                      <div>
-                        <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight)}>{artwork.title}</h3>
-                        <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{artwork.description}</p>
+                      {/* Text overlay - always visible on touch devices, hover on desktop */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
+                        <div className="w-full">
+                          <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight, "text-foreground")}>{artwork.title}</h3>
+                          <p className={cn(TYPOGRAPHY.body.small, "text-foreground/90")}>{artwork.description}</p>
+                        </div>
                       </div>
-                    </div>
                     </div>
                   </Card>
                 </DialogTrigger>
