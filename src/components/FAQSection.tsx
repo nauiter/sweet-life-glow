@@ -59,7 +59,7 @@ export const FAQSection = () => {
   return (
     <section id="faq" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="faq-heading">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
+      <div className="absolute inset-0 bg-background" aria-hidden="true" />
       <div 
         className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
         aria-hidden="true"

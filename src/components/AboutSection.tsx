@@ -47,7 +47,7 @@ export const AboutSection = () => {
   return (
     <section id="about" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="about-heading">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" />
+      <div className="absolute inset-0 bg-background" />
       <div 
         className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
         style={{ transform: `translateY(${parallaxOffset}px)` }}

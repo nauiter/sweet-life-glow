@@ -42,7 +42,7 @@ export const ShopSection = () => {
   return (
     <section id="resources" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="resources-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
+      <div className="absolute inset-0 bg-background" aria-hidden="true" />
       <div 
         className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
         aria-hidden="true"
