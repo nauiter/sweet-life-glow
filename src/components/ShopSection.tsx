@@ -106,9 +106,18 @@ export const ShopSection = () => {
                 </div>
                 
                 <div className="flex flex-col gap-2 mt-auto pt-4">
-                  <span className={cn(TYPOGRAPHY.heading.h3, "gradient-text text-center")}>{resource.price}</span>
+                  <span className={cn(
+                    TYPOGRAPHY.heading.h3, 
+                    "gradient-text text-center px-4 py-2 border-2 border-primary/40 rounded-lg bg-primary/10"
+                  )}>
+                    {resource.price}
+                  </span>
                   <a href={resource.downloadUrl} download aria-label={`Download ${resource.title}`} className="w-full">
-                    <Button variant="outline" size="sm" className="group-hover:border-primary w-full">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="group-hover:border-primary w-full border-2"
+                    >
                       <Download className="mr-2 h-4 w-4" />
                       Download
                     </Button>
