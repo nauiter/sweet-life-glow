@@ -1,7 +1,8 @@
+import * as React from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Quote, Star, Users } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
