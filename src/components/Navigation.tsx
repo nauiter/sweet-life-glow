@@ -76,7 +76,7 @@ export const Navigation = () => {
             onClick={(e) => handleNavClick(e, "#home")}
             className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
           >
-            Sweet Life Animes
+            {/* Logo placeholder */}
           </a>
 
           {/* Desktop Navigation */}
