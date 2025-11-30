@@ -15,8 +15,23 @@ interface TimeLeft {
 export const CountdownTimer = () => {
   const [isVisible, setIsVisible] = useState(false);
   
-  // Set target date: End of December (December 31, 2025)
-  const targetDate = new Date('2025-12-31T23:59:59');
+  // Get or set the user's timer start time (24-hour countdown)
+  const getTargetDate = (): Date => {
+    const storedTime = localStorage.getItem('timer_start');
+    
+    if (storedTime) {
+      // User has visited before, calculate target from stored start
+      const startTime = parseInt(storedTime, 10);
+      return new Date(startTime + 24 * 60 * 60 * 1000); // 24 hours from start
+    } else {
+      // First visit - set start time to now
+      const now = Date.now();
+      localStorage.setItem('timer_start', now.toString());
+      return new Date(now + 24 * 60 * 60 * 1000); // 24 hours from now
+    }
+  };
+  
+  const [targetDate] = useState<Date>(getTargetDate());
   
   const calculateTimeLeft = (): TimeLeft => {
     const difference = +targetDate - +new Date();
@@ -52,7 +67,9 @@ export const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const isUrgent = timeLeft.days <= 3;
+  // Calculate total hours remaining for urgency check
+  const totalHoursRemaining = timeLeft.days * 24 + timeLeft.hours;
+  const isUrgent = totalHoursRemaining < 12;
 
   if (!isVisible) return null;
 
@@ -78,10 +95,10 @@ export const CountdownTimer = () => {
             </div>
             <div>
               <div className={cn(TYPOGRAPHY.body.small, "text-white/90 font-medium uppercase tracking-wide")}>
-                {isUrgent ? "⚡ Last Days of December!" : "🔥 December Special Offer"}
+                {isUrgent ? "⚡ Last Hours!" : "🔥 December Special Offer"}
               </div>
               <div className={cn(TYPOGRAPHY.heading.h4, "text-white font-bold leading-tight")}>
-                90% OFF - Limited Time Only!
+                {isUrgent ? "Hurry! Your 90% OFF Expires Soon!" : "90% OFF - Limited Time Only!"}
               </div>
             </div>
           </div>
@@ -136,7 +153,7 @@ export const CountdownTimer = () => {
           <div className="flex items-center gap-2">
             <Zap className="text-white animate-pulse" size={18} fill="currentColor" />
             <div className={cn(TYPOGRAPHY.body.small, "text-white font-bold uppercase tracking-wide")}>
-              {isUrgent ? "⚡ Last Days!" : "🔥 December Special"}
+              {isUrgent ? "⚡ Last Hours!" : "🔥 December Special"}
             </div>
           </div>
 

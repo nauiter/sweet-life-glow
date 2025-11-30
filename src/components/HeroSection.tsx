@@ -96,9 +96,8 @@ export const HeroSection = () => {
                   </div>
                 </div>
                 <p className={cn(TYPOGRAPHY.body.default, "text-foreground")}>
-                  Join 500+ artists at our <span className="font-bold text-primary">lowest price ever</span>! 
-                  Complete course + AI tools + premium brushes + lifetime access. 
-                  <span className="font-bold text-secondary"> Pay with PayPal, Stripe, or PagSeguro</span> 💜
+                  Your creative journey starts here, cutie! ✨ Complete course, AI magic, premium brushes & lifetime access. 
+                  <span className="font-bold text-secondary">PayPal, Stripe, or PagSeguro accepted</span> 💜
                 </p>
                 <a 
                   href={EXTERNAL_LINKS.coursify}
