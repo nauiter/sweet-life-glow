@@ -237,7 +237,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-1.5 px-3 w-[340px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2 px-3 w-[340px] min-h-[72px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -257,19 +257,22 @@ export const PurchaseNotifications = () => {
 
           <div className="flex items-center gap-3 relative z-10">
             {/* Icon - Left side */}
-            <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
-              <ShoppingBag className={colorClasses.iconColor} size={16} />
+            <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
+              <ShoppingBag className={colorClasses.iconColor} size={18} />
             </div>
 
-            {/* Content - Right side with compact two-line layout */}
+            {/* Content - Right side with optimized 3-line layout */}
             <div className="flex-1 min-w-0 flex flex-col justify-center gap-0.5">
-              {/* Line 1: Name + Message merged */}
-              <p className="text-sm text-foreground truncate" style={{ lineHeight: '1.3' }}>
-                <span className="font-bold">{notification.name}</span>
-                <span className="text-muted-foreground ml-1">{notification.message}</span>
+              {/* Line 1: Name */}
+              <p className="text-sm font-bold text-foreground truncate leading-none">
+                {notification.name}
               </p>
-              {/* Line 2: CTA */}
-              <p className="text-xs font-semibold gradient-text" style={{ lineHeight: '1.3' }}>
+              {/* Line 2: Message */}
+              <p className="text-[11px] text-muted-foreground line-clamp-1 leading-tight">
+                {notification.message}
+              </p>
+              {/* Line 3: CTA */}
+              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none">
                 {notification.cta}
               </p>
             </div>
