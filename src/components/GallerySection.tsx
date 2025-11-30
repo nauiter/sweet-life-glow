@@ -5,40 +5,43 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import artSample1 from "@/assets/art-sample-1.jpg";
 import artSample2 from "@/assets/art-sample-2.jpg";
 import artSample3 from "@/assets/art-sample-3.jpg";
+import artSample4 from "@/assets/art-sample-4.jpg";
+import artSample5 from "@/assets/art-sample-5.jpg";
+import artSample6 from "@/assets/art-sample-6.jpg";
+import artSample7 from "@/assets/art-sample-7.jpg";
+import artSample8 from "@/assets/art-sample-8.jpg";
+import artSample9 from "@/assets/art-sample-9.jpg";
+import artSample10 from "@/assets/art-sample-10.jpg";
+import artSample11 from "@/assets/art-sample-11.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 
-// Mock data: Generate 36 items by repeating the 3 existing images
-const baseArtworks = [
-  { image: artSample1, title: "Digital Workspace Magic", description: "Learn professional workflow" },
-  { image: artSample2, title: "Character Design Mastery", description: "Express emotions through poses" },
-  { image: artSample3, title: "Creative Process", description: "From sketch to masterpiece" }
+// Gallery artworks collection
+const galleryArtworks = [
+  { id: 1, image: artSample1, title: "Digital Workspace Magic", description: "Learn professional workflow" },
+  { id: 2, image: artSample2, title: "Character Design Mastery", description: "Express emotions through poses" },
+  { id: 3, image: artSample3, title: "Creative Process", description: "From sketch to masterpiece" },
+  { id: 4, image: artSample4, title: "Fashion Elegance", description: "Master clothing design and details" },
+  { id: 5, image: artSample5, title: "Outdoor Adventure", description: "Dynamic poses in natural settings" },
+  { id: 6, image: artSample6, title: "Indoor Portrait", description: "Perfect lighting and composition" },
+  { id: 7, image: artSample7, title: "Night Scene Mood", description: "Atmospheric lighting techniques" },
+  { id: 8, image: artSample8, title: "Dynamic Action Pose", description: "Movement and energy expression" },
+  { id: 9, image: artSample9, title: "Perspective Mastery", description: "Advanced angle techniques" },
+  { id: 10, image: artSample10, title: "Gaming Vibes", description: "Modern character personality" },
+  { id: 11, image: artSample11, title: "Energetic Expression", description: "Capturing emotion and life" }
 ];
-
-const generateMockArtworks = () => {
-  return Array.from({ length: 36 }, (_, index) => {
-    const baseIndex = index % 3;
-    return {
-      id: index + 1,
-      image: baseArtworks[baseIndex].image,
-      title: `${baseArtworks[baseIndex].title} #${index + 1}`,
-      description: baseArtworks[baseIndex].description
-    };
-  });
-};
 
 const ITEMS_PER_PAGE = 9;
 
 export const GallerySection = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedImage, setSelectedImage] = useState<typeof artworks[0] | null>(null);
+  const [selectedImage, setSelectedImage] = useState<typeof galleryArtworks[0] | null>(null);
   
-  const artworks = generateMockArtworks();
-  const totalPages = Math.ceil(artworks.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(galleryArtworks.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentArtworks = artworks.slice(startIndex, endIndex);
+  const currentArtworks = galleryArtworks.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
