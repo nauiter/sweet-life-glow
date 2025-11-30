@@ -79,8 +79,8 @@ export const CountdownTimer = () => {
       className={cn(
         "fixed left-1/2 -translate-x-1/2 z-[51] bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-2 border-white/30 rounded-lg md:rounded-xl",
-        "w-[95%] max-w-4xl",
-        "top-2 md:top-20",
+        "w-[92%] sm:w-[95%] max-w-4xl",
+        "top-2 sm:top-3 md:top-20",
         isUrgent && "animate-pulse",
         isVisible ? "animate-slide-up opacity-100" : "-translate-y-full opacity-0"
       )}
@@ -88,8 +88,10 @@ export const CountdownTimer = () => {
         boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)",
         position: "fixed"
       }}
+      role="region"
+      aria-label="Limited time offer countdown"
     >
-      <div className="px-3 py-2 md:px-6 md:py-3">
+      <div className="px-3 py-2.5 sm:py-3 md:px-6 md:py-3">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between gap-4">
           {/* Left: Urgency Message */}
@@ -145,42 +147,39 @@ export const CountdownTimer = () => {
           </a>
         </div>
 
-        {/* Mobile Layout - Horizontal Compact */}
-        <div className="flex md:hidden flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 sm:gap-2">
-          {/* Top row: Price + Timer */}
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
-            {/* Left: Price */}
-            <div className="flex items-center gap-1.5 bg-white/10 rounded-lg px-2 py-1">
-              <span className="text-xs text-white/70 line-through">$297</span>
-              <span className="text-xl text-white font-black">$29</span>
-            </div>
-
-            {/* Center: Countdown - Ultra Compact */}
-            <div className="flex items-center gap-1">
-              <TimeBlockMobile value={timeLeft.days} label="D" />
-              <span className="text-white/50 text-sm">:</span>
-              <TimeBlockMobile value={timeLeft.hours} label="H" />
-              <span className="text-white/50 text-sm">:</span>
-              <TimeBlockMobile value={timeLeft.minutes} label="M" />
-              <span className="text-white/50 text-sm">:</span>
-              <TimeBlockMobile value={timeLeft.seconds} label="S" />
-            </div>
+        {/* Mobile Layout - Vertical Stack */}
+        <div className="flex md:hidden flex-col items-center gap-3">
+          {/* Top: Price */}
+          <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+            <span className="text-xs sm:text-sm text-white/80 line-through">$297</span>
+            <span className="text-2xl sm:text-3xl text-white font-black tracking-tight">$29</span>
           </div>
 
-          {/* Bottom row: CTA Button - Full width on mobile */}
+          {/* Middle: Countdown */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <TimeBlockMobile value={timeLeft.days} label="Days" />
+            <span className="text-white/50 text-base font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.hours} label="Hrs" />
+            <span className="text-white/50 text-base font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.minutes} label="Min" />
+            <span className="text-white/50 text-base font-bold">:</span>
+            <TimeBlockMobile value={timeLeft.seconds} label="Sec" />
+          </div>
+
+          {/* Bottom: CTA Button - 80% width */}
           <a 
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Enroll now for $29"
-            className="w-full sm:w-auto"
+            aria-label="Enroll now for $29 - Save $268"
+            className="w-[80%] max-w-[320px]"
           >
             <Button 
               variant="outline" 
-              size="sm"
-              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl text-sm px-6 py-2 h-auto min-h-[40px] w-full sm:w-auto whitespace-nowrap"
+              size="lg"
+              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base sm:text-lg h-auto min-h-[48px] px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
             >
-              Enroll Now!
+              Enroll Now! 🚀
             </Button>
           </a>
         </div>
@@ -210,12 +209,12 @@ const Separator = () => (
 
 const TimeBlockMobile = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
-    <div className="bg-white/20 backdrop-blur-sm rounded px-1.5 py-0.5 border border-white/30 min-w-[24px]">
-      <div className="text-sm text-white font-bold tabular-nums text-center leading-none">
+    <div className="bg-white/25 backdrop-blur-sm rounded-md px-2 sm:px-2.5 py-1 sm:py-1.5 border border-white/40 min-w-[32px] sm:min-w-[36px]">
+      <div className="text-base sm:text-lg text-white font-bold tabular-nums text-center leading-none">
         {String(value).padStart(2, '0')}
       </div>
     </div>
-    <div className="text-[8px] text-white/70 font-medium mt-0.5 uppercase">
+    <div className="text-[9px] sm:text-[10px] text-white/80 font-medium mt-1 uppercase tracking-wide">
       {label}
     </div>
   </div>
