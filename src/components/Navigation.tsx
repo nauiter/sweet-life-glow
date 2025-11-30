@@ -1,13 +1,10 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { cn } from "@/lib/utils";
-import { MobileSidebar } from "./MobileSidebar";
 
 export const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -60,8 +57,6 @@ export const Navigation = () => {
         });
       });
     }
-    
-    setIsOpen(false);
   };
 
   return (
