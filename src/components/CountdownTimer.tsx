@@ -59,7 +59,7 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed top-16 md:top-20 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500",
+        "fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-b-2 border-white/30",
         isUrgent && "animate-pulse",
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
