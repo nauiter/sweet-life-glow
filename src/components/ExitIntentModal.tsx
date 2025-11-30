@@ -110,19 +110,32 @@ export const ExitIntentModal = () => {
                   </span>
                 </div>
                 
-                <div className="mb-4">
-                  <div className={cn(TYPOGRAPHY.heading.h2, "gradient-text font-black mb-2")}>
-                    LAST CHANCE BONUS
+              <div className="mb-4">
+                <div className={cn(TYPOGRAPHY.heading.h2, "gradient-text font-black mb-2")}>
+                  LAST CHANCE: DECEMBER SALE
+                </div>
+                <div className="flex items-center justify-center gap-3 flex-wrap">
+                  <div className="text-center">
+                    <div className={cn(TYPOGRAPHY.body.small, "text-muted-foreground mb-1")}>Was</div>
+                    <div className={cn(TYPOGRAPHY.heading.h2, "text-muted-foreground line-through")}>$297</div>
                   </div>
-                  <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full">
-                    <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black")}>
-                      $297 FREE
+                  <div className={cn(TYPOGRAPHY.heading.h1, "text-primary")}>→</div>
+                  <div className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full border-4 border-white/20">
+                    <div className={cn(TYPOGRAPHY.body.small, "text-white/90 mb-1")}>Now Only</div>
+                    <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black text-5xl sm:text-6xl")}>
+                      $29
                     </span>
                   </div>
                 </div>
+                <div className="inline-block px-5 py-2 bg-destructive text-white rounded-full mt-3 animate-pulse">
+                  <span className={cn(TYPOGRAPHY.body.default, "font-black")}>
+                    🔥 SAVE 90% - ENDS DECEMBER 31
+                  </span>
+                </div>
+              </div>
 
                 <p id="exit-intent-description" className={cn(TYPOGRAPHY.body.intro, "text-foreground font-semibold mb-6")}>
-                  Enroll NOW and get instant access to our complete Premium Bundle - absolutely FREE!
+                  Don't leave without grabbing the biggest discount of the year! Full course + premium bonuses for just $29!
                 </p>
 
                 {/* Quick Benefits */}
@@ -151,12 +164,22 @@ export const ExitIntentModal = () => {
                 <AlertTriangle className="text-destructive flex-shrink-0 mt-1 animate-pulse" size={24} />
                 <div>
                   <p className={cn(TYPOGRAPHY.body.default, "text-foreground font-bold mb-1")}>
-                    ⏰ This offer disappears if you leave this page!
+                    ⏰ December special ends December 31st at midnight!
                   </p>
                   <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>
-                    Don't miss out on $297 worth of premium content. Join 500+ artists who already claimed their bonus!
+                    This 90% discount ($297 → $29) is our biggest sale ever. After December, price returns to normal. Don't miss out!
                   </p>
                 </div>
+              </div>
+
+              {/* Payment Methods */}
+              <div className="bg-card/50 rounded-lg p-3 border border-primary/20 text-center">
+                <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground mb-1")}>
+                  💳 Secure Payment Options:
+                </p>
+                <p className={cn(TYPOGRAPHY.body.default, "text-foreground font-semibold")}>
+                  PayPal • Stripe • PagSeguro
+                </p>
               </div>
 
               {/* CTA Buttons */}
@@ -168,7 +191,7 @@ export const ExitIntentModal = () => {
                   className="w-full group text-lg font-black animate-pulse hover:animate-none"
                 >
                   <Gift className="group-hover:scale-110 transition-transform" size={24} />
-                  YES! Claim My $297 Bonus Now
+                  YES! Give Me 90% OFF ($29 Only)
                   <Zap className="group-hover:scale-110 transition-transform" size={24} />
                 </Button>
                 
@@ -179,7 +202,7 @@ export const ExitIntentModal = () => {
                     "text-muted-foreground hover:text-foreground transition-colors underline text-center py-2"
                   )}
                 >
-                  No thanks, I don't want premium content for free
+                  No thanks, I'll pay full price later ($297)
                 </button>
               </div>
 

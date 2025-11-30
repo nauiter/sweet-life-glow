@@ -90,18 +90,32 @@ export const WelcomeModal = () => {
             <div className={SPACING.stack.normal}>
               {/* Offer Details */}
               <div className="text-center">
-                <div className="inline-block p-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl border border-primary/30 mb-4">
-                  <div className={cn(TYPOGRAPHY.heading.h1, "gradient-text font-black")}>
-                    🎁 BONUS PACK
+              <div className="mb-4">
+                <div className={cn(TYPOGRAPHY.heading.h2, "gradient-text font-black mb-2")}>
+                  DECEMBER MEGA SALE
+                </div>
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <span className={cn(TYPOGRAPHY.heading.h2, "text-muted-foreground line-through")}>$297</span>
+                  <span className={cn(TYPOGRAPHY.heading.h1, "text-primary font-black")}>→</span>
+                  <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full">
+                    <span className={cn(TYPOGRAPHY.heading.h1, "text-white font-black")}>
+                      $29
+                    </span>
                   </div>
                 </div>
+                <div className="inline-block px-4 py-2 bg-destructive/20 border border-destructive rounded-full">
+                  <span className={cn(TYPOGRAPHY.body.default, "text-destructive font-bold")}>
+                    Save 90% This December!
+                  </span>
+                </div>
+              </div>
                 
                 <h3 id="welcome-modal-description" className={cn(TYPOGRAPHY.heading.h3, "mb-4")}>
-                  First-Time Visitor Exclusive!
+                  December Special: 90% OFF + Free Bonuses!
                 </h3>
                 
                 <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground mb-6 max-w-md mx-auto")}>
-                  Join Sweet Life Animes today and get instant access to exclusive bonus content worth $297 absolutely FREE!
+                  Enroll today for just <strong className="text-primary text-xl">$29</strong> (normally $297) and get instant access to the complete course PLUS exclusive bonus content!
                 </p>
               </div>
 
@@ -134,13 +148,13 @@ export const WelcomeModal = () => {
                   className="flex-1 group text-base sm:text-lg"
                 >
                   <Gift className="group-hover:scale-110 transition-transform" />
-                  Claim My Bonus Pack Now
+                  Enroll for $29 (Save $268!)
                 </Button>
               </div>
 
               {/* Footer Note */}
               <p className={cn(TYPOGRAPHY.body.small, "text-center text-muted-foreground italic")}>
-                ⏰ This exclusive offer is only shown once. Don't miss out!
+                ⏰ December special pricing ends soon. <span className="font-bold text-primary">Pay with PayPal, Stripe, or PagSeguro</span>
               </p>
 
               {/* Skip Button */}
