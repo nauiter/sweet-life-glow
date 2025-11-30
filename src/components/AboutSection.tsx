@@ -5,6 +5,7 @@ import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 import sweetPhoto from "@/assets/sweet5.webp";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const AboutSection = () => {
   const benefits = [
@@ -133,21 +134,21 @@ export const AboutSection = () => {
         {/* Benefits Grid */}
         <div className={cn("grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6", SPACING.container.wide, SPACING.margin.major)}>
           {benefits.map((benefit, index) => (
-            <Card 
-              key={index} 
-              className={cn(SPACING.card.default, "card-elevated animate-slide-up group")}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-start gap-4">
-                <div className="icon-wrapper group-hover:scale-110 transition-transform">
-                  <benefit.icon className="text-white" size={24} />
+            <AnimatedSection key={index} delay={index * 0.1}>
+              <Card 
+                className={cn(SPACING.card.default, "card-elevated group h-full")}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="icon-wrapper group-hover:scale-110 transition-transform will-change-transform">
+                    <benefit.icon className="text-white" size={24} />
+                  </div>
+                  <div className={SPACING.stack.tight}>
+                    <h3 className={cn(TYPOGRAPHY.heading.h4, "font-bold")}>{benefit.title}</h3>
+                    <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{benefit.description}</p>
+                  </div>
                 </div>
-                <div className={SPACING.stack.tight}>
-                  <h3 className={cn(TYPOGRAPHY.heading.h4, "font-bold")}>{benefit.title}</h3>
-                  <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{benefit.description}</p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
 

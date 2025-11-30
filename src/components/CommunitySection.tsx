@@ -7,6 +7,7 @@ import { EXTERNAL_LINKS } from "@/constants/data";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const CommunitySection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -79,25 +80,25 @@ export const CommunitySection = () => {
         {/* Testimonials Grid */}
         <div className={cn("grid sm:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.full, SPACING.margin.hero)}>
           {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index}
-              className={cn(SPACING.card.default, "card-elevated animate-slide-up")}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <Quote className={cn("text-primary", SPACING.margin.close)} size={32} />
-              <p className={cn(TYPOGRAPHY.body.small, "text-foreground leading-relaxed italic", SPACING.margin.close)}>
-                "{testimonial.content}"
-              </p>
-              <div className={cn("flex items-center gap-1", SPACING.margin.tight)}>
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="text-primary fill-primary" />
-                ))}
-              </div>
-              <div>
-                <div className="font-bold">{testimonial.name}</div>
-                <div className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{testimonial.role}</div>
-              </div>
-            </Card>
+            <AnimatedSection key={index} delay={index * 0.1}>
+              <Card 
+                className={cn(SPACING.card.default, "card-elevated h-full")}
+              >
+                <Quote className={cn("text-primary", SPACING.margin.close)} size={32} />
+                <p className={cn(TYPOGRAPHY.body.small, "text-foreground leading-relaxed italic", SPACING.margin.close)}>
+                  "{testimonial.content}"
+                </p>
+                <div className={cn("flex items-center gap-1", SPACING.margin.tight)}>
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <div>
+                  <div className="font-bold">{testimonial.name}</div>
+                  <div className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{testimonial.role}</div>
+                </div>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
 
