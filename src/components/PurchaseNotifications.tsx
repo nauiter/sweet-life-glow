@@ -171,7 +171,7 @@ export const PurchaseNotifications = () => {
     >
       <div 
         className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2 max-w-[140px] neon-glow relative overflow-hidden",
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2.5 max-w-[240px] neon-glow relative overflow-hidden",
           colorClasses.border,
           "transition-all duration-700 ease-in-out"
         )}
@@ -201,19 +201,22 @@ export const PurchaseNotifications = () => {
           </span>
         </div>
 
-        <div className="flex flex-col items-center text-center gap-1 relative z-10">
-          {/* Icon - Centralized */}
-          <div className={cn("w-6 h-6 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
-            <ShoppingBag className={colorClasses.iconColor} size={12} />
+        <div className="flex items-center gap-2.5 relative z-10">
+          {/* Icon - Left side, vertically centered */}
+          <div className={cn("flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
+            <ShoppingBag className={colorClasses.iconColor} size={14} />
           </div>
 
-          {/* Content - Compact */}
-          <div className="w-full">
-            <p className="text-[10px] font-bold text-foreground truncate leading-tight">
+          {/* Content - Right side */}
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] font-bold text-foreground truncate leading-tight">
               {notification.name}
             </p>
-            <p className="text-[9px] text-muted-foreground leading-tight line-clamp-1">
+            <p className="text-[10px] text-muted-foreground leading-tight line-clamp-1 mt-0.5">
               {notification.message}
+            </p>
+            <p className="text-[9px] text-primary/70 mt-0.5">
+              Just now
             </p>
           </div>
         </div>
