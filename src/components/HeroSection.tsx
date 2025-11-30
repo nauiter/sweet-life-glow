@@ -1,39 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles, ShoppingBag } from "lucide-react";
 import sweetCharacter from "@/assets/sweet-character.jpg";
-import { useState, useEffect, useRef } from "react";
 import { EXTERNAL_LINKS } from "@/constants/data";
-import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  // Use custom hook for animated counters
-  const otakusCount = useAnimatedCounter({ target: 500, duration: 1500, enabled: hasAnimated });
-  const artworksCount = useAnimatedCounter({ target: 1000, duration: 1800, enabled: hasAnimated });
-  const updatesCount = useAnimatedCounter({ target: 50, duration: 1200, enabled: hasAnimated });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">
@@ -103,19 +77,34 @@ export const HeroSection = () => {
               </a>
             </div>
             
-            {/* Stats */}
-            <div ref={statsRef} className="flex flex-wrap gap-6 sm:gap-8 pt-4 sm:pt-6">
-              <div>
-                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{otakusCount}+</div>
-                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Creative Otakus</div>
+            {/* Curiosity CTA + Bonus */}
+            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-6 rounded-2xl border border-primary/40 neon-glow", SPACING.margin.normal)}>
+              <div className="absolute -top-3 -right-3">
+                <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-primary to-secondary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
+                  🎁 BONUS INSIDE
+                </span>
               </div>
-              <div>
-                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{artworksCount}+</div>
-                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Artworks Created</div>
-              </div>
-              <div>
-                <div className={cn(TYPOGRAPHY.stat.number, "gradient-text")}>{updatesCount}+</div>
-                <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Weekly Updates</div>
+              <div className={SPACING.stack.tight}>
+                <h3 className={cn(TYPOGRAPHY.heading.h4, "gradient-text flex items-center gap-2")}>
+                  <Sparkles className="text-primary" size={20} />
+                  Curious what makes this different?
+                </h3>
+                <p className={cn(TYPOGRAPHY.body.default, "text-foreground")}>
+                  Join 500+ artists who discovered their unique style! 
+                  <span className="font-bold text-primary"> Get exclusive bonus packs</span> when you enroll today - AI tools, premium brushes, and secret techniques! 💜
+                </p>
+                <a 
+                  href={EXTERNAL_LINKS.coursify}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Discover Sweet Life Animes bonus content"
+                  className="inline-block"
+                >
+                  <Button variant="outline" size="sm" className="group border-primary/50 hover:border-primary hover:bg-primary/10 mt-2">
+                    Discover the Magic
+                    <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

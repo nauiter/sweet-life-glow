@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { EXTERNAL_LINKS } from "@/constants/data";
@@ -20,6 +21,9 @@ const Index = () => {
     <div className="relative">
       {/* Fixed Navigation */}
       <Navigation />
+      
+      {/* Breadcrumbs */}
+      <Breadcrumbs />
       
       {/* Main Content */}
       <HeroSection />
