@@ -177,12 +177,20 @@ export const CountdownTimer = () => {
             <Button 
               variant="outline" 
               size="default"
-              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base h-[48px] rounded-xl transition-all duration-200"
+              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base h-[48px] rounded-xl transition-all duration-200 relative overflow-hidden"
               style={{
                 animation: "pulse-cta 2.5s ease-in-out infinite"
               }}
             >
-              Enroll Now! 🚀
+              <span className="relative z-10">Enroll Now! 🚀</span>
+              <span 
+                className="absolute inset-0 w-[50%] h-full opacity-30"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
+                  animation: "shimmer 3s ease-in-out infinite",
+                  animationDelay: "1s"
+                }}
+              />
             </Button>
           </a>
         </div>
