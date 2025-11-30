@@ -219,7 +219,6 @@ export const GallerySection = () => {
           sizes={isMobile ? "100vw" : "100vw"}
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
           className="w-full h-full object-cover opacity-20 transition-transform duration-100 ease-out" 
           style={{ 
             transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,

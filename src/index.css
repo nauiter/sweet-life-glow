@@ -146,6 +146,12 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* Text size adjustment for mobile */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* User selection support */
+    -webkit-user-select: text;
+    user-select: text;
   }
   
   h1, h2, h3, h4, h5, h6 {

@@ -118,7 +118,7 @@ export const HeroSection = () => {
                 width={800}
                 height={450}
                 sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 550px"
-                fetchPriority="high"
+                loading="eager"
                 className="w-full h-auto object-cover max-h-[400px] sm:max-h-[450px] md:max-h-[500px] lg:max-h-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
