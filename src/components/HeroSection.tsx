@@ -111,9 +111,8 @@ export const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-col gap-4 mb-8 lg:mb-10 items-center lg:items-start">
               <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in Sweet Life Animes anime art course" className="w-full sm:w-[320px]">
-                <Button variant="hero" size="lg" className="group w-full min-h-[54px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/50">
-                  Enroll Now 💜
-                  <Heart className="group-hover:scale-110 transition-transform" />
+                <Button variant="hero" size="lg" className="group w-full min-h-[54px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/50 justify-center">
+                  Enroll Now
                 </Button>
               </a>
               <a href={EXTERNAL_LINKS.payhipShop} target="_blank" rel="noopener noreferrer" aria-label="Visit Sweet Life Animes Shop" className="w-full sm:w-[320px]">
