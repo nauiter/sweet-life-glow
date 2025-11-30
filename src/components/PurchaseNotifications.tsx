@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { ShoppingBag, Sparkles } from "lucide-react";
+import { ShoppingBag, Sparkles, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+type IconType = 'shopping' | 'sparkles' | 'heart';
 
 interface Notification {
   id: string;
@@ -9,6 +11,7 @@ interface Notification {
   colorVariant: 'white' | 'pink' | 'purple';
   badge: string;
   cta: string;
+  iconType: IconType;
 }
 
 const firstNames = [
@@ -68,6 +71,25 @@ const getRandomBadge = () => {
 
 const getRandomCta = () => {
   return ctas[Math.floor(Math.random() * ctas.length)];
+};
+
+const iconTypes: IconType[] = ['shopping', 'sparkles', 'heart'];
+
+const getRandomIcon = (): IconType => {
+  return iconTypes[Math.floor(Math.random() * iconTypes.length)];
+};
+
+const getIconComponent = (iconType: IconType) => {
+  switch (iconType) {
+    case 'shopping':
+      return ShoppingBag;
+    case 'sparkles':
+      return Sparkles;
+    case 'heart':
+      return Heart;
+    default:
+      return ShoppingBag;
+  }
 };
 
 const getBadgeColorClasses = (badge: string) => {
@@ -171,7 +193,8 @@ export const PurchaseNotifications = () => {
         message: getRandomMessage(),
         colorVariant: getRandomColor(),
         badge: getRandomBadge(),
-        cta: getRandomCta()
+        cta: getRandomCta(),
+        iconType: getRandomIcon()
       };
 
       setNotification(newNotification);
@@ -256,9 +279,12 @@ export const PurchaseNotifications = () => {
           />
 
           <div className="flex items-center gap-3 relative z-10">
-            {/* Icon - Left side */}
+            {/* Icon - Left side - Dynamic based on notification type */}
             <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
-              <ShoppingBag className={colorClasses.iconColor} size={18} />
+              {(() => {
+                const IconComponent = getIconComponent(notification.iconType);
+                return <IconComponent className={colorClasses.iconColor} size={18} />;
+              })()}
             </div>
 
             {/* Content - Right side - Optically Balanced */}
