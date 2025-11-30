@@ -57,30 +57,30 @@ const getRandomBadge = () => {
 const getBadgeColorClasses = (badge: string) => {
   if (badge.includes('HOT')) {
     return {
-      bg: 'bg-gradient-to-r from-orange-500 to-red-500',
+      bg: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500',
       text: 'text-white',
-      glow: '0 0 20px rgba(249, 115, 22, 0.8), 0 0 40px rgba(239, 68, 68, 0.4)'
+      glow: '0 0 25px rgba(251, 146, 60, 1), 0 0 50px rgba(239, 68, 68, 0.6), 0 0 75px rgba(236, 72, 153, 0.4)'
     };
   }
   if (badge.includes('NEW')) {
     return {
-      bg: 'bg-gradient-to-r from-cyan-500 to-blue-500',
+      bg: 'bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-400',
       text: 'text-white',
-      glow: '0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(59, 130, 246, 0.4)'
+      glow: '0 0 25px rgba(59, 130, 246, 1), 0 0 50px rgba(6, 182, 212, 0.6), 0 0 75px rgba(20, 184, 166, 0.4)'
     };
   }
   if (badge.includes('JUST IN')) {
     return {
-      bg: 'bg-gradient-to-r from-pink-500 to-purple-500',
+      bg: 'bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500',
       text: 'text-white',
-      glow: '0 0 20px rgba(236, 72, 153, 0.8), 0 0 40px rgba(168, 85, 247, 0.4)'
+      glow: '0 0 25px rgba(168, 85, 247, 1), 0 0 50px rgba(236, 72, 153, 0.6), 0 0 75px rgba(244, 63, 94, 0.4)'
     };
   }
   // FRESH
   return {
-    bg: 'bg-gradient-to-r from-green-400 to-emerald-500',
+    bg: 'bg-gradient-to-r from-lime-400 via-green-500 to-emerald-500',
     text: 'text-white',
-    glow: '0 0 20px rgba(74, 222, 128, 0.8), 0 0 40px rgba(16, 185, 129, 0.4)'
+    glow: '0 0 25px rgba(163, 230, 53, 1), 0 0 50px rgba(34, 197, 94, 0.6), 0 0 75px rgba(16, 185, 129, 0.4)'
   };
 };
 
