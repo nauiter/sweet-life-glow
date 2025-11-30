@@ -66,7 +66,7 @@ export const AboutSection = () => {
 
         {/* Who's Sweet Card */}
         <Card className={cn(SPACING.container.content, "p-4 sm:p-6 md:p-8", "card-solid animate-slide-up", SPACING.margin.hero)}>
-          <div className="flex flex-col md:flex-row items-start gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-6">
             {/* Left Column - Text Content */}
             <div className="flex-1 space-y-4 w-full">
               <div className="flex items-start gap-4">
@@ -106,8 +106,8 @@ export const AboutSection = () => {
               </div>
             </div>
             
-            {/* Right Column - Image (Smaller) */}
-            <div className="w-full md:w-64 flex-shrink-0">
+            {/* Right Column - Image (Smaller, Vertically Centered) */}
+            <div className="w-full md:w-64 flex-shrink-0 relative">
               <div className="relative rounded-2xl overflow-hidden neon-glow group/image aspect-square">
                 <img 
                   src={sweetPhoto} 
