@@ -32,7 +32,7 @@ export const UpdatesSection = () => {
   return (
     <section id="updates" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="updates-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" aria-hidden="true" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
@@ -50,16 +50,19 @@ export const UpdatesSection = () => {
         </div>
 
         {/* Updates List */}
-        <div className={cn(SPACING.container.content, SPACING.stack.normal)}>
+        <div className={cn(SPACING.container.content, SPACING.stack.normal)} role="feed" aria-label="Latest updates and announcements" aria-live="polite">
           {updates.map((update, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, `card-elevated transition-all animate-slide-up group cursor-pointer ${
+              className={cn(SPACING.card.default, `card-elevated transition-all animate-slide-up group cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 ${
                 update.urgent 
                   ? 'border-primary/50 neon-glow hover:border-primary' 
                   : 'hover:neon-glow'
               }`)}
               style={{ animationDelay: `${index * 0.1}s` }}
+              role="article"
+              tabIndex={0}
+              aria-label={`${update.type}: ${update.title}, dated ${update.date}`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className={cn("flex-1", SPACING.stack.tight)}>
@@ -67,6 +70,8 @@ export const UpdatesSection = () => {
                     <Badge 
                       variant={update.urgent ? "default" : "secondary"}
                       className={update.urgent ? "glow-pulse" : ""}
+                      role={update.urgent ? "status" : undefined}
+                      aria-label={update.urgent ? `Urgent: ${update.badge}` : update.badge}
                     >
                       {update.badge}
                     </Badge>
@@ -85,7 +90,7 @@ export const UpdatesSection = () => {
                 
                 <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
                   update.urgent ? 'bg-primary/20 neon-glow' : 'bg-secondary/20'
-                }`}>
+                }`} aria-hidden="true">
                   {update.urgent ? (
                     <Clock className="text-primary" size={24} />
                   ) : (

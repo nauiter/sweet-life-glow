@@ -33,7 +33,8 @@ const Index = () => {
       <CountdownTimer />
       
       {/* Main Content */}
-      <HeroSection />
+      <main id="main-content">
+        <HeroSection />
       
       <Suspense fallback={<SectionSkeleton />}>
         <Section variant="light">
@@ -63,6 +64,7 @@ const Index = () => {
         <Footer />
         <FooterNauiterMaster />
       </Suspense>
+      </main>
       
       {/* Lazy load conditional/interactive components */}
       <Suspense fallback={null}>

@@ -57,9 +57,9 @@ export const FAQSection = () => {
   return (
     <section id="faq" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="faq-heading">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" aria-hidden="true" />
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" aria-hidden="true" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
@@ -78,7 +78,7 @@ export const FAQSection = () => {
 
         {/* FAQ Accordion */}
         <div className={SPACING.container.content}>
-          <Card className={cn(SPACING.card.spacious, "card-elevated animate-slide-up")} style={{ contain: 'layout style paint' }}>
+          <Card className={cn(SPACING.card.spacious, "card-elevated animate-slide-up")} style={{ contain: 'layout style paint' }} role="region" aria-label="Frequently Asked Questions List">
             <Accordion type="single" collapsible className={SPACING.stack.normal}>
               {faqs.map((faq, index) => (
                 <AccordionItem 
@@ -86,10 +86,13 @@ export const FAQSection = () => {
                   value={`item-${index}`}
                   className="border-b border-primary/20 last:border-0"
                 >
-                  <AccordionTrigger className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline")}>
+                  <AccordionTrigger 
+                    className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded")}
+                    aria-label={`Question: ${faq.question}`}
+                  >
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2")}>
+                  <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2")} role="region" aria-label={`Answer to: ${faq.question}`}>
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
