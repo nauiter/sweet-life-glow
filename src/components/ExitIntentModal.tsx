@@ -151,8 +151,8 @@ export const ExitIntentModal = () => {
               </div>
 
               {/* Urgency Message - Simplified */}
-              <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-2 text-center flex items-center justify-center">
-                <p className="text-xs text-foreground font-bold">
+              <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-2.5 text-center flex items-center justify-center min-h-[40px]">
+                <p className="text-xs text-foreground font-bold leading-none my-0">
                   ⏰ 90% discount ends December 31st!
                 </p>
               </div>
