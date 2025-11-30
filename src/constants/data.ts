@@ -8,6 +8,7 @@ export const EXTERNAL_LINKS = {
   instagram: "https://www.instagram.com/sweetlifeanimes",
   deviantArt: "https://www.deviantart.com/latthy",
   facebook: "https://www.facebook.com/profile.php?id=61581047814185",
+  iwara: "https://www.iwara.tv/profile/sweetlifeanimes",
   
   // Support
   paypal: "https://www.paypal.com/donate/?hosted_button_id=FXDHDJ5B3LPS2",
