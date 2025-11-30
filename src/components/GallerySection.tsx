@@ -79,29 +79,12 @@ const galleryArtworks = [
 const ITEMS_PER_BATCH = 8;
 const AUTO_ROTATE_INTERVAL = 10000; // 10 seconds - slower rotation
 
-// Neon border colors for gallery items
-const neonColors = [
-  {
-    border: 'border-white/40',
-    shadow: '0 0 20px rgba(255, 255, 255, 0.4)',
-    glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]'
-  },
-  {
-    border: 'border-pink-400/50',
-    shadow: '0 0 20px rgba(244, 114, 182, 0.4)',
-    glow: 'hover:shadow-[0_0_30px_rgba(244,114,182,0.6)]'
-  },
-  {
-    border: 'border-purple-400/50',
-    shadow: '0 0 20px rgba(192, 132, 252, 0.4)',
-    glow: 'hover:shadow-[0_0_30px_rgba(192,132,252,0.6)]'
-  },
-  {
-    border: 'border-cyan-400/50',
-    shadow: '0 0 20px rgba(34, 211, 238, 0.4)',
-    glow: 'hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]'
-  }
-];
+// Neon border style for gallery items - white only
+const neonStyle = {
+  border: 'border-white/40',
+  shadow: '0 0 20px rgba(255, 255, 255, 0.4)',
+  glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]'
+};
 
 // Shuffle function to randomize array
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -255,8 +238,6 @@ export const GallerySection = () => {
           {currentArtworks.map((artwork, index) => {
             const globalIndex = startIndex + index;
             const isImageLoaded = loadedImages.has(globalIndex);
-            const colorIndex = globalIndex % neonColors.length;
-            const neonStyle = neonColors[colorIndex];
             
             return (
               <Dialog key={`${artwork.id}-${currentBatch}`}>
