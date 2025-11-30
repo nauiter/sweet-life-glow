@@ -287,19 +287,18 @@ export const PurchaseNotifications = () => {
               })()}
             </div>
 
-            {/* Content - Right side - Optically Balanced */}
-            {/* pb-[3px] compensates the height difference between Name (14px) and CTA (10px), centering the middle line */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center pb-[3px]">
+            {/* Content - Right side - Equally distributed vertically */}
+            <div className="flex-1 min-w-0 flex flex-col justify-between py-1">
               {/* Line 1: Name */}
-              <p className="text-sm font-bold text-foreground truncate leading-none mb-[2px]">
+              <p className="text-sm font-bold text-foreground truncate leading-none">
                 {notification.name}
               </p>
-              {/* Line 2: Message - The Visual Axis */}
+              {/* Line 2: Message */}
               <p className="text-[11px] text-muted-foreground line-clamp-1 leading-none">
                 {notification.message}
               </p>
               {/* Line 3: CTA */}
-              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none mt-[2px]">
+              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none">
                 {notification.cta}
               </p>
             </div>
