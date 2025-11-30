@@ -223,7 +223,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Progress Dots */}
-        <div className={cn("flex justify-center gap-4", SPACING.margin.section)}>
+        <div className={cn("flex justify-center gap-4 mt-16 md:mt-20")}>
           {Array.from({ length: totalBatches }, (_, i) => (
             <button
               key={i}
