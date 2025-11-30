@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-8 max-w-6xl mx-auto items-start">
           {/* Brand */}
           <div className="flex flex-col">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Sweet Life Animes</h3>
+            <h3 className="font-bold mb-4 text-foreground text-base gradient-text">Sweet Life Animes</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Your neon-lit creative universe where anime art meets emotion and technique. 💜
             </p>
