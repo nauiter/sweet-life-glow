@@ -84,7 +84,7 @@ export const GallerySection = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => setSelectedImage(artwork)}
                 >
-                  <div className="relative aspect-square overflow-hidden">
+                  <div className="relative aspect-[9/16] overflow-hidden">
                     <img 
                       src={artwork.image} 
                       alt={artwork.title}
