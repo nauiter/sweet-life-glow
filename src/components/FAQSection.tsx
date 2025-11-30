@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, Sparkles } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -87,12 +87,13 @@ export const FAQSection = () => {
                   className="border-b border-primary/20 last:border-0"
                 >
                   <AccordionTrigger 
-                    className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded")}
+                    className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded flex items-start gap-3")}
                     aria-label={`Question: ${faq.question}`}
                   >
-                    {faq.question}
+                    <Sparkles className="text-muted-foreground/60 mt-1 flex-shrink-0" size={16} />
+                    <span className="flex-1">{faq.question}</span>
                   </AccordionTrigger>
-                  <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2")} role="region" aria-label={`Answer to: ${faq.question}`}>
+                  <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2 pl-8")} role="region" aria-label={`Answer to: ${faq.question}`}>
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
