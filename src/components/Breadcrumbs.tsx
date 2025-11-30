@@ -12,10 +12,8 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({ items = [] }: BreadcrumbsProps) => {
-  const defaultItems: BreadcrumbItem[] = [
-    { label: "Home", href: "#home" },
-    ...(items.length > 0 ? items : [{ label: "Sweet Life Animes", href: "#home", current: true }])
-  ];
+  const defaultItems: BreadcrumbItem[] = 
+    items.length > 0 ? items : [{ label: "Sweet Life Animes", href: "#home", current: true }];
 
   return (
     <nav 
@@ -36,40 +34,20 @@ export const Breadcrumbs = ({ items = [] }: BreadcrumbsProps) => {
               itemType="https://schema.org/ListItem"
               className="flex items-center gap-2"
             >
-              {index > 0 && (
-                <ChevronRight className="text-muted-foreground" size={16} aria-hidden="true" />
-              )}
-              
-              {index === 0 ? (
-                <a
-                  href={item.href}
-                  itemProp="item"
-                  className={cn(
-                    "flex items-center gap-1 transition-colors",
-                    item.current 
-                      ? "text-primary font-medium" 
-                      : "text-muted-foreground hover:text-primary"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  <Home size={16} aria-hidden="true" />
-                  <span itemProp="name">{item.label}</span>
-                </a>
-              ) : (
-                <a
-                  href={item.href}
-                  itemProp="item"
-                  className={cn(
-                    "transition-colors",
-                    item.current 
-                      ? "text-primary font-medium" 
-                      : "text-muted-foreground hover:text-primary"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  <span itemProp="name">{item.label}</span>
-                </a>
-              )}
+              <a
+                href={item.href}
+                itemProp="item"
+                className={cn(
+                  "flex items-center gap-2 transition-colors",
+                  item.current 
+                    ? "text-primary font-medium" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
+                aria-current={item.current ? "page" : undefined}
+              >
+                <Home size={16} aria-hidden="true" />
+                <span itemProp="name">{item.label}</span>
+              </a>
               
               <meta itemProp="position" content={String(index + 1)} />
             </li>
