@@ -76,14 +76,15 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed top-2 left-1/2 -translate-x-1/2 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
+        "fixed top-2 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[95%] max-w-4xl",
         isUrgent && "animate-pulse",
         isVisible ? "animate-slide-up opacity-100" : "-translate-y-full opacity-0"
       )}
       style={{
-        boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)"
+        boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)",
+        position: "fixed"
       }}
     >
       <div className="px-3 py-2 md:px-6 md:py-3">

@@ -78,7 +78,7 @@ const galleryArtworks = [
 ];
 
 const ITEMS_PER_BATCH_DESKTOP = 8;
-const ITEMS_PER_BATCH_MOBILE = 3;
+const ITEMS_PER_BATCH_MOBILE = 4;
 const AUTO_ROTATE_INTERVAL = 10000; // 10 seconds - slower rotation
 
 // Neon border style for gallery items - white only with smooth transitions
