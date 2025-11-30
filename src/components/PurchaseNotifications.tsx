@@ -6,6 +6,7 @@ interface Notification {
   id: string;
   name: string;
   message: string;
+  colorVariant: 'white' | 'pink' | 'purple';
 }
 
 const firstNames = [
@@ -46,6 +47,37 @@ const getRandomMessage = () => {
   return messages[Math.floor(Math.random() * messages.length)];
 };
 
+const getRandomColor = (): 'white' | 'pink' | 'purple' => {
+  const colors: ('white' | 'pink' | 'purple')[] = ['white', 'pink', 'purple'];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
+const getColorClasses = (variant: 'white' | 'pink' | 'purple') => {
+  switch (variant) {
+    case 'white':
+      return {
+        border: 'border-white/40',
+        shadow: '0 0 20px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)',
+        iconBg: 'bg-white/20',
+        iconColor: 'text-white'
+      };
+    case 'pink':
+      return {
+        border: 'border-pink-400/50',
+        shadow: '0 0 20px rgba(244, 114, 182, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)',
+        iconBg: 'bg-pink-500/20',
+        iconColor: 'text-pink-400'
+      };
+    case 'purple':
+      return {
+        border: 'border-purple-400/50',
+        shadow: '0 0 20px rgba(192, 132, 252, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)',
+        iconBg: 'bg-purple-500/20',
+        iconColor: 'text-purple-400'
+      };
+  }
+};
+
 // Create a subtle notification sound using Web Audio API
 const playNotificationSound = () => {
   try {
@@ -83,7 +115,8 @@ export const PurchaseNotifications = () => {
       const newNotification: Notification = {
         id: Math.random().toString(36).substr(2, 9),
         name: getRandomName(),
-        message: getRandomMessage()
+        message: getRandomMessage(),
+        colorVariant: getRandomColor()
       };
 
       setNotification(newNotification);
@@ -117,6 +150,8 @@ export const PurchaseNotifications = () => {
 
   if (!notification) return null;
 
+  const colorClasses = getColorClasses(notification.colorVariant);
+
   return (
     <div
       className={cn(
@@ -126,11 +161,17 @@ export const PurchaseNotifications = () => {
           : "-translate-x-full opacity-0"
       )}
     >
-      <div className="bg-card/95 backdrop-blur-md border-2 border-white/40 rounded-lg shadow-xl p-4 max-w-sm neon-glow" style={{ boxShadow: "0 0 20px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)" }}>
+      <div 
+        className={cn(
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-4 max-w-sm neon-glow",
+          colorClasses.border
+        )}
+        style={{ boxShadow: colorClasses.shadow }}
+      >
         <div className="flex items-start gap-3">
           {/* Icon */}
-          <div className="flex-shrink-0 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-            <ShoppingBag className="text-primary" size={20} />
+          <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
+            <ShoppingBag className={colorClasses.iconColor} size={20} />
           </div>
 
           {/* Content */}
