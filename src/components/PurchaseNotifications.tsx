@@ -237,7 +237,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2 px-3 w-[340px] min-h-[72px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2 px-3 w-[340px] min-h-[72px] neon-glow relative overflow-hidden flex flex-col justify-center",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -261,10 +261,10 @@ export const PurchaseNotifications = () => {
               <ShoppingBag className={colorClasses.iconColor} size={18} />
             </div>
 
-            {/* Content - Right side with optimized 3-line layout */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center gap-0.5">
+            {/* Content - Right side with perfectly centered 3-line layout */}
+            <div className="flex-1 min-w-0 flex flex-col justify-center gap-[2px]">
               {/* Line 1: Name */}
-              <p className="text-sm font-bold text-foreground truncate leading-none">
+              <p className="text-sm font-bold text-foreground truncate leading-none pt-[1px]">
                 {notification.name}
               </p>
               {/* Line 2: Message */}
@@ -272,7 +272,7 @@ export const PurchaseNotifications = () => {
                 {notification.message}
               </p>
               {/* Line 3: CTA */}
-              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none">
+              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none pb-[1px]">
                 {notification.cta}
               </p>
             </div>
