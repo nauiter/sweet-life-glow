@@ -50,7 +50,7 @@ export const ExitIntentModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent 
-        className="max-w-[85%] sm:max-w-[65%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[45%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-4 data-[state=open]:duration-500 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-bottom-4 data-[state=closed]:duration-300"
+        className="max-w-[85%] sm:max-w-[65%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[45%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl data-[state=open]:animate-bounce-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:duration-300"
         aria-describedby="exit-intent-description"
       >
         {/* Close Button */}
