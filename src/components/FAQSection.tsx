@@ -9,8 +9,10 @@ import { HelpCircle, Sparkles } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
+import { useParallax } from "@/hooks/useParallax";
 
 export const FAQSection = () => {
+  const parallaxOffset = useParallax(0.12);
   const faqs = [
     {
       question: "What is Sweet Life Animes?",
@@ -57,8 +59,12 @@ export const FAQSection = () => {
   return (
     <section id="faq" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="faq-heading">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" aria-hidden="true" />
-      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
+      <div 
+        className="absolute top-1/2 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
+        aria-hidden="true"
+        style={{ transform: `translateY(${-parallaxOffset}px)` }}
+      />
       <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" aria-hidden="true" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
