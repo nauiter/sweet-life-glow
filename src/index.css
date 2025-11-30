@@ -247,9 +247,9 @@ All colors MUST be HSL.
     margin-bottom: 32px;
   }
   
-  /* ✨ Separadores Visuais Delicados - Fios de seda */
+  /* ✨ Separadores Visuais Delicados - Fios de seda uniformes */
   section:not(:last-of-type) {
-    border-bottom: 1px solid hsl(var(--border) / 0.3);
+    border-bottom: 1px solid #e0e0e0;
     padding-bottom: 48px;
   }
   
@@ -257,6 +257,14 @@ All colors MUST be HSL.
   section[id*="resources"]:not(:last-of-type),
   section[id*="updates"]:not(:last-of-type) {
     padding-bottom: 32px;
+  }
+  
+  /* 🌈 Espaçamento Lateral em Blocos Secundários - Moldura elegante */
+  section[id*="faq"] > div,
+  section[id*="resources"] > div,
+  section[id*="updates"] > div {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   /* 🎯 CTAs - Espaço para respirar */
@@ -272,7 +280,7 @@ All colors MUST be HSL.
     padding: 16px 32px;
   }
 
-  /* 📚 FAQ - Pausa merecida */
+  /* 📚 FAQ - Pausa merecida com estrelas guia */
   [data-radix-accordion-item] {
     margin-bottom: 28px;
   }
@@ -282,7 +290,7 @@ All colors MUST be HSL.
   }
 
   [data-radix-accordion-item]:not(:last-child) {
-    border-bottom: 1px solid hsl(var(--border));
+    border-bottom: 1px solid #e0e0e0;
   }
 
   /* 🌌 Rodapé - Fim de capítulo */
