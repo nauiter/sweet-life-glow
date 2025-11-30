@@ -46,8 +46,12 @@
     <!-- Preload LCP image for faster rendering -->
     <link rel="preload" as="image" href="/images/sweet-character.jpg" fetchpriority="high">
     
-    <!-- Load fonts with optimized weights and font-display swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load fonts asynchronously to avoid render blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Fallback for users without JavaScript -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
