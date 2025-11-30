@@ -3,13 +3,18 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Zap, X, Gift, Heart, Sparkles, Palette, Users, BookOpen, Video } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const ExitIntentModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const isMobile = useIsMobile();
   const STORAGE_KEY = "sweet-life-exit-intent-shown";
 
   useEffect(() => {
+    // Exit intent only works on desktop
+    if (isMobile) return;
+    
     // Check if exit intent was already triggered
     const hasSeenExitIntent = localStorage.getItem(STORAGE_KEY);
     
@@ -36,7 +41,7 @@ export const ExitIntentModal = () => {
       clearTimeout(timer);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [hasTriggered]);
+  }, [hasTriggered, isMobile]);
 
   const handleCTA = () => {
     setIsOpen(false);
