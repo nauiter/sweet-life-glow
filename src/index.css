@@ -180,6 +180,24 @@ All colors MUST be HSL.
     padding-left: 32px;
     padding-right: 32px;
   }
+  
+  /* Enhanced button hover effects */
+  .button-hero,
+  [class*="variant-hero"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .button-hero:hover,
+  [class*="variant-hero"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(255, 105, 180, 0.3), 0 10px 10px -5px rgba(255, 105, 180, 0.2);
+  }
+  
+  /* December sale promo section styling */
+  .promo-section-desktop {
+    background: linear-gradient(135deg, #2c1e4a 0%, #1a1333 100%);
+    border: 2px solid rgba(255, 105, 180, 0.3);
+  }
 }
 
 @layer base {

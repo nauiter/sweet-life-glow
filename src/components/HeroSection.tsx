@@ -91,7 +91,15 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className={cn("container relative z-10 py-6 sm:py-8 md:py-12 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8", SPACING.section.x)}>
+      <div className="container relative z-10 py-6 sm:py-8 md:py-12 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
+        {/* Desktop: Title Above Grid */}
+        <div className="hidden lg:block text-center mb-12">
+          <h1 className="text-[36px] font-bold leading-[1.4] mb-4">
+            <span className="gradient-text block mb-2">Learn Anime Art</span>
+            <span className="neon-text block">with Sweet</span>
+          </h1>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Left: Character Image (Desktop) */}
           <div className="hidden lg:block relative animate-slide-up order-1">
@@ -103,7 +111,7 @@ export const HeroSection = () => {
                 height={600}
                 sizes="(max-width: 1024px) 0vw, 45vw"
                 loading="eager"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             </div>
@@ -114,13 +122,14 @@ export const HeroSection = () => {
           </div>
 
           {/* Right: Text Content */}
-          <div className={cn("animate-slide-up order-2", SPACING.stack.normal)}>
-            <h1 className="text-2xl sm:text-3xl font-bold leading-[1.4] mb-5 sm:mb-6 text-center mt-10 sm:mt-0 md:text-[28px] md:text-center lg:text-[36px] lg:text-left lg:mt-0">
+          <div className={cn("animate-slide-up order-2 lg:pl-8", SPACING.stack.normal)}>
+            {/* Mobile/Tablet Title */}
+            <h1 className="lg:hidden text-2xl sm:text-3xl font-bold leading-[1.4] mb-5 sm:mb-6 text-center mt-10 sm:mt-0 md:text-[28px] md:text-center">
               <span className="gradient-text block mb-2">Learn Anime Art</span>
               <span className="neon-text block">with Sweet</span>
             </h1>
             
-            <div className="space-y-4 mb-5 sm:mb-6 md:mb-8">
+            <div className="space-y-4 mb-8 lg:mb-10">
               <p className="text-muted-foreground max-w-xl mx-auto md:mx-auto lg:mx-0 px-4 md:px-0 lg:px-0 text-center md:text-center lg:text-left leading-relaxed text-sm sm:text-base lg:text-[18px] lg:leading-[1.6]">
                 Hey cutie! 💜 Ready to level up your art skills?
               </p>
@@ -130,15 +139,15 @@ export const HeroSection = () => {
             </div>
             
             {/* Speech Bubble */}
-            <div className={cn("relative bg-card/70 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-primary/30 neon-glow max-w-md mx-auto lg:mx-0 mb-5 sm:mb-6 md:mb-8")} role="complementary" aria-label="Sweet's message to students">
+            <div className="relative bg-card/70 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-primary/30 neon-glow max-w-md mx-auto lg:mx-0 mb-8 lg:mb-10" role="complementary" aria-label="Sweet's message to students">
               <p className="text-foreground italic text-xs sm:text-sm lg:text-base leading-relaxed">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
               <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/70 border-l border-b border-primary/30 transform rotate-45" aria-hidden="true" />
             </div>
             
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 md:px-0 lg:px-0 justify-center md:justify-center lg:justify-center items-center">
+            {/* CTAs - Desktop: Centralized */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-6 mb-8 lg:mb-10 px-4 md:px-0 lg:px-0 justify-center lg:justify-center items-center">
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
@@ -149,7 +158,7 @@ export const HeroSection = () => {
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200 rounded-xl shadow-lg hover:shadow-xl"
+                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/50"
                 >
                   Enroll Now 💜
                   <Heart className="group-hover:scale-110 transition-transform" />
@@ -165,7 +174,7 @@ export const HeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200 rounded-xl"
+                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-300 rounded-xl shadow-md hover:shadow-lg"
                 >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
@@ -173,28 +182,28 @@ export const HeroSection = () => {
               </a>
             </div>
             
-            {/* December Offer Banner */}
-            <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-2xl border border-primary/40 neon-glow mt-5 sm:mt-6 mx-4 md:mx-0 lg:mx-0 max-w-3xl lg:max-w-none" role="region" aria-label="Special December offer">
-              <div className="absolute -top-2.5 -right-2 sm:-right-2.5">
+            {/* December Offer Banner - Desktop: Horizontal Stripe */}
+            <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 neon-glow mt-12 mx-4 md:mx-0 lg:mx-0 max-w-3xl lg:max-w-none overflow-hidden" role="region" aria-label="Special December offer">
+              <div className="absolute -top-2.5 -right-2 sm:-right-2.5 z-10">
                 <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
                   🔥 90% OFF
                 </span>
               </div>
               
-              {/* Desktop Layout: Horizontal */}
-              <div className="hidden lg:flex items-center justify-between gap-6">
+              {/* Desktop Layout: Full Horizontal Stripe */}
+              <div className="hidden lg:flex items-center justify-between gap-8 p-6 lg:p-8 bg-[#2c1e4a] rounded-2xl">
                 {/* Left: Offer Details */}
-                <div className="flex-1 space-y-2">
+                <div className="flex-1 space-y-3">
                   <div className="flex items-center gap-3">
                     <Sparkles className="text-primary flex-shrink-0" size={24} />
                     <h3 className="text-2xl font-bold gradient-text">December Sale!</h3>
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed">
+                  <p className="text-base text-white/90 leading-relaxed">
                     Complete course, AI magic, premium brushes & lifetime access. ✨
                   </p>
                   <div className="flex items-center gap-3">
-                    <span className="text-lg text-muted-foreground line-through">$297</span>
-                    <span className="text-4xl text-primary font-black">$29</span>
+                    <span className="text-xl text-white/70 line-through">$297</span>
+                    <span className="text-5xl text-white font-black">$29</span>
                   </div>
                 </div>
                 
@@ -209,16 +218,16 @@ export const HeroSection = () => {
                   <Button 
                     variant="hero" 
                     size="lg" 
-                    className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold whitespace-nowrap px-8 shadow-lg hover:shadow-xl"
+                    className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90"
                   >
                     Enroll for $29 (Save $268!)
-                    <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
+                    <Sparkles className="group-hover:scale-110 transition-transform" size={18} />
                   </Button>
                 </a>
               </div>
               
               {/* Mobile/Tablet Layout: Vertical */}
-              <div className="lg:hidden space-y-3">
+              <div className="lg:hidden space-y-3 p-4 sm:p-5">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-2 mb-2">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text flex items-center gap-2">
                     <Sparkles className="text-primary flex-shrink-0" size={20} />
