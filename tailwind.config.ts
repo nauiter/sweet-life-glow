@@ -159,7 +159,7 @@ export default {
           '@apply bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer transition-all duration-500 ease-out hover:neon-glow': {},
         },
         '.card-gradient': {
-          '@apply bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow': {},
+          '@apply bg-card/70 backdrop-blur-sm border-primary/20 neon-glow': {},
         },
         '.card-highlight': {
           '@apply bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border-primary/40 neon-glow': {},
