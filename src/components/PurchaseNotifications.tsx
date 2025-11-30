@@ -171,7 +171,7 @@ export const PurchaseNotifications = () => {
     >
       <div 
         className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2.5 max-w-[280px] neon-glow relative overflow-hidden",
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2 max-w-[140px] neon-glow relative overflow-hidden",
           colorClasses.border,
           "transition-all duration-700 ease-in-out"
         )}
@@ -192,7 +192,7 @@ export const PurchaseNotifications = () => {
         {/* Urgency Badge */}
         <div className="absolute -top-1 -right-1">
           <span className={cn(
-            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg animate-pulse",
+            "inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold shadow-lg animate-pulse",
             notification.colorVariant === 'pink' && "bg-pink-500 text-white",
             notification.colorVariant === 'purple' && "bg-purple-500 text-white",
             notification.colorVariant === 'white' && "bg-white text-primary"
@@ -201,25 +201,19 @@ export const PurchaseNotifications = () => {
           </span>
         </div>
 
-        <div className="flex items-start gap-2 relative z-10">
-          {/* Icon */}
-          <div className={cn("flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
-            <ShoppingBag className={colorClasses.iconColor} size={16} />
+        <div className="flex flex-col items-center text-center gap-1 relative z-10">
+          {/* Icon - Centralized */}
+          <div className={cn("w-6 h-6 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
+            <ShoppingBag className={colorClasses.iconColor} size={12} />
           </div>
 
-          {/* Content */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1 mb-0.5">
-              <p className="text-xs font-bold text-foreground truncate">
-                {notification.name}
-              </p>
-              <Sparkles className="text-secondary flex-shrink-0" size={11} />
-            </div>
-            <p className="text-[11px] text-muted-foreground leading-snug line-clamp-1">
-              {notification.message}
+          {/* Content - Compact */}
+          <div className="w-full">
+            <p className="text-[10px] font-bold text-foreground truncate leading-tight">
+              {notification.name}
             </p>
-            <p className="text-[10px] text-primary/70 mt-0.5">
-              Just now
+            <p className="text-[9px] text-muted-foreground leading-tight line-clamp-1">
+              {notification.message}
             </p>
           </div>
         </div>
