@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Zap, X, Gift, Heart, Sparkles, Palette, Users, BookOpen, Video } from "lucide-react";
+import { Zap, Gift, Heart, Sparkles, Palette, Users, BookOpen, Video } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -75,15 +75,6 @@ export const ExitIntentModal = () => {
         className="max-w-[85%] sm:max-w-[65%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[45%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:duration-500 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:duration-300"
         aria-describedby="exit-intent-description"
       >
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-3 right-3 z-50 p-1.5 rounded-full bg-background/50 hover:bg-background/80 transition-colors group"
-          aria-label="Close exit intent modal"
-        >
-          <X className="text-muted-foreground group-hover:text-foreground" size={18} />
-        </button>
-
         {/* Animated Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 animate-fade-in" style={{ animationDuration: '0.6s' }} />
