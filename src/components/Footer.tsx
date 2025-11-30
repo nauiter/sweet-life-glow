@@ -7,9 +7,9 @@ export const Footer = () => {
   return (
     <footer className="relative pt-6 pb-8 border-t" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-20 xl:gap-24 mb-8 max-w-5xl mx-auto items-start justify-items-center text-center">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-20 xl:gap-24 mb-8 max-w-5xl mx-auto items-start justify-items-center md:justify-items-start">
           {/* Brand */}
-          <div className="flex flex-col max-w-xs items-center">
+          <div className="flex flex-col max-w-xs">
             <h3 className="font-bold mb-4 text-foreground text-base gradient-text">Sweet Life Animes</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Your neon-lit creative universe where anime art meets emotion and technique. 💜
@@ -17,7 +17,7 @@ export const Footer = () => {
           </div>
           
           {/* Connect & Support */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col">
             <h4 className="font-bold mb-4 text-foreground text-base">Connect & Support</h4>
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li>
@@ -79,7 +79,7 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col">
             <h4 className="font-bold mb-4 text-foreground text-base">Legal</h4>
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li>
