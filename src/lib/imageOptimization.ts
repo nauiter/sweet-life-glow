@@ -1,6 +1,7 @@
 /**
  * Image Optimization Utilities
  * Supports Cloudinary and Imgix CDN integration
+ * Includes WebP and AVIF format support with automatic fallbacks
  */
 
 type CDNProvider = 'cloudinary' | 'imgix' | 'none';
@@ -11,6 +12,12 @@ interface ImageOptions {
   quality?: number;
   format?: 'auto' | 'webp' | 'avif' | 'jpg' | 'png';
   fit?: 'cover' | 'contain' | 'fill' | 'scale-down';
+}
+
+interface ModernImageFormats {
+  avif: string;
+  webp: string;
+  fallback: string;
 }
 
 // Configure your CDN provider here
@@ -152,6 +159,79 @@ export const lazyLoadImage = (
 };
 
 /**
+ * Generate modern image format URLs (AVIF, WebP, fallback)
+ * Perfect for use with <picture> element
+ */
+export const getModernImageFormats = (
+  imagePath: string,
+  options: ImageOptions = {}
+): ModernImageFormats => {
+  return {
+    avif: getOptimizedImageUrl(imagePath, { ...options, format: 'avif' }),
+    webp: getOptimizedImageUrl(imagePath, { ...options, format: 'webp' }),
+    fallback: getOptimizedImageUrl(imagePath, { ...options, format: options.format === 'png' ? 'png' : 'jpg' })
+  };
+};
+
+/**
+ * Generate responsive srcset for multiple formats
+ * Returns object with AVIF, WebP, and fallback srcsets
+ */
+export const generateModernSrcSets = (
+  imagePath: string,
+  widths: number[] = [640, 750, 828, 1080, 1200, 1920],
+  options: Omit<ImageOptions, 'width'> = {}
+): ModernImageFormats => {
+  const generateFormatSrcSet = (format: 'avif' | 'webp' | 'jpg') => {
+    return widths
+      .map((width) => {
+        const url = getOptimizedImageUrl(imagePath, { 
+          ...options, 
+          width, 
+          format: format === 'jpg' ? (options.format === 'png' ? 'png' : 'jpg') : format 
+        });
+        return `${url} ${width}w`;
+      })
+      .join(', ');
+  };
+
+  return {
+    avif: generateFormatSrcSet('avif'),
+    webp: generateFormatSrcSet('webp'),
+    fallback: generateFormatSrcSet('jpg')
+  };
+};
+
+/**
+ * Preload critical images with modern formats
+ */
+export const preloadModernImage = (
+  src: string,
+  options: ImageOptions = {},
+  formats: ('avif' | 'webp' | 'jpg')[] = ['avif', 'webp']
+) => {
+  formats.forEach((format) => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.type = `image/${format}`;
+    
+    const optimizedSrc = getOptimizedImageUrl(src, { ...options, format });
+    link.href = optimizedSrc;
+    
+    if (options.width) {
+      const srcset = widths => widths
+        .map(w => `${getOptimizedImageUrl(src, { ...options, width: w, format })} ${w}w`)
+        .join(', ');
+      link.setAttribute('imagesrcset', srcset([640, 750, 828, 1080, 1200, 1920]));
+      link.setAttribute('imagesizes', '100vw');
+    }
+    
+    document.head.appendChild(link);
+  });
+};
+
+/**
  * Configure CDN provider (call this in your app initialization)
  */
 export const configureCDN = (
@@ -172,7 +252,10 @@ export const configureCDN = (
 export default {
   getOptimizedImageUrl,
   generateSrcSet,
+  getModernImageFormats,
+  generateModernSrcSets,
   preloadImage,
+  preloadModernImage,
   lazyLoadImage,
   configureCDN
 };
