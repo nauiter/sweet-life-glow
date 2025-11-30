@@ -46,6 +46,13 @@
     <!-- Preload LCP image for faster rendering -->
     <link rel="preload" as="image" href="/images/sweet-character.jpg" fetchpriority="high">
     
+    <!-- Preload critical fonts to eliminate render blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/orbitron/v35/yMJRMIlzdpvBhQQL_Qq7dy1biN15.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" crossorigin>
+    
     <!-- Load fonts asynchronously to avoid render blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Fallback for users without JavaScript -->
