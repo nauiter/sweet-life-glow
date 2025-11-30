@@ -71,19 +71,19 @@ export const Navigation = () => {
         )}
       >
         <div className="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+          <div className="flex items-center md:justify-center lg:justify-between h-16">
+            {/* Logo - Hidden on tablets (md), visible on desktop (lg+) */}
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, "#home")}
-              className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
+              className="hidden lg:block text-xl font-bold gradient-text hover:scale-105 transition-transform"
               aria-label="Sweet Life Animes - Go to home"
             >
               Sweet Life Animes
             </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop/Tablet Navigation */}
+            <div className="hidden md:flex items-center gap-1 lg:gap-1">
               {navItems.map((item) => (
                 <a
                   key={item.id}
@@ -105,7 +105,7 @@ export const Navigation = () => {
                 rel="noopener noreferrer"
                 aria-label="Enroll in course"
               >
-                <Button variant="default" size="sm" className="ml-4 hover:scale-105 transition-transform">
+                <Button variant="default" size="sm" className="ml-2 lg:ml-4 hover:scale-105 transition-transform">
                   Enroll Now
                 </Button>
               </a>
