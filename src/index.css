@@ -199,7 +199,7 @@ All colors MUST be HSL.
     padding-right: 16px;
   }
 
-  /* ✨ Títulos e Cabeçalhos - Impacto visual uniforme */
+  /* ✨ Títulos e Cabeçalhos - Melodia uniforme */
   h1, h2, h3 {
     margin-top: 48px;
     margin-bottom: 24px;
@@ -251,7 +251,7 @@ All colors MUST be HSL.
     padding: 28px;
   }
   
-  /* 🎨 Uniformidade de Seções Principais - Sinfonia visual */
+  /* 🎨 Uniformidade de Seções Principais - Melodia visual */
   section {
     margin-top: 48px;
     margin-bottom: 48px;
@@ -261,7 +261,7 @@ All colors MUST be HSL.
     margin-top: 0;
   }
   
-  /* 🔧 Blocos Secundários - Clareiras equilibradas */
+  /* 🔧 Blocos Secundários - Clareiras equilibradas com fundo suave */
   section[id*="faq"],
   section[id*="resources"],
   section[id*="updates"] {
@@ -269,7 +269,13 @@ All colors MUST be HSL.
     margin-bottom: 32px;
   }
   
-  /* ✨ Separadores Visuais Delicados - Fios de seda uniformes */
+  /* 🌈 Fundo alternado para blocos secundários */
+  section[id*="faq"],
+  section[id*="updates"] {
+    background-color: #fafafa;
+  }
+  
+  /* ✨ Separadores Visuais Uniformes - Fios de seda suaves */
   section:not(:last-of-type) {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 48px;
@@ -302,7 +308,7 @@ All colors MUST be HSL.
     padding: 16px 32px;
   }
 
-  /* 📚 FAQ - Pausa merecida com estrelas guia */
+  /* 📚 FAQ - Pausa merecida com estrelas guia uniformes */
   [data-radix-accordion-item] {
     margin-bottom: 28px;
   }
@@ -315,10 +321,11 @@ All colors MUST be HSL.
     border-bottom: 1px solid #e0e0e0;
   }
 
-  /* 🌌 Rodapé - Fim de capítulo */
+  /* 🌌 Rodapé - Fim de capítulo harmonioso */
   footer {
     padding: 40px;
     line-height: 1.6;
+    border-top: 1px solid #e0e0e0;
   }
 
   footer p {
