@@ -110,7 +110,7 @@ export const ExitIntentModal = () => {
                   Full course + premium bonuses for just $29!
                 </p>
 
-                {/* Quick Benefits - 4 items */}
+                {/* Quick Benefits - 8 items in 2 columns */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   <QuickBenefit 
                     icon={<Sparkles className="text-primary" size={14} />}
@@ -127,6 +127,25 @@ export const ExitIntentModal = () => {
                   <QuickBenefit 
                     icon={<Zap className="text-accent" size={14} />}
                     text="Secret Class"
+                  />
+                </div>
+                
+                <div className="grid grid-cols-2 gap-2 mb-3">
+                  <QuickBenefit 
+                    icon={<Sparkles className="text-accent" size={14} />}
+                    text="AI Tools"
+                  />
+                  <QuickBenefit 
+                    icon={<Gift className="text-primary" size={14} />}
+                    text="Bonus Content"
+                  />
+                  <QuickBenefit 
+                    icon={<Zap className="text-secondary" size={14} />}
+                    text="Weekly Updates"
+                  />
+                  <QuickBenefit 
+                    icon={<Heart className="text-accent" fill="currentColor" size={14} />}
+                    text="Community"
                   />
                 </div>
               </div>
@@ -177,7 +196,7 @@ export const ExitIntentModal = () => {
 
 const QuickBenefit = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
   <div className="flex items-center gap-1.5 bg-background/50 backdrop-blur-sm rounded-lg p-2 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 group">
-    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300" style={{ animation: 'pulse 3s ease-in-out infinite' }}>
       {icon}
     </div>
     <span className="text-[10px] text-foreground font-semibold">
