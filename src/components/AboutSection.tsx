@@ -122,6 +122,8 @@ export const AboutSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent transition-opacity duration-500 group-hover/image:opacity-80" />
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
               </div>
               <Heart className="absolute -top-3 -right-3 text-primary w-8 h-8 animate-float" fill="currentColor" />
             </div>
