@@ -7,10 +7,10 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const sectionVariants = {
-  light: "bg-card/30",
-  dark: "bg-gradient-to-b from-background via-card/50 to-background",
-  highlight: "bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10",
-  default: "bg-background"
+  light: "",
+  dark: "",
+  highlight: "",
+  default: ""
 };
 
 export const Section = React.forwardRef<HTMLElement, SectionProps>(
