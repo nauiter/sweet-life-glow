@@ -22,7 +22,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 lg:pt-32 pb-8" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-8" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements with Parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
@@ -93,7 +93,7 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
         {/* Title - Centered Below Countdown */}
-        <div className="text-center mb-6 md:mb-8 lg:mb-10 mt-6 lg:mt-0">
+        <div className="text-center mb-6 md:mb-8 lg:mb-10">
           <h1 className="font-bold leading-[1.2]" style={{ fontSize: 'clamp(32px, 5.5vw, 52px)' }}>
             <span className="gradient-text neon-text">Learn Anime Art with Sweet</span>
           </h1>
