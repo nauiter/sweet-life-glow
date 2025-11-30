@@ -41,8 +41,8 @@ export const TYPOGRAPHY = {
 
 export const SPACING = {
   section: {
-    // Vertical padding: 40px → 56px → 80px (mobile-optimized)
-    y: 'py-10 sm:py-14 md:py-16 lg:py-20',
+    // Vertical padding generoso: 80px → 96px → 112px → 128px
+    y: 'py-20 sm:py-24 md:py-28 lg:py-32',
     // Horizontal padding: 16px → 20px → 24px → 32px
     x: 'px-4 sm:px-5 md:px-6 lg:px-8',
   },
