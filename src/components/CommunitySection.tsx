@@ -59,7 +59,7 @@ export const CommunitySection = () => {
   return (
     <section id="community" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="community-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
