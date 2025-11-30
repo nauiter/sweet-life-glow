@@ -52,7 +52,7 @@ export const ExitIntentModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent 
-        className="max-w-3xl bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 overflow-hidden shadow-2xl"
+        className="max-w-[95%] sm:max-w-[80%] lg:max-w-[60%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 overflow-hidden shadow-2xl"
         aria-describedby="exit-intent-description"
       >
         {/* Close Button */}
