@@ -1,3 +1,5 @@
+import * as React from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles, ShoppingBag } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
@@ -5,22 +7,87 @@ import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only track scroll on desktop
+      if (window.innerWidth >= 1024) {
+        setScrollY(window.scrollY);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-8 md:pt-[220px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements with Parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-32 right-20 w-40 h-40 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent/30 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
+        <div 
+          className="absolute top-20 left-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl animate-float"
+          style={{
+            transform: `translateY(${scrollY * 0.15}px)`,
+            transition: "transform 0.1s ease-out"
+          }}
+        />
+        <div 
+          className="absolute bottom-32 right-20 w-40 h-40 bg-secondary/30 rounded-full blur-3xl animate-float" 
+          style={{ 
+            animationDelay: '1s',
+            transform: `translateY(${scrollY * -0.2}px)`,
+            transition: "transform 0.1s ease-out"
+          }} 
+        />
+        <div 
+          className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent/30 rounded-full blur-2xl animate-float" 
+          style={{ 
+            animationDelay: '2s',
+            transform: `translateY(${scrollY * 0.1}px)`,
+            transition: "transform 0.1s ease-out"
+          }} 
+        />
       </div>
       
-      {/* Sparkles */}
+      {/* Sparkles with Parallax */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <Sparkles className="absolute top-1/4 left-1/4 text-primary animate-sparkle" size={20} />
-        <Sparkles className="absolute top-1/3 right-1/3 text-secondary animate-sparkle" size={16} style={{ animationDelay: '0.5s' }} />
-        <Sparkles className="absolute bottom-1/3 left-1/2 text-accent animate-sparkle" size={18} style={{ animationDelay: '1s' }} />
-        <Heart className="absolute top-1/2 right-1/4 text-primary animate-sparkle" size={16} style={{ animationDelay: '1.5s' }} />
+        <Sparkles 
+          className="absolute top-1/4 left-1/4 text-primary animate-sparkle" 
+          size={20}
+          style={{
+            transform: `translateY(${scrollY * 0.25}px)`,
+            transition: "transform 0.1s ease-out"
+          }}
+        />
+        <Sparkles 
+          className="absolute top-1/3 right-1/3 text-secondary animate-sparkle" 
+          size={16} 
+          style={{ 
+            animationDelay: '0.5s',
+            transform: `translateY(${scrollY * -0.15}px)`,
+            transition: "transform 0.1s ease-out"
+          }} 
+        />
+        <Sparkles 
+          className="absolute bottom-1/3 left-1/2 text-accent animate-sparkle" 
+          size={18} 
+          style={{ 
+            animationDelay: '1s',
+            transform: `translateY(${scrollY * 0.3}px)`,
+            transition: "transform 0.1s ease-out"
+          }} 
+        />
+        <Heart 
+          className="absolute top-1/2 right-1/4 text-primary animate-sparkle" 
+          size={16} 
+          style={{ 
+            animationDelay: '1.5s',
+            transform: `translateY(${scrollY * -0.25}px)`,
+            transition: "transform 0.1s ease-out"
+          }} 
+        />
       </div>
 
       {/* Content */}
