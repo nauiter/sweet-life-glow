@@ -2,9 +2,6 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
-import artSample1 from "@/assets/art-sample-1.jpg";
-import artSample2 from "@/assets/art-sample-2.jpg";
-import artSample3 from "@/assets/art-sample-3.jpg";
 import artSample4 from "@/assets/art-sample-4.jpg";
 import artSample5 from "@/assets/art-sample-5.jpg";
 import artSample6 from "@/assets/art-sample-6.jpg";
@@ -27,25 +24,22 @@ import { cn } from "@/lib/utils";
 
 // Gallery artworks collection
 const galleryArtworks = [
-  { id: 1, image: artSample1, title: "Digital Workspace Magic", description: "Learn professional workflow" },
-  { id: 2, image: artSample2, title: "Character Design Mastery", description: "Express emotions through poses" },
-  { id: 3, image: artSample3, title: "Creative Process", description: "From sketch to masterpiece" },
-  { id: 4, image: artSample4, title: "Fashion Elegance", description: "Master clothing design and details" },
-  { id: 5, image: artSample5, title: "Outdoor Adventure", description: "Dynamic poses in natural settings" },
-  { id: 6, image: artSample6, title: "Indoor Portrait", description: "Perfect lighting and composition" },
-  { id: 7, image: artSample7, title: "Night Scene Mood", description: "Atmospheric lighting techniques" },
-  { id: 8, image: artSample8, title: "Dynamic Action Pose", description: "Movement and energy expression" },
-  { id: 9, image: artSample9, title: "Perspective Mastery", description: "Advanced angle techniques" },
-  { id: 10, image: artSample10, title: "Gaming Vibes", description: "Modern character personality" },
-  { id: 11, image: artSample11, title: "Energetic Expression", description: "Capturing emotion and life" },
-  { id: 12, image: artSample12, title: "Workspace Focus", description: "Digital artist lifestyle" },
-  { id: 13, image: artSample13, title: "Mystical Atmosphere", description: "Fantasy lighting and mood" },
-  { id: 14, image: artSample14, title: "Elegant Poses", description: "Graceful character positioning" },
-  { id: 15, image: artSample15, title: "Cozy Moments", description: "Intimate scene composition" },
-  { id: 16, image: artSample16, title: "Power Action", description: "Dynamic energy and motion" },
-  { id: 17, image: artSample17, title: "Combat Scene", description: "Action-packed illustration" },
-  { id: 18, image: artSample18, title: "Fierce Character", description: "Strong personality design" },
-  { id: 19, image: artSample19, title: "Spring Fantasy", description: "Colorful seasonal art" }
+  { id: 1, image: artSample4, title: "Fashion Elegance", description: "Master clothing design and details" },
+  { id: 2, image: artSample5, title: "Outdoor Adventure", description: "Dynamic poses in natural settings" },
+  { id: 3, image: artSample6, title: "Indoor Portrait", description: "Perfect lighting and composition" },
+  { id: 4, image: artSample7, title: "Night Scene Mood", description: "Atmospheric lighting techniques" },
+  { id: 5, image: artSample8, title: "Dynamic Action Pose", description: "Movement and energy expression" },
+  { id: 6, image: artSample9, title: "Perspective Mastery", description: "Advanced angle techniques" },
+  { id: 7, image: artSample10, title: "Gaming Vibes", description: "Modern character personality" },
+  { id: 8, image: artSample11, title: "Energetic Expression", description: "Capturing emotion and life" },
+  { id: 9, image: artSample12, title: "Workspace Focus", description: "Digital artist lifestyle" },
+  { id: 10, image: artSample13, title: "Mystical Atmosphere", description: "Fantasy lighting and mood" },
+  { id: 11, image: artSample14, title: "Elegant Poses", description: "Graceful character positioning" },
+  { id: 12, image: artSample15, title: "Cozy Moments", description: "Intimate scene composition" },
+  { id: 13, image: artSample16, title: "Power Action", description: "Dynamic energy and motion" },
+  { id: 14, image: artSample17, title: "Combat Scene", description: "Action-packed illustration" },
+  { id: 15, image: artSample18, title: "Fierce Character", description: "Strong personality design" },
+  { id: 16, image: artSample19, title: "Spring Fantasy", description: "Colorful seasonal art" }
 ];
 
 const ITEMS_PER_PAGE = 9;
