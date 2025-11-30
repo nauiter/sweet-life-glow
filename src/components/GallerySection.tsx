@@ -110,6 +110,8 @@ export const GallerySection = () => {
   const [shuffledArtworks] = useState(() => shuffleArray(galleryArtworks));
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const ITEMS_PER_BATCH = isMobile ? ITEMS_PER_BATCH_MOBILE : ITEMS_PER_BATCH_DESKTOP;
   const totalBatches = Math.ceil(shuffledArtworks.length / ITEMS_PER_BATCH);
@@ -208,6 +210,29 @@ export const GallerySection = () => {
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
+  const handleCardMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    if (isMobile) return; // Disable 3D effect on mobile for performance
+    
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calculate rotation values (max ±15 degrees)
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+    
+    setMousePosition({ x: rotateY, y: rotateX });
+    setHoveredCard(index);
+  }, [isMobile]);
+
+  const handleCardMouseLeave = useCallback(() => {
+    setHoveredCard(null);
+    setMousePosition({ x: 0, y: 0 });
+  }, []);
+
   return (
     <section id="gallery" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="gallery-heading">
       {/* Background */}
@@ -243,6 +268,7 @@ export const GallerySection = () => {
         {/* Gallery Grid */}
         <div 
           className={cn("grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 lg:gap-10 mb-12 md:mb-16", SPACING.container.full)}
+          style={{ perspective: '1000px' }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           role="list"
@@ -251,6 +277,12 @@ export const GallerySection = () => {
           {currentArtworks.map((artwork, index) => {
             const globalIndex = startIndex + index;
             const isImageLoaded = loadedImages.has(globalIndex);
+            const isHovered = hoveredCard === index;
+            
+            // Calculate 3D transform
+            const transform3D = isHovered && !isMobile
+              ? `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg) translateZ(20px) scale(1.05)`
+              : 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
             
             return (
               <Dialog key={`${artwork.id}-${currentBatch}`}>
@@ -260,20 +292,34 @@ export const GallerySection = () => {
                     data-index={globalIndex}
                     className={cn(
                       "group overflow-hidden bg-card/50 backdrop-blur-sm border-2 cursor-pointer",
-                      "transition-all duration-500 ease-out",
+                      "transition-all duration-300 ease-out",
                       neonStyle.border,
                       neonStyle.glow,
                       isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"
                     )}
                     style={{ 
                       animationDelay: `${index * 0.1}s`,
-                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1), ${neonStyle.transition}`,
-                      willChange: isTransitioning ? 'opacity, transform' : 'auto',
-                      boxShadow: neonStyle.shadow
+                      transform: transform3D,
+                      transition: isHovered 
+                        ? 'transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease'
+                        : 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease',
+                      willChange: isHovered ? 'transform' : 'auto',
+                      boxShadow: isHovered 
+                        ? '0 25px 50px -12px rgba(255, 255, 255, 0.25), 0 0 30px rgba(255, 255, 255, 0.6)' 
+                        : neonStyle.shadow,
+                      transformStyle: 'preserve-3d'
                     }}
+                    onMouseMove={(e) => handleCardMouseMove(e, index)}
+                    onMouseLeave={handleCardMouseLeave}
                     onClick={() => setSelectedImage(artwork)}
                   >
-                    <div className="relative aspect-[9/16] overflow-hidden bg-muted">
+                    <div 
+                      className="relative aspect-[9/16] overflow-hidden bg-muted"
+                      style={{
+                        transform: isHovered ? 'translateZ(10px)' : 'translateZ(0)',
+                        transition: 'transform 0.3s ease-out'
+                      }}
+                    >
                       {isImageLoaded ? (
                         <img 
                           src={artwork.image} 
