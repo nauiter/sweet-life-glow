@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className="relative pt-6 pb-8 border-t" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-20 xl:gap-24 mb-8 max-w-5xl mx-auto items-start justify-items-center md:justify-items-start">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-16 xl:gap-20 mb-8 max-w-6xl mx-auto items-start justify-items-center">
           {/* Brand */}
           <div className="flex flex-col max-w-xs">
             <h3 className="font-bold mb-4 text-foreground text-base gradient-text">Sweet Life Animes</h3>
