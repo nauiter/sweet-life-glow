@@ -57,20 +57,33 @@ export const AboutSection = () => {
         </div>
 
         {/* Who's Sweet Card */}
-        <Card className={cn(SPACING.container.content, SPACING.card.spacious, "card-solid animate-slide-up", SPACING.margin.hero)}>
-          <div className="flex items-start gap-4 md:gap-6">
-            <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
+        <Card className={cn(SPACING.container.content, "p-4 sm:p-6 md:p-8", "card-solid animate-slide-up", SPACING.margin.hero)}>
+          <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-6">
+            <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow mx-auto sm:mx-0">
               <Heart size={24} className="text-white md:w-8 md:h-8" fill="currentColor" />
             </div>
-            <div className={SPACING.stack.normal}>
+            <div className="flex-1 text-center sm:text-left space-y-4">
               <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Who's Sweet? 💜</h3>
-              <p className="text-foreground leading-relaxed">
-                I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started. Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="badge-primary">VTuber Artist</span>
-                <span className="badge-secondary">Digital Illustrator</span>
-                <span className="badge-accent">Creative Mentor</span>
+              
+              <div className="space-y-3 max-w-2xl mx-auto sm:mx-0">
+                <p className="text-foreground leading-relaxed text-base">
+                  I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started.
+                </p>
+                <p className="text-foreground leading-relaxed text-base">
+                  Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary/30 border-2 border-primary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
+                  VTuber Artist
+                </span>
+                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-secondary/20 to-secondary/30 border-2 border-secondary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
+                  Digital Illustrator
+                </span>
+                <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/20 to-accent/30 border-2 border-accent/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform">
+                  Creative Mentor
+                </span>
               </div>
             </div>
           </div>

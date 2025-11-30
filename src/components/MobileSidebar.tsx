@@ -33,7 +33,7 @@ export const MobileSidebar = ({ activeSection, onNavClick }: MobileSidebarProps)
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "fixed top-3 right-3 z-[60] md:hidden",
+          "fixed top-[70px] right-3 z-[45] md:hidden",
           "w-12 h-12 rounded-lg",
           "flex items-center justify-center",
           "bg-primary/90 backdrop-blur-sm",
