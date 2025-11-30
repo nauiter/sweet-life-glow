@@ -153,19 +153,19 @@ export default {
       addComponents({
         // Card Variants
         '.card-elevated': {
-          '@apply bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow': {},
+          '@apply bg-card/70 backdrop-blur-sm border border-primary/20 hover:border-primary/30 transition-all duration-300': {},
         },
         '.card-glass': {
-          '@apply bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer transition-all duration-500 ease-out hover:neon-glow': {},
+          '@apply bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/30 cursor-pointer transition-all duration-300': {},
         },
         '.card-gradient': {
-          '@apply bg-card/70 backdrop-blur-sm border-primary/20 neon-glow': {},
+          '@apply bg-card/70 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10': {},
         },
         '.card-highlight': {
-          '@apply bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border-primary/40 neon-glow': {},
+          '@apply bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border border-primary/30 transition-all duration-300 hover:from-primary/15 hover:to-secondary/15': {},
         },
         '.card-solid': {
-          '@apply bg-card/70 backdrop-blur-sm border-primary/30 neon-glow': {},
+          '@apply bg-card/70 backdrop-blur-sm border border-primary/20 transition-all duration-300': {},
         },
         
         // Badge Variants
