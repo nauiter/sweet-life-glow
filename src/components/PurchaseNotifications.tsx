@@ -237,7 +237,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl p-4 w-[340px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-3 px-3.5 w-[340px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -255,19 +255,19 @@ export const PurchaseNotifications = () => {
             }}
           />
 
-          <div className="flex items-center gap-2 relative z-10">
+          <div className="flex items-start gap-2.5 relative z-10">
             {/* Icon - Left side */}
-            <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
-              <ShoppingBag className={colorClasses.iconColor} size={18} />
+            <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center border-2 mt-0.5", colorClasses.iconBg, colorClasses.border)}>
+              <ShoppingBag className={colorClasses.iconColor} size={16} />
             </div>
 
             {/* Content - Right side with clear hierarchy */}
-            <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-              <p className="text-base font-bold text-foreground truncate leading-tight">
+            <div className="flex-1 min-w-0 flex flex-col">
+              <p className="text-sm font-bold text-foreground truncate leading-tight mb-1">
                 {notification.name}
               </p>
               <p 
-                className="text-sm leading-snug line-clamp-2"
+                className="text-xs leading-snug line-clamp-1 mb-1"
                 style={{ color: '#dddddd' }}
               >
                 {notification.message}
