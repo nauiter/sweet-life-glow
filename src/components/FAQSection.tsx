@@ -101,24 +101,6 @@ export const FAQSection = () => {
             </Accordion>
           </Card>
         </div>
-
-        {/* Bottom CTA */}
-        <div className={cn("text-center animate-slide-up", SPACING.stack.normal, SPACING.margin.major)} style={{ animationDelay: '0.2s' }}>
-          <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
-            Still have questions? Reach out on Instagram!
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href={EXTERNAL_LINKS.instagram}
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Contact Sweet Life Animes on Instagram"
-              className="px-6 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 hover:border-primary/50 hover:neon-glow transition-all text-foreground hover:text-primary"
-            >
-              📸 Instagram
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
