@@ -9,21 +9,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 neon-glow",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-card/50 hover:bg-card hover:border-primary/50",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 neon-glow active:scale-95",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 active:scale-95",
+        outline: "border border-input bg-card/50 hover:bg-card hover:border-primary/50 active:scale-95",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95",
+        ghost: "hover:bg-accent hover:text-accent-foreground active:scale-95",
         link: "text-primary underline-offset-4 hover:underline",
-        neon: "bg-primary text-primary-foreground hover:bg-primary/90 glow-pulse font-bold",
-        hero: "bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 transform transition-transform neon-glow font-bold",
+        neon: "bg-primary text-primary-foreground hover:bg-primary/90 glow-pulse font-bold active:scale-95",
+        hero: "bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 transform transition-all neon-glow font-bold active:scale-95 shadow-lg hover:shadow-xl",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 min-h-[44px]", // Área de toque mínima mobile
+        sm: "h-9 rounded-md px-3 min-h-[40px]",
+        lg: "h-12 rounded-lg px-8 text-base min-h-[48px]",
+        xl: "h-14 rounded-lg px-10 text-lg min-h-[52px]",
+        icon: "h-10 w-10 min-h-[44px] min-w-[44px]",
       },
     },
     defaultVariants: {

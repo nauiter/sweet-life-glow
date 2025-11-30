@@ -47,14 +47,15 @@ export const HeroSection = () => {
             </div>
             
             {/* CTAs */}
-            <div className={cn("flex flex-wrap gap-4 mb-6 sm:mb-7 md:mb-8")}>
+            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-4 mb-6 sm:mb-7 md:mb-8")}>
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Enroll in Sweet Life Animes anime art course"
+                className="w-full sm:w-auto"
               >
-                <Button variant="hero" size="xl" className="group">
+                <Button variant="hero" size="xl" className="group w-full sm:w-auto min-h-[56px] text-lg font-bold">
                   Enroll Now
                   <Heart className="group-hover:scale-110 transition-transform" />
                 </Button>
@@ -64,8 +65,13 @@ export const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Sweet Life Animes Shop"
+                className="w-full sm:w-auto"
               >
-                <Button variant="outline" size="xl" className="group border-primary/50 hover:border-primary">
+                <Button 
+                  variant="outline" 
+                  size="xl" 
+                  className="group border-primary/50 hover:border-primary w-full sm:w-auto min-h-[56px] text-lg border-2"
+                >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
                 </Button>
@@ -73,24 +79,24 @@ export const HeroSection = () => {
             </div>
             
             {/* Curiosity CTA + Bonus */}
-            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-6 rounded-2xl border border-primary/40 neon-glow mt-8")}>
+            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-primary/40 neon-glow mt-6 sm:mt-8")}>
               <div className="absolute -top-3 -right-3">
-                <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
+                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs font-bold shadow-lg animate-pulse">
                   🔥 90% OFF DECEMBER
                 </span>
               </div>
               <div className={SPACING.stack.tight}>
-                <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-                  <h3 className={cn(TYPOGRAPHY.heading.h4, "gradient-text flex items-center gap-2")}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-2 mb-2">
+                  <h3 className={cn("text-lg sm:text-xl md:text-2xl font-bold gradient-text flex items-center gap-2")}>
                     <Sparkles className="text-primary" size={20} />
                     December Mega Sale!
                   </h3>
                   <div className="flex items-center gap-2">
-                    <span className={cn(TYPOGRAPHY.body.default, "text-muted-foreground line-through")}>$297</span>
-                    <span className={cn(TYPOGRAPHY.heading.h2, "text-primary font-black")}>$29</span>
+                    <span className={cn("text-base sm:text-lg", "text-muted-foreground line-through")}>$297</span>
+                    <span className={cn("text-3xl sm:text-4xl", "text-primary font-black")}>$29</span>
                   </div>
                 </div>
-                <p className={cn(TYPOGRAPHY.body.default, "text-foreground")}>
+                <p className={cn("text-base", "text-foreground leading-relaxed")}>
                   Your creative journey starts here, cutie! ✨ Complete course, AI magic, premium brushes & lifetime access.
                 </p>
                 <a 
@@ -98,9 +104,13 @@ export const HeroSection = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Enroll in December special for $29"
-                  className="inline-block"
+                  className="inline-block w-full sm:w-auto mt-3"
                 >
-                  <Button variant="hero" size="lg" className="group hover:scale-105 transition-transform mt-2 font-bold">
+                  <Button 
+                    variant="hero" 
+                    size="lg" 
+                    className="group hover:scale-105 transition-transform font-bold w-full sm:w-auto min-h-[52px] text-base sm:text-lg"
+                  >
                     Enroll for $29 (Save $268!)
                     <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
                   </Button>
