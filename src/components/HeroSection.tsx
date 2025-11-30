@@ -120,8 +120,9 @@ export const HeroSection = () => {
               <img 
                 src={sweetCharacter} 
                 alt="Sweet - Your Anime Art Sensei and Creative Mentor"
-                width={1920}
-                height={1080}
+                width={800}
+                height={450}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 600px"
                 fetchPriority="high"
                 className="w-full h-auto object-cover"
               />
