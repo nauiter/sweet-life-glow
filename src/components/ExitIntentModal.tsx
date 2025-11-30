@@ -50,7 +50,7 @@ export const ExitIntentModal = () => {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent 
-        className="max-w-[85%] sm:max-w-[65%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[45%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl"
+        className="max-w-[85%] sm:max-w-[65%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[45%] w-full bg-gradient-to-br from-destructive/10 via-background/95 to-primary/10 backdrop-blur-xl border-2 border-primary/50 p-0 shadow-2xl data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-4 data-[state=open]:duration-500 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-bottom-4 data-[state=closed]:duration-300"
         aria-describedby="exit-intent-description"
       >
         {/* Close Button */}
@@ -63,14 +63,14 @@ export const ExitIntentModal = () => {
         </button>
 
         {/* Animated Background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none animate-fade-in" style={{ animationDuration: '0.8s' }}>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-          <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.3s' }} />
+          <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.6s' }} />
         </div>
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 animate-fade-in" style={{ animationDuration: '0.6s', animationDelay: '0.2s' }}>
           {/* Main Content */}
           <div className="p-4 sm:p-5">
             <div className="space-y-3">
