@@ -251,7 +251,7 @@ export const GallerySection = () => {
             willChange: 'transform'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" />
       </div>
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
