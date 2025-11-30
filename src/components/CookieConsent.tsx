@@ -33,19 +33,19 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl animate-slide-up hidden md:block" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
+    <div className="fixed bottom-0 left-0 right-0 z-50 py-2 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl animate-slide-up hidden md:block" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           {/* Left: Message */}
-          <div className="flex items-start gap-3 flex-1">
-            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
-              <Cookie className="text-primary" size={20} />
+          <div className="flex items-start gap-2 flex-1">
+            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
+              <Cookie className="text-primary" size={16} />
             </div>
             <div>
-              <h3 className={cn(TYPOGRAPHY.body.default, "font-bold mb-1")}>
+              <h3 className="text-sm font-bold mb-0.5">
                 🍪 We use cookies
               </h3>
-              <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground max-w-2xl")}>
+              <p className="text-xs text-muted-foreground max-w-2xl leading-snug">
                 We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
                 By clicking "Accept All", you consent to our use of cookies. 
                 Read our{" "}
@@ -76,12 +76,12 @@ export const CookieConsent = () => {
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Button
               variant="outline"
               size="sm"
               onClick={handleDecline}
-              className="border-primary/30 hover:border-primary/50"
+              className="border-primary/30 hover:border-primary/50 h-8 text-xs px-3"
             >
               Decline
             </Button>
@@ -89,7 +89,7 @@ export const CookieConsent = () => {
               variant="hero"
               size="sm"
               onClick={handleAccept}
-              className="whitespace-nowrap"
+              className="whitespace-nowrap h-8 text-xs px-3"
             >
               Accept All
             </Button>
@@ -98,7 +98,7 @@ export const CookieConsent = () => {
               className="p-1 hover:bg-primary/10 rounded transition-colors"
               aria-label="Close cookie banner"
             >
-              <X size={20} className="text-muted-foreground" />
+              <X size={18} className="text-muted-foreground" />
             </button>
           </div>
         </div>
