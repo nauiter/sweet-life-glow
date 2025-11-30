@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import artSample4 from "@/assets/art-sample-4.jpg";
 import artSample5 from "@/assets/art-sample-5.jpg";
 import artSample6 from "@/assets/art-sample-6.jpg";
@@ -78,21 +77,37 @@ const galleryArtworks = [
   { id: 34, image: artSample37, title: "Cherry Blossom", description: "Spring atmosphere" }
 ];
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_BATCH = 8;
+const AUTO_ROTATE_INTERVAL = 5000; // 5 seconds
 
 export const GallerySection = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentBatch, setCurrentBatch] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState<typeof galleryArtworks[0] | null>(null);
-  
-  const totalPages = Math.ceil(galleryArtworks.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const totalBatches = Math.ceil(galleryArtworks.length / ITEMS_PER_BATCH);
+  const startIndex = currentBatch * ITEMS_PER_BATCH;
+  const endIndex = startIndex + ITEMS_PER_BATCH;
   const currentArtworks = galleryArtworks.slice(startIndex, endIndex);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+        setCurrentBatch((prev) => (prev + 1) % totalBatches);
+        setIsTransitioning(false);
+      }, 300);
+    }, AUTO_ROTATE_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [isPaused, totalBatches]);
+
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   return (
     <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)}>
@@ -121,13 +136,23 @@ export const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", SPACING.grid.normal, SPACING.container.full)}>
+        <div 
+          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4", SPACING.grid.normal, SPACING.container.full)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {currentArtworks.map((artwork, index) => (
-            <Dialog key={artwork.id}>
+            <Dialog key={`${artwork.id}-${currentBatch}`}>
               <DialogTrigger asChild>
                 <Card 
-                  className={cn("group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up cursor-pointer")}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className={cn(
+                    "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow cursor-pointer",
+                    isTransitioning ? "opacity-0" : "opacity-100 animate-fade-in"
+                  )}
+                  style={{ 
+                    animationDelay: `${index * 0.1}s`,
+                    transition: 'opacity 0.3s ease-in-out'
+                  }}
                   onClick={() => setSelectedImage(artwork)}
                 >
                   <div className="relative aspect-[9/16] overflow-hidden">
@@ -135,7 +160,7 @@ export const GallerySection = () => {
                       src={artwork.image} 
                       alt={artwork.title}
                       width={1024}
-                      height={1024}
+                      height={1820}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -166,48 +191,27 @@ export const GallerySection = () => {
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className={cn("flex justify-center", SPACING.margin.major)}>
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious 
-                  onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
-                  className={cn(
-                    currentPage === 1 && "pointer-events-none opacity-50",
-                    "cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors"
-                  )}
-                />
-              </PaginationItem>
-              
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <PaginationItem key={page}>
-                  <PaginationLink
-                    onClick={() => handlePageChange(page)}
-                    isActive={currentPage === page}
-                    className={cn(
-                      "cursor-pointer transition-all",
-                      currentPage === page 
-                        ? "bg-primary/20 text-primary border-primary/50 hover:bg-primary/30" 
-                        : "hover:bg-primary/10 hover:text-primary"
-                    )}
-                  >
-                    {page}
-                  </PaginationLink>
-                </PaginationItem>
-              ))}
-              
-              <PaginationItem>
-                <PaginationNext 
-                  onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
-                  className={cn(
-                    currentPage === totalPages && "pointer-events-none opacity-50",
-                    "cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors"
-                  )}
-                />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+        {/* Progress Dots */}
+        <div className={cn("flex justify-center gap-2", SPACING.margin.section)}>
+          {Array.from({ length: totalBatches }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setIsTransitioning(true);
+                setTimeout(() => {
+                  setCurrentBatch(i);
+                  setIsTransitioning(false);
+                }, 300);
+              }}
+              className={cn(
+                "w-2 h-2 rounded-full transition-all",
+                currentBatch === i 
+                  ? "bg-primary w-8" 
+                  : "bg-primary/30 hover:bg-primary/50"
+              )}
+              aria-label={`Go to batch ${i + 1}`}
+            />
+          ))}
         </div>
 
         {/* Bottom Text */}
