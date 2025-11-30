@@ -171,7 +171,7 @@ export const PurchaseNotifications = () => {
     >
       <div 
         className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-3 max-w-xs neon-glow relative overflow-hidden",
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2.5 max-w-[280px] neon-glow relative overflow-hidden",
           colorClasses.border,
           "transition-all duration-700 ease-in-out"
         )}
@@ -201,21 +201,21 @@ export const PurchaseNotifications = () => {
           </span>
         </div>
 
-        <div className="flex items-start gap-2.5 relative z-10">
+        <div className="flex items-start gap-2 relative z-10">
           {/* Icon */}
-          <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
-            <ShoppingBag className={colorClasses.iconColor} size={18} />
+          <div className={cn("flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
+            <ShoppingBag className={colorClasses.iconColor} size={16} />
           </div>
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1.5 mb-0.5">
+            <div className="flex items-center gap-1 mb-0.5">
               <p className="text-xs font-bold text-foreground truncate">
                 {notification.name}
               </p>
-              <Sparkles className="text-secondary flex-shrink-0" size={12} />
+              <Sparkles className="text-secondary flex-shrink-0" size={11} />
             </div>
-            <p className="text-[11px] text-muted-foreground leading-tight">
+            <p className="text-[11px] text-muted-foreground leading-snug line-clamp-1">
               {notification.message}
             </p>
             <p className="text-[10px] text-primary/70 mt-0.5">
