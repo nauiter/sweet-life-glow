@@ -54,11 +54,12 @@ export const UpdatesSection = () => {
           {updates.map((update, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, `card-elevated transition-all animate-slide-up group cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 ${
-                update.urgent 
-                  ? 'border-primary/50 neon-glow hover:border-primary' 
-                  : 'hover:neon-glow'
-              }`)}
+              className={cn(
+                SPACING.card.default, 
+                "card-elevated animate-slide-up group cursor-pointer transition-all duration-300",
+                "focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2",
+                update.urgent && "border-primary/40"
+              )}
               style={{ animationDelay: `${index * 0.1}s` }}
               role="article"
               tabIndex={0}

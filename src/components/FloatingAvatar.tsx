@@ -24,7 +24,7 @@ export const FloatingAvatar = () => {
 
       {/* Chat Bubble */}
       {isOpen && (
-        <Card className="fixed bottom-24 right-6 z-40 w-80 p-6 bg-card/95 backdrop-blur-md border-primary/30 neon-glow animate-slide-up">
+        <Card className="fixed bottom-24 right-6 z-40 w-80 p-6 card-elevated animate-slide-up">
           <div className="space-y-4">
             {/* Avatar Header */}
             <div className="flex items-center gap-3">
