@@ -80,7 +80,7 @@ export const Navigation = () => {
             className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
             aria-label="Sweet Life Animes - Go to home"
           >
-            Sweet Life Animes
+            {/* Logo */}
           </a>
 
           {/* Desktop Navigation */}
