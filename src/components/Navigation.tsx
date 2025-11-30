@@ -46,13 +46,16 @@ export const Navigation = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      const offset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
+      // Use requestAnimationFrame to batch layout reads
+      requestAnimationFrame(() => {
+        const offset = 80; // Account for fixed header
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
       });
     }
     

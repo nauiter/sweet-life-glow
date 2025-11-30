@@ -82,7 +82,7 @@ export const FAQSection = () => {
 
         {/* FAQ Accordion */}
         <div className={SPACING.container.content}>
-          <Card className={cn(SPACING.card.spacious, "card-elevated animate-slide-up")}>
+          <Card className={cn(SPACING.card.spacious, "card-elevated animate-slide-up")} style={{ contain: 'layout style paint' }}>
             <Accordion type="single" collapsible className={SPACING.stack.normal}>
               {faqs.map((faq, index) => (
                 <AccordionItem 
