@@ -103,6 +103,27 @@ export const GallerySection = () => {
   const endIndex = startIndex + ITEMS_PER_BATCH;
   const currentArtworks = shuffledArtworks.slice(startIndex, endIndex);
 
+  // Prefetch next batch images
+  useEffect(() => {
+    const nextBatch = (currentBatch + 1) % totalBatches;
+    const nextStartIndex = nextBatch * ITEMS_PER_BATCH;
+    const nextEndIndex = nextStartIndex + ITEMS_PER_BATCH;
+    const nextArtworks = shuffledArtworks.slice(nextStartIndex, nextEndIndex);
+
+    // Prefetch images from next batch
+    const prefetchImages = () => {
+      nextArtworks.forEach((artwork) => {
+        const img = new Image();
+        img.src = artwork.image;
+      });
+    };
+
+    // Delay prefetch to not interfere with current batch loading
+    const prefetchTimer = setTimeout(prefetchImages, 2000);
+
+    return () => clearTimeout(prefetchTimer);
+  }, [currentBatch, totalBatches, shuffledArtworks]);
+
   useEffect(() => {
     if (isPaused) return;
 

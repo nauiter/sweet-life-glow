@@ -54,10 +54,10 @@ export const UpdatesSection = () => {
           {updates.map((update, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, `bg-card/70 backdrop-blur-sm transition-all animate-slide-up group cursor-pointer ${
+              className={cn(SPACING.card.default, `card-elevated transition-all animate-slide-up group cursor-pointer ${
                 update.urgent 
                   ? 'border-primary/50 neon-glow hover:border-primary' 
-                  : 'border-primary/20 hover:border-primary/50 hover:neon-glow'
+                  : 'hover:neon-glow'
               }`)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
