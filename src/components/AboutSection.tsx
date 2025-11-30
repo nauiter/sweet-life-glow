@@ -57,7 +57,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Who's Sweet Card */}
-        <Card className={cn(SPACING.container.content, SPACING.card.spacious, "bg-card/70 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up", SPACING.margin.hero)}>
+        <Card className={cn(SPACING.container.content, SPACING.card.spacious, "card-solid animate-slide-up", SPACING.margin.hero)}>
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
               <Heart size={40} className="text-white" fill="currentColor" />
@@ -68,9 +68,9 @@ export const AboutSection = () => {
                 I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started. Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
               </p>
               <div className="flex gap-2 flex-wrap">
-                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-primary/20 rounded-full border border-primary/50")}>VTuber Artist</span>
-                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-secondary/20 rounded-full border border-secondary/50")}>Digital Illustrator</span>
-                <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-accent/20 rounded-full border border-accent/50")}>Creative Mentor</span>
+                <span className="badge-primary">VTuber Artist</span>
+                <span className="badge-secondary">Digital Illustrator</span>
+                <span className="badge-accent">Creative Mentor</span>
               </div>
             </div>
           </div>
@@ -81,11 +81,11 @@ export const AboutSection = () => {
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className={cn(SPACING.card.default, "bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group")}
+              className={cn(SPACING.card.default, "card-elevated animate-slide-up group")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="icon-wrapper group-hover:scale-110 transition-transform">
                   <benefit.icon className="text-white" size={24} />
                 </div>
                 <div className={SPACING.stack.tight}>

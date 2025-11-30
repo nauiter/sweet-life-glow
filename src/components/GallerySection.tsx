@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import artSample4 from "@/assets/art-sample-4.jpg";
@@ -95,6 +95,8 @@ export const GallerySection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [shuffledArtworks] = useState(() => shuffleArray(galleryArtworks));
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const totalBatches = Math.ceil(shuffledArtworks.length / ITEMS_PER_BATCH);
   const startIndex = currentBatch * ITEMS_PER_BATCH;
@@ -115,6 +117,30 @@ export const GallerySection = () => {
 
     return () => clearInterval(interval);
   }, [isPaused, totalBatches]);
+
+  // Lazy loading with Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setLoadedImages(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      {
+        rootMargin: '50px', // Load images 50px before they're visible
+        threshold: 0.01
+      }
+    );
+
+    imageRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [currentBatch]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -171,55 +197,70 @@ export const GallerySection = () => {
           role="list"
           aria-label="Anime artwork gallery"
         >
-          {currentArtworks.map((artwork, index) => (
-            <Dialog key={`${artwork.id}-${currentBatch}`}>
-              <DialogTrigger asChild>
-                <Card 
-                  className={cn(
-                    "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer",
-                    "transition-all duration-500 ease-out hover:neon-glow",
-                    isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"
-                  )}
-                  style={{ 
-                    animationDelay: `${index * 0.1}s`,
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                  }}
-                  onClick={() => setSelectedImage(artwork)}
-                >
-                  <div className="relative aspect-[9/16] overflow-hidden">
-                    <img 
-                      src={artwork.image} 
-                      alt={artwork.title}
-                      width={1024}
-                      height={1820}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+          {currentArtworks.map((artwork, index) => {
+            const globalIndex = startIndex + index;
+            const isImageLoaded = loadedImages.has(globalIndex);
+            
+            return (
+              <Dialog key={`${artwork.id}-${currentBatch}`}>
+                <DialogTrigger asChild>
+                  <Card 
+                    ref={(el) => (imageRefs.current[index] = el)}
+                    data-index={globalIndex}
+                    className={cn(
+                      "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer",
+                      "transition-all duration-500 ease-out hover:neon-glow",
+                      isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"
+                    )}
+                    style={{ 
+                      animationDelay: `${index * 0.1}s`,
+                      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                      willChange: isTransitioning ? 'opacity, transform' : 'auto'
+                    }}
+                    onClick={() => setSelectedImage(artwork)}
+                  >
+                    <div className="relative aspect-[9/16] overflow-hidden bg-muted">
+                      {isImageLoaded ? (
+                        <img 
+                          src={artwork.image} 
+                          alt={artwork.title}
+                          width={1024}
+                          height={1820}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          style={{ willChange: 'transform' }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="animate-pulse w-12 h-12 rounded-full bg-primary/20" />
+                        </div>
+                      )}
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <div>
                         <h3 className={cn(TYPOGRAPHY.heading.h4, SPACING.margin.tight)}>{artwork.title}</h3>
                         <p className={cn(TYPOGRAPHY.body.small, "text-muted-foreground")}>{artwork.description}</p>
                       </div>
                     </div>
+                    </div>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-primary/20">
+                  <div className="relative">
+                    <img 
+                      src={artwork.image} 
+                      alt={artwork.title}
+                      className="w-full h-auto rounded-lg"
+                      loading="lazy"
+                    />
+                    <div className="mt-6">
+                      <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight, "gradient-text")}>{artwork.title}</h3>
+                      <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground")}>{artwork.description}</p>
+                    </div>
                   </div>
-                </Card>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-primary/20">
-                <div className="relative">
-                  <img 
-                    src={artwork.image} 
-                    alt={artwork.title}
-                    className="w-full h-auto rounded-lg"
-                    loading="lazy"
-                  />
-                  <div className="mt-6">
-                    <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight, "gradient-text")}>{artwork.title}</h3>
-                    <p className={cn(TYPOGRAPHY.body.default, "text-muted-foreground")}>{artwork.description}</p>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          ))}
+                </DialogContent>
+              </Dialog>
+            );
+          })}
         </div>
 
         {/* Progress Dots */}
