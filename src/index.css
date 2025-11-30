@@ -577,7 +577,7 @@ All colors MUST be HSL.
     position: absolute;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 24px;
     pointer-events: none;
     z-index: 1;
   }
