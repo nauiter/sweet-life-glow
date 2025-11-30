@@ -165,7 +165,7 @@ export const GallerySection = () => {
 
         {/* Gallery Grid */}
         <div 
-          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10", SPACING.container.full)}
+          className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-12 md:mb-16", SPACING.container.full)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           role="list"
@@ -223,7 +223,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Progress Dots */}
-        <div className={cn("flex justify-center gap-4 mt-16 md:mt-20")}>
+        <div className={cn("flex justify-center gap-4 mb-12 md:mb-16")}>
           {Array.from({ length: totalBatches }, (_, i) => (
             <button
               key={i}
@@ -246,7 +246,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Bottom Text */}
-        <div className={cn("text-center animate-slide-up", SPACING.margin.major)} style={{ animationDelay: '0.3s' }}>
+        <div className={cn("text-center animate-slide-up")} style={{ animationDelay: '0.3s' }}>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-2xl mx-auto")}>
             Every week, students share their amazing progress in our Discord community. You could be next! 💜
           </p>
