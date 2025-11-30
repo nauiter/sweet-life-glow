@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import sweetPhoto from "@/assets/sweet5.webp";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useParallax } from "@/hooks/useParallax";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export const AboutSection = () => {
   const parallaxOffset = useParallax(0.15);
@@ -123,13 +122,13 @@ export const AboutSection = () => {
             {/* Right Column - Image/Illustration */}
             <div className="hidden lg:block relative w-full h-full min-h-[300px]">
               <div className="relative rounded-2xl overflow-hidden neon-glow h-full group/image">
-                <OptimizedImage 
+                <img 
                   src={sweetPhoto} 
                   alt="Sweet - Your Creative Mentor"
-                  width={500}
-                  height={500}
-                  sizes="(max-width: 1024px) 0vw, 25vw"
+                  width="500"
+                  height="500"
                   className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover/image:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent transition-opacity duration-500 group-hover/image:opacity-80" />
                 {/* Shimmer effect */}
