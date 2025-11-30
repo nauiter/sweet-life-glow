@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[200px] sm:pt-[220px]" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">
@@ -24,8 +24,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className={cn("container relative z-10 py-8 sm:py-12 md:pb-20", SPACING.section.x)}>
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+      <div className={cn("container relative z-10 py-6 sm:py-8 md:py-12", SPACING.section.x)}>
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
             <div className={cn("inline-block px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-primary/30 neon-glow", SPACING.margin.close)}>
@@ -114,16 +114,16 @@ export const HeroSection = () => {
           </div>
           
           {/* Right: Character Image */}
-          <div className="relative animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div className="relative animate-slide-up max-w-2xl mx-auto lg:mx-0" style={{ animationDelay: '0.2s' }}>
             <div className="relative rounded-3xl overflow-hidden neon-glow">
               <img 
                 src="/images/sweet-character.jpg" 
                 alt="Sweet - Your Anime Art Sensei and Creative Mentor"
                 width={800}
                 height={450}
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 600px"
+                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 550px"
                 fetchPriority="high"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover max-h-[400px] sm:max-h-[450px] md:max-h-[500px] lg:max-h-none"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             </div>
