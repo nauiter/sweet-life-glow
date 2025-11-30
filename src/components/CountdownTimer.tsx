@@ -77,17 +77,19 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed left-1/2 -translate-x-1/2 z-[51] bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
+        "fixed left-1/2 -translate-x-1/2 z-[51] bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md",
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[92%] sm:w-[95%] max-w-4xl",
         "top-2 sm:top-3 md:top-20",
+        "transition-all duration-700 ease-out",
         isUrgent && "animate-pulse",
-        isVisible ? "animate-slide-up opacity-100" : "-translate-y-full opacity-0"
+        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
       )}
       style={{
         boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)",
         position: "fixed",
-        maxHeight: "40vh" // Limita altura a 40% da viewport no mobile
+        maxHeight: "40vh", // Limita altura a 40% da viewport no mobile
+        animation: isVisible ? "fade-in-center 0.7s ease-out" : "none"
       }}
       role="region"
       aria-label="Limited time offer countdown"
