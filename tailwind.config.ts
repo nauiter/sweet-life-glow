@@ -128,6 +128,18 @@ export default {
             transform: "translate(0, 0) scale(1)" 
           },
         },
+        "blur-in": {
+          "0%": {
+            opacity: "0",
+            filter: "blur(20px)",
+            transform: "translateY(30px)"
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0px)",
+            transform: "translateY(0)"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -140,6 +152,7 @@ export default {
         "bounce-in": "bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
         "parallax-1": "parallax-1 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
         "parallax-2": "parallax-2 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "blur-in": "blur-in 0.8s ease-out",
       },
       fontFamily: {
         'orbitron': ['Orbitron', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
