@@ -176,8 +176,8 @@ export const ExitIntentModal = () => {
 };
 
 const QuickBenefit = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
-  <div className="flex items-center gap-1.5 bg-background/50 backdrop-blur-sm rounded-lg p-2 border border-primary/20">
-    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0">
+  <div className="flex items-center gap-1.5 bg-background/50 backdrop-blur-sm rounded-lg p-2 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 group">
+    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 animate-pulse">
       {icon}
     </div>
     <span className="text-[10px] text-foreground font-semibold">
