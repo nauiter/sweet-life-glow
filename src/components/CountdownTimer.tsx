@@ -98,32 +98,11 @@ export const CountdownTimer = () => {
       aria-label="Limited time offer countdown"
     >
       <div className="px-2.5 py-2.5 sm:py-3 md:px-6 md:py-3">
-        {/* Desktop Layout */}
-        <div className="hidden md:flex items-center justify-between gap-4">
-          {/* Left: Urgency Message */}
-          <div className="flex items-center gap-3">
-            <Zap className="text-white animate-pulse" size={20} fill="currentColor" />
-            <div>
-              <div className="text-xs text-white/90 font-medium uppercase tracking-wide">
-                🔥 December Special
-              </div>
-              <div className="text-lg text-white font-bold leading-tight">
-                90% OFF - Limited Time!
-              </div>
-            </div>
-          </div>
-
-          {/* Center: Price + Countdown */}
-          <div className="flex items-center gap-3">
-            {/* Price Box */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 text-center">
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-white/70 line-through">$297</span>
-                <span className="text-2xl text-white font-black">$29</span>
-              </div>
-            </div>
-
-            {/* Countdown */}
+        {/* Desktop Layout - Apenas Timer + Botão */}
+        <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
+          {/* Countdown Timer */}
+          <div className="flex items-center gap-2">
+            <Clock className="text-white" size={24} />
             <div className="flex items-center gap-1.5">
               <TimeBlock value={timeLeft.days} label="Days" />
               <span className="text-white/50 font-bold pb-4">:</span>
@@ -135,7 +114,7 @@ export const CountdownTimer = () => {
             </div>
           </div>
 
-          {/* Right: CTA Button */}
+          {/* CTA Button */}
           <a 
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
@@ -146,9 +125,17 @@ export const CountdownTimer = () => {
             <Button 
               variant="outline" 
               size="default"
-              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl hover:scale-105 transition-transform whitespace-nowrap"
+              className="bg-white text-primary hover:bg-white/90 border-0 font-bold shadow-xl hover:scale-105 transition-transform whitespace-nowrap relative overflow-hidden px-8"
             >
-              Enroll Now!
+              <span className="relative z-10">Enroll Now! 🚀</span>
+              <span 
+                className="absolute inset-0 w-[50%] h-full opacity-30"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
+                  animation: "shimmer 3s ease-in-out infinite",
+                  animationDelay: "1s"
+                }}
+              />
             </Button>
           </a>
         </div>
