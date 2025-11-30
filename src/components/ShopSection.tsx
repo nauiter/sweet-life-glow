@@ -56,7 +56,7 @@ export const ShopSection = () => {
         {/* Shop CTA */}
         <div className={cn("text-center animate-slide-up", SPACING.margin.normal)} style={{ animationDelay: '0.1s' }}>
           <Card className={cn(SPACING.container.narrow, SPACING.card.default, "card-highlight")}>
-            <div className={SPACING.stack.tight}>
+            <div className="flex flex-col gap-6">
               <div className="flex items-center justify-center gap-3">
                 <ShoppingBag className="text-primary" size={32} />
                 <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Visit Our Shop</h3>
@@ -70,7 +70,7 @@ export const ShopSection = () => {
                 rel="noopener noreferrer"
                 aria-label="Visit Sweet Life Animes Shop on Payhip"
               >
-                <Button variant="hero" size="lg" className="mt-2">
+                <Button variant="hero" size="lg">
                   <ShoppingBag className="mr-2" />
                   Browse Shop
                 </Button>
