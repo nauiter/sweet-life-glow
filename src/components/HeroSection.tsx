@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-8 md:pt-[180px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" />
       <div className="absolute inset-0 opacity-20">

@@ -79,7 +79,7 @@ export const CountdownTimer = () => {
         "fixed left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[95%] max-w-4xl",
-        "top-2 md:top-16",
+        "top-2 md:top-20",
         isUrgent && "animate-pulse",
         isVisible ? "animate-slide-up opacity-100" : "-translate-y-full opacity-0"
       )}
