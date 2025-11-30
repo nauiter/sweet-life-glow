@@ -123,7 +123,7 @@ export const MobileSidebar = ({ activeSection, onNavClick }: MobileSidebarProps)
           </nav>
 
           {/* CTA Button */}
-          <div className="pt-6 border-t border-primary/30">
+          <div className="pt-6 border-t" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
             <a
               href={EXTERNAL_LINKS.coursify}
               target="_blank"
