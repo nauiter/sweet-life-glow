@@ -81,13 +81,14 @@ export const CountdownTimer = () => {
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[92%] sm:w-[95%] max-w-4xl",
         "top-2 sm:top-3 md:top-20",
+        "transition-all duration-700 ease-out",
         isUrgent && "animate-pulse"
       )}
       style={{
         left: "50%",
         transform: isVisible 
-          ? "translateX(-50%) scale(1)" 
-          : "translateX(-50%) scale(0.95)",
+          ? "translateX(-50%) translateY(0) scale(1)" 
+          : "translateX(-50%) translateY(-20px) scale(0.95)",
         opacity: isVisible ? 1 : 0,
         boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3)",
         position: "fixed",
