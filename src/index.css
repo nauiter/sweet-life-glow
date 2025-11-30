@@ -123,13 +123,35 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
+  /* Font face optimization with font-display swap */
+  @font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-display: swap;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Optimized font stack with system fallbacks */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    /* Prevent font flicker with font-optical-sizing */
+    font-optical-sizing: auto;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', 'Trebuchet MS', sans-serif;
+    /* Optimized heading font stack */
+    font-family: 'Orbitron', 'Trebuchet MS', 'Arial Black', sans-serif;
+    font-optical-sizing: auto;
   }
   
   p {
