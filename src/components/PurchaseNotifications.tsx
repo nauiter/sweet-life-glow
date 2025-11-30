@@ -1,0 +1,124 @@
+import { useState, useEffect } from "react";
+import { ShoppingBag, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+interface Notification {
+  id: string;
+  name: string;
+  message: string;
+}
+
+const firstNames = [
+  "Emma", "Olivia", "Ava", "Sophia", "Isabella",
+  "Mia", "Charlotte", "Amelia", "Harper", "Evelyn",
+  "Liam", "Noah", "William", "James", "Oliver",
+  "Benjamin", "Elijah", "Lucas", "Mason", "Logan",
+  "Emily", "Madison", "Abigail", "Ella", "Avery",
+  "Jackson", "Sebastian", "Aiden", "Matthew", "Samuel"
+];
+
+const lastNames = [
+  "Smith", "Johnson", "Williams", "Brown", "Jones",
+  "Garcia", "Miller", "Davis", "Rodriguez", "Martinez",
+  "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson",
+  "Thomas", "Taylor", "Moore", "Jackson", "Martin",
+  "Lee", "White", "Harris", "Clark", "Lewis",
+  "Robinson", "Walker", "Young", "Allen", "King"
+];
+
+const messages = [
+  "just enrolled in the course! 🎉",
+  "grabbed the 90% OFF deal! ✨",
+  "just joined Sweet Life Academy! 💜",
+  "claimed the December special! 🔥",
+  "is now learning anime art! 🎨",
+  "just secured their spot! ⚡",
+  "joined the creative journey! 💫"
+];
+
+const getRandomName = () => {
+  const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+  const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+  return `${firstName} ${lastName}`;
+};
+
+const getRandomMessage = () => {
+  return messages[Math.floor(Math.random() * messages.length)];
+};
+
+export const PurchaseNotifications = () => {
+  const [notification, setNotification] = useState<Notification | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const showNotification = () => {
+      const newNotification: Notification = {
+        id: Math.random().toString(36).substr(2, 9),
+        name: getRandomName(),
+        message: getRandomMessage()
+      };
+
+      setNotification(newNotification);
+      setIsVisible(true);
+
+      // Hide after 5 seconds
+      setTimeout(() => {
+        setIsVisible(false);
+      }, 5000);
+    };
+
+    // Show first notification after 10 seconds
+    const initialTimeout = setTimeout(() => {
+      showNotification();
+    }, 10000);
+
+    // Show notifications every 20-40 seconds (random interval)
+    const interval = setInterval(() => {
+      const randomDelay = Math.random() * 20000 + 20000; // 20-40 seconds
+      setTimeout(showNotification, randomDelay);
+    }, 45000);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
+  if (!notification) return null;
+
+  return (
+    <div
+      className={cn(
+        "fixed bottom-6 left-6 z-50 transition-all duration-500 ease-out",
+        isVisible 
+          ? "translate-x-0 opacity-100" 
+          : "-translate-x-full opacity-0"
+      )}
+    >
+      <div className="bg-card/95 backdrop-blur-md border border-primary/30 rounded-lg shadow-xl p-4 max-w-sm neon-glow">
+        <div className="flex items-start gap-3">
+          {/* Icon */}
+          <div className="flex-shrink-0 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+            <ShoppingBag className="text-primary" size={20} />
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-sm font-bold text-foreground truncate">
+                {notification.name}
+              </p>
+              <Sparkles className="text-secondary flex-shrink-0" size={14} />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {notification.message}
+            </p>
+            <p className="text-xs text-primary/70 mt-1">
+              Just now
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
