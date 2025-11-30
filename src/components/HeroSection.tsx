@@ -22,7 +22,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-8" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden pt-40 sm:pt-44 lg:pt-40 pb-8" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements with Parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
