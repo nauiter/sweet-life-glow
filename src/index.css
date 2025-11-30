@@ -271,7 +271,6 @@ All colors MUST be HSL.
   
   /* ✨ Separadores Visuais Uniformes - Fios de seda suaves */
   section:not(:last-of-type) {
-    border-bottom: 1px solid #e0e0e0;
     padding-bottom: 32px;
   }
   
