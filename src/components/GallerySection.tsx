@@ -78,17 +78,28 @@ const galleryArtworks = [
 const ITEMS_PER_BATCH = 8;
 const AUTO_ROTATE_INTERVAL = 5000; // 5 seconds
 
+// Shuffle function to randomize array
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 export const GallerySection = () => {
   const [currentBatch, setCurrentBatch] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState<typeof galleryArtworks[0] | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [shuffledArtworks] = useState(() => shuffleArray(galleryArtworks));
 
-  const totalBatches = Math.ceil(galleryArtworks.length / ITEMS_PER_BATCH);
+  const totalBatches = Math.ceil(shuffledArtworks.length / ITEMS_PER_BATCH);
   const startIndex = currentBatch * ITEMS_PER_BATCH;
   const endIndex = startIndex + ITEMS_PER_BATCH;
-  const currentArtworks = galleryArtworks.slice(startIndex, endIndex);
+  const currentArtworks = shuffledArtworks.slice(startIndex, endIndex);
 
   useEffect(() => {
     if (isPaused) return;
@@ -210,7 +221,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Progress Dots */}
-        <div className={cn("flex justify-center gap-2", SPACING.margin.section)}>
+        <div className={cn("flex justify-center gap-4", SPACING.margin.section)}>
           {Array.from({ length: totalBatches }, (_, i) => (
             <button
               key={i}
@@ -222,10 +233,10 @@ export const GallerySection = () => {
                 }, 300);
               }}
               className={cn(
-                "w-2 h-2 rounded-full transition-all",
+                "w-3 h-3 rounded-full transition-all duration-300",
                 currentBatch === i 
-                  ? "bg-primary w-8" 
-                  : "bg-primary/30 hover:bg-primary/50"
+                  ? "bg-primary w-12 shadow-[0_0_10px_hsl(var(--primary))]" 
+                  : "bg-primary/30 hover:bg-primary/50 hover:scale-110"
               )}
               aria-label={`Go to batch ${i + 1}`}
             />
