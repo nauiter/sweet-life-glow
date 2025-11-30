@@ -33,15 +33,15 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 py-1.5 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl hidden md:block animate-blur-in" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
+    <div className="fixed bottom-0 left-0 right-0 z-50 py-1 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t-2 border-white/20 shadow-2xl hidden md:block animate-blur-in" style={{ boxShadow: '0 -2px 20px rgba(255, 255, 255, 0.1), 0 -4px 40px rgba(255, 255, 255, 0.05)' }}>
       <div className="container max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
           {/* Left: Message */}
           <div className="flex-1">
-            <h3 className="text-sm font-bold mb-0.5">
+            <h3 className="text-sm font-bold mb-0">
               🍪 We use cookies
             </h3>
-            <p className="text-xs text-muted-foreground max-w-2xl leading-snug">
+            <p className="text-[11px] text-muted-foreground max-w-2xl leading-tight">
               We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
               By clicking "Accept All", you consent to our use of cookies. 
               Read our{" "}
@@ -76,7 +76,7 @@ export const CookieConsent = () => {
               variant="outline"
               size="sm"
               onClick={handleDecline}
-              className="border-primary/30 hover:border-primary/50 h-8 text-xs px-3"
+              className="border-primary/30 hover:border-primary/50 h-7 text-xs px-3"
             >
               Decline
             </Button>
@@ -84,7 +84,7 @@ export const CookieConsent = () => {
               variant="hero"
               size="sm"
               onClick={handleAccept}
-              className="whitespace-nowrap h-8 text-xs px-3"
+              className="whitespace-nowrap h-7 text-xs px-3"
             >
               Accept All
             </Button>
@@ -93,7 +93,7 @@ export const CookieConsent = () => {
               className="p-1 hover:bg-primary/10 rounded transition-colors"
               aria-label="Close cookie banner"
             >
-              <X size={18} className="text-muted-foreground" />
+              <X size={16} className="text-muted-foreground" />
             </button>
           </div>
         </div>
