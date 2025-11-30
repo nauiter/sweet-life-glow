@@ -1,8 +1,10 @@
+import * as React from "react";
 import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
+import { Section } from "@/components/ui/section";
 
 // Lazy load below-the-fold components to reduce initial bundle size
 const AboutSection = lazy(() => import("@/components/AboutSection").then(m => ({ default: m.AboutSection })));
@@ -32,13 +34,32 @@ const Index = () => {
       
       {/* Main Content */}
       <HeroSection />
+      
       <Suspense fallback={<SectionSkeleton />}>
-        <AboutSection />
-        <GallerySection />
-        <CommunitySection />
-        <ShopSection />
-        <UpdatesSection />
-        <FAQSection />
+        <Section variant="light">
+          <AboutSection />
+        </Section>
+        
+        <Section variant="dark">
+          <GallerySection />
+        </Section>
+        
+        <Section variant="highlight">
+          <CommunitySection />
+        </Section>
+        
+        <Section variant="light">
+          <ShopSection />
+        </Section>
+        
+        <Section variant="dark">
+          <UpdatesSection />
+        </Section>
+        
+        <Section variant="light">
+          <FAQSection />
+        </Section>
+        
         <Footer />
         <FooterNauiterMaster />
       </Suspense>
