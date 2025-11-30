@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Cookie, X } from "lucide-react";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TYPOGRAPHY } from "@/constants/designTokens";
 
@@ -33,46 +33,41 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 py-2 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl animate-slide-up hidden md:block" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
+    <div className="fixed bottom-0 left-0 right-0 z-50 py-1.5 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl animate-slide-up hidden md:block" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           {/* Left: Message */}
-          <div className="flex items-start gap-2 flex-1">
-            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
-              <Cookie className="text-primary" size={16} />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold mb-0.5">
-                🍪 We use cookies
-              </h3>
-              <p className="text-xs text-muted-foreground max-w-2xl leading-snug">
-                We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-                By clicking "Accept All", you consent to our use of cookies. 
-                Read our{" "}
-                <a 
-                  href="/privacy" 
-                  className="text-primary hover:underline font-medium"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/privacy";
-                  }}
-                >
-                  Privacy Policy
-                </a>
-                {" "}and{" "}
-                <a 
-                  href="/terms" 
-                  className="text-primary hover:underline font-medium"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = "/terms";
-                  }}
-                >
-                  Terms of Service
-                </a>
-                .
-              </p>
-            </div>
+          <div className="flex-1">
+            <h3 className="text-sm font-bold mb-0.5">
+              🍪 We use cookies
+            </h3>
+            <p className="text-xs text-muted-foreground max-w-2xl leading-snug">
+              We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+              By clicking "Accept All", you consent to our use of cookies. 
+              Read our{" "}
+              <a 
+                href="/privacy" 
+                className="text-primary hover:underline font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/privacy";
+                }}
+              >
+                Privacy Policy
+              </a>
+              {" "}and{" "}
+              <a 
+                href="/terms" 
+                className="text-primary hover:underline font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/terms";
+                }}
+              >
+                Terms of Service
+              </a>
+              .
+            </p>
           </div>
 
           {/* Right: Actions */}
