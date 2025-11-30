@@ -92,7 +92,7 @@ export const CountdownTimer = () => {
       role="region"
       aria-label="Limited time offer countdown"
     >
-      <div className="px-2.5 py-2 sm:py-2.5 md:px-6 md:py-3">
+      <div className="px-2.5 py-2.5 sm:py-3 md:px-6 md:py-3">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between gap-4">
           {/* Left: Urgency Message */}
@@ -148,37 +148,31 @@ export const CountdownTimer = () => {
           </a>
         </div>
 
-        {/* Mobile Layout - Vertical Stack Compacto */}
-        <div className="flex md:hidden flex-col items-center gap-2">
-          {/* Top: Price - Compacto */}
-          <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm rounded-lg px-3 py-1 border border-white/20">
-            <span className="text-[10px] sm:text-xs text-white/80 line-through">$297</span>
-            <span className="text-xl sm:text-2xl text-white font-black tracking-tight">$29</span>
-          </div>
-
-          {/* Middle: Countdown - Reduzido */}
-          <div className="flex items-center gap-1">
+        {/* Mobile Layout - Simplificado: Apenas Timer + Botão */}
+        <div className="flex md:hidden flex-col items-center justify-center gap-3 py-3">
+          {/* Timer: Contador de tempo */}
+          <div className="flex items-center gap-1.5">
             <TimeBlockMobile value={timeLeft.days} label="D" />
-            <span className="text-white/50 text-xs font-bold">:</span>
+            <span className="text-white/60 text-sm font-bold">:</span>
             <TimeBlockMobile value={timeLeft.hours} label="H" />
-            <span className="text-white/50 text-xs font-bold">:</span>
+            <span className="text-white/60 text-sm font-bold">:</span>
             <TimeBlockMobile value={timeLeft.minutes} label="M" />
-            <span className="text-white/50 text-xs font-bold">:</span>
+            <span className="text-white/60 text-sm font-bold">:</span>
             <TimeBlockMobile value={timeLeft.seconds} label="S" />
           </div>
 
-          {/* Bottom: CTA Button - 80% width, mais compacto */}
+          {/* Botão CTA - 80% width, 48px height */}
           <a 
             href={EXTERNAL_LINKS.coursify}
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Enroll now for $29 - Save $268"
-            className="w-[80%] max-w-[280px]"
+            aria-label="Enroll now in the anime art course"
+            className="w-[80%] max-w-[320px] px-4"
           >
             <Button 
               variant="outline" 
               size="default"
-              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-sm sm:text-base h-auto min-h-[44px] px-4 py-2 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
+              className="w-full bg-white text-primary hover:bg-white/95 active:bg-white/90 border-0 font-bold shadow-xl text-base h-[48px] rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
             >
               Enroll Now! 🚀
             </Button>
@@ -209,13 +203,13 @@ const Separator = () => (
 );
 
 const TimeBlockMobile = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-col items-center">
-    <div className="bg-white/25 backdrop-blur-sm rounded px-1.5 py-0.5 border border-white/40 min-w-[26px]">
-      <div className="text-sm sm:text-base text-white font-bold tabular-nums text-center leading-none">
+  <div className="flex flex-col items-center gap-1">
+    <div className="bg-white/25 backdrop-blur-sm rounded-md px-2.5 py-1 border border-white/40 min-w-[32px]">
+      <div className="text-lg text-white font-bold tabular-nums text-center leading-none">
         {String(value).padStart(2, '0')}
       </div>
     </div>
-    <div className="text-[8px] text-white/70 font-medium mt-0.5 uppercase tracking-wide">
+    <div className="text-[9px] text-white/80 font-medium uppercase tracking-wider">
       {label}
     </div>
   </div>
