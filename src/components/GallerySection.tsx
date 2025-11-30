@@ -77,7 +77,31 @@ const galleryArtworks = [
 ];
 
 const ITEMS_PER_BATCH = 8;
-const AUTO_ROTATE_INTERVAL = 5000; // 5 seconds
+const AUTO_ROTATE_INTERVAL = 10000; // 10 seconds - slower rotation
+
+// Neon border colors for gallery items
+const neonColors = [
+  {
+    border: 'border-white/40',
+    shadow: '0 0 20px rgba(255, 255, 255, 0.4)',
+    glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]'
+  },
+  {
+    border: 'border-pink-400/50',
+    shadow: '0 0 20px rgba(244, 114, 182, 0.4)',
+    glow: 'hover:shadow-[0_0_30px_rgba(244,114,182,0.6)]'
+  },
+  {
+    border: 'border-purple-400/50',
+    shadow: '0 0 20px rgba(192, 132, 252, 0.4)',
+    glow: 'hover:shadow-[0_0_30px_rgba(192,132,252,0.6)]'
+  },
+  {
+    border: 'border-cyan-400/50',
+    shadow: '0 0 20px rgba(34, 211, 238, 0.4)',
+    glow: 'hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]'
+  }
+];
 
 // Shuffle function to randomize array
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -231,6 +255,8 @@ export const GallerySection = () => {
           {currentArtworks.map((artwork, index) => {
             const globalIndex = startIndex + index;
             const isImageLoaded = loadedImages.has(globalIndex);
+            const colorIndex = globalIndex % neonColors.length;
+            const neonStyle = neonColors[colorIndex];
             
             return (
               <Dialog key={`${artwork.id}-${currentBatch}`}>
@@ -239,14 +265,17 @@ export const GallerySection = () => {
                     ref={(el) => (imageRefs.current[index] = el)}
                     data-index={globalIndex}
                     className={cn(
-                      "group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer",
-                      "transition-all duration-500 ease-out hover:neon-glow",
+                      "group overflow-hidden bg-card/50 backdrop-blur-sm border-2 cursor-pointer",
+                      "transition-all duration-500 ease-out",
+                      neonStyle.border,
+                      neonStyle.glow,
                       isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100 animate-fade-in"
                     )}
                     style={{ 
                       animationDelay: `${index * 0.1}s`,
                       transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                      willChange: isTransitioning ? 'opacity, transform' : 'auto'
+                      willChange: isTransitioning ? 'opacity, transform' : 'auto',
+                      boxShadow: neonStyle.shadow
                     }}
                     onClick={() => setSelectedImage(artwork)}
                   >
