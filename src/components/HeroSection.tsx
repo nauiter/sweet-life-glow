@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles, ShoppingBag } from "lucide-react";
-import sweetCharacter from "@/assets/sweet-character.jpg";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -118,7 +117,7 @@ export const HeroSection = () => {
           <div className="relative animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <div className="relative rounded-3xl overflow-hidden neon-glow">
               <img 
-                src={sweetCharacter} 
+                src="/images/sweet-character.jpg" 
                 alt="Sweet - Your Anime Art Sensei and Creative Mentor"
                 width={800}
                 height={450}
