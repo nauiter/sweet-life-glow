@@ -4,33 +4,33 @@ import { EXTERNAL_LINKS } from "@/constants/data";
 export const Footer = () => {
   return (
     <footer className="relative py-12 border-t border-primary/20">
-      <div className="container px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-5xl mx-auto">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-8 max-w-6xl mx-auto">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col">
             <h3 className="text-2xl font-bold gradient-text">Sweet Life Animes</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Your neon-lit creative universe where anime art meets emotion and technique. 💜
             </p>
           </div>
           
-          <div>
-            <h4 className="font-bold mb-4">Connect & Support</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><a href={EXTERNAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Follow Sweet Life Animes on Instagram">Instagram</a></li>
-              <li><a href={EXTERNAL_LINKS.deviantArt} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="View Sweet Life Animes Art Gallery on DeviantArt">Art Gallery (DeviantArt)</a></li>
-              <li><a href={EXTERNAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes Facebook Page">Facebook Page</a></li>
-              <li><a href={EXTERNAL_LINKS.iwara} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes on Iwara.tv">Iwara.tv</a></li>
-              <li><a href={EXTERNAL_LINKS.paypal} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Support Sweet Life Animes via PayPal">Donate via PayPal</a></li>
+          <div className="flex flex-col">
+            <h4 className="font-bold mb-4 text-foreground">Connect & Support</h4>
+            <ul className="space-y-3 text-muted-foreground text-sm">
+              <li><a href={EXTERNAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block" aria-label="Follow Sweet Life Animes on Instagram">Instagram</a></li>
+              <li><a href={EXTERNAL_LINKS.deviantArt} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block" aria-label="View Sweet Life Animes Art Gallery on DeviantArt">Art Gallery (DeviantArt)</a></li>
+              <li><a href={EXTERNAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block" aria-label="Visit Sweet Life Animes Facebook Page">Facebook Page</a></li>
+              <li><a href={EXTERNAL_LINKS.iwara} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block" aria-label="Visit Sweet Life Animes on Iwara.tv">Iwara.tv</a></li>
+              <li><a href={EXTERNAL_LINKS.paypal} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block" aria-label="Support Sweet Life Animes via PayPal">Donate via PayPal</a></li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-4">Legal</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Refund Policy</a></li>
+          <div className="flex flex-col">
+            <h4 className="font-bold mb-4 text-foreground">Legal</h4>
+            <ul className="space-y-3 text-muted-foreground text-sm">
+              <li><a href="/privacy" className="hover:text-primary transition-colors inline-block">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-primary transition-colors inline-block">Terms of Service</a></li>
+              <li><a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-block">Refund Policy</a></li>
             </ul>
           </div>
         </div>
