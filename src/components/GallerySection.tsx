@@ -41,7 +41,6 @@ import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 import { generateSrcSet, GALLERY_IMAGE_SIZES, GALLERY_MOBILE_SIZES, GALLERY_DESKTOP_SIZES, CDN_CONFIG } from "@/lib/responsiveImage";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 
 // Gallery artworks collection
 const galleryArtworks = [
@@ -238,12 +237,14 @@ export const GallerySection = () => {
     <section id="gallery" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="gallery-heading">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <OptimizedImage 
+        <img 
           src={galleryBg} 
           alt="" 
           width={1600} 
           height={900} 
-          sizes="100vw"
+          sizes={isMobile ? "100vw" : "100vw"}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-20 transition-transform duration-100 ease-out" 
           style={{ 
             transform: `translateY(${scrollY * 0.3}px) scale(1.1)`,
@@ -320,13 +321,20 @@ export const GallerySection = () => {
                       }}
                     >
                       {isImageLoaded ? (
-                        <OptimizedImage 
+                        <img 
                           src={artwork.image} 
+                          srcSet={generateSrcSet({ 
+                            src: artwork.image, 
+                            widths: isMobile ? [300, 600] : [400, 800, 1200],
+                            cdnEnabled: CDN_CONFIG.enabled,
+                            cdnBaseUrl: CDN_CONFIG.baseUrl
+                          })}
                           alt={artwork.title}
                           width={isMobile ? 300 : 400}
                           height={isMobile ? 533 : 710}
                           sizes={isMobile ? GALLERY_MOBILE_SIZES : GALLERY_DESKTOP_SIZES}
-                          priority={index < 3}
+                          loading={index < 3 ? "eager" : "lazy"}
+                          decoding="async"
                           className="w-full h-full object-cover lg:group-hover:scale-110 transition-transform duration-500"
                           style={{ willChange: 'transform' }}
                         />
@@ -347,13 +355,19 @@ export const GallerySection = () => {
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-primary/20">
                   <div className="relative">
-                    <OptimizedImage 
+                    <img 
                       src={artwork.image}
+                      srcSet={generateSrcSet({ 
+                        src: artwork.image, 
+                        widths: isMobile ? [600, 900] : [800, 1200, 1600],
+                        cdnEnabled: CDN_CONFIG.enabled,
+                        cdnBaseUrl: CDN_CONFIG.baseUrl
+                      })} 
                       alt={artwork.title}
-                      width={isMobile ? 900 : 1600}
-                      height={isMobile ? 1600 : 2840}
                       sizes={isMobile ? "90vw" : "(max-width: 1200px) 90vw, 1200px"}
                       className="w-full h-auto rounded-lg"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="mt-6">
                       <h3 className={cn(TYPOGRAPHY.heading.h3, SPACING.margin.tight, "gradient-text")}>{artwork.title}</h3>
