@@ -18,6 +18,14 @@ import artSample16 from "@/assets/art-sample-16.jpg";
 import artSample17 from "@/assets/art-sample-17.jpg";
 import artSample18 from "@/assets/art-sample-18.jpg";
 import artSample19 from "@/assets/art-sample-19.jpg";
+import artSample20 from "@/assets/art-sample-20.jpg";
+import artSample21 from "@/assets/art-sample-21.jpg";
+import artSample22 from "@/assets/art-sample-22.jpg";
+import artSample23 from "@/assets/art-sample-23.jpg";
+import artSample24 from "@/assets/art-sample-24.jpg";
+import artSample25 from "@/assets/art-sample-25.jpg";
+import artSample26 from "@/assets/art-sample-26.jpg";
+import artSample27 from "@/assets/art-sample-27.jpg";
 import galleryBg from "@/assets/gallery-bg.jpg";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
@@ -39,7 +47,15 @@ const galleryArtworks = [
   { id: 13, image: artSample16, title: "Power Action", description: "Dynamic energy and motion" },
   { id: 14, image: artSample17, title: "Combat Scene", description: "Action-packed illustration" },
   { id: 15, image: artSample18, title: "Fierce Character", description: "Strong personality design" },
-  { id: 16, image: artSample19, title: "Spring Fantasy", description: "Colorful seasonal art" }
+  { id: 16, image: artSample19, title: "Spring Fantasy", description: "Colorful seasonal art" },
+  { id: 17, image: artSample20, title: "Moonlit Elegance", description: "Night scene composition" },
+  { id: 18, image: artSample21, title: "Dreamy Perspective", description: "Creative angle work" },
+  { id: 19, image: artSample22, title: "Bold Character", description: "Confident pose design" },
+  { id: 20, image: artSample23, title: "Gothic Style", description: "Dark fantasy aesthetic" },
+  { id: 21, image: artSample24, title: "Dramatic Lighting", description: "Atmospheric mood setting" },
+  { id: 22, image: artSample25, title: "Bunny Charm", description: "Playful costume design" },
+  { id: 23, image: artSample26, title: "Pink Dreams", description: "Soft color palette mastery" },
+  { id: 24, image: artSample27, title: "Urban Night", description: "City lights and neon" }
 ];
 
 const ITEMS_PER_PAGE = 9;
