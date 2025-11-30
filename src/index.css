@@ -222,14 +222,14 @@ All colors MUST be HSL.
     line-height: 1.6;
   }
 
-  /* 💬 Depoimentos - Vozes acolhedoras */
+  /* 💬 Depoimentos - Almofadas macias */
   #community [class*="Card"]:not([class*="gradient"]) {
     margin-top: 24px;
     margin-bottom: 24px;
-    padding: 20px 24px;
+    padding: 28px;
   }
   
-  /* 🎨 Uniformidade de Seções - Sinfonia visual */
+  /* 🎨 Uniformidade de Seções Principais - Sinfonia visual */
   section {
     margin-top: 48px;
     margin-bottom: 48px;
@@ -237,6 +237,26 @@ All colors MUST be HSL.
   
   section:first-of-type {
     margin-top: 0;
+  }
+  
+  /* 🔧 Blocos Secundários - Clareiras equilibradas */
+  section[id*="faq"],
+  section[id*="resources"],
+  section[id*="updates"] {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  
+  /* ✨ Separadores Visuais Delicados - Fios de seda */
+  section:not(:last-of-type) {
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+    padding-bottom: 48px;
+  }
+  
+  section[id*="faq"]:not(:last-of-type),
+  section[id*="resources"]:not(:last-of-type),
+  section[id*="updates"]:not(:last-of-type) {
+    padding-bottom: 32px;
   }
 
   /* 🎯 CTAs - Espaço para respirar */
