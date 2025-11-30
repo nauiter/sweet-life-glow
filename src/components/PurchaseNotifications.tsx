@@ -261,18 +261,18 @@ export const PurchaseNotifications = () => {
               <ShoppingBag className={colorClasses.iconColor} size={18} />
             </div>
 
-            {/* Content - Right side with perfectly centered 3-line layout */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center gap-[2px]">
+            {/* Content - Right side with perfect vertical symmetry around middle line */}
+            <div className="flex-1 min-w-0 flex flex-col justify-center">
               {/* Line 1: Name */}
-              <p className="text-sm font-bold text-foreground truncate leading-none pt-[1px]">
+              <p className="text-sm font-bold text-foreground truncate leading-none mb-[2px]">
                 {notification.name}
               </p>
-              {/* Line 2: Message */}
-              <p className="text-[11px] text-muted-foreground line-clamp-1 leading-tight">
+              {/* Line 2: Message - Center Axis */}
+              <p className="text-[11px] text-muted-foreground line-clamp-1 leading-none">
                 {notification.message}
               </p>
               {/* Line 3: CTA */}
-              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none pb-[1px]">
+              <p className="text-[10px] font-extrabold uppercase tracking-wider gradient-text leading-none mt-[2px]">
                 {notification.cta}
               </p>
             </div>
