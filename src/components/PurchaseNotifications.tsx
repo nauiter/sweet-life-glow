@@ -237,7 +237,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-3 px-3.5 w-[340px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2 px-3.5 w-[340px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
