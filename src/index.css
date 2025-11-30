@@ -253,8 +253,8 @@ All colors MUST be HSL.
   
   /* 🎨 Uniformidade de Seções Principais - Melodia visual */
   section {
-    margin-top: 48px;
-    margin-bottom: 48px;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
   
   section:first-of-type {
@@ -265,8 +265,8 @@ All colors MUST be HSL.
   section[id*="faq"],
   section[id*="resources"],
   section[id*="updates"] {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
   
   /* 🌈 Fundo alternado para blocos secundários */
@@ -278,13 +278,13 @@ All colors MUST be HSL.
   /* ✨ Separadores Visuais Uniformes - Fios de seda suaves */
   section:not(:last-of-type) {
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
   }
   
   section[id*="faq"]:not(:last-of-type),
   section[id*="resources"]:not(:last-of-type),
   section[id*="updates"]:not(:last-of-type) {
-    padding-bottom: 32px;
+    padding-bottom: 24px;
   }
   
   /* 🌈 Espaçamento Lateral em Blocos Secundários - Moldura elegante */
