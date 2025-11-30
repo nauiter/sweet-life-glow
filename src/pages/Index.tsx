@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { WelcomeModal } from "@/components/WelcomeModal";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
+import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { EXTERNAL_LINKS } from "@/constants/data";
@@ -48,6 +49,9 @@ const Index = () => {
       
       {/* Exit Intent Modal - Last Chance Offer */}
       <ExitIntentModal />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
       
       {/* Mobile CTA Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary md:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.3)]">

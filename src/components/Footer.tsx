@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="relative py-12 border-t border-primary/20">
       <div className="container px-4">
-        <div className="grid md:grid-cols-2 gap-8 mb-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-5xl mx-auto">
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold gradient-text">Sweet Life Animes</h3>
@@ -22,6 +22,15 @@ export const Footer = () => {
               <li><a href={EXTERNAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes Facebook Page">Facebook Page</a></li>
               <li><a href={EXTERNAL_LINKS.iwara} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Visit Sweet Life Animes on Iwara.tv">Iwara.tv</a></li>
               <li><a href={EXTERNAL_LINKS.paypal} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Support Sweet Life Animes via PayPal">Donate via PayPal</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4">Legal</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
+              <li><a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Refund Policy</a></li>
             </ul>
           </div>
         </div>
