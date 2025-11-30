@@ -180,9 +180,9 @@ export const HeroSection = () => {
         </div>
         
         {/* December Offer Card - Full Width Below Grid */}
-        <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-10 md:mt-12 lg:mt-16 mx-4 md:mx-0 max-w-full overflow-hidden" role="region" aria-label="Special December offer">
-          <div className="absolute -top-2.5 -right-2 sm:-right-2.5 z-10">
-            <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
+        <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-10 md:mt-12 lg:mt-16 mx-4 md:mx-0 max-w-full overflow-visible" role="region" aria-label="Special December offer">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10">
+            <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs sm:text-sm font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
               🔥 90% OFF
             </span>
           </div>
