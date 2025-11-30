@@ -7,8 +7,8 @@ import { ExitIntentModal } from "@/components/ExitIntentModal";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PurchaseNotifications } from "@/components/PurchaseNotifications";
+import { MobileCTABar } from "@/components/MobileCTABar";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
-import { EXTERNAL_LINKS } from "@/constants/data";
 
 // Lazy load below-the-fold components to reduce initial bundle size
 const AboutSection = lazy(() => import("@/components/AboutSection").then(m => ({ default: m.AboutSection })));
@@ -57,18 +57,8 @@ const Index = () => {
       {/* Purchase Notifications - Social Proof */}
       <PurchaseNotifications />
       
-      {/* Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary md:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.3)]">
-        <a 
-          href={EXTERNAL_LINKS.coursify}
-          target="_blank" 
-          rel="noopener noreferrer"
-          aria-label="Enroll now in Sweet Life Animes anime art course - Join 500+ artists"
-          className="block w-full py-2.5 sm:py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform text-center text-sm sm:text-base"
-        >
-          💜 Enroll Now - Join 500+ Artists
-        </a>
-      </div>
+      {/* Mobile CTA Bar with Dismiss */}
+      <MobileCTABar />
     </div>
   );
 };

@@ -55,7 +55,7 @@ export const ShopSection = () => {
 
         {/* Shop CTA */}
         <div className={cn("text-center animate-slide-up", SPACING.margin.normal)} style={{ animationDelay: '0.1s' }}>
-          <Card className={cn(SPACING.container.narrow, SPACING.card.default, "bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border-primary/40 neon-glow")}>
+          <Card className={cn(SPACING.container.narrow, SPACING.card.default, "card-highlight")}>
             <div className={SPACING.stack.tight}>
               <div className="flex items-center justify-center gap-3">
                 <ShoppingBag className="text-primary" size={32} />
@@ -84,16 +84,16 @@ export const ShopSection = () => {
           {resources.map((resource, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, "bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up group")}
+              className={cn(SPACING.card.default, "card-elevated animate-slide-up group")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={SPACING.stack.normal}>
                 <div className="flex items-start justify-between">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform neon-glow">
+                  <div className="icon-wrapper-lg group-hover:scale-110 transition-transform">
                     <resource.icon className="text-white" size={28} />
                   </div>
                   {resource.badge && (
-                    <span className={cn(TYPOGRAPHY.badge, "px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/50")}>
+                    <span className="badge-primary">
                       {resource.badge}
                     </span>
                   )}

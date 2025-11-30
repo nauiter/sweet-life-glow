@@ -80,7 +80,7 @@ export const CommunitySection = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className={cn(SPACING.card.default, "bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow animate-slide-up")}
+              className={cn(SPACING.card.default, "card-elevated animate-slide-up")}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Quote className={cn("text-primary", SPACING.margin.close)} size={32} />
@@ -102,21 +102,21 @@ export const CommunitySection = () => {
 
         {/* Social Proof Stats */}
         <div ref={statsRef} className={SPACING.container.content}>
-          <Card className={cn(SPACING.card.spacious, "bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow animate-slide-up")}>
-            <div className={cn("grid grid-cols-2 lg:grid-cols-4", SPACING.grid.normal, "text-center")}>
-              <div>
+          <Card className={cn(SPACING.card.spacious, "card-gradient animate-slide-up")}>
+            <div className={cn("grid grid-cols-2 lg:grid-cols-4", SPACING.grid.normal, "text-center")} style={{ contain: 'layout style paint' }}>
+              <div style={{ willChange: hasAnimated ? 'auto' : 'contents' }}>
                 <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{ratingCount.toFixed(1)}/5</div>
                 <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Average Rating</div>
               </div>
-              <div>
+              <div style={{ willChange: hasAnimated ? 'auto' : 'contents' }}>
                 <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{studentsCount}+</div>
                 <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Active Students</div>
               </div>
-              <div>
+              <div style={{ willChange: hasAnimated ? 'auto' : 'contents' }}>
                 <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{lessonsCount}+</div>
                 <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Lessons</div>
               </div>
-              <div>
+              <div style={{ willChange: hasAnimated ? 'auto' : 'contents' }}>
                 <div className={cn(TYPOGRAPHY.stat.number, "gradient-text", SPACING.margin.tight)}>{artworksCount >= 1000 ? '1K+' : `${artworksCount}+`}</div>
                 <div className={cn(TYPOGRAPHY.stat.label, "text-muted-foreground")}>Artworks</div>
               </div>

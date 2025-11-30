@@ -108,5 +108,57 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addComponents }: any) {
+      addComponents({
+        // Card Variants
+        '.card-elevated': {
+          '@apply bg-card/70 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all hover:neon-glow': {},
+        },
+        '.card-glass': {
+          '@apply bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 cursor-pointer transition-all duration-500 ease-out hover:neon-glow': {},
+        },
+        '.card-gradient': {
+          '@apply bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-primary/30 neon-glow': {},
+        },
+        '.card-highlight': {
+          '@apply bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm border-primary/40 neon-glow': {},
+        },
+        '.card-solid': {
+          '@apply bg-card/70 backdrop-blur-sm border-primary/30 neon-glow': {},
+        },
+        
+        // Badge Variants
+        '.badge-primary': {
+          '@apply px-3 py-1 bg-primary/20 rounded-full border border-primary/50 text-sm': {},
+        },
+        '.badge-secondary': {
+          '@apply px-3 py-1 bg-secondary/20 rounded-full border border-secondary/50 text-sm': {},
+        },
+        '.badge-accent': {
+          '@apply px-3 py-1 bg-accent/20 rounded-full border border-accent/50 text-sm': {},
+        },
+        
+        // Container Variants
+        '.container-narrow': {
+          '@apply max-w-2xl mx-auto': {},
+        },
+        '.container-content': {
+          '@apply max-w-4xl mx-auto': {},
+        },
+        '.container-wide': {
+          '@apply max-w-6xl mx-auto': {},
+        },
+        
+        // Icon Wrapper
+        '.icon-wrapper': {
+          '@apply w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center': {},
+        },
+        '.icon-wrapper-lg': {
+          '@apply w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center neon-glow': {},
+        },
+      });
+    },
+  ],
 } satisfies Config;
