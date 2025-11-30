@@ -171,7 +171,7 @@ export const PurchaseNotifications = () => {
     >
       <div 
         className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-4 max-w-sm neon-glow relative overflow-hidden",
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-3 max-w-xs neon-glow relative overflow-hidden",
           colorClasses.border,
           "transition-all duration-700 ease-in-out"
         )}
@@ -201,24 +201,24 @@ export const PurchaseNotifications = () => {
           </span>
         </div>
 
-        <div className="flex items-start gap-3 relative z-10">
+        <div className="flex items-start gap-2.5 relative z-10">
           {/* Icon */}
-          <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
-            <ShoppingBag className={colorClasses.iconColor} size={20} />
+          <div className={cn("flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
+            <ShoppingBag className={colorClasses.iconColor} size={18} />
           </div>
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
-              <p className="text-sm font-bold text-foreground truncate">
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <p className="text-xs font-bold text-foreground truncate">
                 {notification.name}
               </p>
-              <Sparkles className="text-secondary flex-shrink-0" size={14} />
+              <Sparkles className="text-secondary flex-shrink-0" size={12} />
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-[11px] text-muted-foreground leading-tight">
               {notification.message}
             </p>
-            <p className="text-xs text-primary/70 mt-1">
+            <p className="text-[10px] text-primary/70 mt-0.5">
               Just now
             </p>
           </div>
