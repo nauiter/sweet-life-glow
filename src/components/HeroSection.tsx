@@ -65,7 +65,7 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
         {/* Title - Centered Below Countdown */}
-        <div className="text-center mb-6 md:mb-8 lg:mb-10">
+        <div className="text-center mb-6 md:mb-8 lg:mb-10 mt-6 sm:mt-8">
           <h1 className="font-bold leading-[1.2]" style={{
           fontSize: 'clamp(32px, 5.5vw, 52px)'
         }}>
