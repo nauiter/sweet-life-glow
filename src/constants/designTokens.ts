@@ -41,8 +41,8 @@ export const TYPOGRAPHY = {
 
 export const SPACING = {
   section: {
-    // Vertical padding compacto: 40px → 48px → 64px → 80px
-    y: 'py-10 sm:py-12 md:py-16 lg:py-20',
+    // Vertical padding compacto: 32px → 40px → 48px → 64px
+    y: 'py-8 sm:py-10 md:py-12 lg:py-16',
     // Horizontal padding: 16px → 20px → 24px → 32px
     x: 'px-4 sm:px-5 md:px-6 lg:px-8',
   },
