@@ -164,16 +164,24 @@ export const GallerySection = () => {
   }, [currentBatch]);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const section = document.getElementById('gallery');
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        const scrollProgress = -rect.top;
-        setScrollY(scrollProgress);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const section = document.getElementById('gallery');
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const scrollProgress = -rect.top;
+            setScrollY(scrollProgress);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
