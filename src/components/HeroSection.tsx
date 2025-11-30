@@ -96,8 +96,7 @@ export const HeroSection = () => {
                   </div>
                 </div>
                 <p className={cn(TYPOGRAPHY.body.default, "text-foreground")}>
-                  Your creative journey starts here, cutie! ✨ Complete course, AI magic, premium brushes & lifetime access. 
-                  <span className="font-bold text-secondary">PayPal, Stripe, or PagSeguro accepted</span> 💜
+                  Your creative journey starts here, cutie! ✨ Complete course, AI magic, premium brushes & lifetime access.
                 </p>
                 <a 
                   href={EXTERNAL_LINKS.coursify}
