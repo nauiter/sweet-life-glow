@@ -169,30 +169,11 @@ export const PurchaseNotifications = () => {
           : "-translate-x-full opacity-0"
       )}
     >
-      <div 
-        className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-2.5 max-w-[240px] neon-glow relative overflow-hidden",
-          colorClasses.border,
-          "transition-all duration-700 ease-in-out"
-        )}
-        style={{ boxShadow: colorClasses.shadow }}
-      >
-        {/* Animated gradient background overlay */}
-        <div 
-          className="absolute inset-0 opacity-10 animate-pulse"
-          style={{
-            background: notification.colorVariant === 'pink' 
-              ? 'linear-gradient(135deg, rgba(244, 114, 182, 0.3), transparent)'
-              : notification.colorVariant === 'purple'
-              ? 'linear-gradient(135deg, rgba(192, 132, 252, 0.3), transparent)'
-              : 'linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent)'
-          }}
-        />
-        
-        {/* Urgency Badge */}
-        <div className="absolute -top-1 -right-1">
+      <div className="relative">
+        {/* Badge - Positioned above card */}
+        <div className="absolute -top-2 right-3 z-20">
           <span className={cn(
-            "inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold shadow-lg animate-pulse",
+            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg animate-pulse",
             notification.colorVariant === 'pink' && "bg-pink-500 text-white",
             notification.colorVariant === 'purple' && "bg-purple-500 text-white",
             notification.colorVariant === 'white' && "bg-white text-primary"
@@ -201,23 +182,44 @@ export const PurchaseNotifications = () => {
           </span>
         </div>
 
-        <div className="flex items-center gap-2.5 relative z-10">
-          {/* Icon - Left side, vertically centered */}
-          <div className={cn("flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
-            <ShoppingBag className={colorClasses.iconColor} size={14} />
-          </div>
+        <div 
+          className={cn(
+            "bg-card/95 backdrop-blur-md border-2 rounded-2xl shadow-xl p-4 w-[320px] neon-glow relative overflow-hidden",
+            colorClasses.border,
+            "transition-all duration-700 ease-in-out"
+          )}
+          style={{ boxShadow: colorClasses.shadow }}
+        >
+          {/* Animated gradient background overlay */}
+          <div 
+            className="absolute inset-0 opacity-10 animate-pulse"
+            style={{
+              background: notification.colorVariant === 'pink' 
+                ? 'linear-gradient(135deg, rgba(244, 114, 182, 0.3), transparent)'
+                : notification.colorVariant === 'purple'
+                ? 'linear-gradient(135deg, rgba(192, 132, 252, 0.3), transparent)'
+                : 'linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent)'
+            }}
+          />
 
-          {/* Content - Right side */}
-          <div className="flex-1 min-w-0">
-            <p className="text-[11px] font-bold text-foreground truncate leading-tight">
-              {notification.name}
-            </p>
-            <p className="text-[10px] text-muted-foreground leading-tight line-clamp-1 mt-0.5">
-              {notification.message}
-            </p>
-            <p className="text-[9px] text-primary/70 mt-0.5">
-              Just now
-            </p>
+          <div className="flex items-start gap-3 relative z-10">
+            {/* Icon - Left side */}
+            <div className={cn("flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center border-2", colorClasses.iconBg, colorClasses.border)}>
+              <ShoppingBag className={colorClasses.iconColor} size={20} />
+            </div>
+
+            {/* Content - Right side */}
+            <div className="flex-1 min-w-0 pt-1">
+              <p className="text-sm font-bold text-foreground truncate leading-tight mb-1">
+                {notification.name}
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-1">
+                {notification.message}
+              </p>
+              <p className="text-[10px] text-primary/60">
+                Just now
+              </p>
+            </div>
           </div>
         </div>
       </div>
