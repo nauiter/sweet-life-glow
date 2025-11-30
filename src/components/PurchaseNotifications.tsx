@@ -218,7 +218,7 @@ export const PurchaseNotifications = () => {
 
         <div 
           className={cn(
-            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-1.5 px-3 w-[320px] neon-glow relative overflow-hidden",
+            "bg-card/95 backdrop-blur-md border-2 rounded-xl shadow-xl py-2.5 px-3 w-[320px] neon-glow relative overflow-hidden",
             colorClasses.border,
             "transition-all duration-700 ease-in-out"
           )}
@@ -243,11 +243,11 @@ export const PurchaseNotifications = () => {
             </div>
 
             {/* Content - Right side, vertically centered */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center">
-              <p className="text-xs font-bold text-foreground truncate leading-none mb-0.5">
+            <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
+              <p className="text-xs font-bold text-foreground truncate leading-tight">
                 {notification.name}
               </p>
-              <p className="text-[10px] text-muted-foreground leading-none line-clamp-1">
+              <p className="text-[10px] text-muted-foreground leading-snug line-clamp-1">
                 {notification.message}
               </p>
             </div>
