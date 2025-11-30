@@ -177,7 +177,7 @@ All colors MUST be HSL.
     padding-right: 16px;
   }
 
-  /* ✨ Títulos e Cabeçalhos - Impacto visual */
+  /* ✨ Títulos e Cabeçalhos - Impacto visual uniforme */
   h1, h2, h3 {
     margin-top: 48px;
     margin-bottom: 24px;
@@ -197,7 +197,7 @@ All colors MUST be HSL.
     margin-top: 0;
   }
 
-  /* 🌈 Parágrafos - Dança entre linhas */
+  /* 🌈 Parágrafos - Dança suave entre linhas */
   p {
     line-height: 1.8;
     margin-bottom: 20px;
@@ -211,11 +211,10 @@ All colors MUST be HSL.
     margin-right: auto;
   }
 
-  /* 🌟 Listas de Benefícios - Palco próprio */
+  /* 🌟 Listas de Benefícios - Moldura delicada */
   [class*="grid"] > [class*="Card"],
   [class*="benefits"] > * {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 24px;
     margin-bottom: 16px;
   }
 
@@ -223,11 +222,21 @@ All colors MUST be HSL.
     line-height: 1.6;
   }
 
-  /* 💬 Depoimentos - Almofadas fofas */
+  /* 💬 Depoimentos - Vozes acolhedoras */
   #community [class*="Card"]:not([class*="gradient"]) {
     margin-top: 24px;
     margin-bottom: 24px;
-    padding: 20px;
+    padding: 20px 24px;
+  }
+  
+  /* 🎨 Uniformidade de Seções - Sinfonia visual */
+  section {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  
+  section:first-of-type {
+    margin-top: 0;
   }
 
   /* 🎯 CTAs - Espaço para respirar */
