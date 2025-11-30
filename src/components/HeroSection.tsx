@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-36 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
@@ -28,25 +28,25 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn("text-3xl sm:text-4xl md:text-7xl font-bold leading-tight mb-5 sm:mb-6 md:mb-6 text-center lg:text-left")}>
+            <h1 className={cn("text-2xl sm:text-3xl md:text-7xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center lg:text-left mt-8 sm:mt-0")}>
               <span className="gradient-text block mb-2">Learn Anime Art</span>
               <span className="neon-text block">with Sweet</span>
             </h1>
             
-            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8 px-4 lg:px-0 text-center lg:text-left leading-relaxed")}>
+            <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-6 md:mb-8 px-4 lg:px-0 text-center lg:text-left leading-relaxed text-sm sm:text-base")}>
               Hey cutie! 💜 Ready to level up your art skills? Join 500+ creative otakus in my neon-lit universe where emotion meets technique.
             </p>
             
             {/* Speech Bubble */}
-            <div className={cn("relative bg-card/70 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-primary/30 neon-glow max-w-md mx-auto lg:mx-0 mb-6 sm:mb-7 md:mb-8")} role="complementary" aria-label="Sweet's message to students">
-              <p className="text-foreground italic text-sm sm:text-base leading-relaxed">
+            <div className={cn("relative bg-card/70 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-primary/30 neon-glow max-w-md mx-auto lg:mx-0 mb-5 sm:mb-6 md:mb-8")} role="complementary" aria-label="Sweet's message to students">
+              <p className="text-foreground italic text-xs sm:text-sm leading-relaxed">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
               <div className="absolute -bottom-2 left-8 w-4 h-4 bg-card/70 border-l border-b border-primary/30 transform rotate-45" aria-hidden="true" />
             </div>
             
             {/* CTAs */}
-            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-4 mb-6 sm:mb-7 md:mb-8 px-4 lg:px-0")}>
+            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 lg:px-0")}>
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
@@ -56,8 +56,8 @@ export const HeroSection = () => {
               >
                 <Button 
                   variant="hero" 
-                  size="xl" 
-                  className="group w-full sm:w-auto min-h-[56px] text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200"
+                  size="lg" 
+                  className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200"
                 >
                   Enroll Now
                   <Heart className="group-hover:scale-110 transition-transform" />
@@ -72,8 +72,8 @@ export const HeroSection = () => {
               >
                 <Button 
                   variant="outline" 
-                  size="xl" 
-                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full sm:w-auto min-h-[56px] text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200"
+                  size="lg" 
+                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full sm:w-auto min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200"
                 >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
@@ -82,25 +82,25 @@ export const HeroSection = () => {
             </div>
             
             {/* Curiosity CTA + Bonus */}
-            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-primary/40 neon-glow mt-6 sm:mt-8 mx-4 lg:mx-0")} role="region" aria-label="Special December offer">
-              <div className="absolute -top-3 -right-2 sm:-right-3">
-                <span className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs sm:text-sm font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
-                  🔥 90% OFF DECEMBER
+            <div className={cn("relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-primary/40 neon-glow mt-5 sm:mt-6 mx-4 lg:mx-0")} role="region" aria-label="Special December offer">
+              <div className="absolute -top-2.5 -right-2 sm:-right-2.5">
+                <span className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-[10px] sm:text-xs font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
+                  🔥 90% OFF
                 </span>
               </div>
               <div className={SPACING.stack.tight}>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-3 mb-3">
-                  <h3 className={cn("text-xl sm:text-2xl md:text-2xl font-bold gradient-text flex items-center gap-2")}>
-                    <Sparkles className="text-primary flex-shrink-0" size={24} />
-                    <span>December Mega Sale!</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-2 mb-2">
+                  <h3 className={cn("text-lg sm:text-xl md:text-2xl font-bold gradient-text flex items-center gap-2")}>
+                    <Sparkles className="text-primary flex-shrink-0" size={20} />
+                    <span>December Sale!</span>
                   </h3>
                   <div className="flex items-center gap-2">
-                    <span className={cn("text-lg sm:text-xl", "text-muted-foreground line-through")}>$297</span>
-                    <span className={cn("text-4xl sm:text-5xl", "text-primary font-black")}>$29</span>
+                    <span className={cn("text-base sm:text-lg", "text-muted-foreground line-through")}>$297</span>
+                    <span className={cn("text-3xl sm:text-4xl", "text-primary font-black")}>$29</span>
                   </div>
                 </div>
-                <p className={cn("text-sm sm:text-base", "text-foreground leading-relaxed mb-4")}>
-                  Your creative journey starts here, cutie! ✨ Complete course, AI magic, premium brushes & lifetime access.
+                <p className={cn("text-xs sm:text-sm", "text-foreground leading-relaxed mb-3")}>
+                  Complete course, AI magic, premium brushes & lifetime access. ✨
                 </p>
                 <a 
                   href={EXTERNAL_LINKS.coursify}
@@ -111,8 +111,8 @@ export const HeroSection = () => {
                 >
                   <Button 
                     variant="hero" 
-                    size="lg" 
-                    className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full sm:w-auto min-h-[52px] text-base sm:text-lg"
+                    size="default" 
+                    className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full sm:w-auto min-h-[48px] text-sm sm:text-base"
                   >
                     Enroll for $29 (Save $268!)
                     <Sparkles className="group-hover:scale-110 transition-transform" size={16} />

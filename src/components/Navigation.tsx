@@ -120,7 +120,7 @@ export const Navigation = () => {
       </nav>
 
       {/* Mobile Sidebar */}
-      <MobileSidebar activeSection={activeSection} onNavClick={handleNavClick} />
+      {/* Menu hambúrguer removido para mobile mais limpo */}
     </>
   );
 };

@@ -173,17 +173,18 @@ All colors MUST be HSL.
   @media (max-width: 640px) {
     body {
       font-size: 16px; /* Base mínima para mobile */
+      padding-inline: 16px; /* Garante espaçamento lateral em todos os elementos */
     }
     
     p {
-      padding-inline: 0.5rem;
+      padding-inline: 0;
       font-size: 1rem; /* 16px mínimo */
       line-height: 1.65; /* Espaçamento confortável */
     }
     
     h1 {
-      font-size: 1.75rem; /* 28px */
-      line-height: 1.2;
+      font-size: 1.5rem; /* 24px como solicitado */
+      line-height: 1.4; /* 1.4 como solicitado */
     }
     
     h2 {
@@ -199,6 +200,26 @@ All colors MUST be HSL.
     h4 {
       font-size: 1.125rem; /* 18px */
       line-height: 1.4;
+    }
+    
+    /* Garante que elementos não encostem nas bordas em telas pequenas */
+    section {
+      padding-inline: 16px;
+    }
+    
+    .container {
+      padding-inline: 16px;
+    }
+  }
+  
+  /* Telas muito pequenas (320px) */
+  @media (max-width: 375px) {
+    body {
+      padding-inline: 12px;
+    }
+    
+    section, .container {
+      padding-inline: 12px;
     }
   }
   
