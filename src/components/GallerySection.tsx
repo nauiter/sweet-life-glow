@@ -195,8 +195,9 @@ export const GallerySection = () => {
         <img 
           src={galleryBg} 
           alt="" 
-          width={1701} 
-          height={1080} 
+          width={1600} 
+          height={900} 
+          sizes="100vw"
           loading="lazy"
           className="w-full h-full object-cover opacity-20 transition-transform duration-100 ease-out" 
           style={{ 
@@ -253,10 +254,11 @@ export const GallerySection = () => {
                         <img 
                           src={artwork.image} 
                           alt={artwork.title}
-                          width={1024}
-                          height={1820}
+                          width={400}
+                          height={710}
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover lg:group-hover:scale-110 transition-transform duration-500"
                           style={{ willChange: 'transform' }}
                         />
                       ) : (
