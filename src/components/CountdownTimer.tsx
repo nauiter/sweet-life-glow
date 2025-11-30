@@ -195,13 +195,6 @@ export const CountdownTimer = () => {
             </Button>
           </a>
         </div>
-
-        {/* Payment Methods Badge */}
-        <div className="text-center mt-2 pt-2 border-t border-white/20">
-          <p className={cn(TYPOGRAPHY.body.tiny, "text-white/80")}>
-            💳 Pay with <span className="font-semibold">PayPal, Stripe, or PagSeguro</span>
-          </p>
-        </div>
       </div>
     </div>
   );
