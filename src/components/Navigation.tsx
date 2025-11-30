@@ -65,7 +65,7 @@ export const Navigation = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block",
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-primary/20"
           : "bg-transparent"

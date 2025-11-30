@@ -76,7 +76,7 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
+        "fixed md:top-16 top-0 left-0 right-0 z-40 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-b-2 border-white/30",
         isUrgent && "animate-pulse",
         isVisible ? "animate-slide-up" : "-translate-y-full opacity-0"
@@ -147,8 +147,8 @@ export const CountdownTimer = () => {
           </a>
         </div>
 
-        {/* Mobile Layout - Vertical Stack */}
-        <div className="flex md:hidden flex-col items-center gap-3 text-center">
+        {/* Mobile Layout - Vertical Stack - 60% smaller */}
+        <div className="flex md:hidden flex-col items-center gap-2 text-center scale-[0.4] origin-top -mb-20">
           {/* Urgency Message */}
           <div className="flex items-center gap-2">
             <Zap className="text-white animate-pulse" size={18} fill="currentColor" />

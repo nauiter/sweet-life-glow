@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useIsMobile } from "@/hooks/use-mobile";
 import artSample4 from "@/assets/art-sample-4.jpg";
 import artSample5 from "@/assets/art-sample-5.jpg";
 import artSample6 from "@/assets/art-sample-6.jpg";
@@ -76,7 +77,8 @@ const galleryArtworks = [
   { id: 34, image: artSample37, title: "Cherry Blossom", description: "Spring atmosphere" }
 ];
 
-const ITEMS_PER_BATCH = 8;
+const ITEMS_PER_BATCH_DESKTOP = 8;
+const ITEMS_PER_BATCH_MOBILE = 3;
 const AUTO_ROTATE_INTERVAL = 10000; // 10 seconds - slower rotation
 
 // Neon border style for gallery items - white only with smooth transitions
@@ -98,6 +100,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 export const GallerySection = () => {
+  const isMobile = useIsMobile();
   const [currentBatch, setCurrentBatch] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState<typeof galleryArtworks[0] | null>(null);
@@ -107,10 +110,16 @@ export const GallerySection = () => {
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const ITEMS_PER_BATCH = isMobile ? ITEMS_PER_BATCH_MOBILE : ITEMS_PER_BATCH_DESKTOP;
   const totalBatches = Math.ceil(shuffledArtworks.length / ITEMS_PER_BATCH);
   const startIndex = currentBatch * ITEMS_PER_BATCH;
   const endIndex = startIndex + ITEMS_PER_BATCH;
   const currentArtworks = shuffledArtworks.slice(startIndex, endIndex);
+
+  // Reset to first batch when switching between mobile/desktop
+  useEffect(() => {
+    setCurrentBatch(0);
+  }, [ITEMS_PER_BATCH]);
 
   // Prefetch next batch images
   useEffect(() => {
@@ -131,7 +140,7 @@ export const GallerySection = () => {
     const prefetchTimer = setTimeout(prefetchImages, 2000);
 
     return () => clearTimeout(prefetchTimer);
-  }, [currentBatch, totalBatches, shuffledArtworks]);
+  }, [currentBatch, totalBatches, shuffledArtworks, ITEMS_PER_BATCH]);
 
   useEffect(() => {
     if (isPaused) return;
