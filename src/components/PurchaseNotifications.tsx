@@ -126,7 +126,7 @@ export const PurchaseNotifications = () => {
           : "-translate-x-full opacity-0"
       )}
     >
-      <div className="bg-card/95 backdrop-blur-md border border-primary/30 rounded-lg shadow-xl p-4 max-w-sm neon-glow">
+      <div className="bg-card/95 backdrop-blur-md border-2 border-white/40 rounded-lg shadow-xl p-4 max-w-sm neon-glow" style={{ boxShadow: "0 0 20px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)" }}>
         <div className="flex items-start gap-3">
           {/* Icon */}
           <div className="flex-shrink-0 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
