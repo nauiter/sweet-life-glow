@@ -77,7 +77,7 @@ export const HeroSection = () => {
           {/* Left: Character Image + Speech Bubble (Desktop) */}
           <div className="hidden lg:flex relative animate-slide-up order-1 flex-col gap-4 w-full max-w-[500px] justify-self-center">
             <div className="relative rounded-3xl overflow-hidden neon-glow">
-              <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" className="w-full h-auto object-cover rounded-2xl" />
+              <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" fetchPriority="high" className="w-full h-auto object-cover rounded-2xl" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             </div>
             
@@ -189,7 +189,7 @@ export const HeroSection = () => {
         animationDelay: '0.2s'
       }}>
           <div className="relative rounded-3xl overflow-hidden neon-glow">
-            <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" className="w-full h-auto object-cover max-h-[380px] sm:max-h-[420px] md:max-h-[480px]" />
+            <img src="/images/sweet-character.jpg" alt="Sweet - Your Anime Art Sensei and Creative Mentor" width="800" height="450" loading="eager" fetchPriority="high" className="w-full h-auto object-cover max-h-[380px] sm:max-h-[420px] md:max-h-[480px]" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
           
