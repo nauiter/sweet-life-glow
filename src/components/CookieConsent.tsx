@@ -33,7 +33,7 @@ export const CookieConsent = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 py-1.5 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl hidden md:block animate-in fade-in-0 slide-in-from-bottom-4 duration-700" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
+    <div className="fixed bottom-0 left-0 right-0 z-50 py-1.5 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t shadow-2xl hidden md:block animate-blur-in" style={{ borderTopColor: `hsl(var(--separator-color) / var(--separator-opacity))` }}>
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           {/* Left: Message */}
