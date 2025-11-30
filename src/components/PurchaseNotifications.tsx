@@ -242,15 +242,15 @@ export const PurchaseNotifications = () => {
               <ShoppingBag className={colorClasses.iconColor} size={20} />
             </div>
 
-            {/* Content - Right side */}
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold text-foreground truncate leading-tight mb-1">
+            {/* Content - Right side, vertically centered */}
+            <div className="flex-1 min-w-0 flex flex-col justify-center">
+              <p className="text-sm font-bold text-foreground truncate leading-tight">
                 {notification.name}
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-1">
+              <p className="text-xs text-muted-foreground leading-tight line-clamp-1">
                 {notification.message}
               </p>
-              <p className="text-[10px] text-primary/60">
+              <p className="text-[10px] text-primary/60 leading-tight">
                 Just now
               </p>
             </div>
