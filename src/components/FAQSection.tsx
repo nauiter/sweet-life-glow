@@ -81,16 +81,17 @@ export const FAQSection = () => {
           <Card className={cn(SPACING.card.spacious, "card-elevated animate-slide-up")} style={{ contain: 'layout style paint' }} role="region" aria-label="Frequently Asked Questions List">
             <Accordion type="single" collapsible className={SPACING.stack.normal}>
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="border-b border-primary/20 last:border-0"
-                >
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="border-b last:border-0"
+                    style={{ borderColor: '#e0e0e0' }}
+                  >
                   <AccordionTrigger 
                     className={cn(TYPOGRAPHY.body.intro, "text-left hover:text-primary transition-colors py-4 font-semibold hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded flex items-start gap-3")}
                     aria-label={`Question: ${faq.question}`}
                   >
-                    <Sparkles className="text-muted-foreground/60 mt-1 flex-shrink-0" size={16} />
+                    <Sparkles className="mt-1 flex-shrink-0" style={{ color: '#999999' }} size={16} />
                     <span className="flex-1">{faq.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className={cn(TYPOGRAPHY.body.default, "text-muted-foreground leading-relaxed pb-4 pt-2 pl-8")} role="region" aria-label={`Answer to: ${faq.question}`}>
