@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { MagicCursor } from "@/components/MagicCursor";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { Section } from "@/components/ui/section";
 
@@ -26,6 +27,9 @@ const MobileCTABar = lazy(() => import("@/components/MobileCTABar").then(m => ({
 const Index = () => {
   return (
     <div className="relative">
+      {/* Magic Cursor Effect - Desktop Only */}
+      <MagicCursor />
+      
       {/* Fixed Navigation */}
       <Navigation />
       
