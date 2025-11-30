@@ -66,67 +66,54 @@ export const AboutSection = () => {
 
         {/* Who's Sweet Card */}
         <Card className={cn(SPACING.container.content, "p-4 sm:p-6 md:p-8", "card-solid animate-slide-up", SPACING.margin.hero)}>
-          <div className="flex flex-col lg:grid lg:grid-cols-2 items-start gap-4 md:gap-6 lg:gap-8">
+          <div className="flex flex-col md:flex-row items-start gap-6">
             {/* Left Column - Text Content */}
-            <div className="flex flex-col sm:flex-row lg:flex-col items-start gap-4 md:gap-6 w-full">
-              <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow mx-auto sm:mx-0 lg:mx-0">
-                <Heart size={24} className="text-white md:w-8 md:h-8" fill="currentColor" />
+            <div className="flex-1 space-y-4 w-full">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center neon-glow">
+                  <Heart size={24} className="text-white" fill="currentColor" />
+                </div>
+                <div className="flex-1">
+                  <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Who's Sweet? 💜</h3>
+                </div>
               </div>
-              <div className="flex-1 text-center sm:text-left space-y-4 w-full">
-                <h3 className={cn(TYPOGRAPHY.heading.h3, "gradient-text")}>Who's Sweet? 💜</h3>
-                
-                <div className="space-y-3 max-w-2xl mx-auto sm:mx-0 md:text-[18px]">
-                  <p className="text-foreground leading-relaxed text-base">
-                    I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started.
-                  </p>
-                  <p className="text-foreground leading-relaxed text-base">
-                    Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
-                  </p>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  <span 
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary/30 border-2 border-primary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
-                    data-tooltip="VTuber Artist"
-                  >
-                    <span className="md:hidden lg:inline">VTuber Artist</span>
-                    <span className="hidden md:inline lg:hidden">🎨</span>
-                    <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-primary/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
-                      VTuber Artist
-                    </span>
-                  </span>
-                  <span 
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-secondary/20 to-secondary/30 border-2 border-secondary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
-                    data-tooltip="Digital Illustrator"
-                  >
-                    <span className="md:hidden lg:inline">Digital Illustrator</span>
-                    <span className="hidden md:inline lg:hidden">✏️</span>
-                    <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-secondary/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
-                      Digital Illustrator
-                    </span>
-                  </span>
-                  <span 
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/20 to-accent/30 border-2 border-accent/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform relative group cursor-pointer"
-                    data-tooltip="Creative Mentor"
-                  >
-                    <span className="md:hidden lg:inline">Creative Mentor</span>
-                    <span className="hidden md:inline lg:hidden">💡</span>
-                    <span className="hidden md:group-hover:block absolute -bottom-12 left-1/2 -translate-x-1/2 bg-background/95 border border-accent/40 px-3 py-1.5 rounded-lg text-xs whitespace-nowrap z-10 shadow-lg">
-                      Creative Mentor
-                    </span>
-                  </span>
-                </div>
+              
+              <div className="space-y-3">
+                <p className="text-foreground leading-relaxed text-base">
+                  I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started.
+                </p>
+                <p className="text-foreground leading-relaxed text-base">
+                  Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary/30 border-2 border-primary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform"
+                >
+                  🎨 VTuber Artist
+                </span>
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-secondary/20 to-secondary/30 border-2 border-secondary/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform"
+                >
+                  ✏️ Digital Illustrator
+                </span>
+                <span 
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/20 to-accent/30 border-2 border-accent/40 rounded-full text-foreground text-sm font-semibold backdrop-blur-sm hover:scale-105 transition-transform"
+                >
+                  💡 Creative Mentor
+                </span>
               </div>
             </div>
             
-            {/* Right Column - Image/Illustration */}
-            <div className="hidden lg:block relative w-full h-full min-h-[300px]">
-              <div className="relative rounded-2xl overflow-hidden neon-glow h-full group/image">
+            {/* Right Column - Image (Smaller) */}
+            <div className="w-full md:w-64 flex-shrink-0">
+              <div className="relative rounded-2xl overflow-hidden neon-glow group/image aspect-square">
                 <img 
                   src={sweetPhoto} 
                   alt="Sweet - Your Creative Mentor"
-                  width="500"
-                  height="500"
+                  width="300"
+                  height="300"
                   className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover/image:scale-110"
                   loading="lazy"
                 />
@@ -134,7 +121,7 @@ export const AboutSection = () => {
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
               </div>
-              <Heart className="absolute -top-3 -right-3 text-primary w-8 h-8 animate-float" fill="currentColor" />
+              <Heart className="absolute -top-3 -right-3 text-primary w-8 h-8 animate-float hidden md:block" fill="currentColor" />
             </div>
           </div>
         </Card>
