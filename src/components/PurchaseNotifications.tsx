@@ -7,6 +7,7 @@ interface Notification {
   name: string;
   message: string;
   colorVariant: 'white' | 'pink' | 'purple';
+  badge: string;
 }
 
 const firstNames = [
@@ -45,6 +46,12 @@ const getRandomName = () => {
 
 const getRandomMessage = () => {
   return messages[Math.floor(Math.random() * messages.length)];
+};
+
+const badges = ['🔥 HOT', '⚡ NEW', '✨ JUST IN', '💫 FRESH'];
+
+const getRandomBadge = () => {
+  return badges[Math.floor(Math.random() * badges.length)];
 };
 
 const getRandomColor = (): 'white' | 'pink' | 'purple' => {
@@ -116,7 +123,8 @@ export const PurchaseNotifications = () => {
         id: Math.random().toString(36).substr(2, 9),
         name: getRandomName(),
         message: getRandomMessage(),
-        colorVariant: getRandomColor()
+        colorVariant: getRandomColor(),
+        badge: getRandomBadge()
       };
 
       setNotification(newNotification);
@@ -163,12 +171,37 @@ export const PurchaseNotifications = () => {
     >
       <div 
         className={cn(
-          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-4 max-w-sm neon-glow",
-          colorClasses.border
+          "bg-card/95 backdrop-blur-md border-2 rounded-lg shadow-xl p-4 max-w-sm neon-glow relative overflow-hidden",
+          colorClasses.border,
+          "transition-all duration-700 ease-in-out"
         )}
         style={{ boxShadow: colorClasses.shadow }}
       >
-        <div className="flex items-start gap-3">
+        {/* Animated gradient background overlay */}
+        <div 
+          className="absolute inset-0 opacity-10 animate-pulse"
+          style={{
+            background: notification.colorVariant === 'pink' 
+              ? 'linear-gradient(135deg, rgba(244, 114, 182, 0.3), transparent)'
+              : notification.colorVariant === 'purple'
+              ? 'linear-gradient(135deg, rgba(192, 132, 252, 0.3), transparent)'
+              : 'linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent)'
+          }}
+        />
+        
+        {/* Urgency Badge */}
+        <div className="absolute -top-1 -right-1">
+          <span className={cn(
+            "inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold shadow-lg animate-pulse",
+            notification.colorVariant === 'pink' && "bg-pink-500 text-white",
+            notification.colorVariant === 'purple' && "bg-purple-500 text-white",
+            notification.colorVariant === 'white' && "bg-white text-primary"
+          )}>
+            {notification.badge}
+          </span>
+        </div>
+
+        <div className="flex items-start gap-3 relative z-10">
           {/* Icon */}
           <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center", colorClasses.iconBg)}>
             <ShoppingBag className={colorClasses.iconColor} size={20} />
