@@ -43,6 +43,11 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
+    /* Section Separators - Consistent Pattern */
+    --separator-color: 276 40% 30%;
+    --separator-opacity: 0.2;
+    --separator-height: 1px;
+    
     /* Custom Neon Variables */
     --neon-pink: 328 100% 64%;
     --neon-purple: 270 100% 70%;
@@ -269,15 +274,17 @@ All colors MUST be HSL.
     margin-bottom: 24px;
   }
   
-  /* ✨ Separadores Visuais Uniformes - Fios de seda suaves */
+  /* ✨ Separadores Visuais Uniformes - Sobrescreve padding para desktop */
   section:not(:last-of-type) {
     padding-bottom: 32px;
+    margin-bottom: 32px;
   }
   
   section[id*="faq"]:not(:last-of-type),
   section[id*="resources"]:not(:last-of-type),
   section[id*="updates"]:not(:last-of-type) {
     padding-bottom: 24px;
+    margin-bottom: 24px;
   }
   
   /* 🌈 Espaçamento Lateral em Blocos Secundários - Moldura elegante */
@@ -402,6 +409,13 @@ All colors MUST be HSL.
   p {
     line-height: 1.6; /* Melhor legibilidade mobile */
     padding-block: 0.1em;
+  }
+  
+  /* 🎨 Separadores de Seção - Padrão Global Consistente */
+  section:not(:last-of-type) {
+    border-bottom: var(--separator-height) solid hsl(var(--separator-color) / var(--separator-opacity));
+    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
   
   /* Responsive text optimization - Mobile First */
