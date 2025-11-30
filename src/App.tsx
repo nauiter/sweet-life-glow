@@ -14,12 +14,12 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <a href="#main-content" className="skip-to-main">
-        Skip to main content
-      </a>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <a href="#main-content" className="skip-to-main">
+          Skip to main content
+        </a>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<Privacy />} />
