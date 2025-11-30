@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Zap, X, Gift, Heart, Sparkles } from "lucide-react";
+import { Zap, X, Gift, Heart, Sparkles, Palette, Users, BookOpen, Video } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const ExitIntentModal = () => {
@@ -121,7 +121,7 @@ export const ExitIntentModal = () => {
                     text="Lifetime Access"
                   />
                   <QuickBenefit 
-                    icon={<Gift className="text-secondary" size={14} />}
+                    icon={<Palette className="text-secondary" size={14} />}
                     text="100+ Brushes"
                   />
                   <QuickBenefit 
@@ -132,19 +132,19 @@ export const ExitIntentModal = () => {
                 
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   <QuickBenefit 
-                    icon={<Sparkles className="text-accent" size={14} />}
-                    text="AI Tools"
+                    icon={<BookOpen className="text-accent" size={14} />}
+                    text="Pro Techniques"
                   />
                   <QuickBenefit 
                     icon={<Gift className="text-primary" size={14} />}
                     text="Bonus Content"
                   />
                   <QuickBenefit 
-                    icon={<Zap className="text-secondary" size={14} />}
-                    text="Weekly Updates"
+                    icon={<Video className="text-secondary" size={14} />}
+                    text="Video Tutorials"
                   />
                   <QuickBenefit 
-                    icon={<Heart className="text-accent" fill="currentColor" size={14} />}
+                    icon={<Users className="text-accent" fill="currentColor" size={14} />}
                     text="Community"
                   />
                 </div>
