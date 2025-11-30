@@ -69,7 +69,7 @@ export const HeroSection = () => {
           <h1 className="font-bold leading-[1.2]" style={{
           fontSize: 'clamp(32px, 5.5vw, 52px)'
         }}>
-            <span className="gradient-text neon-text my-[20px]">Learn Anime Art with Sweet</span>
+            <span className="gradient-text neon-text my-0">Learn Anime Art with Sweet</span>
           </h1>
         </div>
 
