@@ -70,7 +70,7 @@ export const Navigation = () => {
             : "bg-transparent"
         )}
       >
-        <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a
@@ -79,7 +79,7 @@ export const Navigation = () => {
               className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
               aria-label="Sweet Life Animes - Go to home"
             >
-              {/* Logo */}
+              Sweet Life Animes
             </a>
 
             {/* Desktop Navigation */}
@@ -90,9 +90,9 @@ export const Navigation = () => {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
-                    "px-3 py-2 rounded-md text-sm font-medium transition-all",
+                    "px-3 py-2 rounded-md text-sm font-medium transition-all duration-200",
                     activeSection === item.id
-                      ? "text-primary bg-primary/10"
+                      ? "text-primary bg-primary/10 shadow-sm"
                       : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                   )}
                 >
@@ -105,7 +105,7 @@ export const Navigation = () => {
                 rel="noopener noreferrer"
                 aria-label="Enroll in course"
               >
-                <Button variant="default" size="sm" className="ml-4">
+                <Button variant="default" size="sm" className="ml-4 hover:scale-105 transition-transform">
                   Enroll Now
                 </Button>
               </a>

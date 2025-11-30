@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-8 md:pt-[200px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
+    <section id="home" className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-28 sm:pt-32 pb-8 md:pt-[220px] md:pb-0" aria-label="Hero section - Welcome to Sweet Life Animes">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card/30" aria-hidden="true" />
       <div className="absolute inset-0 opacity-20" aria-hidden="true">
@@ -28,7 +28,7 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left: Text Content */}
           <div className={cn("animate-slide-up", SPACING.stack.normal)}>
-            <h1 className={cn("text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.4] mb-5 sm:mb-6 md:mb-6 text-center md:text-center lg:text-left mt-10 sm:mt-0")}>
+            <h1 className="text-2xl sm:text-3xl font-bold leading-[1.4] mb-5 sm:mb-6 text-center mt-10 sm:mt-0 md:text-[28px] md:text-center lg:text-[36px] lg:text-left lg:mt-0">
               <span className="gradient-text block mb-2">Learn Anime Art</span>
               <span className="neon-text block">with Sweet</span>
             </h1>
@@ -46,20 +46,20 @@ export const HeroSection = () => {
             </div>
             
             {/* CTAs */}
-            <div className={cn("flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 md:px-0 lg:px-0 justify-center md:justify-center lg:justify-start")}>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-5 sm:mb-6 md:mb-8 px-4 md:px-0 lg:px-0 justify-center md:justify-center lg:justify-start">
               <a 
                 href={EXTERNAL_LINKS.coursify}
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Enroll in Sweet Life Animes anime art course"
-                className="w-full sm:w-auto md:w-[300px] lg:w-auto"
+                className="w-full sm:w-auto md:w-[80%] md:mx-auto lg:w-[300px] lg:mx-0"
               >
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200"
+                  className="group w-full min-h-[48px] text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-200 rounded-xl"
                 >
-                  Enroll Now
+                  Enroll Now 🚀
                   <Heart className="group-hover:scale-110 transition-transform" />
                 </Button>
               </a>
@@ -68,12 +68,12 @@ export const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Sweet Life Animes Shop"
-                className="w-full sm:w-auto md:w-[300px] lg:w-auto"
+                className="w-full sm:w-auto md:w-[80%] md:mx-auto lg:w-[300px] lg:mx-0"
               >
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200"
+                  className="group border-primary/50 hover:border-primary hover:bg-primary/10 w-full min-h-[48px] text-base sm:text-lg border-2 hover:scale-105 active:scale-95 transition-all duration-200 rounded-xl"
                 >
                   <ShoppingBag className="group-hover:scale-110 transition-transform" />
                   Browse Shop
