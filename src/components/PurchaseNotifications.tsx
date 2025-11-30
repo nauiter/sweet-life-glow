@@ -8,6 +8,7 @@ interface Notification {
   message: string;
   colorVariant: 'white' | 'pink' | 'purple';
   badge: string;
+  cta: string;
 }
 
 const firstNames = [
@@ -50,8 +51,23 @@ const getRandomMessage = () => {
 
 const badges = ['🔥 HOT', '⚡ NEW', '✨ JUST IN', '💫 FRESH'];
 
+const ctas = [
+  'Welcome aboard! 🎉',
+  "Let's go! 💜",
+  'Amazing choice! ✨',
+  "You're in! 🚀",
+  'Great decision! 💫',
+  'Hell yeah! 🔥',
+  'Perfect timing! ⚡',
+  'Awesome move! 🌟'
+];
+
 const getRandomBadge = () => {
   return badges[Math.floor(Math.random() * badges.length)];
+};
+
+const getRandomCta = () => {
+  return ctas[Math.floor(Math.random() * ctas.length)];
 };
 
 const getBadgeColorClasses = (badge: string) => {
@@ -154,7 +170,8 @@ export const PurchaseNotifications = () => {
         name: getRandomName(),
         message: getRandomMessage(),
         colorVariant: getRandomColor(),
-        badge: getRandomBadge()
+        badge: getRandomBadge(),
+        cta: getRandomCta()
       };
 
       setNotification(newNotification);
@@ -245,15 +262,18 @@ export const PurchaseNotifications = () => {
             </div>
 
             {/* Content - Right side with clear hierarchy */}
-            <div className="flex-1 min-w-0 flex flex-col">
-              <p className="text-base font-bold text-foreground truncate mb-1 leading-tight">
+            <div className="flex-1 min-w-0 flex flex-col gap-0.5">
+              <p className="text-base font-bold text-foreground truncate leading-tight">
                 {notification.name}
               </p>
               <p 
-                className="text-sm leading-relaxed line-clamp-2"
+                className="text-sm leading-snug line-clamp-2"
                 style={{ color: '#dddddd' }}
               >
                 {notification.message}
+              </p>
+              <p className="text-xs font-semibold gradient-text leading-tight">
+                {notification.cta}
               </p>
             </div>
           </div>
