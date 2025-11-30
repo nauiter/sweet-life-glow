@@ -144,34 +144,35 @@ hero: 'mb-12 sm:mb-14 md:mb-16'      // 48→56→64px
 
 ---
 
-## 📏 Padronização Final de Espaçamentos (2025-11-30) - ATUALIZADO
+## 📏 Padronização Final de Espaçamentos (2025-11-30) - EQUILIBRADO
 
-### Novo Padrão Generoso - Alinhado com Hero Section
-✅ **Todas as seções principais agora usam espaçamento generoso:**
+### Padrão Equilibrado - Valores Intermediários
+✅ **Todas as seções principais agora usam espaçamento equilibrado:**
 
 | Seção | Classe de Espaçamento | Valores Expandidos | Tamanhos |
 |-------|----------------------|-------------------|----------|
-| AboutSection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
-| GallerySection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
-| CommunitySection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
-| ShopSection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
-| UpdatesSection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
-| FAQSection | `SPACING.section.y` | `py-20 sm:py-24 md:py-28 lg:py-32` | 80→96→112→128px |
+| AboutSection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
+| GallerySection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
+| CommunitySection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
+| ShopSection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
+| UpdatesSection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
+| FAQSection | `SPACING.section.y` | `py-12 sm:py-16 md:py-20 lg:py-24` | 48→64→80→96px |
 
 ### Seções com Espaçamento Especial (Mantido)
-- **HeroSection**: `pt-40 sm:pt-44 lg:pt-40 pb-8` (160px→176px→160px top) - Padding superior ajustado para countdown banner
+- **HeroSection**: `pt-40 sm:pt-44 lg:pt-40 pb-8` - Padding superior ajustado para countdown banner
 - **Footer**: `py-12` (48px constante) - Apropriado para rodapé
 
-### Mudanças Implementadas
-**Antes:** `py-10 sm:py-14 md:py-16 lg:py-20` (40→56→64→80px)
-**Depois:** `py-20 sm:py-24 md:py-28 lg:py-32` (80→96→112→128px)
+### Evolução dos Valores
+- **Inicial:** `py-10 sm:py-14 md:py-16 lg:py-20` (40→56→64→80px) - Muito compacto
+- **Tentativa:** `py-20 sm:py-24 md:py-28 lg:py-32` (80→96→112→128px) - Muito espaçoso
+- **Final:** `py-12 sm:py-16 md:py-20 lg:py-24` (48→64→80→96px) - **Equilibrado ✓**
 
-### Benefícios do Novo Padrão
-1. ✅ **Espaçamento Generoso**: Respiro visual significativo entre seções
-2. ✅ **Consistência com Hero**: Alinhado com o padrão da seção principal
-3. ✅ **Design Premium**: Aparência mais sofisticada e profissional
-4. ✅ **Hierarquia Clara**: Melhor separação visual entre conteúdos
-5. ✅ **Responsividade Otimizada**: Progressão suave em todos os breakpoints
+### Benefícios do Padrão Equilibrado
+1. ✅ **Espaçamento Confortável**: Respiro visual adequado sem excessos
+2. ✅ **Consistência Visual**: Ritmo uniforme entre todas as seções
+3. ✅ **Design Profissional**: Aparência limpa e organizada
+4. ✅ **Melhor Aproveitamento**: Mais conteúdo visível sem scroll excessivo
+5. ✅ **Responsividade Otimizada**: Progressão natural em todos os breakpoints
 
 ---
 
