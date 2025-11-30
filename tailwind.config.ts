@@ -103,8 +103,8 @@ export default {
         "fade-in-footer": "fade-in-footer 0.8s ease-out",
       },
       fontFamily: {
-        'orbitron': ['Orbitron', 'sans-serif'],
-        'poppins': ['Poppins', 'sans-serif'],
+        'orbitron': ['Orbitron', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+        'poppins': ['Poppins', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },

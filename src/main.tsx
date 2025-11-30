@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { initFontLoading } from "./lib/fontUtils";
 
 // Register Service Worker for caching
 if ('serviceWorker' in navigator) {
@@ -20,5 +21,10 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+
+// Initialize font loading
+initFontLoading().then(() => {
+  console.log('🔤 Font system initialized');
+});
 
 createRoot(document.getElementById("root")!).render(<App />);
