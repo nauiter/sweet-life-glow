@@ -40,7 +40,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="about-heading">
+    <section id="about" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="about-heading">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
       <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
@@ -77,7 +77,7 @@ export const AboutSection = () => {
         </Card>
 
         {/* Benefits Grid */}
-        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-2", SPACING.grid.normal, SPACING.container.wide, SPACING.margin.major)}>
+        <div className={cn("grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6", SPACING.container.wide, SPACING.margin.major)}>
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
