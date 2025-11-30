@@ -8,10 +8,13 @@ import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { useParallax } from "@/hooks/useParallax";
 
 export const CommunitySection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
+  const parallaxOffset = useParallax(0.2);
+
 
   // Use custom hook for animated counters
   const ratingCount = useAnimatedCounter({ target: 4.9, duration: 1500, isDecimal: true, enabled: hasAnimated });
@@ -60,7 +63,10 @@ export const CommunitySection = () => {
     <section id="community" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="community-heading">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
+      <div 
+        className="absolute bottom-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl transition-transform duration-100" 
+        style={{ transform: `translateY(${-parallaxOffset}px)` }}
+      />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}

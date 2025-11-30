@@ -6,8 +6,11 @@ import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
 import sweetPhoto from "@/assets/sweet5.webp";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { useParallax } from "@/hooks/useParallax";
 
 export const AboutSection = () => {
+  const parallaxOffset = useParallax(0.15);
+  
   const benefits = [
     {
       icon: Palette,
@@ -44,8 +47,11 @@ export const AboutSection = () => {
   return (
     <section id="about" className="relative overflow-hidden py-12 md:py-24" aria-labelledby="about-heading">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
-      <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" />
+      <div 
+        className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
+      />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Section Header */}

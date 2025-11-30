@@ -4,8 +4,11 @@ import { Download, Linkedin, Sparkles, Grid, ShoppingBag } from "lucide-react";
 import { DOWNLOAD_LINKS, EXTERNAL_LINKS } from "@/constants/data";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
+import { useParallax } from "@/hooks/useParallax";
 
 export const ShopSection = () => {
+  const parallaxOffset = useParallax(0.18);
+  
   const resources = [
     {
       icon: Linkedin,
@@ -39,8 +42,12 @@ export const ShopSection = () => {
   return (
     <section id="resources" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="resources-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" aria-hidden="true" />
-      <div className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
+      <div 
+        className="absolute top-40 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl transition-transform duration-100" 
+        aria-hidden="true"
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
+      />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}

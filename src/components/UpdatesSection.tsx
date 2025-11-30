@@ -32,7 +32,7 @@ export const UpdatesSection = () => {
   return (
     <section id="updates" className={cn("relative overflow-hidden", SPACING.section.y)} aria-labelledby="updates-heading">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/20 to-background" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/5 to-background" aria-hidden="true" />
       
       <div className={cn("container relative z-10", SPACING.section.x)}>
         {/* Header */}
