@@ -76,7 +76,7 @@ export const CountdownTimer = () => {
   return (
     <div 
       className={cn(
-        "fixed left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
+        "fixed left-1/2 -translate-x-1/2 z-[51] bg-gradient-to-r from-primary via-secondary to-primary backdrop-blur-md transition-all duration-500",
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[95%] max-w-4xl",
         "top-2 md:top-20",
