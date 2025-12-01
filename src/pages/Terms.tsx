@@ -6,9 +6,32 @@ import { cn } from "@/lib/utils";
 import { FileText, AlertCircle, DollarSign, Users, Copyright, Ban, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Terms = () => {
-  const lastUpdated = "November 30, 2025";
+  const lastUpdated = "November 30, 2024";
+
+  useEffect(() => {
+    document.title = "Terms of Service | Sweet Life Animes";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Read our Terms of Service to understand the rules and guidelines for using Sweet Life Animes courses and community. Learn about course access, payments, user conduct, and more.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Read our Terms of Service to understand the rules and guidelines for using Sweet Life Animes courses and community. Learn about course access, payments, user conduct, and more.";
+      document.head.appendChild(meta);
+    }
+
+    return () => {
+      document.title = "Sweet Life Animes";
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute("content", "Sweet Life Animes - Explore our exclusive anime art courses and community.");
+      }
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen">

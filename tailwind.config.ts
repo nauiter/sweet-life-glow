@@ -140,6 +140,10 @@ export default {
             transform: "translateY(0)"
           },
         },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -153,6 +157,7 @@ export default {
         "parallax-1": "parallax-1 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
         "parallax-2": "parallax-2 0.9s cubic-bezier(0.34, 1.56, 0.64, 1)",
         "blur-in": "blur-in 0.8s ease-out",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
       },
       fontFamily: {
         'orbitron': ['Orbitron', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
