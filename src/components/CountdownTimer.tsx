@@ -108,7 +108,7 @@ export const CountdownTimer = () => {
       role="region"
       aria-label="Limited time offer countdown"
     >
-      <div className="px-2.5 py-2.5 sm:py-3 md:px-6 md:py-3">
+      <div className="px-2.5 py-1.5 sm:py-2 md:px-6 md:py-3">
         {/* Desktop Layout - Apenas Timer + Botão */}
         <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8">
           {/* Countdown Timer */}
@@ -152,7 +152,7 @@ export const CountdownTimer = () => {
         </div>
 
         {/* Mobile Layout - Simplificado: Apenas Timer + Botão */}
-        <div className="flex md:hidden flex-col items-center justify-center gap-3 py-3">
+        <div className="flex md:hidden flex-col items-center justify-center gap-2 py-1">
           {/* Timer: Contador de tempo */}
           <div className="flex items-center gap-1.5">
             <TimeBlockMobile value={timeLeft.days} label="D" />
