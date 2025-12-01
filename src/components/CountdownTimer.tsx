@@ -62,7 +62,18 @@ export const CountdownTimer = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+      
+      // Check if timer reached zero and restart it
+      if (newTimeLeft.days === 0 && newTimeLeft.hours === 0 && 
+          newTimeLeft.minutes === 0 && newTimeLeft.seconds === 0) {
+        // Reset timer to 24 hours from now
+        const now = Date.now();
+        localStorage.setItem('timer_start', now.toString());
+        // Force page reload to restart timer
+        window.location.reload();
+      }
     }, 1000);
 
     return () => clearInterval(timer);
