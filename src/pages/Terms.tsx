@@ -3,7 +3,9 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { TYPOGRAPHY, SPACING } from "@/constants/designTokens";
 import { cn } from "@/lib/utils";
-import { FileText, AlertCircle, DollarSign, Users, Copyright, Ban } from "lucide-react";
+import { FileText, AlertCircle, DollarSign, Users, Copyright, Ban, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Terms = () => {
   const lastUpdated = "November 30, 2025";
@@ -28,6 +30,15 @@ const Terms = () => {
             <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
               Last Updated: {lastUpdated}
             </p>
+            
+            <div className="mt-8">
+              <Link to="/">
+                <Button variant="outline" className="gap-2">
+                  <ArrowLeft size={18} />
+                  Voltar para Home
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Content */}
