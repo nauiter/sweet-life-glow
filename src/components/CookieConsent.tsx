@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TYPOGRAPHY } from "@/constants/designTokens";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
   const STORAGE_KEY = "sweet-life-cookie-consent";
 
   useEffect(() => {
@@ -30,7 +32,8 @@ export const CookieConsent = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  // Only show on desktop
+  if (!isVisible || isMobile) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 py-1 px-4 bg-gradient-to-r from-card/95 via-background/95 to-card/95 backdrop-blur-xl border-t-2 border-white/20 shadow-2xl hidden md:block animate-blur-in" style={{ boxShadow: '0 -2px 20px rgba(255, 255, 255, 0.1), 0 -4px 40px rgba(255, 255, 255, 0.05)' }}>
