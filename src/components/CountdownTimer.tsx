@@ -81,8 +81,7 @@ export const CountdownTimer = () => {
         "border-2 border-white/30 rounded-lg md:rounded-xl",
         "w-[92%] sm:w-[95%] max-w-4xl",
         "top-2 sm:top-3 md:top-20",
-        "transition-all duration-700 ease-out",
-        isUrgent && "animate-pulse-slow"
+        "transition-all duration-700 ease-out"
       )}
       style={{
         left: "50%",
