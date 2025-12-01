@@ -6,7 +6,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://sweetlifeanimes.com/</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,45 +16,60 @@
     </image:image>
   </url>
 
+  <!-- Static Pages -->
+  <url>
+    <loc>https://sweetlifeanimes.com/privacy</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sweetlifeanimes.com/terms</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Main Sections (Anchors on homepage) -->
   <url>
     <loc>https://sweetlifeanimes.com/#about</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/#gallery</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/#community</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/#resources</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/#updates</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/#faq</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,21 +77,21 @@
   <!-- Downloadable Resources -->
   <url>
     <loc>https://sweetlifeanimes.com/downloads/Master_Of_Linkedln.pdf</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/downloads/Unlocking_the_Power_of_ChatGPT.pdf</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://sweetlifeanimes.com/downloads/Sweet_GridsLayouts.rar</loc>
-    <lastmod>2025-01-29</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
