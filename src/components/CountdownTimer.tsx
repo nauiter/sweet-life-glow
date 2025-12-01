@@ -82,7 +82,7 @@ export const CountdownTimer = () => {
         "w-[92%] sm:w-[95%] max-w-4xl",
         "top-2 sm:top-3 md:top-20",
         "transition-all duration-700 ease-out",
-        isUrgent && "animate-pulse"
+        isUrgent && "animate-pulse-slow"
       )}
       style={{
         left: "50%",
