@@ -10,24 +10,40 @@ interface Particle {
   duration: number;
   delay: number;
   opacity: number;
+  drift: number;
+  rotation: number;
+  layer: number;
 }
 
 export const ParticleSystem = () => {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const icons: Array<'sparkle' | 'star' | 'heart' | 'circle'> = ['sparkle', 'star', 'heart', 'circle'];
-    const particleCount = 25; // Número de partículas
+    const particleCount = 30;
 
     const newParticles: Particle[] = Array.from({ length: particleCount }, (_, i) => ({
       id: i,
-      x: Math.random() * 100, // Posição X em %
-      y: Math.random() * 100, // Posição Y em %
+      x: Math.random() * 100,
+      y: Math.random() * 100,
       icon: icons[Math.floor(Math.random() * icons.length)],
-      size: 12 + Math.random() * 12, // Tamanho entre 12-24px
-      duration: 8 + Math.random() * 12, // Duração animação 8-20s
-      delay: Math.random() * 5, // Delay inicial 0-5s
-      opacity: 0.15 + Math.random() * 0.25, // Opacidade 0.15-0.4
+      size: 10 + Math.random() * 14,
+      duration: 10 + Math.random() * 15,
+      delay: Math.random() * 5,
+      opacity: 0.2 + Math.random() * 0.3,
+      drift: -20 + Math.random() * 40, // Drift horizontal -20 a 20px
+      rotation: Math.random() * 360, // Rotação inicial aleatória
+      layer: Math.floor(Math.random() * 3), // 3 camadas para parallax
     }));
 
     setParticles(newParticles);
@@ -58,16 +74,20 @@ export const ParticleSystem = () => {
           'hsl(var(--secondary))',
           'hsl(var(--accent))',
         ];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        const color = colors[particle.id % colors.length];
+        
+        // Parallax baseado na camada
+        const parallaxSpeed = [0.1, 0.2, 0.3][particle.layer];
+        const parallaxOffset = scrollY * parallaxSpeed;
 
         return (
           <div
             key={particle.id}
-            className="absolute animate-float"
+            className="absolute particle-ambient"
             style={{
               left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              animationDuration: `${particle.duration}s`,
+              top: `calc(${particle.y}% - ${parallaxOffset}px)`,
+              animationDuration: `${particle.duration}s, ${particle.duration * 0.7}s, ${particle.duration * 1.2}s`,
               animationDelay: `${particle.delay}s`,
               opacity: particle.opacity,
             }}
@@ -76,7 +96,7 @@ export const ParticleSystem = () => {
               size={particle.size}
               style={{ 
                 color,
-                filter: 'drop-shadow(0 0 8px currentColor)',
+                filter: 'drop-shadow(0 0 6px currentColor)',
               }}
               fill="currentColor"
             />
