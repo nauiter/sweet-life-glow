@@ -1,12 +1,13 @@
-import * as React from "react";
 import { lazy, Suspense } from "react";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { MagicCursor } from "@/components/MagicCursor";
-import { ParticleSystem } from "@/components/ParticleSystem";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 import { Section } from "@/components/ui/section";
+
+// Lazy load effect components
+const MagicCursor = lazy(() => import("@/components/MagicCursor").then(m => ({ default: m.MagicCursor })));
+const ParticleSystem = lazy(() => import("@/components/ParticleSystem").then(m => ({ default: m.ParticleSystem })));
 
 // Lazy load below-the-fold components to reduce initial bundle size
 const AboutSection = lazy(() => import("@/components/AboutSection").then(m => ({ default: m.AboutSection })));
@@ -28,17 +29,17 @@ const DonationButton = lazy(() => import("@/components/DonationButton").then(m =
 const Index = () => {
   return (
     <div className="relative">
-      {/* Magic Cursor Effect - Desktop Only */}
-      <MagicCursor />
-      
-      {/* Particle System - Ambient Background Effect */}
-      <ParticleSystem />
-      
       {/* Fixed Navigation */}
       <Navigation />
       
       {/* Countdown Timer - Creates Urgency */}
       <CountdownTimer />
+      
+      {/* Lazy load effect components */}
+      <Suspense fallback={null}>
+        <MagicCursor />
+        <ParticleSystem />
+      </Suspense>
       
       {/* Main Content */}
       <main id="main-content">
