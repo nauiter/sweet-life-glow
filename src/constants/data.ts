@@ -16,6 +16,7 @@ export const EXTERNAL_LINKS = {
   // Course & Shop
   coursify: "https://sweetlifeacademy.coursify.me/courses/anime-ai-mastery-create-grow-monetize-your-brand",
   payhipShop: "https://payhip.com/SweetLifeAnimes",
+  telegramVip: "https://payhip.com/b/Mf5XY",
 } as const;
 
 export const SITE_CONFIG = {

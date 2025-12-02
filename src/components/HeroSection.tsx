@@ -151,13 +151,21 @@ export const HeroSection = () => {
               </div>
             </div>
             
-            {/* Right: CTA Button */}
-            <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29" className="flex-shrink-0">
-              <Button variant="hero" size="lg" className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90">
-                Enroll for $29 (Save $268!)
-                <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
-              </Button>
-            </a>
+            {/* Right: CTA Buttons */}
+            <div className="flex flex-col gap-4 flex-shrink-0">
+              <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29">
+                <Button variant="hero" size="lg" className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90 w-full">
+                  Enroll for $29 (Save $268!)
+                  <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
+                </Button>
+              </a>
+              <a href={EXTERNAL_LINKS.telegramVip} target="_blank" rel="noopener noreferrer" aria-label="Join VIP Telegram community">
+                <Button size="lg" className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-blue-500/50 bg-blue-600 hover:bg-blue-700 text-white w-full">
+                  Join VIP Telegram
+                  <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
+                </Button>
+              </a>
+            </div>
           </div>
               
               {/* Mobile Layout: Vertical */}
@@ -175,12 +183,20 @@ export const HeroSection = () => {
                 <p className="text-xs sm:text-sm text-foreground leading-relaxed mb-3">
                   Complete course, AI magic, premium brushes & lifetime access. ✨
                 </p>
-                <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29" className="block w-full">
-                  <Button variant="hero" size="default" className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base">
-                    Enroll for $29 (Save $268!)
-                    <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
-                  </Button>
-                </a>
+                <div className="flex flex-col gap-3 w-full">
+                  <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29" className="block w-full">
+                    <Button variant="hero" size="default" className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base">
+                      Enroll for $29 (Save $268!)
+                      <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
+                    </Button>
+                  </a>
+                  <a href={EXTERNAL_LINKS.telegramVip} target="_blank" rel="noopener noreferrer" aria-label="Join VIP Telegram community" className="block w-full">
+                    <Button size="default" className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/50">
+                      Join VIP Telegram
+                      <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
+                    </Button>
+                  </a>
+                </div>
           </div>
         </div>
         
