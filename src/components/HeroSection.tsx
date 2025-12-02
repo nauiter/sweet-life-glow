@@ -88,7 +88,7 @@ export const HeroSection = () => {
           }} />
             
             {/* Speech Bubble - Directly Below Image */}
-            <div className="relative bg-card/90 backdrop-blur-sm p-5 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
+            <div className="relative bg-card/90 backdrop-blur-sm p-5 rounded-2xl border-2 border-primary/50 shadow-xl shadow-primary/15 animate-glow-pulse" role="complementary" aria-label="Sweet's message to students">
               <p className="text-foreground italic text-[15px] leading-relaxed text-center">
                 "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
               </p>
@@ -216,7 +216,7 @@ export const HeroSection = () => {
         }} />
           
           {/* Speech Bubble - Below Image */}
-          <div className="relative bg-card/90 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border-2 border-primary/50 shadow-2xl shadow-primary/30 animate-glow-pulse mt-4 mx-4" role="complementary" aria-label="Sweet's message to students">
+          <div className="relative bg-card/90 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border-2 border-primary/50 shadow-xl shadow-primary/15 animate-glow-pulse mt-4 mx-4" role="complementary" aria-label="Sweet's message to students">
             <p className="text-foreground italic text-sm sm:text-base leading-relaxed text-center">
               "I'll be your sensei and bestie on this creative journey. Let's make something magical together!"
             </p>
