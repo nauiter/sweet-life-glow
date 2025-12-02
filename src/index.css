@@ -63,7 +63,7 @@ All colors MUST be HSL.
     /* Shadows & Glows */
     --glow-soft: 0 0 20px hsl(328 100% 64% / 0.3);
     --glow-medium: 0 0 30px hsl(328 100% 64% / 0.5), 0 0 60px hsl(270 100% 70% / 0.3);
-    --glow-strong: 0 0 40px hsl(328 100% 64% / 0.6), 0 0 80px hsl(270 100% 70% / 0.4);
+    --glow-strong: 0 0 50px hsl(328 100% 64% / 0.8), 0 0 100px hsl(270 100% 70% / 0.6), 0 0 150px hsl(328 100% 64% / 0.4);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,10 +103,10 @@ All colors MUST be HSL.
 
 @keyframes glow-pulse {
   0%, 100% { 
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.2);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.3), 0 0 90px hsl(var(--primary) / 0.2);
   }
   50% { 
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 50px hsl(var(--primary) / 0.7), 0 0 100px hsl(var(--primary) / 0.5), 0 0 150px hsl(var(--primary) / 0.3);
   }
 }
 
@@ -526,12 +526,12 @@ All colors MUST be HSL.
 /* Custom Utility Classes */
 @layer components {
   .neon-glow {
-    box-shadow: var(--glow-soft);
+    box-shadow: var(--glow-medium);
     transition: var(--transition-smooth);
   }
   
   .neon-glow:hover {
-    box-shadow: var(--glow-medium);
+    box-shadow: var(--glow-strong);
   }
   
   .neon-text {
