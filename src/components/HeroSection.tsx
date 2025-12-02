@@ -160,7 +160,7 @@ export const HeroSection = () => {
                 </Button>
               </a>
               <a href={EXTERNAL_LINKS.telegramVip} target="_blank" rel="noopener noreferrer" aria-label="Join VIP Telegram community">
-                <Button size="lg" className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white w-full">
+                <Button variant="premium" size="lg" className="group whitespace-nowrap px-10 py-6 text-base lg:text-lg w-full">
                   Join VIP Telegram
                   <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
                 </Button>
@@ -191,7 +191,7 @@ export const HeroSection = () => {
                     </Button>
                   </a>
                   <a href={EXTERNAL_LINKS.telegramVip} target="_blank" rel="noopener noreferrer" aria-label="Join VIP Telegram community" className="block w-full">
-                    <Button size="default" className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg hover:shadow-primary/50">
+                    <Button variant="premium" size="default" className="group w-full min-h-[48px] text-sm sm:text-base">
                       Join VIP Telegram
                       <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
                     </Button>
