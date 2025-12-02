@@ -13,8 +13,9 @@ export const DonationButton = () => {
         className="block"
       >
         <Button
+          variant="hero"
           size="default"
-          className="group bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-bold shadow-2xl hover:shadow-primary/50 hover:scale-105 active:scale-95 transition-all duration-300 px-3 py-2 md:px-6 md:py-6 rounded-xl md:rounded-2xl border-2 border-primary/60 text-xs md:text-base"
+          className="group px-3 py-2 md:px-6 md:py-6 rounded-xl md:rounded-2xl text-xs md:text-base"
         >
           <Heart className="group-hover:scale-110 transition-transform fill-current" size={16} />
           <span className="hidden sm:inline">Support the Project</span>

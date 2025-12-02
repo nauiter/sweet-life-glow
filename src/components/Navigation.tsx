@@ -105,7 +105,7 @@ export const Navigation = () => {
                 rel="noopener noreferrer"
                 aria-label="Enroll in course"
               >
-                <Button variant="default" size="sm" className="ml-2 lg:ml-4 hover:scale-105 transition-transform">
+                <Button variant="hero" size="sm" className="ml-2 lg:ml-4">
                   Enroll Now
                 </Button>
               </a>
