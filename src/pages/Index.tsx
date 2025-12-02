@@ -23,6 +23,7 @@ const CookieConsent = lazy(() => import("@/components/CookieConsent").then(m => 
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop").then(m => ({ default: m.ScrollToTop })));
 const PurchaseNotifications = lazy(() => import("@/components/PurchaseNotifications").then(m => ({ default: m.PurchaseNotifications })));
 const MobileCTABar = lazy(() => import("@/components/MobileCTABar").then(m => ({ default: m.MobileCTABar })));
+const DonationButton = lazy(() => import("@/components/DonationButton").then(m => ({ default: m.DonationButton })));
 
 const Index = () => {
   return (
@@ -79,6 +80,7 @@ const Index = () => {
         <CookieConsent />
         <PurchaseNotifications />
         <MobileCTABar />
+        <DonationButton />
       </Suspense>
     </div>
   );
