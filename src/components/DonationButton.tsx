@@ -4,7 +4,7 @@ import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const DonationButton = () => {
   return (
-    <div className="fixed bottom-20 md:bottom-6 right-3 md:right-6 z-40">
+    <div className="hidden md:block fixed bottom-20 md:bottom-6 right-3 md:right-6 z-40">
       <a
         href={EXTERNAL_LINKS.paypal}
         target="_blank"
