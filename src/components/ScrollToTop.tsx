@@ -32,7 +32,7 @@ export const ScrollToTop = () => {
       variant="default"
       size="icon"
       className={cn(
-        "fixed bottom-8 right-8 z-50 rounded-full shadow-lg transition-all duration-300 neon-glow",
+        "fixed bottom-32 md:bottom-8 right-8 z-50 rounded-full shadow-lg transition-all duration-300 neon-glow",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16 pointer-events-none"
       )}
       aria-label="Scroll to top"
