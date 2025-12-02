@@ -346,7 +346,7 @@ export const GallerySection = () => {
                       {/* Text overlay - always visible on touch devices, hover on desktop */}
                       <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
                         <div className="w-full">
-                          <h3 className={cn(TYPOGRAPHY.heading.h4, "text-foreground")}>{artwork.title}</h3>
+                          <h3 className={cn("text-sm md:text-lg lg:text-xl font-bold", "text-foreground")}>{artwork.title}</h3>
                         </div>
                       </div>
                     </div>
