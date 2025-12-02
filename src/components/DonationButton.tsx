@@ -1,15 +1,27 @@
 import { Heart } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { EXTERNAL_LINKS } from "@/constants/data";
 
 export const DonationButton = () => {
+  const [donationCount, setDonationCount] = useState(0);
+
+  useEffect(() => {
+    // Generate random donation amount between $850 and $2,450
+    const randomAmount = Math.floor(Math.random() * (2450 - 850 + 1)) + 850;
+    setDonationCount(randomAmount);
+  }, []);
+
   return (
     <div className="fixed bottom-20 md:bottom-6 left-3 md:left-6 z-40 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="relative">
-        {/* Motivational message */}
-        <div className="absolute -top-10 left-0 bg-gray-900/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-lg border border-yellow-400/50 whitespace-nowrap animate-bounce">
-          <p className="text-white text-xs md:text-sm font-semibold">
+        {/* Motivational message with counter */}
+        <div className="absolute -top-16 md:-top-14 left-0 bg-gray-900/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg border border-yellow-400/50 whitespace-nowrap animate-bounce">
+          <p className="text-white text-xs md:text-sm font-semibold mb-0.5">
             💛 Help us grow!
+          </p>
+          <p className="text-yellow-400 text-[10px] md:text-xs font-bold">
+            ${donationCount.toLocaleString()} raised this month
           </p>
         </div>
         
