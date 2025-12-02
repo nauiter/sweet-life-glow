@@ -16,8 +16,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground active:scale-95",
         link: "text-primary underline-offset-4 hover:underline",
         neon: "bg-primary text-primary-foreground hover:bg-primary/90 glow-pulse font-bold active:scale-95",
-        hero: "bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 transform transition-all neon-glow font-bold active:scale-95 shadow-lg hover:shadow-xl border-2 border-white/20 hover:border-white/40",
-        premium: "bg-gradient-to-r from-secondary to-primary text-white hover:scale-105 transform transition-all font-bold active:scale-95 shadow-2xl hover:shadow-[0_0_40px_hsl(270_100%_70%/0.8),0_0_80px_hsl(328_100%_64%/0.6)] hover:shadow-2xl border-2 border-white/20 hover:border-white/40",
+        hero: "bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 transform transition-all neon-glow font-bold active:scale-95 shadow-lg hover:shadow-xl",
+        premium: "bg-gradient-to-r from-secondary to-primary text-white hover:scale-105 transform transition-all font-bold active:scale-95 shadow-2xl hover:shadow-[0_0_40px_hsl(270_100%_70%/0.8),0_0_80px_hsl(328_100%_64%/0.6)] hover:shadow-2xl",
       },
       size: {
         default: "h-10 px-4 py-2 min-h-[44px]", // Área de toque mínima mobile
