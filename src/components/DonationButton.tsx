@@ -7,8 +7,8 @@ export const DonationButton = () => {
   const [donationCount, setDonationCount] = useState(0);
 
   useEffect(() => {
-    // Generate random donation amount between $850 and $2,450
-    const randomAmount = Math.floor(Math.random() * (2450 - 850 + 1)) + 850;
+    // Generate random donation amount between $1 and $15
+    const randomAmount = Math.floor(Math.random() * 15) + 1;
     setDonationCount(randomAmount);
   }, []);
 
