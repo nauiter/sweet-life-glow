@@ -42,7 +42,7 @@ export const MobileCTABar = () => {
           target="_blank" 
           rel="noopener noreferrer"
           aria-label="Enroll now in Sweet Life Animes anime art course - Join 500+ artists"
-          className="block w-full py-2.5 sm:py-3 bg-white text-primary font-bold rounded-lg neon-glow hover:scale-105 transition-transform text-center text-sm sm:text-base"
+          className="block w-full py-2.5 sm:py-3 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-bold rounded-lg neon-glow hover:scale-105 transition-transform text-center text-sm sm:text-base"
         >
           💜 Enroll Now - Join 500+ Artists
         </a>
