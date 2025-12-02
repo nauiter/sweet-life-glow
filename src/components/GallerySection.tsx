@@ -218,11 +218,11 @@ export const GallerySection = () => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    // Calculate rotation values (max ±15 degrees)
+    // Calculate rotation values (max ±7.5 degrees - reduced by 50%)
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -15;
-    const rotateY = ((x - centerX) / centerX) * 15;
+    const rotateX = ((y - centerY) / centerY) * -7.5;
+    const rotateY = ((x - centerX) / centerX) * 7.5;
     
     setMousePosition({ x: rotateY, y: rotateX });
     setHoveredCard(index);
@@ -279,9 +279,9 @@ export const GallerySection = () => {
             const isImageLoaded = loadedImages.has(globalIndex);
             const isHovered = hoveredCard === index;
             
-            // Calculate 3D transform
+            // Calculate 3D transform (reduced intensity by 50%)
             const transform3D = isHovered && !isMobile
-              ? `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg) translateZ(20px) scale(1.05)`
+              ? `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg) translateZ(10px) scale(1.025)`
               : 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
             
             return (
