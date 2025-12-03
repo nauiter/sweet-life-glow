@@ -65,7 +65,7 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 sm:px-6 max-w-[1200px] mx-auto lg:px-8">
         {/* Title - Centered Below Countdown */}
-        <div className="text-center mb-6 md:mb-8 lg:mb-10 mt-6 sm:mt-8">
+        <div className="text-center mb-6 md:mb-8 lg:mb-10 mt-2 sm:mt-4 lg:mt-8">
           <h1 className="font-bold leading-[1.2]" style={{
           fontSize: 'clamp(32px, 5.5vw, 52px)'
         }}>
@@ -128,7 +128,7 @@ export const HeroSection = () => {
         
         {/* December Offer Card - Full Width Below Grid */}
         <div className="relative bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm rounded-2xl border border-primary/40 shadow-2xl shadow-primary/20 mt-10 md:mt-12 lg:mt-16 mx-4 md:mx-0 max-w-full overflow-visible" role="region" aria-label="Special December offer">
-          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-4 md:right-4 z-10">
             <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-destructive to-primary rounded-full text-white text-xs sm:text-sm font-bold shadow-lg animate-pulse" role="status" aria-label="Limited time sale: 90% off in December">
               🔥 90% OFF
             </span>
@@ -169,8 +169,8 @@ export const HeroSection = () => {
           </div>
               
               {/* Mobile Layout: Vertical */}
-              <div className="md:hidden space-y-3 p-4 sm:p-5">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between flex-wrap gap-2 mb-2">
+              <div className="md:hidden space-y-3 p-4 sm:p-5 pt-12">
+                <div className="flex flex-col items-start gap-2 mb-2">
                   <h3 className="text-lg sm:text-xl font-bold gradient-text flex items-center gap-2">
                     <Sparkles className="text-primary flex-shrink-0" size={20} />
                     <span>December Sale!</span>
