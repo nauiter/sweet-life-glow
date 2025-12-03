@@ -28,4 +28,8 @@ initFontLoading().then(() => {
   console.log('🔤 Font system initialized');
 });
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
