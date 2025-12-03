@@ -152,7 +152,7 @@ export const ShopSection = () => {
                 className="w-full sm:w-auto"
               >
                 <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                  Enroll in Full Course
+                  Enroll Now
                 </Button>
               </a>
             </div>
