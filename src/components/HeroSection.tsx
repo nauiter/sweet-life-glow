@@ -155,7 +155,7 @@ export const HeroSection = () => {
             <div className="flex flex-col gap-4 flex-shrink-0">
               <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29">
                 <Button variant="hero" size="lg" className="group hover:scale-105 active:scale-95 transition-all duration-300 font-bold whitespace-nowrap px-10 py-6 text-base lg:text-lg shadow-2xl hover:shadow-primary/50 bg-primary hover:bg-primary/90 w-full">
-                  Enroll for $29 (Save $268!)
+                  Enroll for $29
                   <Sparkles className="group-hover:scale-110 transition-transform" size={20} />
                 </Button>
               </a>
@@ -186,7 +186,7 @@ export const HeroSection = () => {
                 <div className="flex flex-col gap-3 w-full">
                   <a href={EXTERNAL_LINKS.coursify} target="_blank" rel="noopener noreferrer" aria-label="Enroll in December special for $29" className="block w-full">
                     <Button variant="hero" size="default" className="group hover:scale-105 active:scale-95 transition-all duration-200 font-bold w-full min-h-[48px] text-sm sm:text-base">
-                      Enroll for $29 (Save $268!)
+                      Enroll for $29
                       <Sparkles className="group-hover:scale-110 transition-transform" size={16} />
                     </Button>
                   </a>

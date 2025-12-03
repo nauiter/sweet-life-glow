@@ -79,7 +79,7 @@ export const CommunitySection = () => {
             Community Love
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
-            Don't just take my word for it—here's what the fam is saying! ✨
+            Don't just take my word for it. Here's what the fam is saying! ✨
           </p>
         </div>
 
