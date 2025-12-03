@@ -148,7 +148,7 @@ export const WelcomeModal = () => {
                   className="flex-1 group text-base sm:text-lg"
                 >
                   <Gift className="group-hover:scale-110 transition-transform" />
-                  Enroll for $29 (Save $268!)
+                  Enroll for $29
                 </Button>
               </div>
 

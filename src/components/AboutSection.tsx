@@ -60,7 +60,7 @@ export const AboutSection = () => {
             About the Course
           </h2>
           <p className={cn(TYPOGRAPHY.body.intro, "text-muted-foreground")}>
-            This isn't just another art course—it's your creative awakening. I'm Sweet, and I'll be your sensei and friend on this journey.
+            This isn't just another art course. It's your creative awakening. I'm Sweet, and I'll be your sensei and friend on this journey.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export const AboutSection = () => {
                   I'm a self-taught anime artist who turned passion into profession. After years of practice and building a community of thousands, I created this course to share everything I wish I knew when I started.
                 </p>
                 <p className="text-foreground leading-relaxed text-base">
-                  Think of me as your fun sensei who keeps it real—no boring lectures, just practical skills and genuine support.
+                  Think of me as your fun sensei who keeps it real. No boring lectures, just practical skills and genuine support.
                 </p>
               </div>
               
