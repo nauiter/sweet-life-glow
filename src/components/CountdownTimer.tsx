@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState, useEffect } from "react";
 import { Clock, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";

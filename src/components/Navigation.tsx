@@ -1,5 +1,4 @@
-import * as React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { EXTERNAL_LINKS } from "@/constants/data";
 import { cn } from "@/lib/utils";
